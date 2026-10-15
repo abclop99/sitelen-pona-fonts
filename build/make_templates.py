@@ -26,6 +26,7 @@ drafts layer gets one, with a draft on every page that has none.
 """
 
 import argparse
+import re
 import statistics
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -111,6 +112,128 @@ class Reference:
         pen = SVGPathPen(self.glyphs)
         self.glyphs[self.cmap[cp]].draw(TransformPen(pen, t))
         return pen.getCommands()
+
+
+# --- one sub-layer per page in the glyph layer ------------------------------
+
+ARGS = {"m": 2, "l": 2, "h": 1, "v": 1, "c": 6, "s": 4, "q": 4, "t": 2, "a": 7, "z": 0}
+
+
+def shift_path(d, dx, dy):
+    """Move SVG path data by (dx, dy), keeping its commands as they are."""
+    tokens = re.findall(r"[MmLlHhVvCcSsQqTtAaZz]|[-+]?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?", d)
+    out, i, cmd, first = [], 0, None, True
+    while i < len(tokens):
+        if tokens[i].isalpha():
+            cmd = tokens[i]
+            out.append(cmd)
+            i += 1
+            if cmd in "Zz":
+                continue
+        n = ARGS[cmd.lower()]
+        vals = [float(t) for t in tokens[i:i + n]]
+        i += n
+        # A path's first move is absolute even when written as "m".
+        absolute = cmd.isupper() or (cmd == "m" and first)
+        if absolute:
+            low = cmd.lower()
+            if low == "h":
+                vals[0] += dx
+            elif low == "v":
+                vals[0] += dy
+            elif low == "a":
+                vals[5] += dx
+                vals[6] += dy
+            else:
+                for k in range(0, n, 2):
+                    vals[k] += dx
+                    vals[k + 1] += dy
+        first = False
+        out.append(" ".join(f"{round(v, 4):g}" for v in vals))
+        if cmd in "Mm":
+            cmd = "L" if cmd == "M" else "l"  # extra pairs after a move are lines
+    return " ".join(out)
+
+
+def shift_element(el, dx, dy):
+    """Move an element by (dx, dy), rewriting its coordinates where possible."""
+    tag = el.tag.rsplit("}", 1)[-1]
+    t = el.get("transform")
+    m = re.fullmatch(r"\s*translate\(\s*([-\d.e]+)[\s,]+([-\d.e]+)\s*\)\s*", t or "")
+    if m and tag != "g":
+        # Bake a plain shift into the coordinates, so they read from the page.
+        del el.attrib["transform"]
+        shift_element(el, dx + float(m.group(1)), dy + float(m.group(2)))
+    elif m:
+        tx, ty = float(m.group(1)) + dx, float(m.group(2)) + dy
+        if abs(tx) < 1e-6 and abs(ty) < 1e-6:
+            del el.attrib["transform"]
+        else:
+            el.set("transform", f"translate({round(tx, 4):g},{round(ty, 4):g})")
+    elif t:
+        el.set("transform", f"translate({dx:g},{dy:g}) {t}")
+    elif tag == "path":
+        el.set("d", shift_path(el.get("d", ""), dx, dy))
+    elif tag in ("circle", "ellipse"):
+        el.set("cx", f"{float(el.get('cx', 0)) + dx:g}")
+        el.set("cy", f"{float(el.get('cy', 0)) + dy:g}")
+    elif tag in ("rect", "image", "use", "text"):
+        el.set("x", f"{float(el.get('x', 0)) + dx:g}")
+        el.set("y", f"{float(el.get('y', 0)) + dy:g}")
+    elif tag == "line":
+        for a, v in (("x1", dx), ("y1", dy), ("x2", dx), ("y2", dy)):
+            el.set(a, f"{float(el.get(a, 0)) + v:g}")
+    elif tag in ("polyline", "polygon"):
+        nums = [float(n) for n in re.findall(r"[-+]?[\d.]+(?:e[-+]?\d+)?", el.get("points", ""))]
+        el.set("points", " ".join(f"{n + (dx if k % 2 == 0 else dy):g}" for k, n in enumerate(nums)))
+    elif tag == "g":
+        for child in el:
+            shift_element(child, dx, dy)
+    else:
+        el.set("transform", f"translate({dx:g},{dy:g})")
+
+
+def page_layers(glyph, pages, ids):
+    """Give every page a sub-layer of glyph, shifted onto the page.
+
+    Anything drawn inside a page's sub-layer then has coordinates from that
+    page's top-left corner. Pieces lying loose in glyph move into the
+    sub-layer of the page their centre is on, keeping their place.
+    """
+    from build import element_paths, to_pathops
+    from common import IDENTITY
+    subs = {}
+    loose = []
+    for child in list(glyph):
+        if child.get(f"{INK}groupmode") == "layer":
+            subs[child.get(f"{INK}label")] = child
+        else:
+            loose.append(child)
+        glyph.remove(child)
+    for label, ox, oy in pages:
+        if label not in subs:
+            subs[label] = ET.Element(S + "g", {
+                "id": f"glyph-{label}", f"{INK}groupmode": "layer", f"{INK}label": label,
+                "transform": f"translate({ox:g},{oy:g})"})
+    origin = {label: (ox, oy) for label, ox, oy in pages}
+    for child in loose:
+        shapes = list(element_paths(child, IDENTITY, ids))
+        if not shapes:
+            continue
+        b = [to_pathops(d, m).bounds for d, m in shapes]
+        cx = (min(x[0] for x in b) + max(x[2] for x in b)) / 2
+        cy = (min(x[1] for x in b) + max(x[3] for x in b)) / 2
+        label = next((l for l, ox, oy in pages if ox <= cx <= ox + CELL and oy <= cy <= oy + CELL), None)
+        if label is None:
+            glyph.append(child)  # off every page: leave it where it was
+            continue
+        ox, oy = origin[label]
+        shift_element(child, -ox, -oy)
+        subs[label].append(child)
+    for label, _, _ in pages:
+        glyph.append(subs.pop(label))
+    for sub in subs.values():  # sub-layers of pages that no longer exist
+        glyph.append(sub)
 
 
 def layer(parent, label, style=None, locked=False):
@@ -228,6 +351,11 @@ def write_file(path, words, ref):
                     ox, oy = page_origin(i)
                     ET.SubElement(g, S + "path", {"d": STARTERS[name], "style": GLYPH_STYLE,
                                                   "transform": f"translate({ox},{oy})"})
+
+    glyph = next(g for g in svg.findall(S + "g") if g.get(f"{INK}label") == "glyph")
+    page_list = [(label, *page_origin(i)) for i, (label, _) in enumerate(pages) if label != "parts"]
+    page_list += [(p.get(f"{INK}label"), float(p.get("x")), float(p.get("y"))) for p in own_pages]
+    page_layers(glyph, page_list, {e.get("id"): e for e in svg.iter() if e.get("id")})
 
     ET.indent(svg)
     ET.ElementTree(svg).write(path, encoding="UTF-8", xml_declaration=True)

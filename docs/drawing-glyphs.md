@@ -12,7 +12,7 @@ The first page, **parts**, is for shared pieces. Then come the words, in the ord
 | `guides` | Locked: each page's ink box (solid red), the box for centrelines (dashed), the midline (blue) and the word's name |
 | `drafts` | Geometric first drafts of every word (purple), from `build/drafts.py`. The build uses a word's draft until you draw that word in `glyph` or `fill` |
 | `parts` | Shared pieces, drawn on the parts page: a head, an eye, an arrow… They never go into the font themselves |
-| `glyph` | **Draw here.** Open paths along the centre of each stroke. A piece belongs to the page its centre is on |
+| `glyph` | **Draw here.** Open paths along the centre of each stroke. It has one sub-layer per page, named after the word and shifted onto that page, so coordinates inside it run from 0 to 1000 with (500, 500) at the page centre. Pick the word's sub-layer before drawing (clicking a shape already in it does this too). A piece belongs to the page its centre is on, whichever sub-layer it is in |
 | `fill` | Optional: shapes that should be filled as drawn instead of stroked |
 
 The solid red square is where the ink should end up. Keep centrelines inside the dashed square, which is inset by half a stroke, so the stroked result lands on the solid one.
@@ -67,6 +67,10 @@ If Commons is unreachable, save the sona pona page "Comparison of Madame Lang's 
 
 The *ku suli* words (*kin, namako, oko, …*) have no drawing in *pu*, so their reference comes from a font instead (sitelen seli kiwen, OFL, shown in blue). Those outlines are stored in the file itself.
 
+## Snapping to the grid
+
+The grid is 25 units, and every page starts on a grid line, so the same grid point has the same coordinates on every page. Turn snapping on (`%`, or the magnet at the top right) and make sure snapping to grids is enabled in its menu; then points land on round numbers like 175 or 500.
+
 ## Regenerating the file
 
-`python3 build/make_templates.py --font standard` rewrites the `reference` and `guides` layers and the word pages, for example after a word is added to `spec/words.tsv`. It never touches `parts`, `glyph` or `fill`, and it keeps pages you added yourself. It reads the ku suli reference from `reference/sitelen-seli-kiwen/downloads/sitelenselikiwenjuniko.ttf` (or `--reference other.ttf`); without that file those words lose their reference.
+`python3 build/make_templates.py --font standard` rewrites the `reference` and `guides` layers and the word pages, for example after a word is added to `spec/words.tsv`. It keeps the drawings in `drafts`, `parts`, `glyph` and `fill`, and pages you added yourself. Shapes lying loose in `glyph` are moved into their page's sub-layer, without changing where they are. It reads the ku suli reference from `reference/sitelen-seli-kiwen/downloads/sitelenselikiwenjuniko.ttf` (or `--reference other.ttf`); without that file those words lose their reference.

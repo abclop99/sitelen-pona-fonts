@@ -1107,12 +1107,155 @@
   </g>
   <g id="parts" inkscape:groupmode="layer" inkscape:label="parts" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
   <g id="glyph" inkscape:groupmode="layer" inkscape:label="glyph" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round">
-    <path d="M 175,175 825,825 M 825,175 175,825" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,0)" />
-    <path d="M 175,625 Q 500,100 825,625" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" transform="translate(2400,1200)" />
-    <path d="M 250,225 V 525 A 250,250 0 0 0 750,525 V 225" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,4800)" />
-    <path d="M 250,775 V 475 A 250,250 0 0 1 750,475 V 775" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,6000)" />
-    <path d="M 175,375 Q 500,900 825,375" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,8400)" />
-    <path d="M 380,175 V 825 M 620,175 V 825" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,10800)" />
+    <g id="glyph-a" inkscape:groupmode="layer" inkscape:label="a" transform="translate(1200,0)" />
+    <g id="glyph-akesi" inkscape:groupmode="layer" inkscape:label="akesi" transform="translate(2400,0)" />
+    <g id="glyph-ala" inkscape:groupmode="layer" inkscape:label="ala" transform="translate(3600,0)">
+      <path d="M 175 175 825 825 M 825 175 175 825" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+    </g>
+    <g id="glyph-alasa" inkscape:groupmode="layer" inkscape:label="alasa" transform="translate(4800,0)" />
+    <g id="glyph-ale" inkscape:groupmode="layer" inkscape:label="ale" transform="translate(6000,0)" />
+    <g id="glyph-anpa" inkscape:groupmode="layer" inkscape:label="anpa" transform="translate(7200,0)" />
+    <g id="glyph-ante" inkscape:groupmode="layer" inkscape:label="ante" transform="translate(8400,0)" />
+    <g id="glyph-anu" inkscape:groupmode="layer" inkscape:label="anu" transform="translate(9600,0)" />
+    <g id="glyph-awen" inkscape:groupmode="layer" inkscape:label="awen" transform="translate(10800,0)" />
+    <g id="glyph-e" inkscape:groupmode="layer" inkscape:label="e" transform="translate(12000,0)" />
+    <g id="glyph-en" inkscape:groupmode="layer" inkscape:label="en" transform="translate(13200,0)" />
+    <g id="glyph-esun" inkscape:groupmode="layer" inkscape:label="esun" transform="translate(0,1200)" />
+    <g id="glyph-ijo" inkscape:groupmode="layer" inkscape:label="ijo" transform="translate(1200,1200)" />
+    <g id="glyph-ike" inkscape:groupmode="layer" inkscape:label="ike" transform="translate(2400,1200)">
+      <path d="M 175 625 Q 500 100 825 625" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+    </g>
+    <g id="glyph-ilo" inkscape:groupmode="layer" inkscape:label="ilo" transform="translate(3600,1200)" />
+    <g id="glyph-insa" inkscape:groupmode="layer" inkscape:label="insa" transform="translate(4800,1200)" />
+    <g id="glyph-jaki" inkscape:groupmode="layer" inkscape:label="jaki" transform="translate(6000,1200)" />
+    <g id="glyph-jan" inkscape:groupmode="layer" inkscape:label="jan" transform="translate(7200,1200)" />
+    <g id="glyph-jelo" inkscape:groupmode="layer" inkscape:label="jelo" transform="translate(8400,1200)" />
+    <g id="glyph-jo" inkscape:groupmode="layer" inkscape:label="jo" transform="translate(9600,1200)" />
+    <g id="glyph-kala" inkscape:groupmode="layer" inkscape:label="kala" transform="translate(10800,1200)" />
+    <g id="glyph-kalama" inkscape:groupmode="layer" inkscape:label="kalama" transform="translate(12000,1200)" />
+    <g id="glyph-kama" inkscape:groupmode="layer" inkscape:label="kama" transform="translate(13200,1200)" />
+    <g id="glyph-kasi" inkscape:groupmode="layer" inkscape:label="kasi" transform="translate(0,2400)" />
+    <g id="glyph-ken" inkscape:groupmode="layer" inkscape:label="ken" transform="translate(1200,2400)" />
+    <g id="glyph-kepeken" inkscape:groupmode="layer" inkscape:label="kepeken" transform="translate(2400,2400)" />
+    <g id="glyph-kili" inkscape:groupmode="layer" inkscape:label="kili" transform="translate(3600,2400)" />
+    <g id="glyph-kiwen" inkscape:groupmode="layer" inkscape:label="kiwen" transform="translate(4800,2400)" />
+    <g id="glyph-ko" inkscape:groupmode="layer" inkscape:label="ko" transform="translate(6000,2400)" />
+    <g id="glyph-kon" inkscape:groupmode="layer" inkscape:label="kon" transform="translate(7200,2400)" />
+    <g id="glyph-kule" inkscape:groupmode="layer" inkscape:label="kule" transform="translate(8400,2400)" />
+    <g id="glyph-kulupu" inkscape:groupmode="layer" inkscape:label="kulupu" transform="translate(9600,2400)" />
+    <g id="glyph-kute" inkscape:groupmode="layer" inkscape:label="kute" transform="translate(10800,2400)" />
+    <g id="glyph-la" inkscape:groupmode="layer" inkscape:label="la" transform="translate(12000,2400)" />
+    <g id="glyph-lape" inkscape:groupmode="layer" inkscape:label="lape" transform="translate(13200,2400)" />
+    <g id="glyph-laso" inkscape:groupmode="layer" inkscape:label="laso" transform="translate(0,3600)" />
+    <g id="glyph-lawa" inkscape:groupmode="layer" inkscape:label="lawa" transform="translate(1200,3600)" />
+    <g id="glyph-len" inkscape:groupmode="layer" inkscape:label="len" transform="translate(2400,3600)" />
+    <g id="glyph-lete" inkscape:groupmode="layer" inkscape:label="lete" transform="translate(3600,3600)" />
+    <g id="glyph-li" inkscape:groupmode="layer" inkscape:label="li" transform="translate(4800,3600)" />
+    <g id="glyph-lili" inkscape:groupmode="layer" inkscape:label="lili" transform="translate(6000,3600)" />
+    <g id="glyph-linja" inkscape:groupmode="layer" inkscape:label="linja" transform="translate(7200,3600)" />
+    <g id="glyph-lipu" inkscape:groupmode="layer" inkscape:label="lipu" transform="translate(8400,3600)" />
+    <g id="glyph-loje" inkscape:groupmode="layer" inkscape:label="loje" transform="translate(9600,3600)" />
+    <g id="glyph-lon" inkscape:groupmode="layer" inkscape:label="lon" transform="translate(10800,3600)" />
+    <g id="glyph-luka" inkscape:groupmode="layer" inkscape:label="luka" transform="translate(12000,3600)" />
+    <g id="glyph-lukin" inkscape:groupmode="layer" inkscape:label="lukin" transform="translate(13200,3600)" />
+    <g id="glyph-lupa" inkscape:groupmode="layer" inkscape:label="lupa" transform="translate(0,4800)">
+      <path d="M 250 225 V 525 A 250 250 0 0 0 750 525 V 225" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+    </g>
+    <g id="glyph-ma" inkscape:groupmode="layer" inkscape:label="ma" transform="translate(1200,4800)" />
+    <g id="glyph-mama" inkscape:groupmode="layer" inkscape:label="mama" transform="translate(2400,4800)" />
+    <g id="glyph-mani" inkscape:groupmode="layer" inkscape:label="mani" transform="translate(3600,4800)" />
+    <g id="glyph-meli" inkscape:groupmode="layer" inkscape:label="meli" transform="translate(4800,4800)" />
+    <g id="glyph-mi" inkscape:groupmode="layer" inkscape:label="mi" transform="translate(6000,4800)" />
+    <g id="glyph-mije" inkscape:groupmode="layer" inkscape:label="mije" transform="translate(7200,4800)" />
+    <g id="glyph-moku" inkscape:groupmode="layer" inkscape:label="moku" transform="translate(8400,4800)" />
+    <g id="glyph-moli" inkscape:groupmode="layer" inkscape:label="moli" transform="translate(9600,4800)" />
+    <g id="glyph-monsi" inkscape:groupmode="layer" inkscape:label="monsi" transform="translate(10800,4800)" />
+    <g id="glyph-mu" inkscape:groupmode="layer" inkscape:label="mu" transform="translate(12000,4800)" />
+    <g id="glyph-mun" inkscape:groupmode="layer" inkscape:label="mun" transform="translate(13200,4800)" />
+    <g id="glyph-musi" inkscape:groupmode="layer" inkscape:label="musi" transform="translate(0,6000)" />
+    <g id="glyph-mute" inkscape:groupmode="layer" inkscape:label="mute" transform="translate(1200,6000)" />
+    <g id="glyph-nanpa" inkscape:groupmode="layer" inkscape:label="nanpa" transform="translate(2400,6000)" />
+    <g id="glyph-nasa" inkscape:groupmode="layer" inkscape:label="nasa" transform="translate(3600,6000)" />
+    <g id="glyph-nasin" inkscape:groupmode="layer" inkscape:label="nasin" transform="translate(4800,6000)" />
+    <g id="glyph-nena" inkscape:groupmode="layer" inkscape:label="nena" transform="translate(6000,6000)">
+      <path d="M 250 775 V 475 A 250 250 0 0 1 750 475 V 775" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+    </g>
+    <g id="glyph-ni" inkscape:groupmode="layer" inkscape:label="ni" transform="translate(7200,6000)" />
+    <g id="glyph-nimi" inkscape:groupmode="layer" inkscape:label="nimi" transform="translate(8400,6000)" />
+    <g id="glyph-noka" inkscape:groupmode="layer" inkscape:label="noka" transform="translate(9600,6000)" />
+    <g id="glyph-o" inkscape:groupmode="layer" inkscape:label="o" transform="translate(10800,6000)" />
+    <g id="glyph-olin" inkscape:groupmode="layer" inkscape:label="olin" transform="translate(12000,6000)" />
+    <g id="glyph-ona" inkscape:groupmode="layer" inkscape:label="ona" transform="translate(13200,6000)" />
+    <g id="glyph-open" inkscape:groupmode="layer" inkscape:label="open" transform="translate(0,7200)" />
+    <g id="glyph-pakala" inkscape:groupmode="layer" inkscape:label="pakala" transform="translate(1200,7200)" />
+    <g id="glyph-pali" inkscape:groupmode="layer" inkscape:label="pali" transform="translate(2400,7200)" />
+    <g id="glyph-palisa" inkscape:groupmode="layer" inkscape:label="palisa" transform="translate(3600,7200)" />
+    <g id="glyph-pan" inkscape:groupmode="layer" inkscape:label="pan" transform="translate(4800,7200)" />
+    <g id="glyph-pana" inkscape:groupmode="layer" inkscape:label="pana" transform="translate(6000,7200)" />
+    <g id="glyph-pi" inkscape:groupmode="layer" inkscape:label="pi" transform="translate(7200,7200)" />
+    <g id="glyph-pilin" inkscape:groupmode="layer" inkscape:label="pilin" transform="translate(8400,7200)" />
+    <g id="glyph-pimeja" inkscape:groupmode="layer" inkscape:label="pimeja" transform="translate(9600,7200)" />
+    <g id="glyph-pini" inkscape:groupmode="layer" inkscape:label="pini" transform="translate(10800,7200)" />
+    <g id="glyph-pipi" inkscape:groupmode="layer" inkscape:label="pipi" transform="translate(12000,7200)" />
+    <g id="glyph-poka" inkscape:groupmode="layer" inkscape:label="poka" transform="translate(13200,7200)" />
+    <g id="glyph-poki" inkscape:groupmode="layer" inkscape:label="poki" transform="translate(0,8400)" />
+    <g id="glyph-pona" inkscape:groupmode="layer" inkscape:label="pona" transform="translate(1200,8400)">
+      <path d="M 175 375 Q 500 900 825 375" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+    </g>
+    <g id="glyph-pu" inkscape:groupmode="layer" inkscape:label="pu" transform="translate(2400,8400)" />
+    <g id="glyph-sama" inkscape:groupmode="layer" inkscape:label="sama" transform="translate(3600,8400)" />
+    <g id="glyph-seli" inkscape:groupmode="layer" inkscape:label="seli" transform="translate(4800,8400)" />
+    <g id="glyph-selo" inkscape:groupmode="layer" inkscape:label="selo" transform="translate(6000,8400)" />
+    <g id="glyph-seme" inkscape:groupmode="layer" inkscape:label="seme" transform="translate(7200,8400)" />
+    <g id="glyph-sewi" inkscape:groupmode="layer" inkscape:label="sewi" transform="translate(8400,8400)" />
+    <g id="glyph-sijelo" inkscape:groupmode="layer" inkscape:label="sijelo" transform="translate(9600,8400)" />
+    <g id="glyph-sike" inkscape:groupmode="layer" inkscape:label="sike" transform="translate(10800,8400)" />
+    <g id="glyph-sin" inkscape:groupmode="layer" inkscape:label="sin" transform="translate(12000,8400)" />
+    <g id="glyph-sina" inkscape:groupmode="layer" inkscape:label="sina" transform="translate(13200,8400)" />
+    <g id="glyph-sinpin" inkscape:groupmode="layer" inkscape:label="sinpin" transform="translate(0,9600)" />
+    <g id="glyph-sitelen" inkscape:groupmode="layer" inkscape:label="sitelen" transform="translate(1200,9600)" />
+    <g id="glyph-sona" inkscape:groupmode="layer" inkscape:label="sona" transform="translate(2400,9600)" />
+    <g id="glyph-soweli" inkscape:groupmode="layer" inkscape:label="soweli" transform="translate(3600,9600)" />
+    <g id="glyph-suli" inkscape:groupmode="layer" inkscape:label="suli" transform="translate(4800,9600)" />
+    <g id="glyph-suno" inkscape:groupmode="layer" inkscape:label="suno" transform="translate(6000,9600)" />
+    <g id="glyph-supa" inkscape:groupmode="layer" inkscape:label="supa" transform="translate(7200,9600)" />
+    <g id="glyph-suwi" inkscape:groupmode="layer" inkscape:label="suwi" transform="translate(8400,9600)" />
+    <g id="glyph-tan" inkscape:groupmode="layer" inkscape:label="tan" transform="translate(9600,9600)" />
+    <g id="glyph-taso" inkscape:groupmode="layer" inkscape:label="taso" transform="translate(10800,9600)" />
+    <g id="glyph-tawa" inkscape:groupmode="layer" inkscape:label="tawa" transform="translate(12000,9600)" />
+    <g id="glyph-telo" inkscape:groupmode="layer" inkscape:label="telo" transform="translate(13200,9600)" />
+    <g id="glyph-tenpo" inkscape:groupmode="layer" inkscape:label="tenpo" transform="translate(0,10800)" />
+    <g id="glyph-toki" inkscape:groupmode="layer" inkscape:label="toki" transform="translate(1200,10800)" />
+    <g id="glyph-tomo" inkscape:groupmode="layer" inkscape:label="tomo" transform="translate(2400,10800)" />
+    <g id="glyph-tu" inkscape:groupmode="layer" inkscape:label="tu" transform="translate(3600,10800)">
+      <path d="M 380 175 V 825 M 620 175 V 825" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+    </g>
+    <g id="glyph-unpa" inkscape:groupmode="layer" inkscape:label="unpa" transform="translate(4800,10800)" />
+    <g id="glyph-uta" inkscape:groupmode="layer" inkscape:label="uta" transform="translate(6000,10800)" />
+    <g id="glyph-utala" inkscape:groupmode="layer" inkscape:label="utala" transform="translate(7200,10800)" />
+    <g id="glyph-walo" inkscape:groupmode="layer" inkscape:label="walo" transform="translate(8400,10800)" />
+    <g id="glyph-wan" inkscape:groupmode="layer" inkscape:label="wan" transform="translate(9600,10800)" />
+    <g id="glyph-waso" inkscape:groupmode="layer" inkscape:label="waso" transform="translate(10800,10800)" />
+    <g id="glyph-wawa" inkscape:groupmode="layer" inkscape:label="wawa" transform="translate(12000,10800)" />
+    <g id="glyph-weka" inkscape:groupmode="layer" inkscape:label="weka" transform="translate(13200,10800)" />
+    <g id="glyph-wile" inkscape:groupmode="layer" inkscape:label="wile" transform="translate(0,12000)" />
+    <g id="glyph-namako" inkscape:groupmode="layer" inkscape:label="namako" transform="translate(1200,12000)" />
+    <g id="glyph-kin" inkscape:groupmode="layer" inkscape:label="kin" transform="translate(2400,12000)" />
+    <g id="glyph-oko" inkscape:groupmode="layer" inkscape:label="oko" transform="translate(3600,12000)" />
+    <g id="glyph-kipisi" inkscape:groupmode="layer" inkscape:label="kipisi" transform="translate(4800,12000)" />
+    <g id="glyph-leko" inkscape:groupmode="layer" inkscape:label="leko" transform="translate(6000,12000)" />
+    <g id="glyph-monsuta" inkscape:groupmode="layer" inkscape:label="monsuta" transform="translate(7200,12000)" />
+    <g id="glyph-tonsi" inkscape:groupmode="layer" inkscape:label="tonsi" transform="translate(8400,12000)" />
+    <g id="glyph-jasima" inkscape:groupmode="layer" inkscape:label="jasima" transform="translate(9600,12000)" />
+    <g id="glyph-kijetesantakalu" inkscape:groupmode="layer" inkscape:label="kijetesantakalu" transform="translate(10800,12000)" />
+    <g id="glyph-soko" inkscape:groupmode="layer" inkscape:label="soko" transform="translate(12000,12000)" />
+    <g id="glyph-meso" inkscape:groupmode="layer" inkscape:label="meso" transform="translate(13200,12000)" />
+    <g id="glyph-epiku" inkscape:groupmode="layer" inkscape:label="epiku" transform="translate(0,13200)" />
+    <g id="glyph-kokosila" inkscape:groupmode="layer" inkscape:label="kokosila" transform="translate(1200,13200)" />
+    <g id="glyph-lanpan" inkscape:groupmode="layer" inkscape:label="lanpan" transform="translate(2400,13200)" />
+    <g id="glyph-n" inkscape:groupmode="layer" inkscape:label="n" transform="translate(3600,13200)" />
+    <g id="glyph-misikeke" inkscape:groupmode="layer" inkscape:label="misikeke" transform="translate(4800,13200)" />
+    <g id="glyph-ku" inkscape:groupmode="layer" inkscape:label="ku" transform="translate(6000,13200)" />
   </g>
   <g id="fill" inkscape:groupmode="layer" inkscape:label="fill" style="fill:#000000;stroke:none" />
 </svg>
