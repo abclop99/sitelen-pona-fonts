@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" width="1000" height="1000" viewBox="0 0 1000 1000">
+  <sodipodi:namedview id="namedview" pagecolor="#ffffff" inkscape:document-units="px" inkscape:current-layer="glyph" showgrid="true">
+    <inkscape:grid id="grid" type="xygrid" units="px" originx="0" originy="0" spacingx="25" spacingy="25" empspacing="4" visible="true" enabled="true" />
+  </sodipodi:namedview>
+  <g id="reference" inkscape:groupmode="layer" inkscape:label="reference" style="opacity:0.25" sodipodi:insensitive="true" />
+  <g id="guides" inkscape:groupmode="layer" inkscape:label="guides" style="fill:none;stroke:#e06666;stroke-width:2" sodipodi:insensitive="true">
+    <rect x="100" y="100" width="800" height="800" />
+    <rect x="135.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <path d="M 0,500 H 1000" style="stroke:#6fa8dc" />
+    <path d="M 500.0,0 V 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
+    <text x="20" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">unpa</text>
+  </g>
+  <g id="glyph" inkscape:groupmode="layer" inkscape:label="glyph" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+  <g id="fill" inkscape:groupmode="layer" inkscape:label="fill" style="fill:#000000;stroke:none" />
+</svg>

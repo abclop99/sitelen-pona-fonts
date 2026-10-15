@@ -11,17 +11,24 @@ Three related sitelen pona fonts that share one encoding, so the same text works
 ## Layout
 
 ```
-spec/        shared encoding, asuki input syntax, combo list, mirroring tiers
+spec/        shared encoding, word list (words.tsv), asuki syntax, combo list, mirroring
 docs/        feasibility write-up and design decisions
 reference/   links and notes; downloaded reference fonts (git-ignored)
-build/       build scripts (glyph SVGs + features -> TTF/WOFF2)
+build/       make_templates.py (Inkscape templates), build.py (SVGs -> TTF/WOFF2 + test page)
 fonts/*/     per-font glyph sources and features
-test/        HTML test page
+test/        test page template (the build writes dist/<font>/test.html)
 ```
 
 ## Status
 
-Planning. Start with [docs/custom-font-feasibility.md](docs/custom-font-feasibility.md) and [spec/README.md](spec/README.md).
+Working on the first font: a clean, standard-looking font in `fonts/combos/` (monospace or proportional still undecided; the build makes both). It becomes the base of the combos font.
+
+1. Templates and build pipeline. **Done:** see [docs/drawing-glyphs.md](docs/drawing-glyphs.md).
+2. Draw the words, about 20 common ones first, then the rest of the 137.
+3. Typing features: ASCII input, cartouches, long *pi*.
+4. Combos: automatic stacking and side by side, then designed combos like walking-house *tomo tawa*.
+
+Alongside, handwriting shortcuts collect in [docs/handwriting-shortcuts.md](docs/handwriting-shortcuts.md) for the handwriting font later. Background: [docs/custom-font-feasibility.md](docs/custom-font-feasibility.md) and [spec/README.md](spec/README.md).
 
 ## Licenses
 
