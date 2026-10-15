@@ -4,8 +4,9 @@
 fonts/<font>/glyphs.svg has one page per word in spec/words.tsv. Paths in
 the "glyph" layer are centrelines and become strokes of one fixed weight
 (round caps and joins); shapes in the "fill" layer are filled as drawn.
-Clones of shared parts are followed to their originals. Words with nothing
-drawn are left out of the font.
+Clones of shared parts are followed to their originals. A word with nothing
+drawn uses its geometric draft from the "drafts" layer (see drafts.py), and
+a word with neither is left out of the font.
 
 Two builds come out of the same drawings:
   mono   every glyph is one full cell wide. A "<word>.mono" page replaces
@@ -100,11 +101,13 @@ def to_pathops(d, matrix):
 
 
 def read_pages(svg_file):
-    """Return {page label: glyph outline as a pathops.Path in page coordinates}.
+    """Return ({page label: outline}, drafted labels), outlines as pathops.Paths.
 
     Each top-level piece of the glyph and fill layers (a path, a clone, a
-    group) belongs to the page its centre is on. The parts layer is not read
-    directly: its pieces only reach the font through clones.
+    group) belongs to the page its centre is on. A page with nothing in those
+    layers uses its piece of the drafts layer instead, if it has one. The
+    parts layer is not read directly: its pieces only reach the font through
+    clones.
     """
     root = ET.parse(svg_file).getroot()
     ids = {e.get("id"): e for e in root.iter() if e.get("id")}
@@ -131,7 +134,7 @@ def read_pages(svg_file):
     pieces_by_page = {}
     for g in root.findall(f"{{{SVG_NS}}}g"):
         kind = g.get(f"{ink}label")
-        if kind not in ("glyph", "fill") or hidden(g):
+        if kind not in ("glyph", "fill", "drafts") or hidden(g):
             continue
         for child, matrix in pieces(g, IDENTITY):
             shapes = list(element_paths(child, matrix, ids))
@@ -148,18 +151,20 @@ def read_pages(svg_file):
             px, py = pages[label][:2]
             for d, m in shapes:
                 p = to_pathops(d, multiply((1, 0, 0, 1, -px, -py), m))
-                if kind == "glyph":
+                if kind in ("glyph", "drafts"):
                     p.stroke(STROKE, pathops.LineCap.ROUND_CAP, pathops.LineJoin.ROUND_JOIN, 4)
                     p.convertConicsToQuads()
-                pieces_by_page.setdefault(label, []).append(p)
+                key = "drafts" if kind == "drafts" else "drawn"
+                pieces_by_page.setdefault((key, label), []).append(p)
 
-    result = {}
-    for label, ps in pieces_by_page.items():
+    found = {"drawn": {}, "drafts": {}}
+    for (key, label), ps in pieces_by_page.items():
         out = pathops.Path()
         pathops.union(ps, out.getPen())
         if out.bounds != (0, 0, 0, 0):
-            result[label] = out
-    return result
+            found[key][label] = out
+    drafted = set(found["drafts"]) - set(found["drawn"])
+    return {**found["drafts"], **found["drawn"]}, drafted
 
 
 def make_ttglyph(path, dx):
@@ -268,17 +273,18 @@ def build(font, mode, words, outdir, drawings):
     fb.save(ttf)
     fb.font.flavor = "woff2"
     fb.font.save(outdir / f"{stem}.woff2")
-    print(f"{ttf.relative_to(ROOT)}: {len(drawn)} of {len(words)} words drawn")
+    print(f"{ttf.relative_to(ROOT)}: {len(drawn)} of {len(words)} words")
     return drawn, missing, stem
 
 
-def write_test_page(font, words, drawn, outdir, stems):
+def write_test_page(font, words, drawn, drafted, outdir, stems):
     """Write a self-contained test page with both builds embedded."""
     data = {
         "family": FAMILY.get(font, font),
         "built": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "words": [{"word": w["word"], "cp": w["codepoint"], "aliases": w["aliases"],
-                   "drawn": w["word"] in drawn} for w in words],
+                   "drawn": w["word"] in drawn, "draft": w["word"] in drafted}
+                  for w in words],
         "fonts": {mode: base64.b64encode((outdir / f"{stem}.woff2").read_bytes()).decode()
                   for mode, stem in stems.items()},
     }
@@ -298,14 +304,15 @@ def main():
     words = read_words()
     outdir = ROOT / (args.out or f"dist/{args.font}")
     known = {w["word"] for w in words}
-    drawings = read_pages(ROOT / "fonts" / args.font / "glyphs.svg")
+    drawings, drafted = read_pages(ROOT / "fonts" / args.font / "glyphs.svg")
     for label in sorted(drawings):
         if label.removesuffix(".mono") not in known:
             print(f"warning: page {label!r} is not a word in spec/words.tsv")
     stems = {}
     for mode in ("mono", "prop"):
         drawn, missing, stems[mode] = build(args.font, mode, words, outdir, drawings)
-    write_test_page(args.font, words, set(drawn), outdir, stems)
+    write_test_page(args.font, words, set(drawn), drafted, outdir, stems)
+    print(f"{len(set(drawn) - drafted)} drawn, {len(drafted & set(drawn))} still drafts")
     if missing:
         print(f"not drawn yet ({len(missing)}): {' '.join(missing)}")
 

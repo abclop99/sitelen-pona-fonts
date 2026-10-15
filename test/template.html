@@ -46,6 +46,8 @@
   .cell .glyphs span { background: var(--cell); }
   .cell.todo { opacity: .45; }
   .cell .name { font-size: 12px; color: var(--muted); }
+  .cell.draft { border-style: dashed; }
+  .cell.draft .name::after { content: " · draft"; }
   .progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin: 8px 0 0; }
   .progress div { height: 100%; background: var(--accent); }
 </style>
@@ -65,7 +67,7 @@
   <div id="samples"></div>
 
   <h2>All words</h2>
-  <p class="sub">Each cell shows the monospace build on the left and the proportional build on the right. Faded cells are not drawn yet.</p>
+  <p class="sub">Each cell shows the monospace build on the left and the proportional build on the right. Dashed cells still use the geometric draft; faded cells have nothing yet.</p>
   <div class="grid" id="grid"></div>
 </main>
 
@@ -83,10 +85,12 @@ for (const w of DATA.words) {
   byWord.set(w.word, w);
   for (const a of w.aliases) byWord.set(a, w);
 }
-const drawn = DATA.words.filter(w => w.drawn).length;
+const drawn = DATA.words.filter(w => w.drawn && !w.draft).length;
+const drafts = DATA.words.filter(w => w.draft).length;
 document.getElementById("title").textContent = DATA.family;
 document.getElementById("status").innerHTML =
-  `${drawn} of ${DATA.words.length} words drawn &middot; built ${DATA.built}` +
+  `${drawn} of ${DATA.words.length} words drawn` +
+  (drafts ? `, ${drafts} still drafts` : "") + ` &middot; built ${DATA.built}` +
   `<div class="progress"><div style="width:${100 * drawn / DATA.words.length}%"></div></div>`;
 
 function render(text, mode) {
@@ -131,7 +135,7 @@ function update() {
 const grid = document.getElementById("grid");
 for (const w of DATA.words) {
   const c = document.createElement("div");
-  c.className = "cell" + (w.drawn ? "" : " todo");
+  c.className = "cell" + (w.draft ? " draft" : w.drawn ? "" : " todo");
   const ch = String.fromCodePoint(w.cp);
   c.innerHTML = `<div class="glyphs">${w.drawn
       ? `<span class="f-mono">${ch}</span><span class="f-prop">${ch}</span>`

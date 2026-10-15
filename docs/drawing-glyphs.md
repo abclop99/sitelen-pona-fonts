@@ -10,11 +10,16 @@ The first page, **parts**, is for shared pieces. Then come the words, in the ord
 |---|---|
 | `reference` | Locked and faint: jan Sonja's drawing of each word from *pu* (the official forms), to follow or ignore |
 | `guides` | Locked: each page's ink box (solid red), the box for centrelines (dashed), the midline (blue) and the word's name |
+| `drafts` | Geometric first drafts of every word (purple), from `build/drafts.py`. The build uses a word's draft until you draw that word in `glyph` or `fill` |
 | `parts` | Shared pieces, drawn on the parts page: a head, an eye, an arrow… They never go into the font themselves |
 | `glyph` | **Draw here.** Open paths along the centre of each stroke. A piece belongs to the page its centre is on |
 | `fill` | Optional: shapes that should be filled as drawn instead of stroked |
 
 The solid red square is where the ink should end up. Keep centrelines inside the dashed square, which is inset by half a stroke, so the stroked result lands on the solid one.
+
+## Drafts
+
+Every word starts with a geometric draft made of straight lines, circles and arcs, so the font is complete from the start. A draft is used only while the word's page has nothing in the `glyph` and `fill` layers. To make a word your own, either edit its draft in place (it's in the `drafts` layer), or draw it in `glyph` and delete the draft so the two don't overlap on screen. The test page marks words that are still drafts with a dashed border.
 
 ## Shared parts
 

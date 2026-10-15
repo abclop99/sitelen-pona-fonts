@@ -282,695 +282,828 @@
   </g>
   <g id="guides" inkscape:groupmode="layer" inkscape:label="guides" style="fill:none;stroke:#e06666;stroke-width:2" sodipodi:insensitive="true">
     <rect x="100" y="100" width="800" height="800" />
-    <rect x="135.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="120.0" y="120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 0,500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 500.0,0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="20" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">parts</text>
     <rect x="1300" y="100" width="800" height="800" />
-    <rect x="1335.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="1320.0" y="120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 1200,500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 1700.0,0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="1220" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">a</text>
     <rect x="2500" y="100" width="800" height="800" />
-    <rect x="2535.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="2520.0" y="120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 2400,500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 2900.0,0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="2420" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">akesi</text>
     <rect x="3700" y="100" width="800" height="800" />
-    <rect x="3735.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="3720.0" y="120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 3600,500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 4100.0,0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="3620" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">ala</text>
     <rect x="4900" y="100" width="800" height="800" />
-    <rect x="4935.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="4920.0" y="120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 4800,500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 5300.0,0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="4820" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">alasa</text>
     <rect x="6100" y="100" width="800" height="800" />
-    <rect x="6135.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="6120.0" y="120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 6000,500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 6500.0,0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="6020" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">ale</text>
     <rect x="7300" y="100" width="800" height="800" />
-    <rect x="7335.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="7320.0" y="120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 7200,500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 7700.0,0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="7220" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">anpa</text>
     <rect x="8500" y="100" width="800" height="800" />
-    <rect x="8535.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="8520.0" y="120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 8400,500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 8900.0,0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="8420" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">ante</text>
     <rect x="9700" y="100" width="800" height="800" />
-    <rect x="9735.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="9720.0" y="120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 9600,500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 10100.0,0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="9620" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">anu</text>
     <rect x="10900" y="100" width="800" height="800" />
-    <rect x="10935.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="10920.0" y="120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 10800,500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 11300.0,0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="10820" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">awen</text>
     <rect x="12100" y="100" width="800" height="800" />
-    <rect x="12135.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="12120.0" y="120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 12000,500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 12500.0,0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="12020" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">e</text>
     <rect x="13300" y="100" width="800" height="800" />
-    <rect x="13335.0" y="135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="13320.0" y="120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 13200,500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 13700.0,0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="13220" y="60" style="font:40px sans-serif;fill:#999999;stroke:none">en</text>
     <rect x="100" y="1300" width="800" height="800" />
-    <rect x="135.0" y="1335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="120.0" y="1320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 0,1700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 500.0,1200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="20" y="1260" style="font:40px sans-serif;fill:#999999;stroke:none">esun</text>
     <rect x="1300" y="1300" width="800" height="800" />
-    <rect x="1335.0" y="1335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="1320.0" y="1320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 1200,1700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 1700.0,1200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="1220" y="1260" style="font:40px sans-serif;fill:#999999;stroke:none">ijo</text>
     <rect x="2500" y="1300" width="800" height="800" />
-    <rect x="2535.0" y="1335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="2520.0" y="1320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 2400,1700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 2900.0,1200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="2420" y="1260" style="font:40px sans-serif;fill:#999999;stroke:none">ike</text>
     <rect x="3700" y="1300" width="800" height="800" />
-    <rect x="3735.0" y="1335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="3720.0" y="1320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 3600,1700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 4100.0,1200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="3620" y="1260" style="font:40px sans-serif;fill:#999999;stroke:none">ilo</text>
     <rect x="4900" y="1300" width="800" height="800" />
-    <rect x="4935.0" y="1335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="4920.0" y="1320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 4800,1700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 5300.0,1200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="4820" y="1260" style="font:40px sans-serif;fill:#999999;stroke:none">insa</text>
     <rect x="6100" y="1300" width="800" height="800" />
-    <rect x="6135.0" y="1335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="6120.0" y="1320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 6000,1700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 6500.0,1200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="6020" y="1260" style="font:40px sans-serif;fill:#999999;stroke:none">jaki</text>
     <rect x="7300" y="1300" width="800" height="800" />
-    <rect x="7335.0" y="1335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="7320.0" y="1320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 7200,1700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 7700.0,1200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="7220" y="1260" style="font:40px sans-serif;fill:#999999;stroke:none">jan</text>
     <rect x="8500" y="1300" width="800" height="800" />
-    <rect x="8535.0" y="1335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="8520.0" y="1320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 8400,1700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 8900.0,1200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="8420" y="1260" style="font:40px sans-serif;fill:#999999;stroke:none">jelo</text>
     <rect x="9700" y="1300" width="800" height="800" />
-    <rect x="9735.0" y="1335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="9720.0" y="1320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 9600,1700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 10100.0,1200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="9620" y="1260" style="font:40px sans-serif;fill:#999999;stroke:none">jo</text>
     <rect x="10900" y="1300" width="800" height="800" />
-    <rect x="10935.0" y="1335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="10920.0" y="1320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 10800,1700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 11300.0,1200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="10820" y="1260" style="font:40px sans-serif;fill:#999999;stroke:none">kala</text>
     <rect x="12100" y="1300" width="800" height="800" />
-    <rect x="12135.0" y="1335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="12120.0" y="1320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 12000,1700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 12500.0,1200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="12020" y="1260" style="font:40px sans-serif;fill:#999999;stroke:none">kalama</text>
     <rect x="13300" y="1300" width="800" height="800" />
-    <rect x="13335.0" y="1335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="13320.0" y="1320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 13200,1700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 13700.0,1200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="13220" y="1260" style="font:40px sans-serif;fill:#999999;stroke:none">kama</text>
     <rect x="100" y="2500" width="800" height="800" />
-    <rect x="135.0" y="2535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="120.0" y="2520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 0,2900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 500.0,2400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="20" y="2460" style="font:40px sans-serif;fill:#999999;stroke:none">kasi</text>
     <rect x="1300" y="2500" width="800" height="800" />
-    <rect x="1335.0" y="2535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="1320.0" y="2520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 1200,2900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 1700.0,2400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="1220" y="2460" style="font:40px sans-serif;fill:#999999;stroke:none">ken</text>
     <rect x="2500" y="2500" width="800" height="800" />
-    <rect x="2535.0" y="2535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="2520.0" y="2520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 2400,2900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 2900.0,2400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="2420" y="2460" style="font:40px sans-serif;fill:#999999;stroke:none">kepeken</text>
     <rect x="3700" y="2500" width="800" height="800" />
-    <rect x="3735.0" y="2535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="3720.0" y="2520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 3600,2900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 4100.0,2400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="3620" y="2460" style="font:40px sans-serif;fill:#999999;stroke:none">kili</text>
     <rect x="4900" y="2500" width="800" height="800" />
-    <rect x="4935.0" y="2535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="4920.0" y="2520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 4800,2900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 5300.0,2400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="4820" y="2460" style="font:40px sans-serif;fill:#999999;stroke:none">kiwen</text>
     <rect x="6100" y="2500" width="800" height="800" />
-    <rect x="6135.0" y="2535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="6120.0" y="2520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 6000,2900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 6500.0,2400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="6020" y="2460" style="font:40px sans-serif;fill:#999999;stroke:none">ko</text>
     <rect x="7300" y="2500" width="800" height="800" />
-    <rect x="7335.0" y="2535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="7320.0" y="2520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 7200,2900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 7700.0,2400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="7220" y="2460" style="font:40px sans-serif;fill:#999999;stroke:none">kon</text>
     <rect x="8500" y="2500" width="800" height="800" />
-    <rect x="8535.0" y="2535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="8520.0" y="2520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 8400,2900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 8900.0,2400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="8420" y="2460" style="font:40px sans-serif;fill:#999999;stroke:none">kule</text>
     <rect x="9700" y="2500" width="800" height="800" />
-    <rect x="9735.0" y="2535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="9720.0" y="2520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 9600,2900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 10100.0,2400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="9620" y="2460" style="font:40px sans-serif;fill:#999999;stroke:none">kulupu</text>
     <rect x="10900" y="2500" width="800" height="800" />
-    <rect x="10935.0" y="2535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="10920.0" y="2520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 10800,2900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 11300.0,2400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="10820" y="2460" style="font:40px sans-serif;fill:#999999;stroke:none">kute</text>
     <rect x="12100" y="2500" width="800" height="800" />
-    <rect x="12135.0" y="2535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="12120.0" y="2520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 12000,2900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 12500.0,2400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="12020" y="2460" style="font:40px sans-serif;fill:#999999;stroke:none">la</text>
     <rect x="13300" y="2500" width="800" height="800" />
-    <rect x="13335.0" y="2535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="13320.0" y="2520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 13200,2900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 13700.0,2400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="13220" y="2460" style="font:40px sans-serif;fill:#999999;stroke:none">lape</text>
     <rect x="100" y="3700" width="800" height="800" />
-    <rect x="135.0" y="3735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="120.0" y="3720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 0,4100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 500.0,3600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="20" y="3660" style="font:40px sans-serif;fill:#999999;stroke:none">laso</text>
     <rect x="1300" y="3700" width="800" height="800" />
-    <rect x="1335.0" y="3735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="1320.0" y="3720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 1200,4100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 1700.0,3600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="1220" y="3660" style="font:40px sans-serif;fill:#999999;stroke:none">lawa</text>
     <rect x="2500" y="3700" width="800" height="800" />
-    <rect x="2535.0" y="3735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="2520.0" y="3720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 2400,4100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 2900.0,3600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="2420" y="3660" style="font:40px sans-serif;fill:#999999;stroke:none">len</text>
     <rect x="3700" y="3700" width="800" height="800" />
-    <rect x="3735.0" y="3735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="3720.0" y="3720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 3600,4100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 4100.0,3600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="3620" y="3660" style="font:40px sans-serif;fill:#999999;stroke:none">lete</text>
     <rect x="4900" y="3700" width="800" height="800" />
-    <rect x="4935.0" y="3735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="4920.0" y="3720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 4800,4100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 5300.0,3600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="4820" y="3660" style="font:40px sans-serif;fill:#999999;stroke:none">li</text>
     <rect x="6100" y="3700" width="800" height="800" />
-    <rect x="6135.0" y="3735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="6120.0" y="3720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 6000,4100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 6500.0,3600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="6020" y="3660" style="font:40px sans-serif;fill:#999999;stroke:none">lili</text>
     <rect x="7300" y="3700" width="800" height="800" />
-    <rect x="7335.0" y="3735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="7320.0" y="3720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 7200,4100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 7700.0,3600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="7220" y="3660" style="font:40px sans-serif;fill:#999999;stroke:none">linja</text>
     <rect x="8500" y="3700" width="800" height="800" />
-    <rect x="8535.0" y="3735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="8520.0" y="3720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 8400,4100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 8900.0,3600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="8420" y="3660" style="font:40px sans-serif;fill:#999999;stroke:none">lipu</text>
     <rect x="9700" y="3700" width="800" height="800" />
-    <rect x="9735.0" y="3735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="9720.0" y="3720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 9600,4100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 10100.0,3600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="9620" y="3660" style="font:40px sans-serif;fill:#999999;stroke:none">loje</text>
     <rect x="10900" y="3700" width="800" height="800" />
-    <rect x="10935.0" y="3735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="10920.0" y="3720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 10800,4100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 11300.0,3600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="10820" y="3660" style="font:40px sans-serif;fill:#999999;stroke:none">lon</text>
     <rect x="12100" y="3700" width="800" height="800" />
-    <rect x="12135.0" y="3735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="12120.0" y="3720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 12000,4100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 12500.0,3600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="12020" y="3660" style="font:40px sans-serif;fill:#999999;stroke:none">luka</text>
     <rect x="13300" y="3700" width="800" height="800" />
-    <rect x="13335.0" y="3735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="13320.0" y="3720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 13200,4100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 13700.0,3600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="13220" y="3660" style="font:40px sans-serif;fill:#999999;stroke:none">lukin</text>
     <rect x="100" y="4900" width="800" height="800" />
-    <rect x="135.0" y="4935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="120.0" y="4920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 0,5300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 500.0,4800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="20" y="4860" style="font:40px sans-serif;fill:#999999;stroke:none">lupa</text>
     <rect x="1300" y="4900" width="800" height="800" />
-    <rect x="1335.0" y="4935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="1320.0" y="4920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 1200,5300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 1700.0,4800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="1220" y="4860" style="font:40px sans-serif;fill:#999999;stroke:none">ma</text>
     <rect x="2500" y="4900" width="800" height="800" />
-    <rect x="2535.0" y="4935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="2520.0" y="4920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 2400,5300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 2900.0,4800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="2420" y="4860" style="font:40px sans-serif;fill:#999999;stroke:none">mama</text>
     <rect x="3700" y="4900" width="800" height="800" />
-    <rect x="3735.0" y="4935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="3720.0" y="4920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 3600,5300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 4100.0,4800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="3620" y="4860" style="font:40px sans-serif;fill:#999999;stroke:none">mani</text>
     <rect x="4900" y="4900" width="800" height="800" />
-    <rect x="4935.0" y="4935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="4920.0" y="4920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 4800,5300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 5300.0,4800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="4820" y="4860" style="font:40px sans-serif;fill:#999999;stroke:none">meli</text>
     <rect x="6100" y="4900" width="800" height="800" />
-    <rect x="6135.0" y="4935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="6120.0" y="4920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 6000,5300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 6500.0,4800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="6020" y="4860" style="font:40px sans-serif;fill:#999999;stroke:none">mi</text>
     <rect x="7300" y="4900" width="800" height="800" />
-    <rect x="7335.0" y="4935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="7320.0" y="4920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 7200,5300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 7700.0,4800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="7220" y="4860" style="font:40px sans-serif;fill:#999999;stroke:none">mije</text>
     <rect x="8500" y="4900" width="800" height="800" />
-    <rect x="8535.0" y="4935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="8520.0" y="4920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 8400,5300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 8900.0,4800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="8420" y="4860" style="font:40px sans-serif;fill:#999999;stroke:none">moku</text>
     <rect x="9700" y="4900" width="800" height="800" />
-    <rect x="9735.0" y="4935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="9720.0" y="4920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 9600,5300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 10100.0,4800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="9620" y="4860" style="font:40px sans-serif;fill:#999999;stroke:none">moli</text>
     <rect x="10900" y="4900" width="800" height="800" />
-    <rect x="10935.0" y="4935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="10920.0" y="4920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 10800,5300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 11300.0,4800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="10820" y="4860" style="font:40px sans-serif;fill:#999999;stroke:none">monsi</text>
     <rect x="12100" y="4900" width="800" height="800" />
-    <rect x="12135.0" y="4935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="12120.0" y="4920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 12000,5300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 12500.0,4800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="12020" y="4860" style="font:40px sans-serif;fill:#999999;stroke:none">mu</text>
     <rect x="13300" y="4900" width="800" height="800" />
-    <rect x="13335.0" y="4935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="13320.0" y="4920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 13200,5300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 13700.0,4800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="13220" y="4860" style="font:40px sans-serif;fill:#999999;stroke:none">mun</text>
     <rect x="100" y="6100" width="800" height="800" />
-    <rect x="135.0" y="6135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="120.0" y="6120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 0,6500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 500.0,6000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="20" y="6060" style="font:40px sans-serif;fill:#999999;stroke:none">musi</text>
     <rect x="1300" y="6100" width="800" height="800" />
-    <rect x="1335.0" y="6135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="1320.0" y="6120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 1200,6500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 1700.0,6000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="1220" y="6060" style="font:40px sans-serif;fill:#999999;stroke:none">mute</text>
     <rect x="2500" y="6100" width="800" height="800" />
-    <rect x="2535.0" y="6135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="2520.0" y="6120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 2400,6500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 2900.0,6000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="2420" y="6060" style="font:40px sans-serif;fill:#999999;stroke:none">nanpa</text>
     <rect x="3700" y="6100" width="800" height="800" />
-    <rect x="3735.0" y="6135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="3720.0" y="6120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 3600,6500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 4100.0,6000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="3620" y="6060" style="font:40px sans-serif;fill:#999999;stroke:none">nasa</text>
     <rect x="4900" y="6100" width="800" height="800" />
-    <rect x="4935.0" y="6135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="4920.0" y="6120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 4800,6500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 5300.0,6000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="4820" y="6060" style="font:40px sans-serif;fill:#999999;stroke:none">nasin</text>
     <rect x="6100" y="6100" width="800" height="800" />
-    <rect x="6135.0" y="6135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="6120.0" y="6120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 6000,6500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 6500.0,6000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="6020" y="6060" style="font:40px sans-serif;fill:#999999;stroke:none">nena</text>
     <rect x="7300" y="6100" width="800" height="800" />
-    <rect x="7335.0" y="6135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="7320.0" y="6120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 7200,6500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 7700.0,6000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="7220" y="6060" style="font:40px sans-serif;fill:#999999;stroke:none">ni</text>
     <rect x="8500" y="6100" width="800" height="800" />
-    <rect x="8535.0" y="6135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="8520.0" y="6120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 8400,6500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 8900.0,6000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="8420" y="6060" style="font:40px sans-serif;fill:#999999;stroke:none">nimi</text>
     <rect x="9700" y="6100" width="800" height="800" />
-    <rect x="9735.0" y="6135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="9720.0" y="6120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 9600,6500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 10100.0,6000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="9620" y="6060" style="font:40px sans-serif;fill:#999999;stroke:none">noka</text>
     <rect x="10900" y="6100" width="800" height="800" />
-    <rect x="10935.0" y="6135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="10920.0" y="6120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 10800,6500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 11300.0,6000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="10820" y="6060" style="font:40px sans-serif;fill:#999999;stroke:none">o</text>
     <rect x="12100" y="6100" width="800" height="800" />
-    <rect x="12135.0" y="6135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="12120.0" y="6120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 12000,6500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 12500.0,6000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="12020" y="6060" style="font:40px sans-serif;fill:#999999;stroke:none">olin</text>
     <rect x="13300" y="6100" width="800" height="800" />
-    <rect x="13335.0" y="6135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="13320.0" y="6120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 13200,6500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 13700.0,6000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="13220" y="6060" style="font:40px sans-serif;fill:#999999;stroke:none">ona</text>
     <rect x="100" y="7300" width="800" height="800" />
-    <rect x="135.0" y="7335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="120.0" y="7320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 0,7700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 500.0,7200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="20" y="7260" style="font:40px sans-serif;fill:#999999;stroke:none">open</text>
     <rect x="1300" y="7300" width="800" height="800" />
-    <rect x="1335.0" y="7335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="1320.0" y="7320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 1200,7700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 1700.0,7200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="1220" y="7260" style="font:40px sans-serif;fill:#999999;stroke:none">pakala</text>
     <rect x="2500" y="7300" width="800" height="800" />
-    <rect x="2535.0" y="7335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="2520.0" y="7320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 2400,7700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 2900.0,7200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="2420" y="7260" style="font:40px sans-serif;fill:#999999;stroke:none">pali</text>
     <rect x="3700" y="7300" width="800" height="800" />
-    <rect x="3735.0" y="7335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="3720.0" y="7320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 3600,7700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 4100.0,7200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="3620" y="7260" style="font:40px sans-serif;fill:#999999;stroke:none">palisa</text>
     <rect x="4900" y="7300" width="800" height="800" />
-    <rect x="4935.0" y="7335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="4920.0" y="7320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 4800,7700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 5300.0,7200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="4820" y="7260" style="font:40px sans-serif;fill:#999999;stroke:none">pan</text>
     <rect x="6100" y="7300" width="800" height="800" />
-    <rect x="6135.0" y="7335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="6120.0" y="7320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 6000,7700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 6500.0,7200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="6020" y="7260" style="font:40px sans-serif;fill:#999999;stroke:none">pana</text>
     <rect x="7300" y="7300" width="800" height="800" />
-    <rect x="7335.0" y="7335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="7320.0" y="7320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 7200,7700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 7700.0,7200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="7220" y="7260" style="font:40px sans-serif;fill:#999999;stroke:none">pi</text>
     <rect x="8500" y="7300" width="800" height="800" />
-    <rect x="8535.0" y="7335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="8520.0" y="7320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 8400,7700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 8900.0,7200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="8420" y="7260" style="font:40px sans-serif;fill:#999999;stroke:none">pilin</text>
     <rect x="9700" y="7300" width="800" height="800" />
-    <rect x="9735.0" y="7335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="9720.0" y="7320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 9600,7700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 10100.0,7200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="9620" y="7260" style="font:40px sans-serif;fill:#999999;stroke:none">pimeja</text>
     <rect x="10900" y="7300" width="800" height="800" />
-    <rect x="10935.0" y="7335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="10920.0" y="7320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 10800,7700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 11300.0,7200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="10820" y="7260" style="font:40px sans-serif;fill:#999999;stroke:none">pini</text>
     <rect x="12100" y="7300" width="800" height="800" />
-    <rect x="12135.0" y="7335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="12120.0" y="7320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 12000,7700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 12500.0,7200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="12020" y="7260" style="font:40px sans-serif;fill:#999999;stroke:none">pipi</text>
     <rect x="13300" y="7300" width="800" height="800" />
-    <rect x="13335.0" y="7335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="13320.0" y="7320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 13200,7700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 13700.0,7200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="13220" y="7260" style="font:40px sans-serif;fill:#999999;stroke:none">poka</text>
     <rect x="100" y="8500" width="800" height="800" />
-    <rect x="135.0" y="8535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="120.0" y="8520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 0,8900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 500.0,8400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="20" y="8460" style="font:40px sans-serif;fill:#999999;stroke:none">poki</text>
     <rect x="1300" y="8500" width="800" height="800" />
-    <rect x="1335.0" y="8535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="1320.0" y="8520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 1200,8900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 1700.0,8400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="1220" y="8460" style="font:40px sans-serif;fill:#999999;stroke:none">pona</text>
     <rect x="2500" y="8500" width="800" height="800" />
-    <rect x="2535.0" y="8535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="2520.0" y="8520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 2400,8900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 2900.0,8400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="2420" y="8460" style="font:40px sans-serif;fill:#999999;stroke:none">pu</text>
     <rect x="3700" y="8500" width="800" height="800" />
-    <rect x="3735.0" y="8535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="3720.0" y="8520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 3600,8900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 4100.0,8400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="3620" y="8460" style="font:40px sans-serif;fill:#999999;stroke:none">sama</text>
     <rect x="4900" y="8500" width="800" height="800" />
-    <rect x="4935.0" y="8535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="4920.0" y="8520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 4800,8900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 5300.0,8400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="4820" y="8460" style="font:40px sans-serif;fill:#999999;stroke:none">seli</text>
     <rect x="6100" y="8500" width="800" height="800" />
-    <rect x="6135.0" y="8535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="6120.0" y="8520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 6000,8900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 6500.0,8400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="6020" y="8460" style="font:40px sans-serif;fill:#999999;stroke:none">selo</text>
     <rect x="7300" y="8500" width="800" height="800" />
-    <rect x="7335.0" y="8535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="7320.0" y="8520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 7200,8900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 7700.0,8400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="7220" y="8460" style="font:40px sans-serif;fill:#999999;stroke:none">seme</text>
     <rect x="8500" y="8500" width="800" height="800" />
-    <rect x="8535.0" y="8535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="8520.0" y="8520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 8400,8900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 8900.0,8400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="8420" y="8460" style="font:40px sans-serif;fill:#999999;stroke:none">sewi</text>
     <rect x="9700" y="8500" width="800" height="800" />
-    <rect x="9735.0" y="8535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="9720.0" y="8520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 9600,8900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 10100.0,8400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="9620" y="8460" style="font:40px sans-serif;fill:#999999;stroke:none">sijelo</text>
     <rect x="10900" y="8500" width="800" height="800" />
-    <rect x="10935.0" y="8535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="10920.0" y="8520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 10800,8900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 11300.0,8400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="10820" y="8460" style="font:40px sans-serif;fill:#999999;stroke:none">sike</text>
     <rect x="12100" y="8500" width="800" height="800" />
-    <rect x="12135.0" y="8535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="12120.0" y="8520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 12000,8900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 12500.0,8400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="12020" y="8460" style="font:40px sans-serif;fill:#999999;stroke:none">sin</text>
     <rect x="13300" y="8500" width="800" height="800" />
-    <rect x="13335.0" y="8535.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="13320.0" y="8520.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 13200,8900 h 1000" style="stroke:#6fa8dc" />
     <path d="M 13700.0,8400 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="13220" y="8460" style="font:40px sans-serif;fill:#999999;stroke:none">sina</text>
     <rect x="100" y="9700" width="800" height="800" />
-    <rect x="135.0" y="9735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="120.0" y="9720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 0,10100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 500.0,9600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="20" y="9660" style="font:40px sans-serif;fill:#999999;stroke:none">sinpin</text>
     <rect x="1300" y="9700" width="800" height="800" />
-    <rect x="1335.0" y="9735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="1320.0" y="9720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 1200,10100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 1700.0,9600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="1220" y="9660" style="font:40px sans-serif;fill:#999999;stroke:none">sitelen</text>
     <rect x="2500" y="9700" width="800" height="800" />
-    <rect x="2535.0" y="9735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="2520.0" y="9720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 2400,10100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 2900.0,9600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="2420" y="9660" style="font:40px sans-serif;fill:#999999;stroke:none">sona</text>
     <rect x="3700" y="9700" width="800" height="800" />
-    <rect x="3735.0" y="9735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="3720.0" y="9720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 3600,10100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 4100.0,9600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="3620" y="9660" style="font:40px sans-serif;fill:#999999;stroke:none">soweli</text>
     <rect x="4900" y="9700" width="800" height="800" />
-    <rect x="4935.0" y="9735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="4920.0" y="9720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 4800,10100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 5300.0,9600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="4820" y="9660" style="font:40px sans-serif;fill:#999999;stroke:none">suli</text>
     <rect x="6100" y="9700" width="800" height="800" />
-    <rect x="6135.0" y="9735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="6120.0" y="9720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 6000,10100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 6500.0,9600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="6020" y="9660" style="font:40px sans-serif;fill:#999999;stroke:none">suno</text>
     <rect x="7300" y="9700" width="800" height="800" />
-    <rect x="7335.0" y="9735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="7320.0" y="9720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 7200,10100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 7700.0,9600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="7220" y="9660" style="font:40px sans-serif;fill:#999999;stroke:none">supa</text>
     <rect x="8500" y="9700" width="800" height="800" />
-    <rect x="8535.0" y="9735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="8520.0" y="9720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 8400,10100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 8900.0,9600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="8420" y="9660" style="font:40px sans-serif;fill:#999999;stroke:none">suwi</text>
     <rect x="9700" y="9700" width="800" height="800" />
-    <rect x="9735.0" y="9735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="9720.0" y="9720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 9600,10100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 10100.0,9600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="9620" y="9660" style="font:40px sans-serif;fill:#999999;stroke:none">tan</text>
     <rect x="10900" y="9700" width="800" height="800" />
-    <rect x="10935.0" y="9735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="10920.0" y="9720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 10800,10100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 11300.0,9600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="10820" y="9660" style="font:40px sans-serif;fill:#999999;stroke:none">taso</text>
     <rect x="12100" y="9700" width="800" height="800" />
-    <rect x="12135.0" y="9735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="12120.0" y="9720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 12000,10100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 12500.0,9600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="12020" y="9660" style="font:40px sans-serif;fill:#999999;stroke:none">tawa</text>
     <rect x="13300" y="9700" width="800" height="800" />
-    <rect x="13335.0" y="9735.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="13320.0" y="9720.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 13200,10100 h 1000" style="stroke:#6fa8dc" />
     <path d="M 13700.0,9600 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="13220" y="9660" style="font:40px sans-serif;fill:#999999;stroke:none">telo</text>
     <rect x="100" y="10900" width="800" height="800" />
-    <rect x="135.0" y="10935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="120.0" y="10920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 0,11300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 500.0,10800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="20" y="10860" style="font:40px sans-serif;fill:#999999;stroke:none">tenpo</text>
     <rect x="1300" y="10900" width="800" height="800" />
-    <rect x="1335.0" y="10935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="1320.0" y="10920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 1200,11300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 1700.0,10800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="1220" y="10860" style="font:40px sans-serif;fill:#999999;stroke:none">toki</text>
     <rect x="2500" y="10900" width="800" height="800" />
-    <rect x="2535.0" y="10935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="2520.0" y="10920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 2400,11300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 2900.0,10800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="2420" y="10860" style="font:40px sans-serif;fill:#999999;stroke:none">tomo</text>
     <rect x="3700" y="10900" width="800" height="800" />
-    <rect x="3735.0" y="10935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="3720.0" y="10920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 3600,11300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 4100.0,10800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="3620" y="10860" style="font:40px sans-serif;fill:#999999;stroke:none">tu</text>
     <rect x="4900" y="10900" width="800" height="800" />
-    <rect x="4935.0" y="10935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="4920.0" y="10920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 4800,11300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 5300.0,10800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="4820" y="10860" style="font:40px sans-serif;fill:#999999;stroke:none">unpa</text>
     <rect x="6100" y="10900" width="800" height="800" />
-    <rect x="6135.0" y="10935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="6120.0" y="10920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 6000,11300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 6500.0,10800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="6020" y="10860" style="font:40px sans-serif;fill:#999999;stroke:none">uta</text>
     <rect x="7300" y="10900" width="800" height="800" />
-    <rect x="7335.0" y="10935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="7320.0" y="10920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 7200,11300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 7700.0,10800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="7220" y="10860" style="font:40px sans-serif;fill:#999999;stroke:none">utala</text>
     <rect x="8500" y="10900" width="800" height="800" />
-    <rect x="8535.0" y="10935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="8520.0" y="10920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 8400,11300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 8900.0,10800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="8420" y="10860" style="font:40px sans-serif;fill:#999999;stroke:none">walo</text>
     <rect x="9700" y="10900" width="800" height="800" />
-    <rect x="9735.0" y="10935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="9720.0" y="10920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 9600,11300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 10100.0,10800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="9620" y="10860" style="font:40px sans-serif;fill:#999999;stroke:none">wan</text>
     <rect x="10900" y="10900" width="800" height="800" />
-    <rect x="10935.0" y="10935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="10920.0" y="10920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 10800,11300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 11300.0,10800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="10820" y="10860" style="font:40px sans-serif;fill:#999999;stroke:none">waso</text>
     <rect x="12100" y="10900" width="800" height="800" />
-    <rect x="12135.0" y="10935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="12120.0" y="10920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 12000,11300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 12500.0,10800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="12020" y="10860" style="font:40px sans-serif;fill:#999999;stroke:none">wawa</text>
     <rect x="13300" y="10900" width="800" height="800" />
-    <rect x="13335.0" y="10935.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="13320.0" y="10920.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 13200,11300 h 1000" style="stroke:#6fa8dc" />
     <path d="M 13700.0,10800 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="13220" y="10860" style="font:40px sans-serif;fill:#999999;stroke:none">weka</text>
     <rect x="100" y="12100" width="800" height="800" />
-    <rect x="135.0" y="12135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="120.0" y="12120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 0,12500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 500.0,12000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="20" y="12060" style="font:40px sans-serif;fill:#999999;stroke:none">wile</text>
     <rect x="1300" y="12100" width="800" height="800" />
-    <rect x="1335.0" y="12135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="1320.0" y="12120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 1200,12500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 1700.0,12000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="1220" y="12060" style="font:40px sans-serif;fill:#999999;stroke:none">namako</text>
     <rect x="2500" y="12100" width="800" height="800" />
-    <rect x="2535.0" y="12135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="2520.0" y="12120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 2400,12500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 2900.0,12000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="2420" y="12060" style="font:40px sans-serif;fill:#999999;stroke:none">kin</text>
     <rect x="3700" y="12100" width="800" height="800" />
-    <rect x="3735.0" y="12135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="3720.0" y="12120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 3600,12500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 4100.0,12000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="3620" y="12060" style="font:40px sans-serif;fill:#999999;stroke:none">oko</text>
     <rect x="4900" y="12100" width="800" height="800" />
-    <rect x="4935.0" y="12135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="4920.0" y="12120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 4800,12500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 5300.0,12000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="4820" y="12060" style="font:40px sans-serif;fill:#999999;stroke:none">kipisi</text>
     <rect x="6100" y="12100" width="800" height="800" />
-    <rect x="6135.0" y="12135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="6120.0" y="12120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 6000,12500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 6500.0,12000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="6020" y="12060" style="font:40px sans-serif;fill:#999999;stroke:none">leko</text>
     <rect x="7300" y="12100" width="800" height="800" />
-    <rect x="7335.0" y="12135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="7320.0" y="12120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 7200,12500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 7700.0,12000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="7220" y="12060" style="font:40px sans-serif;fill:#999999;stroke:none">monsuta</text>
     <rect x="8500" y="12100" width="800" height="800" />
-    <rect x="8535.0" y="12135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="8520.0" y="12120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 8400,12500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 8900.0,12000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="8420" y="12060" style="font:40px sans-serif;fill:#999999;stroke:none">tonsi</text>
     <rect x="9700" y="12100" width="800" height="800" />
-    <rect x="9735.0" y="12135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="9720.0" y="12120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 9600,12500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 10100.0,12000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="9620" y="12060" style="font:40px sans-serif;fill:#999999;stroke:none">jasima</text>
     <rect x="10900" y="12100" width="800" height="800" />
-    <rect x="10935.0" y="12135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="10920.0" y="12120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 10800,12500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 11300.0,12000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="10820" y="12060" style="font:40px sans-serif;fill:#999999;stroke:none">kijetesantakalu</text>
     <rect x="12100" y="12100" width="800" height="800" />
-    <rect x="12135.0" y="12135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="12120.0" y="12120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 12000,12500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 12500.0,12000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="12020" y="12060" style="font:40px sans-serif;fill:#999999;stroke:none">soko</text>
     <rect x="13300" y="12100" width="800" height="800" />
-    <rect x="13335.0" y="12135.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="13320.0" y="12120.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 13200,12500 h 1000" style="stroke:#6fa8dc" />
     <path d="M 13700.0,12000 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="13220" y="12060" style="font:40px sans-serif;fill:#999999;stroke:none">meso</text>
     <rect x="100" y="13300" width="800" height="800" />
-    <rect x="135.0" y="13335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="120.0" y="13320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 0,13700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 500.0,13200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="20" y="13260" style="font:40px sans-serif;fill:#999999;stroke:none">epiku</text>
     <rect x="1300" y="13300" width="800" height="800" />
-    <rect x="1335.0" y="13335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="1320.0" y="13320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 1200,13700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 1700.0,13200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="1220" y="13260" style="font:40px sans-serif;fill:#999999;stroke:none">kokosila</text>
     <rect x="2500" y="13300" width="800" height="800" />
-    <rect x="2535.0" y="13335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="2520.0" y="13320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 2400,13700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 2900.0,13200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="2420" y="13260" style="font:40px sans-serif;fill:#999999;stroke:none">lanpan</text>
     <rect x="3700" y="13300" width="800" height="800" />
-    <rect x="3735.0" y="13335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="3720.0" y="13320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 3600,13700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 4100.0,13200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="3620" y="13260" style="font:40px sans-serif;fill:#999999;stroke:none">n</text>
     <rect x="4900" y="13300" width="800" height="800" />
-    <rect x="4935.0" y="13335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="4920.0" y="13320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 4800,13700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 5300.0,13200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="4820" y="13260" style="font:40px sans-serif;fill:#999999;stroke:none">misikeke</text>
     <rect x="6100" y="13300" width="800" height="800" />
-    <rect x="6135.0" y="13335.0" width="730.0" height="730.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
+    <rect x="6120.0" y="13320.0" width="760.0" height="760.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" />
     <path d="M 6000,13700 h 1000" style="stroke:#6fa8dc" />
     <path d="M 6500.0,13200 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" />
     <text x="6020" y="13260" style="font:40px sans-serif;fill:#999999;stroke:none">ku</text>
+  </g>
+  <g id="drafts" inkscape:groupmode="layer" inkscape:label="drafts" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 500,175 L 500,575 M 540,760 C 540,700 440,690 440,760 C 440,830 540,820 540,760 L 575,825" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,0)" inkscape:label="a draft" />
+    <path d="M 400,525 A 100,275 0 1 0 600,525 A 100,275 0 1 0 400,525 Z M 300,375 L 700,375 M 300,525 L 700,525 M 300,675 L 700,675 M 417,175 A 8,8 0 1 0 433,175 A 8,8 0 1 0 417,175 Z M 425,175 h 0.1 M 567,175 A 8,8 0 1 0 583,175 A 8,8 0 1 0 567,175 Z M 575,175 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(2400,0)" inkscape:label="akesi draft" />
+    <path d="M 400,200 C 700,250 700,750 400,800 Z M 225,500 L 800,500 M 725,425 L 800,500 L 725,575" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,0)" inkscape:label="alasa draft" />
+    <path d="M 500,500 C 400,375 175,375 175,500 C 175,625 400,625 500,500 C 600,375 825,375 825,500 C 825,625 600,625 500,500 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,0)" inkscape:label="ale draft" />
+    <path d="M 225,250 L 225,500 L 775,500 L 775,250 M 492,700 A 8,8 0 1 0 508,700 A 8,8 0 1 0 492,700 Z M 500,700 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,0)" inkscape:label="anpa draft" />
+    <path d="M 175,225 L 500,440 L 825,225 M 175,775 L 500,560 L 825,775" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,0)" inkscape:label="ante draft" />
+    <path d="M 250,175 L 500,500 L 750,175 M 500,500 L 500,850" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,0)" inkscape:label="anu draft" />
+    <path d="M 125,800 L 300,800 L 500,200 L 700,800 L 875,800" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,0)" inkscape:label="awen draft" />
+    <path d="M 200,225 L 475,500 L 200,775 M 450,150 L 800,500 L 450,850" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,0)" inkscape:label="e draft" />
+    <path d="M 500,225 L 500,775 M 225,500 L 775,500" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,0)" inkscape:label="en draft" />
+    <path d="M 175,375 C 325,450 525,450 625,375 C 750,275 700,175 600,200 C 500,225 475,375 425,475 C 375,575 300,575 250,625 C 175,700 225,775 350,750 C 475,725 550,650 625,650 C 700,650 775,725 825,775" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,1200)" inkscape:label="esun draft" />
+    <path d="M 175,500 A 325,325 0 1 0 825,500 A 325,325 0 1 0 175,500 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,1200)" inkscape:label="ijo draft" />
+    <path d="M 275,200 L 725,200 L 725,475 L 275,475 Z M 500,200 L 500,825" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,1200)" inkscape:label="ilo draft" />
+    <path d="M 200,375 L 200,625 L 800,625 L 800,375 M 492,450 A 8,8 0 1 0 508,450 A 8,8 0 1 0 492,450 Z M 500,450 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,1200)" inkscape:label="insa draft" />
+    <path d="M 400,325 C 325,225 400,175 500,175 C 650,175 750,250 725,325 C 700,425 475,375 400,450 C 300,550 225,650 300,725 C 375,800 500,700 575,600 C 650,500 750,450 775,525 C 800,625 650,800 525,775 C 425,750 425,625 500,575" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,1200)" inkscape:label="jaki draft" />
+    <path d="M 225,425 A 275,275 0 1 0 775,425 A 275,275 0 1 0 225,425 Z M 363,663 L 250,825 M 637,663 L 750,825" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,1200)" inkscape:label="jan draft" />
+    <path d="M 410,250 A 90,90 0 1 0 590,250 A 90,90 0 1 0 410,250 Z M 500,160 L 500,120 M 410,250 L 350,250 M 590,250 L 650,250 M 500,340 L 290,850 L 710,850 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,1200)" inkscape:label="jelo draft" />
+    <path d="M 400,275 A 100,100 0 1 0 600,275 A 100,100 0 1 0 400,275 Z M 500,375 C 375,425 325,550 325,650 C 325,775 425,825 500,825 C 600,825 675,750 675,650 H 525" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,1200)" inkscape:label="jo draft" />
+    <path d="M 175,650 C 300,450 500,325 675,350 C 850,375 850,625 675,650 C 500,675 300,550 175,350" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,1200)" inkscape:label="kala draft" />
+    <path d="M 300,450 H 700 C 700,601.2 651.2,725 500,725 C 348.8,725 300,601.2 300,450 Z M 325,250 L 403.8,350 M 500,200 L 500,350 M 675,250 L 596.2,350" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,1200)" inkscape:label="kalama draft" />
+    <path d="M 150,800 L 375,800 L 525,200 L 800,775 L 650,800" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,1200)" inkscape:label="kama draft" />
+    <path d="M 500,850 L 500,450 M 500,450 C 450,325 300,300 300,375 C 300,450 425,475 500,450 M 500,450 C 550,250 750,200 750,300 C 750,400 600,450 500,450" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,2400)" inkscape:label="kasi draft" />
+    <path d="M 325,175 L 325,825 M 675,175 C 650,350 500,475 325,500 M 325,500 C 525,525 675,625 675,825" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,2400)" inkscape:label="ken draft" />
+    <path d="M 375,150 L 625,150 L 625,350 L 375,350 Z M 500,150 L 500,575 M 275,725 L 350,825 C 350,650 425,575 500,575 C 600,575 650,675 650,850" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(2400,2400)" inkscape:label="kepeken draft" />
+    <path d="M 220,560 A 280,280 0 1 0 780,560 A 280,280 0 1 0 220,560 Z M 500,280 C 500,225 525,185 575,160" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,2400)" inkscape:label="kili draft" />
+    <path d="M 350,275 L 650,275 L 775,400 L 500,775 L 225,400 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,2400)" inkscape:label="kiwen draft" />
+    <path d="M 450,200 C 550,175 600,250 700,225 C 825,200 850,350 800,450 C 750,550 850,650 775,750 C 700,850 600,750 500,800 C 375,850 300,775 300,700 C 300,625 175,600 200,500 C 225,400 325,425 350,325 C 375,250 400,212 450,200 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,2400)" inkscape:label="ko draft" />
+    <path d="M 400,175 C 275,225 275,375 350,475 C 425,575 425,725 325,825 M 675,175 C 550,225 550,375 625,475 C 700,575 700,725 600,825" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,2400)" inkscape:label="kon draft" />
+    <path d="M 500,175 L 775,825 L 225,825 Z M 175,500 L 825,500" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,2400)" inkscape:label="kule draft" />
+    <path d="M 400,325 A 100,100 0 1 0 600,325 A 100,100 0 1 0 400,325 Z M 250,675 A 100,100 0 1 0 450,675 A 100,100 0 1 0 250,675 Z M 550,675 A 100,100 0 1 0 750,675 A 100,100 0 1 0 550,675 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,2400)" inkscape:label="kulupu draft" />
+    <path d="M 400,275 C 425,175 625,150 625,300 C 625,500 525,675 425,825 M 450,450 L 425,550" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,2400)" inkscape:label="kute draft" />
+    <path d="M 425,150 C 650,325 650,675 425,850" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,2400)" inkscape:label="la draft" />
+    <path d="M 175,500 L 600,500 M 600,500 A 100,100 0 1 0 800,500 A 100,100 0 1 0 600,500 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,2400)" inkscape:label="lape draft" />
+    <path d="M 500,425 C 450,250 300,225 300,325 C 300,400 425,425 500,425 M 500,425 C 550,250 700,225 700,325 C 700,400 575,425 500,425 M 500,425 L 500,525 M 500,525 L 325,850 L 675,850 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,3600)" inkscape:label="laso draft" />
+    <path d="M 150,550 A 275,275 0 1 0 700,550 A 275,275 0 1 0 150,550 Z M 150,425 L 850,425" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,3600)" inkscape:label="lawa draft" />
+    <path d="M 275,850 L 275,175 L 725,175 L 725,850 M 275,675 L 725,675 M 500,675 L 500,850" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(2400,3600)" inkscape:label="len draft" />
+    <path d="M 175,500 L 825,500 M 325,200 L 675,800 M 675,200 L 325,800" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,3600)" inkscape:label="lete draft" />
+    <path d="M 250,175 L 750,500 L 250,825" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,3600)" inkscape:label="li draft" />
+    <path d="M 425,450 L 500,550 L 575,450" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,3600)" inkscape:label="lili draft" />
+    <path d="M 150,450 C 275,550 375,600 500,525 C 625,450 750,375 850,550" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,3600)" inkscape:label="linja draft" />
+    <path d="M 225,175 L 775,175 L 775,825 L 225,825 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,3600)" inkscape:label="lipu draft" />
+    <path d="M 350,175 H 650 C 650,285 610,375 500,375 C 390,375 350,285 350,175 Z M 500,525 L 350,800 L 650,800 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,3600)" inkscape:label="loje draft" />
+    <path d="M 175,575 L 825,575 M 492,400 A 8,8 0 1 0 508,400 A 8,8 0 1 0 492,400 Z M 500,400 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,3600)" inkscape:label="lon draft" />
+    <path d="M 350,425 C 350,315 440,225 550,225 C 660,225 750,315 750,425 V 825 M 250,650 L 350,825 V 425" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,3600)" inkscape:label="luka draft" />
+    <path d="M 125,500 A 375,150 0 1 0 875,500 A 375,150 0 1 0 125,500 Z M 492,500 A 8,8 0 1 0 508,500 A 8,8 0 1 0 492,500 Z M 500,500 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,3600)" inkscape:label="lukin draft" />
+    <path d="M 225,500 A 275,275 0 1 0 775,500 A 275,275 0 1 0 225,500 Z M 500,225 L 500,775 M 225,500 L 775,500" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,4800)" inkscape:label="ma draft" />
+    <path d="M 250,400 A 250,250 0 1 0 750,400 A 250,250 0 1 0 250,400 Z M 425,775 A 75,75 0 1 0 575,775 A 75,75 0 1 0 425,775 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(2400,4800)" inkscape:label="mama draft" />
+    <path d="M 275,575 A 225,225 0 1 0 725,575 A 225,225 0 1 0 275,575 Z M 341,416 C 275,375 225,300 225,225 M 659,416 C 725,375 775,300 775,225" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,4800)" inkscape:label="mani draft" />
+    <path d="M 300,625 A 200,200 0 1 0 700,625 A 200,200 0 1 0 300,625 Z M 175,850 V 525 A 325,325 0 0 1 825,525 V 850" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,4800)" inkscape:label="meli draft" />
+    <path d="M 425,825 L 425,300 M 425,300 A 100,100 0 1 0 625,300 A 100,100 0 1 0 425,300 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,4800)" inkscape:label="mi draft" />
+    <path d="M 275,425 A 225,225 0 1 0 725,425 A 225,225 0 1 0 275,425 Z M 225,850 L 225,650 L 775,650 L 775,850" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,4800)" inkscape:label="mije draft" />
+    <path d="M 350,175 H 650 C 650,285 610,375 500,375 C 390,375 350,285 350,175 Z M 375,637.5 C 375,561.9 436.9,500 512.5,500 C 588.1,500 650,561.9 650,637.5 V 825 M 275,650 L 375,825 V 637.5" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,4800)" inkscape:label="moku draft" />
+    <path d="M 175,500 A 325,325 0 1 0 825,500 A 325,325 0 1 0 175,500 Z M 325,400 L 450,600 M 450,400 L 325,600 M 550,400 L 675,600 M 675,400 L 550,600" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,4800)" inkscape:label="moli draft" />
+    <path d="M 725,175 L 575,175 L 575,825 L 725,825 M 367,500 A 8,8 0 1 0 383,500 A 8,8 0 1 0 367,500 Z M 375,500 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,4800)" inkscape:label="monsi draft" />
+    <path d="M 275,575 A 225,225 0 1 0 725,575 A 225,225 0 1 0 275,575 Z M 290,325 A 60,60 0 1 0 410,325 A 60,60 0 1 0 290,325 Z M 590,325 A 60,60 0 1 0 710,325 A 60,60 0 1 0 590,325 Z M 492,650 A 8,8 0 1 0 508,650 A 8,8 0 1 0 492,650 Z M 500,650 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,4800)" inkscape:label="mu draft" />
+    <path d="M 375,200 C 625,175 775,375 725,550 C 675,725 475,850 300,800 C 500,725 600,625 600,475 C 600,325 500,250 375,200 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,4800)" inkscape:label="mun draft" />
+    <path d="M 325,325 C 325,600 375,825 500,825 C 625,825 675,600 675,325 M 225,250 A 75,75 0 1 0 375,250 A 75,75 0 1 0 225,250 Z M 625,250 A 75,75 0 1 0 775,250 A 75,75 0 1 0 625,250 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,6000)" inkscape:label="musi draft" />
+    <path d="M 350,200 L 350,800 M 500,200 L 500,800 M 650,200 L 650,800" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,6000)" inkscape:label="mute draft" />
+    <path d="M 375,175 L 375,825 M 625,175 L 625,825 M 175,375 L 825,375 M 175,625 L 825,625" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(2400,6000)" inkscape:label="nanpa draft" />
+    <path d="M 500,475 A 75,75 0 0 0 350,475 A 150,150 0 0 0 650,475 A 225,225 0 0 0 200,475 A 300,300 0 0 0 800,475" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,6000)" inkscape:label="nasa draft" />
+    <path d="M 500,150 L 500,850 M 350,600 L 500,425 L 650,600" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,6000)" inkscape:label="nasin draft" />
+    <path d="M 500,150 L 500,825 M 375,700 L 500,825 L 625,700" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,6000)" inkscape:label="ni draft" />
+    <path d="M 250,375 H 750 A 75,75 0 0 1 825,450 V 550 A 75,75 0 0 1 750,625 H 250 A 75,75 0 0 1 175,550 V 450 A 75,75 0 0 1 250,375 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,6000)" inkscape:label="nimi draft" />
+    <path d="M 350,200 V 800 H 525 C 625,800 675,725 675,650 C 675,550 575,500 500,525 C 425,550 375,575 350,600" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,6000)" inkscape:label="noka draft" />
+    <path d="M 500,175 L 500,650 M 450,775 A 50,50 0 1 0 550,775 A 50,50 0 1 0 450,775 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,6000)" inkscape:label="o draft" />
+    <path d="M 500,235 C 459.4,133 329.4,133 337.5,269 C 345.6,354 451.2,422 500,490 C 548.8,422 654.4,354 662.5,269 C 670.6,133 540.6,133 500,235 Z M 500,602.5 C 462.5,503.5 342.5,503.5 350,635.5 C 357.5,718 455,784 500,850 C 545,784 642.5,718 650,635.5 C 657.5,503.5 537.5,503.5 500,602.5 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,6000)" inkscape:label="olin draft" />
+    <path d="M 500,475 A 125,125 0 1 0 750,475 A 125,125 0 1 0 500,475 Z M 175,300 C 275,450 425,575 625,600" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,6000)" inkscape:label="ona draft" />
+    <path d="M 250,175 L 250,800 L 750,800 L 750,175 M 250,625 L 750,625" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,7200)" inkscape:label="open draft" />
+    <path d="M 225,175 L 775,175 L 775,825 L 225,825 Z M 575,175 L 375,475 L 625,475 L 425,825" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,7200)" inkscape:label="pakala draft" />
+    <path d="M 375,325 A 125,125 0 1 0 625,325 A 125,125 0 1 0 375,325 Z M 350,600 C 350,517.5 417.5,450 500,450 C 582.5,450 650,517.5 650,600 V 825 M 250,650 L 350,825 V 600" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(2400,7200)" inkscape:label="pali draft" />
+    <path d="M 425,500 A 75,325 0 1 0 575,500 A 75,325 0 1 0 425,500 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,7200)" inkscape:label="palisa draft" />
+    <path d="M 400,250 L 500,325 L 600,250 M 375,400 L 500,500 L 625,400 M 350,575 L 500,775 L 650,575" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,7200)" inkscape:label="pan draft" />
+    <path d="M 375,587.5 C 375,511.9 436.9,450 512.5,450 C 588.1,450 650,511.9 650,587.5 V 825 M 275,650 L 375,825 V 587.5 M 325,225 L 403.8,325 M 500,175 L 500,325 M 675,225 L 596.2,325" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,7200)" inkscape:label="pana draft" />
+    <path d="M 350,175 L 350,800 L 775,800" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,7200)" inkscape:label="pi draft" />
+    <path d="M 500,375 C 425,195 185,195 200,435 C 215,585 410,705 500,825 C 590,705 785,585 800,435 C 815,195 575,195 500,375 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,7200)" inkscape:label="pilin draft" />
+    <path d="M 500,175 L 825,800 L 175,800 Z M 338,488 L 580,800 M 662,488 L 420,800" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,7200)" inkscape:label="pimeja draft" />
+    <path d="M 375,200 L 625,200 M 375,800 L 625,800 M 500,200 L 500,800" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,7200)" inkscape:label="pini draft" />
+    <path d="M 417,200 A 8,8 0 1 0 433,200 A 8,8 0 1 0 417,200 Z M 425,200 h 0.1 M 567,200 A 8,8 0 1 0 583,200 A 8,8 0 1 0 567,200 Z M 575,200 h 0.1 M 500,300 L 500,850 M 375,400 L 625,400 M 375,575 L 625,575 M 375,725 L 625,725" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,7200)" inkscape:label="pipi draft" />
+    <path d="M 150,375 L 150,625 L 675,625 L 675,375 M 792,475 A 8,8 0 1 0 808,475 A 8,8 0 1 0 792,475 Z M 800,475 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,7200)" inkscape:label="poka draft" />
+    <path d="M 225,175 L 225,825 L 775,825 L 775,175" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,8400)" inkscape:label="poki draft" />
+    <path d="M 275,150 L 725,150 L 725,850 L 275,850 Z M 410,575 A 90,90 0 1 0 590,575 A 90,90 0 1 0 410,575 Z M 400,425 L 445,450 M 500,375 L 500,450 M 600,425 L 555,450" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(2400,8400)" inkscape:label="pu draft" />
+    <path d="M 250,400 L 750,400 M 250,600 L 750,600" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,8400)" inkscape:label="sama draft" />
+    <path d="M 500,150 L 500,650 M 300,300 L 400,600 M 700,300 L 600,600 M 492,800 A 8,8 0 1 0 508,800 A 8,8 0 1 0 492,800 Z M 500,800 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,8400)" inkscape:label="seli draft" />
+    <path d="M 200,775 L 200,250 L 800,250 L 800,775 M 325,250 L 325,600 M 675,250 L 675,600" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,8400)" inkscape:label="selo draft" />
+    <path d="M 325,300 C 325,175 450,150 525,150 C 650,150 700,250 675,325 C 650,425 500,475 500,650 M 492,825 A 8,8 0 1 0 508,825 A 8,8 0 1 0 492,825 Z M 500,825 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,8400)" inkscape:label="seme draft" />
+    <path d="M 150,725 C 225,700 250,650 250,575 V 725 C 250,775 300,800 350,800 C 400,800 450,775 450,725 V 450 V 725 C 450,775 500,800 550,800 C 625,800 650,750 650,700 V 300 M 825,150 L 825,825" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,8400)" inkscape:label="sewi draft" />
+    <path d="M 250,850 L 250,175 L 750,175 L 750,850 M 500,175 L 500,850" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,8400)" inkscape:label="sijelo draft" />
+    <path d="M 175,500 A 325,325 0 1 0 825,500 A 325,325 0 1 0 175,500 Z M 350,500 A 150,150 0 1 0 650,500 A 150,150 0 1 0 350,500 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,8400)" inkscape:label="sike draft" />
+    <path d="M 500,325 L 500,500 M 225,625 L 425,625 M 575,625 L 775,625" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,8400)" inkscape:label="sin draft" />
+    <path d="M 375,175 C 300,300 300,600 375,750 C 425,850 625,825 650,700 C 675,575 575,500 475,525 C 400,550 375,600 375,650" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,8400)" inkscape:label="sina draft" />
+    <path d="M 275,175 L 425,175 L 425,825 L 275,825 M 617,500 A 8,8 0 1 0 633,500 A 8,8 0 1 0 617,500 Z M 625,500 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,9600)" inkscape:label="sinpin draft" />
+    <path d="M 225,175 L 775,175 L 775,825 L 225,825 Z M 342,500 A 8,8 0 1 0 358,500 A 8,8 0 1 0 342,500 Z M 350,500 h 0.1 M 492,500 A 8,8 0 1 0 508,500 A 8,8 0 1 0 492,500 Z M 500,500 h 0.1 M 642,500 A 8,8 0 1 0 658,500 A 8,8 0 1 0 642,500 Z M 650,500 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,9600)" inkscape:label="sitelen draft" />
+    <path d="M 325,375 L 675,375 L 675,850 L 325,850 Z M 300,200 L 390,275 M 500,150 L 500,275 M 700,200 L 610,275" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(2400,9600)" inkscape:label="sona draft" />
+    <path d="M 375,250 H 600 C 750,250 825,325 800,400 C 775,450 700,475 600,450 C 575,450 575,475 575,500 V 800 M 225,600 L 225,800 M 325,600 L 325,800 M 450,600 L 450,800 M 642,375 A 8,8 0 1 0 658,375 A 8,8 0 1 0 642,375 Z M 650,375 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,9600)" inkscape:label="soweli draft" />
+    <path d="M 250,175 L 500,825 L 750,175" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,9600)" inkscape:label="suli draft" />
+    <path d="M 325,500 A 175,175 0 1 0 675,500 A 175,175 0 1 0 325,500 Z M 500,175 L 500,325 M 500,675 L 500,825 M 175,500 L 325,500 M 675,500 L 825,500" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,9600)" inkscape:label="suno draft" />
+    <path d="M 175,325 L 825,325 M 300,325 L 300,675 M 700,325 L 700,675" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,9600)" inkscape:label="supa draft" />
+    <path d="M 175,525 L 275,325 L 375,525 M 625,525 L 725,325 L 825,525 M 492,700 A 8,8 0 1 0 508,700 A 8,8 0 1 0 492,700 Z M 500,700 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,9600)" inkscape:label="suwi draft" />
+    <path d="M 725,650 C 725,450 625,350 500,350 C 400,350 325,425 300,525 M 225,425 L 300,575 L 425,525" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,9600)" inkscape:label="tan draft" />
+    <path d="M 600,175 L 600,825 M 400,500 L 600,500" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,9600)" inkscape:label="taso draft" />
+    <path d="M 825,775 H 650 L 600,225 L 225,650 C 250,700 350,750 450,775" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,9600)" inkscape:label="tawa draft" />
+    <path d="M 175,375 C 275,175 400,250 500,375 C 600,500 725,500 825,325 M 175,675 C 275,475 400,550 500,675 C 600,800 725,800 825,625" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,9600)" inkscape:label="telo draft" />
+    <path d="M 175,500 A 325,325 0 1 0 825,500 A 325,325 0 1 0 175,500 Z M 500,300 L 500,500 L 600,500" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,10800)" inkscape:label="tenpo draft" />
+    <path d="M 275,600 A 225,225 0 1 0 725,600 A 225,225 0 1 0 275,600 Z M 325,225 L 403.8,300 M 500,175 L 500,300 M 675,225 L 596.2,300" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,10800)" inkscape:label="toki draft" />
+    <path d="M 500,175 L 775,475 L 775,825 L 225,825 L 225,475 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(2400,10800)" inkscape:label="tomo draft" />
+    <path d="M 250,325 A 125,125 0 1 0 500,325 A 125,125 0 1 0 250,325 Z M 500,325 A 125,125 0 1 0 750,325 A 125,125 0 1 0 500,325 Z M 425,650 A 75,200 0 1 0 575,650 A 75,200 0 1 0 425,650 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,10800)" inkscape:label="unpa draft" />
+    <path d="M 300,350 H 700 C 700,501.2 651.2,625 500,625 C 348.8,625 300,501.2 300,350 Z M 492,775 A 8,8 0 1 0 508,775 A 8,8 0 1 0 492,775 Z M 500,775 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,10800)" inkscape:label="uta draft" />
+    <path d="M 325,225 L 700,775 M 700,225 L 300,775 M 250,625 L 300,775 M 750,625 L 700,775" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,10800)" inkscape:label="utala draft" />
+    <path d="M 500,175 L 800,800 L 200,800 Z M 250,425 L 370,450 M 750,425 L 630,450" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,10800)" inkscape:label="walo draft" />
+    <path d="M 375,350 L 500,225 L 500,825" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,10800)" inkscape:label="wan draft" />
+    <path d="M 350,175 L 675,600 L 400,600 L 400,825 M 467,525 A 8,8 0 1 0 483,525 A 8,8 0 1 0 467,525 Z M 475,525 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,10800)" inkscape:label="waso draft" />
+    <path d="M 200,200 L 375,700 M 800,200 L 625,700 M 375,675 A 125,125 0 1 0 625,675 A 125,125 0 1 0 375,675 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,10800)" inkscape:label="wawa draft" />
+    <path d="M 225,200 L 425,425 M 775,200 L 575,425 M 425,575 L 225,800 M 575,575 L 775,800" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,10800)" inkscape:label="weka draft" />
+    <path d="M 250,250 C 175,375 175,750 325,775 C 425,800 475,700 500,625 C 525,700 575,800 675,775 C 825,750 825,375 750,250" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,12000)" inkscape:label="wile draft" />
+    <path d="M 500,175 L 500,375 M 500,625 L 500,825 M 175,500 L 375,500 M 625,500 L 825,500" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,12000)" inkscape:label="namako draft" />
+    <path d="M 500,175 L 500,575 M 425,750 L 575,750 M 462,685 L 538,815 M 538,685 L 462,815" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(2400,12000)" inkscape:label="kin draft" />
+    <path d="M 175,500 C 375,450 525,325 600,200 M 175,500 C 375,550 525,675 600,800 M 600,200 C 775,350 775,650 600,800 M 565,500 A 60,60 0 1 0 685,500 A 60,60 0 1 0 565,500 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,12000)" inkscape:label="oko draft" />
+    <path d="M 250,775 L 750,225 M 292,275 A 8,8 0 1 0 308,275 A 8,8 0 1 0 292,275 Z M 300,275 h 0.1 M 692,725 A 8,8 0 1 0 708,725 A 8,8 0 1 0 692,725 Z M 700,725 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,12000)" inkscape:label="kipisi draft" />
+    <path d="M 200,200 L 800,200 L 800,800 L 200,800 Z M 375,375 L 625,375 L 625,625 L 375,625 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,12000)" inkscape:label="leko draft" />
+    <path d="M 150,575 L 250,425 L 350,550 L 450,325 L 550,575 L 650,350 L 750,525 L 850,450" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,12000)" inkscape:label="monsuta draft" />
+    <path d="M 325,450 A 175,175 0 1 0 675,450 A 175,175 0 1 0 325,450 Z M 376,326 L 225,200 M 624,326 L 775,200 M 500,625 L 500,825" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,12000)" inkscape:label="tonsi draft" />
+    <path d="M 500,175 L 500,825 M 275,450 C 275,325 400,325 500,375 C 600,425 725,425 725,300 M 275,725 C 275,600 400,600 500,650 C 600,700 725,700 725,575" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,12000)" inkscape:label="jasima draft" />
+    <path d="M 375,800 V 325 C 450,225 600,225 700,325 L 825,450 L 700,500 V 800 M 500,550 L 500,800 M 600,550 L 600,800 M 375,575 H 225 C 175,575 150,625 150,687 C 150,750 175,800 225,800 H 375 M 275,575 L 275,800 M 567,375 A 8,8 0 1 0 583,375 A 8,8 0 1 0 567,375 Z M 575,375 h 0.1 M 642,375 A 8,8 0 1 0 658,375 A 8,8 0 1 0 642,375 Z M 650,375 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,12000)" inkscape:label="kijetesantakalu draft" />
+    <path d="M 175,450 C 175,250 350,175 500,175 C 650,175 825,250 825,450 Z M 500,450 L 500,825 M 375,650 L 625,650" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,12000)" inkscape:label="soko draft" />
+    <path d="M 300,175 L 300,825 M 700,175 L 700,825 M 492,500 A 8,8 0 1 0 508,500 A 8,8 0 1 0 492,500 Z M 500,500 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,12000)" inkscape:label="meso draft" />
+    <path d="M 275,525 C 275,800 725,800 725,525 M 300,225 L 390,350 M 500,175 L 500,350 M 700,225 L 610,350" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,13200)" inkscape:label="epiku draft" />
+    <path d="M 300,600 A 200,200 0 1 0 700,600 A 200,200 0 1 0 300,600 Z M 175,750 L 825,475 M 300,225 L 390,325 M 500,175 L 500,325 M 700,225 L 610,325" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,13200)" inkscape:label="kokosila draft" />
+    <path d="M 350,325 A 150,150 0 1 0 650,325 A 150,150 0 1 0 350,325 Z M 400,450 C 225,525 175,700 250,775 C 325,850 450,700 600,650 C 725,600 800,700 800,800 M 642,775 A 8,8 0 1 0 658,775 A 8,8 0 1 0 642,775 Z M 650,775 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(2400,13200)" inkscape:label="lanpan draft" />
+    <path d="M 500,175 L 500,550 M 375,850 V 725 C 375,650 425,625 475,625 C 550,625 600,675 600,725 V 850" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,13200)" inkscape:label="n draft" />
+    <path d="M 325,500 A 175,325 0 1 0 675,500 A 175,325 0 1 0 325,500 Z M 325,500 L 675,500" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,13200)" inkscape:label="misikeke draft" />
+    <path d="M 225,175 L 775,175 L 775,825 L 225,825 Z M 700,300 L 375,425 L 450,825 M 567,600 A 8,8 0 1 0 583,600 A 8,8 0 1 0 567,600 Z M 575,600 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,13200)" inkscape:label="ku draft" />
   </g>
   <g id="parts" inkscape:groupmode="layer" inkscape:label="parts" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
   <g id="glyph" inkscape:groupmode="layer" inkscape:label="glyph" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round">

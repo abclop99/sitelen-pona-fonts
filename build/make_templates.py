@@ -8,6 +8,9 @@ Its layers span every page:
   reference  locked, faint: jan Sonja's drawing from pu (linked file, see
              build/fetch_pu_reference.py); ku suli words use a reference font
   guides     locked: each page's ink box, midline and word name
+  drafts     geometric first drafts (build/drafts.py). The build uses a
+             word's draft only while nothing is drawn on its page in glyph
+             or fill, so drawing a word replaces it
   parts      shared pieces, drawn on the parts page. Clone them (Alt+D) into
              words; the parts themselves never go into the font
   glyph      where you draw: open paths along the centre of each stroke.
@@ -15,8 +18,9 @@ Its layers span every page:
   fill       optional: shapes that should be filled instead of stroked
 
 Rerunning rewrites only the reference and guides layers and the page list.
-The parts, glyph and fill layers are kept as they are, and so are pages you
-added yourself (for example a "seme.mono" page).
+The drafts, parts, glyph and fill layers are kept as they are, and so are
+pages you added yourself (for example a "seme.mono" page). A file without a
+drafts layer gets one, with a draft on every page that has none.
 
     python3 build/make_templates.py --font standard
 """
@@ -33,6 +37,7 @@ from fontTools.ttLib import TTFont
 
 from common import (BOX, CELL, GRID, INKSCAPE_NS, MIDLINE, ROOT, SODIPODI_NS,
                     STROKE, SVG_NS, page_origin, read_words)
+from drafts import DRAFTS
 
 ET.register_namespace("", SVG_NS)
 ET.register_namespace("inkscape", INKSCAPE_NS)
@@ -47,7 +52,8 @@ S = f"{{{SVG_NS}}}"
 GLYPH_STYLE = (f"fill:none;stroke:#000000;stroke-width:{STROKE};"
                "stroke-linecap:round;stroke-linejoin:round")
 FILL_STYLE = "fill:#000000;stroke:none"
-KEPT_LAYERS = ("parts", "glyph", "fill")
+DRAFT_STYLE = GLYPH_STYLE.replace("#000000", "#8e7cc3")
+KEPT_LAYERS = ("drafts", "parts", "glyph", "fill")
 
 # Relative to fonts/<font>/, where glyphs.svg lives.
 PU_LINK = "../../reference/pu/downloads"
@@ -158,9 +164,12 @@ def reference_art(g, word, ref, ox, oy):
 
 
 def write_file(path, words, ref):
-    keep, own_pages = {}, []
+    keep, own_pages, drawn = {}, [], set(STARTERS)
     labels = {"parts"} | {w["word"] for w in words}
     if path.exists():
+        from build import read_pages
+        found, drafted = read_pages(path)
+        drawn |= set(found) - drafted
         old = ET.parse(path).getroot()
         for g in old.findall(S + "g"):
             if g.get(f"{INK}label") in KEPT_LAYERS:
@@ -200,11 +209,19 @@ def write_file(path, words, ref):
     for p in own_pages:
         page_guides(guides, p.get(f"{INK}label"), float(p.get("x")), float(p.get("y")))
 
-    for label, style in (("parts", GLYPH_STYLE), ("glyph", GLYPH_STYLE), ("fill", FILL_STYLE)):
+    for label, style in (("drafts", DRAFT_STYLE), ("parts", GLYPH_STYLE),
+                         ("glyph", GLYPH_STYLE), ("fill", FILL_STYLE)):
         if label in keep:
             svg.append(keep[label])
             continue
         g = layer(svg, label, style)
+        if label == "drafts":
+            for i, (name, _) in enumerate(pages):
+                if name in DRAFTS and name not in drawn:
+                    ox, oy = page_origin(i)
+                    ET.SubElement(g, S + "path", {"d": DRAFTS[name], "style": DRAFT_STYLE,
+                                                  "transform": f"translate({ox},{oy})",
+                                                  f"{INK}label": f"{name} draft"})
         if label == "glyph":
             for i, (name, _) in enumerate(pages):
                 if name in STARTERS:
