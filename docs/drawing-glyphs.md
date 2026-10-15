@@ -1,32 +1,41 @@
 # Drawing glyphs
 
-Each word has its own SVG in `fonts/<font>/glyphs/`, for example `fonts/standard/glyphs/toki.svg`. Open it in Inkscape, draw, save, and run the build.
+A whole font is one Inkscape file, `fonts/<font>/glyphs.svg`, with one page per word (Inkscape 1.2 or newer). Open it, draw, save, and run the build.
 
-## What's in a template
+## What's in the file
+
+The first page, **parts**, is for shared pieces. Then come the words, in the order of `spec/words.tsv`, twelve to a row; each page is named after its word (Inkscape's Pages panel lists them).
 
 | Layer | What it's for |
 |---|---|
-| `reference` | Locked and faint: jan Sonja's drawing of the word from *pu* (the official forms), to follow or ignore |
-| `guides` | Locked: the ink box (solid red), the box for centrelines (dashed), the midline (blue) and the word's name |
-| `glyph` | **Draw here.** Open paths along the centre of each stroke |
+| `reference` | Locked and faint: jan Sonja's drawing of each word from *pu* (the official forms), to follow or ignore |
+| `guides` | Locked: each page's ink box (solid red), the box for centrelines (dashed), the midline (blue) and the word's name |
+| `parts` | Shared pieces, drawn on the parts page: a head, an eye, an arrow… They never go into the font themselves |
+| `glyph` | **Draw here.** Open paths along the centre of each stroke. A piece belongs to the page its centre is on |
 | `fill` | Optional: shapes that should be filled as drawn instead of stroked |
 
 The solid red square is where the ink should end up. Keep centrelines inside the dashed square, which is inset by half a stroke, so the stroked result lands on the solid one.
+
+## Shared parts
+
+Draw a shared piece once in the `parts` layer, on the parts page. To use it in a word, select it, clone it (`Alt+D`), move the clone to the `glyph` layer (`Shift+PageUp`/`Shift+PageDown`, or Layer ▸ Move Selection to Layer…) and put it on the word's page. Move, scale, rotate or mirror the clone as needed.
+
+Editing the original updates every clone. The build strokes after placing, so a scaled-down clone still has the same line weight as everything else. Don't delete a part that still has clones: the build stops with an error naming the missing piece.
 
 ## How to draw
 
 - **Draw centrelines, not outlines.** One path down the middle of each stroke. The build gives every path the same stroke weight (`STROKE` in `build/common.py`, 70 units) with round ends and joins, whatever stroke width the path has in Inkscape.
 - **Build from simple pieces.** Use the Bezier pen (`B`) for lines and curves, the ellipse tool (`E`) for circles, and the rectangle tool (`R`) for boxes. With snapping on, points land on the 25-unit grid, which keeps sizes and curves consistent across words.
 - **Preview the real weight.** Give your paths `stroke-width: 70`, round caps and round joins, and no fill (Fill and Stroke, `Ctrl+Shift+F`). Inkscape remembers the last style per tool, so you only set it once.
-- **Clones work.** A clone (`Alt+D`) of a part is followed to the original, with its move, scale or mirror, and stroked afterwards, so a scaled clone keeps the same line weight.
 - **Dots** are a path with a single tiny segment; the round caps turn it into a dot.
 - **Filled areas** (if a glyph has any) go in the `fill` layer and are filled exactly as drawn.
 - **The midline matters.** Sitelen pona centres on the midline, not a baseline, so keep each glyph visually centred on the blue line unless it is meant to sit high or low.
-- Anything hidden, and anything outside the `glyph` and `fill` layers, is ignored.
+- **Groups are fine.** A group counts as one piece, so it belongs to the page its centre is on.
+- Anything hidden, anything off the pages, and anything outside the `glyph` and `fill` layers is ignored (the build warns about pieces that are on no page).
 
 ## Words that need a different drawing in monospace
 
-The monospace build puts every glyph in a full-width cell. If a word looks wrong there (for example a narrow *seme* that looks lost, or a wide glyph that looks cramped), copy `seme.svg` to `seme.mono.svg` and change the copy. The monospace build uses `.mono.svg` when it exists; the proportional build always uses the plain file.
+The monospace build puts every glyph in a full-width cell. If a word looks wrong there (for example a narrow *seme* that looks lost, or a wide glyph that looks cramped), add a page (Pages tool, `Shift+F7`) with the same size, name it `seme.mono`, and draw the monospace version on it. The monospace build uses a `.mono` page when one exists; the proportional build always uses the plain page.
 
 ## Building and testing
 
@@ -51,8 +60,8 @@ python3 build/fetch_pu_reference.py
 
 If Commons is unreachable, save the sona pona page "Comparison of Madame Lang's handwriting and linja pona" as `.mhtml` after scrolling to the bottom (so every image has loaded), then run `python3 build/fetch_pu_reference.py --from-mhtml page.mhtml`.
 
-The *ku suli* words (*kin, namako, oko, …*) have no drawing in *pu*, so their reference comes from a font instead (sitelen seli kiwen, OFL, shown in blue). Rerunning only rewrites the `reference` and `guides` layers, never `glyph` or `fill`:
+The *ku suli* words (*kin, namako, oko, …*) have no drawing in *pu*, so their reference comes from a font instead (sitelen seli kiwen, OFL, shown in blue). Those outlines are stored in the file itself.
 
-```
-python3 build/make_templates.py --font standard --reference reference/sitelen-seli-kiwen/downloads/sitelenselikiwenjuniko.ttf
-```
+## Regenerating the file
+
+`python3 build/make_templates.py --font standard` rewrites the `reference` and `guides` layers and the word pages, for example after a word is added to `spec/words.tsv`. It never touches `parts`, `glyph` or `fill`, and it keeps pages you added yourself. It reads the ku suli reference from `reference/sitelen-seli-kiwen/downloads/sitelenselikiwenjuniko.ttf` (or `--reference other.ttf`); without that file those words lose their reference.

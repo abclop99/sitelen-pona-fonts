@@ -19,6 +19,15 @@ MIDLINE = 500        # SVG y of the midline
 BOX = (100, 900)     # outer edge of the ink: glyphs fill this square
 STROKE = 70          # default stroke width for centrelines
 GRID = 25            # Inkscape grid spacing
+PAGE_COLUMNS = 12    # pages per row in glyphs.svg
+PAGE_GAP = 200       # space between pages
+
+
+def page_origin(index):
+    """Top-left corner of page number index in glyphs.svg."""
+    step = CELL + PAGE_GAP
+    return (index % PAGE_COLUMNS) * step, (index // PAGE_COLUMNS) * step
+
 
 SVG_NS = "http://www.w3.org/2000/svg"
 INKSCAPE_NS = "http://www.inkscape.org/namespaces/inkscape"

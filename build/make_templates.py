@@ -1,23 +1,30 @@
 #!/usr/bin/env python3
-"""Create one Inkscape SVG template per word for a font.
+"""Create (or refresh) the multi-page Inkscape file a font is drawn in.
 
-Each template has three layers:
+fonts/<font>/glyphs.svg has one page per word (Inkscape 1.2+), laid out in
+a grid in spec/words.tsv order, plus a "parts" page first for shared pieces.
+Its layers span every page:
+
   reference  locked, faint: jan Sonja's drawing from pu (linked file, see
-             build/fetch_pu_reference.py); other words use a reference font
-  guides     locked: the ink box, the midline and the word's name
-  glyph      where you draw: open paths along the centre of each stroke
+             build/fetch_pu_reference.py); ku suli words use a reference font
+  guides     locked: each page's ink box, midline and word name
+  parts      shared pieces, drawn on the parts page. Clone them (Alt+D) into
+             words; the parts themselves never go into the font
+  glyph      where you draw: open paths along the centre of each stroke.
+             Each piece belongs to the page its centre is on
   fill       optional: shapes that should be filled instead of stroked
 
-Existing files keep their glyph and fill layers; only the reference and
-guides layers are rewritten. So rerunning this with a different reference
-font never touches your drawings.
+Rerunning rewrites only the reference and guides layers and the page list.
+The parts, glyph and fill layers are kept as they are, and so are pages you
+added yourself (for example a "seme.mono" page).
 
-    python3 build/make_templates.py --font standard --reference path/to/font.ttf
+    python3 build/make_templates.py --font standard
 """
 
 import argparse
 import statistics
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 from fontTools.pens.boundsPen import BoundsPen
 from fontTools.pens.svgPathPen import SVGPathPen
@@ -25,7 +32,7 @@ from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
 
 from common import (BOX, CELL, GRID, INKSCAPE_NS, MIDLINE, ROOT, SODIPODI_NS,
-                    STROKE, SVG_NS, read_words)
+                    STROKE, SVG_NS, page_origin, read_words)
 
 ET.register_namespace("", SVG_NS)
 ET.register_namespace("inkscape", INKSCAPE_NS)
@@ -40,9 +47,11 @@ S = f"{{{SVG_NS}}}"
 GLYPH_STYLE = (f"fill:none;stroke:#000000;stroke-width:{STROKE};"
                "stroke-linecap:round;stroke-linejoin:round")
 FILL_STYLE = "fill:#000000;stroke:none"
+KEPT_LAYERS = ("parts", "glyph", "fill")
 
-# Relative to fonts/<font>/glyphs/, where the templates live.
-PU_LINK = "../../../reference/pu/downloads"
+# Relative to fonts/<font>/, where glyphs.svg lives.
+PU_LINK = "../../reference/pu/downloads"
+DEFAULT_REFERENCE = ROOT / "reference/sitelen-seli-kiwen/downloads/sitelenselikiwenjuniko.ttf"
 # The tallest pu glyphs (jan, jelo) are about 25 viewBox units tall: fit
 # those to the ink box, so the rest keep their size relative to them.
 PU_SCALE = (BOX[1] - BOX[0]) / 25
@@ -61,7 +70,7 @@ STARTERS = {
 
 
 class Reference:
-    """Glyph outlines from a reference font, scaled into the template's box."""
+    """Glyph outlines from a reference font, scaled into a page's box."""
 
     def __init__(self, path, words):
         self.font = TTFont(path)
@@ -84,22 +93,22 @@ class Reference:
         self.glyphs[name].draw(pen)
         return pen.bounds
 
-    def svg_path(self, cp):
+    def svg_path(self, cp, ox, oy):
         b = self._bounds(cp)
         if not b:
             return None
         # Shrink any glyph that would still overflow the box (wide words).
         s = min(self.scale, (BOX[1] - BOX[0]) / max(b[2] - b[0], b[3] - b[1]))
         cx, cy = (b[0] + b[2]) / 2, (b[1] + b[3]) / 2
-        # Font y is up, SVG y is down; centre the glyph in the cell.
-        t = (s, 0, 0, -s, CELL / 2 - s * cx, MIDLINE + s * cy)
+        # Font y is up, SVG y is down; centre the glyph on its page.
+        t = (s, 0, 0, -s, ox + CELL / 2 - s * cx, oy + MIDLINE + s * cy)
         pen = SVGPathPen(self.glyphs)
         self.glyphs[self.cmap[cp]].draw(TransformPen(pen, t))
         return pen.getCommands()
 
 
 def layer(parent, label, style=None, locked=False):
-    g = ET.SubElement(parent, f"{{{SVG_NS}}}g", {
+    g = ET.SubElement(parent, S + "g", {
         "id": label,
         f"{INK}groupmode": "layer",
         f"{INK}label": label,
@@ -111,116 +120,119 @@ def layer(parent, label, style=None, locked=False):
     return g
 
 
-def guides_layer(svg, word):
-    g = layer(svg, "guides", "fill:none;stroke:#e06666;stroke-width:2", True)
+def page_guides(g, label, ox, oy):
     lo, hi = BOX
     inset = lo + STROKE / 2
-    ET.SubElement(g, S + "rect", {"x": str(lo), "y": str(lo), "width": str(hi - lo),
-                              "height": str(hi - lo)})
-    ET.SubElement(g, S + "rect", {"x": str(inset), "y": str(inset),
-                              "width": str(CELL - 2 * inset), "height": str(CELL - 2 * inset),
-                              "style": "stroke-dasharray:8,8;stroke:#f4a6a6"})
-    ET.SubElement(g, S + "path", {"d": f"M 0,{MIDLINE} H {CELL}", "style": "stroke:#6fa8dc"})
-    ET.SubElement(g, S + "path", {"d": f"M {CELL / 2},0 V {CELL}",
-                              "style": "stroke:#6fa8dc;stroke-dasharray:4,12"})
-    text = ET.SubElement(g, S + "text", {"x": "20", "y": "60",
-                                     "style": "font:40px sans-serif;fill:#999999;stroke:none"})
-    text.text = word["word"]
+    ET.SubElement(g, S + "rect", {"x": str(ox + lo), "y": str(oy + lo),
+                                  "width": str(hi - lo), "height": str(hi - lo)})
+    ET.SubElement(g, S + "rect", {"x": str(ox + inset), "y": str(oy + inset),
+                                  "width": str(CELL - 2 * inset),
+                                  "height": str(CELL - 2 * inset),
+                                  "style": "stroke-dasharray:8,8;stroke:#f4a6a6"})
+    ET.SubElement(g, S + "path", {"d": f"M {ox},{oy + MIDLINE} h {CELL}",
+                                  "style": "stroke:#6fa8dc"})
+    ET.SubElement(g, S + "path", {"d": f"M {ox + CELL / 2},{oy} v {CELL}",
+                                  "style": "stroke:#6fa8dc;stroke-dasharray:4,12"})
+    text = ET.SubElement(g, S + "text", {"x": str(ox + 20), "y": str(oy + 60),
+                                         "style": "font:40px sans-serif;fill:#999999;stroke:none"})
+    text.text = label
 
 
-def reference_layer(svg, word, ref):
-    g = layer(svg, "reference", "opacity:0.25", True)
+def reference_art(g, word, ref, ox, oy):
     if word["set"] == "pu":
         # jan Sonja's drawing from pu, linked rather than copied into the repo.
-        # build/fetch_pu_reference.py downloads the files. Every file shares
-        # one 27.502 x 31.312 viewBox with the glyph centred, so one placement
-        # fits all.
+        # Every file shares one 27.502 x 31.312 viewBox with the glyph
+        # centred, so one placement fits all.
+        href = f"{PU_LINK}/{word['word']}.svg"
         ET.SubElement(g, S + "image", {
-            "href": f"{PU_LINK}/{word['word']}.svg",
-            f"{{{XLINK_NS}}}href": f"{PU_LINK}/{word['word']}.svg",  # older Inkscape
-            "x": str(round((CELL - PU_WIDTH) / 2, 1)),
-            "y": str(round((CELL - PU_HEIGHT) / 2, 1)),
+            "href": href, f"{{{XLINK_NS}}}href": href,  # xlink for older Inkscape
+            "x": str(round(ox + (CELL - PU_WIDTH) / 2, 1)),
+            "y": str(round(oy + (CELL - PU_HEIGHT) / 2, 1)),
             "width": str(PU_WIDTH), "height": str(PU_HEIGHT),
             "preserveAspectRatio": "none",
         })
-    # Words with no pu drawing (nimi ku suli) fall back to the reference font.
-    d = ref.svg_path(word["codepoint"]) if ref and word["set"] != "pu" else None
-    if d:
-        ET.SubElement(g, S + "path", {"d": d, "style": "fill:#3d85c6;stroke:none"})
+    elif ref:
+        d = ref.svg_path(word["codepoint"], ox, oy)
+        if d:
+            ET.SubElement(g, S + "path", {"d": d, "style": "fill:#3d85c6;stroke:none"})
 
 
-def new_svg(word):
-    svg = ET.Element(f"{{{SVG_NS}}}svg", {
-        "width": str(CELL), "height": str(CELL),
-        "viewBox": f"0 0 {CELL} {CELL}",
-    })
+def write_file(path, words, ref):
+    keep, own_pages = {}, []
+    labels = {"parts"} | {w["word"] for w in words}
+    if path.exists():
+        old = ET.parse(path).getroot()
+        for g in old.findall(S + "g"):
+            if g.get(f"{INK}label") in KEPT_LAYERS:
+                keep[g.get(f"{INK}label")] = g
+        nv = old.find(f"{SODI}namedview")
+        if nv is not None:
+            own_pages = [p for p in nv.findall(f"{INK}page")
+                         if p.get(f"{INK}label") not in labels]
+
+    svg = ET.Element(S + "svg", {"width": str(CELL), "height": str(CELL),
+                                 "viewBox": f"0 0 {CELL} {CELL}"})
     nv = ET.SubElement(svg, f"{SODI}namedview", {
-        "id": "namedview", "pagecolor": "#ffffff",
+        "id": "namedview", "pagecolor": "#ffffff", "showgrid": "true",
         f"{INK}document-units": "px", f"{INK}current-layer": "glyph",
-        "showgrid": "true",
     })
     ET.SubElement(nv, f"{INK}grid", {
-        "id": "grid", "type": "xygrid", "units": "px",
-        "originx": "0", "originy": "0",
+        "id": "grid", "type": "xygrid", "units": "px", "originx": "0", "originy": "0",
         "spacingx": str(GRID), "spacingy": str(GRID),
         "empspacing": "4", "visible": "true", "enabled": "true",
     })
-    return svg
-
-
-def write_template(path, word, ref):
-    keep = {}
-    if path.exists():
-        old = ET.parse(path).getroot()
-        for g in old.findall(f"{{{SVG_NS}}}g"):
-            label = g.get(f"{INK}label")
-            if label in ("glyph", "fill"):
-                keep[label] = g
-        svg = old
-        for g in list(svg.findall(f"{{{SVG_NS}}}g")):
-            svg.remove(g)
-    else:
-        svg = new_svg(word)
+    pages = [("parts", None)] + [(w["word"], w) for w in words]
+    for i, (label, _) in enumerate(pages):
+        ox, oy = page_origin(i)
+        ET.SubElement(nv, f"{INK}page", {"id": f"page-{label}", f"{INK}label": label,
+                                         "x": str(ox), "y": str(oy),
+                                         "width": str(CELL), "height": str(CELL)})
+    nv.extend(own_pages)
 
     # Layer order matters: later layers draw on top.
-    reference_layer(svg, word, ref)
-    guides_layer(svg, word)
-    if "glyph" in keep:
-        svg.append(keep["glyph"])
-    else:
-        g = layer(svg, "glyph", GLYPH_STYLE)
-        if word["word"] in STARTERS:
-            ET.SubElement(g, S + "path", {"d": STARTERS[word["word"]], "style": GLYPH_STYLE})
-    if "fill" in keep:
-        svg.append(keep["fill"])
-    else:
-        layer(svg, "fill", FILL_STYLE)
+    refs = layer(svg, "reference", "opacity:0.25", True)
+    guides = layer(svg, "guides", "fill:none;stroke:#e06666;stroke-width:2", True)
+    for i, (label, word) in enumerate(pages):
+        ox, oy = page_origin(i)
+        page_guides(guides, label, ox, oy)
+        if word:
+            reference_art(refs, word, ref, ox, oy)
+    for p in own_pages:
+        page_guides(guides, p.get(f"{INK}label"), float(p.get("x")), float(p.get("y")))
+
+    for label, style in (("parts", GLYPH_STYLE), ("glyph", GLYPH_STYLE), ("fill", FILL_STYLE)):
+        if label in keep:
+            svg.append(keep[label])
+            continue
+        g = layer(svg, label, style)
+        if label == "glyph":
+            for i, (name, _) in enumerate(pages):
+                if name in STARTERS:
+                    ox, oy = page_origin(i)
+                    ET.SubElement(g, S + "path", {"d": STARTERS[name], "style": GLYPH_STYLE,
+                                                  "transform": f"translate({ox},{oy})"})
 
     ET.indent(svg)
     ET.ElementTree(svg).write(path, encoding="UTF-8", xml_declaration=True)
+    return len(pages)
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--font", default="standard", help="folder under fonts/")
-    ap.add_argument("--reference", help="reference .ttf/.otf for the faint layer")
-    ap.add_argument("words", nargs="*", help="only these words (default: all)")
+    ap.add_argument("--reference", default=DEFAULT_REFERENCE,
+                    help="reference .ttf/.otf for words with no pu drawing")
     args = ap.parse_args()
 
     words = read_words()
-    if args.words:
-        words = [w for w in words if w["word"] in args.words]
-    ref = Reference(args.reference, read_words()) if args.reference else None
-    out = ROOT / "fonts" / args.font / "glyphs"
-    out.mkdir(parents=True, exist_ok=True)
-    for w in words:
-        for path in [out / f"{w['word']}.svg", out / f"{w['word']}.mono.svg"]:
-            if path.name.endswith(".mono.svg") and not path.exists():
-                continue
-            write_template(path, w, ref)
-    print(f"{len(words)} templates in {out.relative_to(ROOT)}"
-          + (f", reference: {ref.name}" if ref else ", no reference font"))
+    ref = Path(args.reference) if args.reference else None
+    ref = Reference(ref, words) if ref and ref.exists() else None
+    path = ROOT / "fonts" / args.font / "glyphs.svg"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    n = write_file(path, words, ref)
+    print(f"{path.relative_to(ROOT)}: {n} pages"
+          + (f", reference font: {ref.name}" if ref else ", no reference font"))
 
 
 if __name__ == "__main__":

@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
-"""Build a font from its glyph SVGs.
+"""Build a font from its multi-page Inkscape file.
 
-For each word in spec/words.tsv this reads fonts/<font>/glyphs/<word>.svg:
-paths in the "glyph" layer are centrelines and become strokes of one fixed
-weight (round caps and joins); shapes in the "fill" layer are filled as drawn.
-Words with nothing drawn are left out of the font.
+fonts/<font>/glyphs.svg has one page per word in spec/words.tsv. Paths in
+the "glyph" layer are centrelines and become strokes of one fixed weight
+(round caps and joins); shapes in the "fill" layer are filled as drawn.
+Clones of shared parts are followed to their originals. Words with nothing
+drawn are left out of the font.
 
 Two builds come out of the same drawings:
-  mono   every glyph is one full cell wide. <word>.mono.svg replaces
-         <word>.svg here when it exists, for glyphs that need a wider or
-         differently proportioned drawing in a fixed-width cell.
+  mono   every glyph is one full cell wide. A "<word>.mono" page replaces
+         the word's page here when it exists, for glyphs that need a wider
+         or differently proportioned drawing in a fixed-width cell.
   prop   each glyph is trimmed to its ink plus equal side bearings.
 
     python3 build/build.py --font standard
@@ -32,7 +33,7 @@ from fontTools.pens.ttGlyphPen import TTGlyphPen
 from fontTools.svgLib.path import parse_path
 from fontTools.svgLib.path.shapes import PathBuilder
 
-from common import (ASCENT, CELL, INKSCAPE_NS, IDENTITY, ROOT, STROKE, SVG_NS,
+from common import (ASCENT, CELL, INKSCAPE_NS, IDENTITY, ROOT, SODIPODI_NS, STROKE, SVG_NS,
                     multiply, parse_transform, read_words)
 
 FAMILY = {
@@ -98,26 +99,67 @@ def to_pathops(d, matrix):
     return path
 
 
-def read_glyph(svg_file):
-    """Return the glyph outline as one pathops.Path in SVG coordinates, or None."""
+def read_pages(svg_file):
+    """Return {page label: glyph outline as a pathops.Path in page coordinates}.
+
+    Each top-level piece of the glyph and fill layers (a path, a clone, a
+    group) belongs to the page its centre is on. The parts layer is not read
+    directly: its pieces only reach the font through clones.
+    """
     root = ET.parse(svg_file).getroot()
     ids = {e.get("id"): e for e in root.iter() if e.get("id")}
-    pieces = []
-    for g in root.iter(f"{{{SVG_NS}}}g"):
-        label = g.get(f"{{{INKSCAPE_NS}}}label")
-        if label not in ("glyph", "fill"):
-            continue
-        for d, m in element_paths(g, IDENTITY, ids):
-            p = to_pathops(d, m)
-            if label == "glyph":
-                p.stroke(STROKE, pathops.LineCap.ROUND_CAP, pathops.LineJoin.ROUND_JOIN, 4)
-                p.convertConicsToQuads()
-            pieces.append(p)
-    if not pieces:
+    ink = f"{{{INKSCAPE_NS}}}"
+    pages = {}
+    nv = root.find(f"{{{SODIPODI_NS}}}namedview")
+    for p in (nv.findall(f"{ink}page") if nv is not None else []):
+        pages[p.get(f"{ink}label")] = tuple(float(p.get(k)) for k in ("x", "y", "width", "height"))
+
+    def page_of(x, y):
+        for label, (px, py, pw, ph) in pages.items():
+            if px <= x <= px + pw and py <= y <= py + ph:
+                return label
         return None
-    result = pathops.Path()
-    pathops.union(pieces, result.getPen())
-    return result if result.bounds != (0, 0, 0, 0) else None
+
+    def pieces(layer, matrix):
+        matrix = multiply(matrix, parse_transform(layer.get("transform")))
+        for child in layer:
+            if local(child.tag) == "g" and child.get(f"{ink}groupmode") == "layer":
+                yield from pieces(child, matrix)
+            elif not hidden(child):
+                yield child, matrix
+
+    pieces_by_page = {}
+    for g in root.findall(f"{{{SVG_NS}}}g"):
+        kind = g.get(f"{ink}label")
+        if kind not in ("glyph", "fill") or hidden(g):
+            continue
+        for child, matrix in pieces(g, IDENTITY):
+            shapes = list(element_paths(child, matrix, ids))
+            if not shapes:
+                continue
+            whole = pathops.Path()
+            for d, m in shapes:
+                parse_path(d, TransformPen(whole.getPen(), m))
+            x0, y0, x1, y1 = whole.bounds
+            label = page_of((x0 + x1) / 2, (y0 + y1) / 2)
+            if label is None:
+                print(f"warning: a piece in the {kind} layer at ({x0:.0f}, {y0:.0f}) is on no page")
+                continue
+            px, py = pages[label][:2]
+            for d, m in shapes:
+                p = to_pathops(d, multiply((1, 0, 0, 1, -px, -py), m))
+                if kind == "glyph":
+                    p.stroke(STROKE, pathops.LineCap.ROUND_CAP, pathops.LineJoin.ROUND_JOIN, 4)
+                    p.convertConicsToQuads()
+                pieces_by_page.setdefault(label, []).append(p)
+
+    result = {}
+    for label, ps in pieces_by_page.items():
+        out = pathops.Path()
+        pathops.union(ps, out.getPen())
+        if out.bounds != (0, 0, 0, 0):
+            result[label] = out
+    return result
 
 
 def make_ttglyph(path, dx):
@@ -147,8 +189,7 @@ def notdef(width):
     return pen.glyph()
 
 
-def build(font, mode, words, outdir):
-    glyph_dir = ROOT / "fonts" / font / "glyphs"
+def build(font, mode, words, outdir, drawings):
     family = FAMILY.get(font, f"SP {font.title()} Draft")
     style = "Mono" if mode == "mono" else "Regular"
     fullname = f"{family} Mono" if mode == "mono" else family
@@ -166,11 +207,9 @@ def build(font, mode, words, outdir):
 
     drawn, missing = [], []
     for w in words:
-        src = glyph_dir / f"{w['word']}.svg"
-        mono_src = glyph_dir / f"{w['word']}.mono.svg"
-        if mode == "mono" and mono_src.exists():
-            src = mono_src
-        path = read_glyph(src) if src.exists() else None
+        path = drawings.get(w["word"])
+        if mode == "mono":
+            path = drawings.get(f"{w['word']}.mono", path)
         if path is None:
             missing.append(w["word"])
             continue
@@ -259,12 +298,13 @@ def main():
     words = read_words()
     outdir = ROOT / (args.out or f"dist/{args.font}")
     known = {w["word"] for w in words}
-    for f in sorted((ROOT / "fonts" / args.font / "glyphs").glob("*.svg")):
-        if f.name.split(".")[0] not in known:
-            print(f"warning: {f.name} is not a word in spec/words.tsv")
+    drawings = read_pages(ROOT / "fonts" / args.font / "glyphs.svg")
+    for label in sorted(drawings):
+        if label.removesuffix(".mono") not in known:
+            print(f"warning: page {label!r} is not a word in spec/words.tsv")
     stems = {}
     for mode in ("mono", "prop"):
-        drawn, missing, stems[mode] = build(args.font, mode, words, outdir)
+        drawn, missing, stems[mode] = build(args.font, mode, words, outdir, drawings)
     write_test_page(args.font, words, set(drawn), outdir, stems)
     if missing:
         print(f"not drawn yet ({len(missing)}): {' '.join(missing)}")

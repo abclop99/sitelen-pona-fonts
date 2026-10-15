@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Download jan Sonja's pu drawings for the templates' reference layer.
+"""Download jan Sonja's pu drawings for the glyph files' reference layer.
 
-The templates link to reference/pu/downloads/<word>.svg (git-ignored) instead
-of copying the drawings into the repo. This fetches them from Wikimedia
+fonts/<font>/glyphs.svg links to reference/pu/downloads/<word>.svg
+(git-ignored) instead of copying the drawings into the repo. This fetches them from Wikimedia
 Commons, where each is "<Word> - sitelen pona in Sonja Lang's handwriting.svg".
 
     python3 build/fetch_pu_reference.py
