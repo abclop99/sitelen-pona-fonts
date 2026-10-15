@@ -12,7 +12,7 @@ Existing files keep their glyph and fill layers; only the reference and
 guides layers are rewritten. So rerunning this with a different reference
 font never touches your drawings.
 
-    python3 build/make_templates.py --font combos --reference path/to/font.ttf
+    python3 build/make_templates.py --font standard --reference path/to/font.ttf
 """
 
 import argparse
@@ -203,7 +203,7 @@ def write_template(path, word, ref):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--font", default="combos", help="folder under fonts/")
+    ap.add_argument("--font", default="standard", help="folder under fonts/")
     ap.add_argument("--reference", help="reference .ttf/.otf for the faint layer")
     ap.add_argument("words", nargs="*", help="only these words (default: all)")
     args = ap.parse_args()

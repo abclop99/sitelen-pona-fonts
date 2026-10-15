@@ -12,7 +12,7 @@ Two builds come out of the same drawings:
          differently proportioned drawing in a fixed-width cell.
   prop   each glyph is trimmed to its ink plus equal side bearings.
 
-    python3 build/build.py --font combos
+    python3 build/build.py --font standard
 """
 
 import argparse
@@ -36,7 +36,7 @@ from common import (ASCENT, CELL, INKSCAPE_NS, IDENTITY, ROOT, STROKE, SVG_NS,
                     multiply, parse_transform, read_words)
 
 FAMILY = {
-    "combos": "SP Combos Draft",
+    "standard": "SP Standard Draft",
 }
 SIDE_BEARING = 60     # each side, proportional build
 SPACE_PROP = 330      # word space, proportional build
@@ -234,7 +234,7 @@ def write_test_page(font, words, drawn, outdir, stems):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--font", default="combos", help="folder under fonts/")
+    ap.add_argument("--font", default="standard", help="folder under fonts/")
     ap.add_argument("--out", default=None, help="output folder (default dist/<font>)")
     args = ap.parse_args()
 

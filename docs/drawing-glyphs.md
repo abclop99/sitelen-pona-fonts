@@ -1,6 +1,6 @@
 # Drawing glyphs
 
-Each word has its own SVG in `fonts/<font>/glyphs/`, for example `fonts/combos/glyphs/toki.svg`. Open it in Inkscape, draw, save, and run the build.
+Each word has its own SVG in `fonts/<font>/glyphs/`, for example `fonts/standard/glyphs/toki.svg`. Open it in Inkscape, draw, save, and run the build.
 
 ## What's in a template
 
@@ -33,10 +33,10 @@ You need Python 3 with two libraries, installed once:
 
 ```
 python3 -m pip install -r build/requirements.txt
-python3 build/build.py --font combos
+python3 build/build.py --font standard
 ```
 
-This writes `dist/combos/` with a monospace and a proportional font (`.ttf` and `.woff2`) and `test.html`. Open `test.html` in a browser to type toki pona and see it in both builds, plus a grid of every word. Words that aren't drawn yet show as their Latin name in a dashed box.
+This writes `dist/standard/` with a monospace and a proportional font (`.ttf` and `.woff2`) and `test.html`. Open `test.html` in a browser to type toki pona and see it in both builds, plus a grid of every word. Words that aren't drawn yet show as their Latin name in a dashed box.
 
 Every push also builds the fonts on GitHub. The **Build fonts** run on the Actions tab has a `fonts` download with the same files, so you can check a build without installing anything.
 
@@ -53,5 +53,5 @@ If Commons is unreachable, save the sona pona page "Comparison of Madame Lang's 
 The *ku suli* words (*kin, namako, oko, …*) have no drawing in *pu*, so their reference comes from a font instead (sitelen seli kiwen, OFL, shown in blue). Rerunning only rewrites the `reference` and `guides` layers, never `glyph` or `fill`:
 
 ```
-python3 build/make_templates.py --font combos --reference reference/sitelen-seli-kiwen/downloads/sitelenselikiwenjuniko.ttf
+python3 build/make_templates.py --font standard --reference reference/sitelen-seli-kiwen/downloads/sitelenselikiwenjuniko.ttf
 ```

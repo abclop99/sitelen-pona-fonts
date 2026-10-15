@@ -1,10 +1,11 @@
 # sitelen-pona-fonts
 
-Three related sitelen pona fonts that share one encoding, so the same text works in all of them (minus features a font doesn't have).
+Related sitelen pona fonts that share one encoding, so the same text works in all of them (minus features a font doesn't have).
 
 | Folder | Font | Style |
 |---|---|---|
 | `fonts/handwriting/` | *(name TBD)* | Semi-cursive script based on how sitelen pona could be handwritten at speed. Line style undecided |
+| `fonts/standard/` | *(name TBD)* | Plain, clean sitelen pona close to the *pu* forms, with even monoline strokes. Monospace or proportional undecided (the build makes both). The first font |
 | `fonts/combos/` | *(name TBD)* | Normal sitelen pona with added features: more automatic combinations (stacked, side by side, inside) and designed combos such as a walking-house *tomo tawa*. Could start as a modification of an existing open-licensed font |
 | `fonts/display/` | *(name TBD)* | Display / formal script with unified styling, loosely inspired by seal script. Probably monospace, with nested combinations |
 
@@ -21,7 +22,7 @@ test/        test page template (the build writes dist/<font>/test.html)
 
 ## Status
 
-Working on the first font: a clean, standard-looking font in `fonts/combos/` (monospace or proportional still undecided; the build makes both). It becomes the base of the combos font.
+Working on the first font, `fonts/standard/`. The combos font may later start from its drawings.
 
 1. Templates and build pipeline. **Done:** see [docs/drawing-glyphs.md](docs/drawing-glyphs.md).
 2. Draw the words, about 20 common ones first, then the rest of the 137.
