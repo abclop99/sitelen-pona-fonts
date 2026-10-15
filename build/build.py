@@ -59,20 +59,37 @@ def hidden(el):
     return "display:none" in style or el.get("display") == "none"
 
 
-def element_paths(el, matrix):
-    """Yield (svg path data, matrix) for every visible shape under el."""
+XLINK_HREF = "{http://www.w3.org/1999/xlink}href"
+
+
+def element_paths(el, matrix, ids, depth=0):
+    """Yield (svg path data, matrix) for every visible shape under el.
+
+    <use> elements (Inkscape clones) are followed to the element they point
+    at, so a shared part drawn once can be placed, scaled or mirrored in
+    many glyphs. Strokes are applied after the transform, so a scaled clone
+    keeps the same line weight.
+    """
     if hidden(el):
         return
     matrix = multiply(matrix, parse_transform(el.get("transform")))
     tag = local(el.tag)
+    if tag == "use":
+        href = el.get("href") or el.get(XLINK_HREF) or ""
+        target = ids.get(href.lstrip("#")) if href.startswith("#") else None
+        if target is None or depth > 20:
+            raise ValueError(f"clone points at missing element {href!r}")
+        offset = (1, 0, 0, 1, float(el.get("x", 0)), float(el.get("y", 0)))
+        yield from element_paths(target, multiply(matrix, offset), ids, depth + 1)
+        return
     if tag in SHAPES:
         pb = PathBuilder()
-        el.attrib.pop("transform", None)
-        pb.add_path_from_element(el)
+        bare = ET.Element(el.tag, {k: v for k, v in el.attrib.items() if k != "transform"})
+        pb.add_path_from_element(bare)
         for d in pb.paths:
             yield d, matrix
     for child in el:
-        yield from element_paths(child, matrix)
+        yield from element_paths(child, matrix, ids, depth)
 
 
 def to_pathops(d, matrix):
@@ -84,12 +101,13 @@ def to_pathops(d, matrix):
 def read_glyph(svg_file):
     """Return the glyph outline as one pathops.Path in SVG coordinates, or None."""
     root = ET.parse(svg_file).getroot()
+    ids = {e.get("id"): e for e in root.iter() if e.get("id")}
     pieces = []
     for g in root.iter(f"{{{SVG_NS}}}g"):
         label = g.get(f"{{{INKSCAPE_NS}}}label")
         if label not in ("glyph", "fill"):
             continue
-        for d, m in element_paths(g, IDENTITY):
+        for d, m in element_paths(g, IDENTITY, ids):
             p = to_pathops(d, m)
             if label == "glyph":
                 p.stroke(STROKE, pathops.LineCap.ROUND_CAP, pathops.LineJoin.ROUND_JOIN, 4)
