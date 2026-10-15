@@ -6,7 +6,7 @@ Each word has its own SVG in `fonts/<font>/glyphs/`, for example `fonts/combos/g
 
 | Layer | What it's for |
 |---|---|
-| `reference` | Locked and faint: the word in a reference font, to trace or ignore |
+| `reference` | Locked and faint: jan Sonja's drawing of the word from *pu* (the official forms), to follow or ignore |
 | `guides` | Locked: the ink box (solid red), the box for centrelines (dashed), the midline (blue) and the word's name |
 | `glyph` | **Draw here.** Open paths along the centre of each stroke |
 | `fill` | Optional: shapes that should be filled as drawn instead of stroked |
@@ -40,12 +40,20 @@ This writes `dist/combos/` with a monospace and a proportional font (`.ttf` and 
 
 Every push also builds the fonts on GitHub. The **Build fonts** run on the Actions tab has a `fonts` download with the same files, so you can check a build without installing anything.
 
-## Changing the reference font
+## Getting the reference drawings
 
-The reference layer comes from whatever font you pass in. Rerunning only rewrites the `reference` and `guides` layers, never `glyph` or `fill`:
+The reference layer links to `reference/pu/downloads/<word>.svg`: jan Sonja's handwritten forms from *pu*, as hosted on Wikimedia Commons. They are linked rather than copied into the repo, so they need downloading once (git ignores the folder):
+
+```
+python3 build/fetch_pu_reference.py
+```
+
+If Commons is unreachable, save the sona pona page "Comparison of Madame Lang's handwriting and linja pona" as `.mhtml` after scrolling to the bottom (so every image has loaded), then run `python3 build/fetch_pu_reference.py --from-mhtml page.mhtml`.
+
+The *ku suli* words (*kin, namako, oko, …*) have no drawing in *pu*, so their templates have no reference.
+
+You can also overlay a reference font on top. Rerunning only rewrites the `reference` and `guides` layers, never `glyph` or `fill`:
 
 ```
 python3 build/make_templates.py --font combos --reference path/to/font.ttf
 ```
-
-Reference fonts live in `reference/<name>/downloads/`, which git ignores (see [reference/README.md](../reference/README.md)).

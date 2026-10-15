@@ -2,7 +2,8 @@
 """Create one Inkscape SVG template per word for a font.
 
 Each template has three layers:
-  reference  locked, faint: the word's glyph from a reference font (optional)
+  reference  locked, faint: jan Sonja's drawing from pu (linked file, see
+             build/fetch_pu_reference.py), plus optionally a reference font
   guides     locked: the ink box, the midline and the word's name
   glyph      where you draw: open paths along the centre of each stroke
   fill       optional: shapes that should be filled instead of stroked
@@ -29,6 +30,8 @@ from common import (BOX, CELL, GRID, INKSCAPE_NS, MIDLINE, ROOT, SODIPODI_NS,
 ET.register_namespace("", SVG_NS)
 ET.register_namespace("inkscape", INKSCAPE_NS)
 ET.register_namespace("sodipodi", SODIPODI_NS)
+XLINK_NS = "http://www.w3.org/1999/xlink"
+ET.register_namespace("xlink", XLINK_NS)
 
 INK = f"{{{INKSCAPE_NS}}}"
 SODI = f"{{{SODIPODI_NS}}}"
@@ -37,6 +40,13 @@ S = f"{{{SVG_NS}}}"
 GLYPH_STYLE = (f"fill:none;stroke:#000000;stroke-width:{STROKE};"
                "stroke-linecap:round;stroke-linejoin:round")
 FILL_STYLE = "fill:#000000;stroke:none"
+
+# Relative to fonts/<font>/glyphs/, where the templates live.
+PU_LINK = "../../../reference/pu/downloads"
+# The tallest pu glyphs (jan, jelo) are about 25 viewBox units tall: fit
+# those to the ink box, so the rest keep their size relative to them.
+PU_SCALE = (BOX[1] - BOX[0]) / 25
+PU_WIDTH, PU_HEIGHT = round(27.502 * PU_SCALE, 1), round(31.312 * PU_SCALE, 1)
 
 # Simple starting shapes for a few words, so a first build has something in it.
 # They are ordinary drawings: edit or replace them.
@@ -119,6 +129,19 @@ def guides_layer(svg, word):
 
 def reference_layer(svg, word, ref):
     g = layer(svg, "reference", "opacity:0.25", True)
+    if word["set"] == "pu":
+        # jan Sonja's drawing from pu, linked rather than copied into the repo.
+        # build/fetch_pu_reference.py downloads the files. Every file shares
+        # one 27.502 x 31.312 viewBox with the glyph centred, so one placement
+        # fits all.
+        ET.SubElement(g, S + "image", {
+            "href": f"{PU_LINK}/{word['word']}.svg",
+            f"{{{XLINK_NS}}}href": f"{PU_LINK}/{word['word']}.svg",  # older Inkscape
+            "x": str(round((CELL - PU_WIDTH) / 2, 1)),
+            "y": str(round((CELL - PU_HEIGHT) / 2, 1)),
+            "width": str(PU_WIDTH), "height": str(PU_HEIGHT),
+            "preserveAspectRatio": "none",
+        })
     d = ref.svg_path(word["codepoint"]) if ref else None
     if d:
         ET.SubElement(g, S + "path", {"d": d, "style": "fill:#3d85c6;stroke:none"})
