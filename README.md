@@ -34,5 +34,6 @@ Alongside, handwriting shortcuts collect in [docs/handwriting-shortcuts.md](docs
 
 - Fonts and glyph sources: [SIL Open Font License 1.1](OFL.txt)
 - Build scripts and tooling: [MIT](LICENSE-MIT.txt)
+- The templates' reference layer for the *ku suli* words contains outlines from sitelen seli kiwen (Copyright Kreative Software, OFL 1.1). It is a tracing guide only and never reaches a built font.
 - If a font copies glyphs or feature code from another OFL font (for example sitelen seli kiwen), add that font's copyright line to its license notice, as OFL condition 2 requires.
 - `reference/sitelen-seli-kiwen/` (README and license only; see [reference/README.md](reference/README.md) for the font files): by Kreative Software (jan Lepeka), OFL 1.1, see its own [OFL.txt](reference/sitelen-seli-kiwen/OFL.txt)

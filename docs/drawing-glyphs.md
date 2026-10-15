@@ -50,10 +50,8 @@ python3 build/fetch_pu_reference.py
 
 If Commons is unreachable, save the sona pona page "Comparison of Madame Lang's handwriting and linja pona" as `.mhtml` after scrolling to the bottom (so every image has loaded), then run `python3 build/fetch_pu_reference.py --from-mhtml page.mhtml`.
 
-The *ku suli* words (*kin, namako, oko, …*) have no drawing in *pu*, so their templates have no reference.
-
-You can also overlay a reference font on top. Rerunning only rewrites the `reference` and `guides` layers, never `glyph` or `fill`:
+The *ku suli* words (*kin, namako, oko, …*) have no drawing in *pu*, so their reference comes from a font instead (sitelen seli kiwen, OFL, shown in blue). Rerunning only rewrites the `reference` and `guides` layers, never `glyph` or `fill`:
 
 ```
-python3 build/make_templates.py --font combos --reference path/to/font.ttf
+python3 build/make_templates.py --font combos --reference reference/sitelen-seli-kiwen/downloads/sitelenselikiwenjuniko.ttf
 ```

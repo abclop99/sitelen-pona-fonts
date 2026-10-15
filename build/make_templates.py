@@ -3,7 +3,7 @@
 
 Each template has three layers:
   reference  locked, faint: jan Sonja's drawing from pu (linked file, see
-             build/fetch_pu_reference.py), plus optionally a reference font
+             build/fetch_pu_reference.py); other words use a reference font
   guides     locked: the ink box, the midline and the word's name
   glyph      where you draw: open paths along the centre of each stroke
   fill       optional: shapes that should be filled instead of stroked
@@ -72,8 +72,8 @@ class Reference:
             b = self._bounds(w["codepoint"])
             if b:
                 sizes.append(max(b[2] - b[0], b[3] - b[1]))
-        # Scale so a typical word fills the ink box; small words stay small.
-        self.scale = (BOX[1] - BOX[0]) / statistics.median(sizes)
+        # Scale so the larger words fill the ink box; small words stay small.
+        self.scale = (BOX[1] - BOX[0]) / statistics.quantiles(sizes, n=10)[-1]
         self.name = self.font["name"].getDebugName(4) or str(path)
 
     def _bounds(self, cp):
@@ -88,7 +88,8 @@ class Reference:
         b = self._bounds(cp)
         if not b:
             return None
-        s = self.scale
+        # Shrink any glyph that would still overflow the box (wide words).
+        s = min(self.scale, (BOX[1] - BOX[0]) / max(b[2] - b[0], b[3] - b[1]))
         cx, cy = (b[0] + b[2]) / 2, (b[1] + b[3]) / 2
         # Font y is up, SVG y is down; centre the glyph in the cell.
         t = (s, 0, 0, -s, CELL / 2 - s * cx, MIDLINE + s * cy)
@@ -142,7 +143,8 @@ def reference_layer(svg, word, ref):
             "width": str(PU_WIDTH), "height": str(PU_HEIGHT),
             "preserveAspectRatio": "none",
         })
-    d = ref.svg_path(word["codepoint"]) if ref else None
+    # Words with no pu drawing (nimi ku suli) fall back to the reference font.
+    d = ref.svg_path(word["codepoint"]) if ref and word["set"] != "pu" else None
     if d:
         ET.SubElement(g, S + "path", {"d": d, "style": "fill:#3d85c6;stroke:none"})
 
