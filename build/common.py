@@ -42,7 +42,7 @@ def scale_d(d, k, c=CELL / 2):
             out.append(cmd)
             i += 1
             continue
-        rel = cmd.islower()
+        rel = cmd.islower() and len(out) > 1   # a leading m starts at an absolute point
         xy = lambda v: v * k if rel else c + (v - c) * k
         low = cmd.lower()
         if low == "a":
