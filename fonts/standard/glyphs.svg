@@ -1496,8 +1496,8 @@
     </g>
     <path d="M 120,500 C 373.3,436.7 563.3,278.3 658.3,120 M 120,500 C 373.3,563.3 563.3,721.7 658.3,880 M 658.3,120 C 880,310 880,690 658.3,880 M 614,500 C 614,541.9 648.1,576 690,576 C 731.9,576 766,541.9 766,500 C 766,458.1 731.9,424 690,424 C 648.1,424 614,458.1 614,500 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,12000)" inkscape:label="oko draft" />
     <g inkscape:label="kipisi draft" transform="translate(4800,12000)" id="draft-kipisi">
-      <use xlink:href="#part-dot" inkscape:label="dot" transform="matrix(1,0,0,1,-276.36,-310.91)" style="stroke-width:40" />
-      <use xlink:href="#part-dot" inkscape:label="dot" transform="matrix(1,0,0,1,276.36,310.91)" style="stroke-width:40" />
+      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,-276.36,-310.91)" style="stroke-width:40" />
+      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,276.36,310.91)" style="stroke-width:40" />
       <path d="M 154.5,880 L 845.5,120" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <path d="M 120,120 L 880,120 L 880,880 L 120,880 Z M 341.7,341.7 L 658.3,341.7 L 658.3,658.3 L 341.7,658.3 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,12000)" inkscape:label="leko draft" />
