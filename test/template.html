@@ -7,17 +7,17 @@
 <style>
   :root {
     --bg: #fbfaf7; --fg: #1f1d1a; --muted: #8a857c; --line: #e4e0d8;
-    --card: #ffffff; --accent: #2f6f9f; --cell: rgba(47, 111, 159, .12);
+    --card: #ffffff; --accent: #2f6f9f; --cell: rgba(47, 111, 159, .12); --draft: #8e7cc3;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #1b1a18; --fg: #ece8e1; --muted: #8f8a82; --line: #34322e;
-      --card: #24231f; --accent: #7fb3d9; --cell: rgba(127, 179, 217, .14);
+      --card: #24231f; --accent: #7fb3d9; --cell: rgba(127, 179, 217, .14); --draft: #a998dc;
     }
   }
   :root[data-theme="dark"] {
     --bg: #1b1a18; --fg: #ece8e1; --muted: #8f8a82; --line: #34322e;
-    --card: #24231f; --accent: #7fb3d9; --cell: rgba(127, 179, 217, .14);
+    --card: #24231f; --accent: #7fb3d9; --cell: rgba(127, 179, 217, .14); --draft: #a998dc;
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--fg);
@@ -48,6 +48,8 @@
   .cell .name { font-size: 12px; color: var(--muted); }
   .cell.draft { border-style: dashed; }
   .cell.draft .name::after { content: " · draft"; }
+  .show-drafts .sp .d, .show-drafts .cell.draft .glyphs span { color: var(--draft); }
+  .key { color: var(--draft); font-weight: 600; }
   .progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin: 8px 0 0; }
   .progress div { height: 100%; background: var(--accent); }
 </style>
@@ -60,6 +62,7 @@
   <div class="controls">
     <label>Size <input type="range" id="size" min="16" max="160" value="56"></label>
     <label><input type="checkbox" id="cells"> Show glyph boxes</label>
+    <label><input type="checkbox" id="drafts" checked> Colour drafts</label>
   </div>
 
   <h2>Text</h2>
@@ -67,7 +70,7 @@
   <div id="samples"></div>
 
   <h2>All words</h2>
-  <p class="sub">Each cell shows the monospace build on the left and the proportional build on the right. Dashed cells still use the geometric draft; faded cells have nothing yet.</p>
+  <p class="sub">Each cell shows the monospace build on the left and the proportional build on the right. Dashed cells, in <span class="key">purple</span>, still use the geometric draft; faded cells have nothing yet.</p>
   <div class="grid" id="grid"></div>
 </main>
 
@@ -90,7 +93,7 @@ const drafts = DATA.words.filter(w => w.draft).length;
 document.getElementById("title").textContent = DATA.family;
 document.getElementById("status").innerHTML =
   `${drawn} of ${DATA.words.length} words drawn` +
-  (drafts ? `, ${drafts} still drafts` : "") + ` &middot; built ${DATA.built}` +
+  (drafts ? `, <span class="key">${drafts} still drafts</span>` : "") + ` &middot; built ${DATA.built}` +
   `<div class="progress"><div style="width:${100 * drawn / DATA.words.length}%"></div></div>`;
 
 function render(text, mode) {
@@ -101,7 +104,7 @@ function render(text, mode) {
     const w = byWord.get(token.toLowerCase());
     if (w && w.drawn) {
       const s = document.createElement("span");
-      s.className = "g";
+      s.className = w.draft ? "g d" : "g";
       s.textContent = String.fromCodePoint(w.cp);
       out.appendChild(s);
     } else if (/^[a-zA-Z]+$/.test(token)) {
@@ -147,6 +150,9 @@ document.getElementById("input").addEventListener("input", update);
 document.getElementById("size").addEventListener("input", update);
 document.getElementById("cells").addEventListener("change", e =>
   document.body.classList.toggle("show-cells", e.target.checked));
+document.getElementById("drafts").addEventListener("change", e =>
+  document.body.classList.toggle("show-drafts", e.target.checked));
+document.body.classList.add("show-drafts");
 update();
 </script>
 </body>

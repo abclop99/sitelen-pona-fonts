@@ -53,7 +53,8 @@ S = f"{{{SVG_NS}}}"
 GLYPH_STYLE = (f"fill:none;stroke:#000000;stroke-width:{STROKE};"
                "stroke-linecap:round;stroke-linejoin:round")
 FILL_STYLE = "fill:#000000;stroke:none"
-DRAFT_STYLE = GLYPH_STYLE.replace("#000000", "#8e7cc3")
+DRAFT_COLOUR = "#8e7cc3"
+DRAFT_STYLE = GLYPH_STYLE.replace("#000000", DRAFT_COLOUR)
 KEPT_LAYERS = ("drafts", "parts", "glyph", "fill")
 
 # Relative to fonts/<font>/, where glyphs.svg lives.
@@ -375,11 +376,21 @@ def write_file(path, words, ref):
 
     glyph = next(g for g in svg.findall(S + "g") if g.get(f"{INK}label") == "glyph")
     # Drawings made in the drafts layer by mistake belong in glyph: anything
-    # there that isn't one of the generated drafts moves over.
+    # there that isn't one of the generated drafts moves over, and so does a
+    # draft that has been recoloured (taken over as a drawing).
     drafts_layer = next(g for g in svg.findall(S + "g") if g.get(f"{INK}label") == "drafts")
-    strays = [el for el in drafts_layer if not (el.get(f"{INK}label") or "").endswith(" draft")]
+
+    def taken_over(el):
+        label = el.get(f"{INK}label") or ""
+        stroke = re.search(r"stroke:\s*(#[0-9a-fA-F]+)", el.get("style", ""))
+        return not label.endswith(" draft") or (stroke and stroke.group(1).lower() != DRAFT_COLOUR)
+
+    strays = [el for el in drafts_layer if taken_over(el)]
     for el in strays:
         drafts_layer.remove(el)
+        label = el.get(f"{INK}label") or ""
+        if label.endswith(" draft"):
+            el.set(f"{INK}label", label.removesuffix(" draft"))
     page_list = [(label, *page_origin(i)) for i, (label, _) in enumerate(pages) if label != "parts"]
     page_list += [(p.get(f"{INK}label"), float(p.get("x")), float(p.get("y"))) for p in own_pages]
     page_layers(glyph, page_list, {e.get("id"): e for e in svg.iter() if e.get("id")}, strays)
