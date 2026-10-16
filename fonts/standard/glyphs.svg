@@ -1338,8 +1338,8 @@
       <path d="M 415.6,784.3 C 415.6,830.9 453.4,868.7 500,868.7 C 546.6,868.7 584.4,830.9 584.4,784.3 C 584.4,737.7 546.6,699.9 500,699.9 C 453.4,699.9 415.6,737.7 415.6,784.3 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g inkscape:label="olin draft" transform="translate(12000,6000)" id="draft-olin">
-      <use xlink:href="#part-heart" inkscape:label="heart" transform="matrix(0.509558,0,0,0.509558,245.221,44.0687)" />
-      <use xlink:href="#part-heart" inkscape:label="heart" transform="matrix(0.509558,0,0,0.509558,245.221,431.589)" />
+      <use xlink:href="#part-heart" inkscape:label="heart" transform="matrix(0.486842,0,0,0.486842,256.579,61.5756)" />
+      <use xlink:href="#part-heart" inkscape:label="heart" transform="matrix(0.486842,0,0,0.486842,256.579,451.576)" />
     </g>
     <g inkscape:label="ona draft" transform="translate(13200,6000)" id="draft-ona">
       <use xlink:href="#part-pointer" inkscape:label="pointer" transform="matrix(0,-1,-1,0,999.996,999.997)" />
@@ -1462,7 +1462,7 @@
       <use xlink:href="#part-tally" inkscape:label="tally" transform="matrix(1,0,0,1,126.667,0)" />
     </g>
     <g inkscape:label="unpa draft" transform="translate(4800,10800)" id="draft-unpa">
-      <use xlink:href="#part-heart" inkscape:label="heart" transform="matrix(0.662377,0,0,0.662377,168.812,21.2286)" />
+      <use xlink:href="#part-heart" inkscape:label="heart" transform="matrix(0.636998,0,0,0.636998,181.501,43.5614)" />
       <use xlink:href="#part-palisa" inkscape:label="palisa" transform="matrix(0.821908,0,0,0.821908,89.0511,156.721)" />
     </g>
     <g inkscape:label="uta draft" transform="translate(6000,10800)" id="draft-uta">
@@ -1564,7 +1564,7 @@
       <use xlink:href="#part-luka" transform="matrix(0.493421,0,0,0.493421,228.289,390.789)" id="part-hand" inkscape:label="hand" />
     </g>
     <g id="parts-heart" inkscape:groupmode="layer" inkscape:label="part-heart" transform="translate(2400,14400)">
-      <path d="M 500,311.3 C 405.2,83.8 101.9,83.8 120.9,387.1 C 139.8,576.7 386.3,728.4 500,880 C 613.7,728.4 860.2,576.7 879.1,387.1 C 898.1,83.8 594.8,83.8 500,311.3 Z" data-spec="M 500,311.3 C 405.2,83.8 101.9,83.8 120.9,387.1 C 139.8,576.7 386.3,728.4 500,880 C 613.7,728.4 860.2,576.7 879.1,387.1 C 898.1,83.8 594.8,83.8 500,311.3 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" id="part-heart" inkscape:label="heart" />
+      <path d="M 500,291.3 C 371.2,32.3 120,80 120,347.1 C 120,536.8 375,700 500,880 M 500,291.3 C 628.8,32.3 880,80 880,347.1 C 880,536.8 625,700 500,880" data-spec="M 500,291.3 C 371.2,32.3 120,80 120,347.1 C 120,536.8 375,700 500,880 M 500,291.3 C 628.8,32.3 880,80 880,347.1 C 880,536.8 625,700 500,880" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" id="part-heart" inkscape:label="heart" />
     </g>
     <g id="parts-palisa" inkscape:groupmode="layer" inkscape:label="part-palisa" transform="translate(3600,14400)">
       <path d="M 412.3,500 C 412.3,709.9 443.9,880 500,880 C 556.1,880 587.7,709.9 587.7,500 C 587.7,290.1 556.1,120 500,120 C 443.9,120 412.3,290.1 412.3,500 Z" data-spec="M 412.3,500 C 412.3,709.9 443.9,880 500,880 C 556.1,880 587.7,709.9 587.7,500 C 587.7,290.1 556.1,120 500,120 C 443.9,120 412.3,290.1 412.3,500 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" id="part-palisa" inkscape:label="palisa" />
