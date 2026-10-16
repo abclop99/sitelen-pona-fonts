@@ -1382,7 +1382,7 @@
       <use xlink:href="#part-pointer" inkscape:label="pointer" transform="matrix(1,0,0,-1,0,999.996)" />
     </g>
     <g inkscape:label="ona draft" transform="translate(13200,6000)" id="draft-ona">
-      <use xlink:href="#part-pointer" inkscape:label="pointer" transform="matrix(0,1,-1,0,999.996,0)" />
+      <use xlink:href="#part-pointer" inkscape:label="pointer" transform="matrix(0,-1,-1,0,999.996,999.996)" />
     </g>
     <g inkscape:label="jan draft" transform="translate(7200,1200)" id="draft-jan">
       <use xlink:href="#part-person-head" inkscape:label="person-head" />

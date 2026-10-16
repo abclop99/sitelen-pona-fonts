@@ -124,7 +124,7 @@ LINKS = {
     # Pointing hands: one hand, flipped and turned
     "mi": dict(parts=[("pointer", None)]),
     "sina": dict(parts=[("pointer", ("matrix", (1, 0, 0, -1, 0, 1000)))]),
-    "ona": dict(parts=[("pointer", ("matrix", (0, 1, -1, 0, 1000, 0)))]),
+    "ona": dict(parts=[("pointer", ("matrix", (0, -1, -1, 0, 1000, 1000)))]),
     # People and animal heads
     "jan": dict(parts=[("person-head", None)]),
     "mije": dict(parts=[("person-head", None)], own=line((210, 850), (210, 775), (790, 775), (790, 850))),
