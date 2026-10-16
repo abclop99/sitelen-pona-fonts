@@ -167,8 +167,10 @@
     <inkscape:page x="7200" y="15600" width="1000" height="1000" id="page-part-tally" inkscape:label="part-tally" />
     <inkscape:page x="8400" y="15600" width="1000" height="1000" id="page-part-big-circle" inkscape:label="part-big-circle" />
     <inkscape:page x="9600" y="15600" width="1000" height="1000" id="page-part-small-circle" inkscape:label="part-small-circle" />
-    <inkscape:page x="10800" y="15600" width="1000" height="1000" id="page-part-dot" inkscape:label="part-dot" />
-    <inkscape:page x="12000" y="15600" width="1000" height="1000" id="page-part-big-dot" inkscape:label="part-big-dot" />
+    <inkscape:page x="10800" y="15600" width="1000" height="1000" id="page-part-sun-rays" inkscape:label="part-sun-rays" />
+    <inkscape:page x="12000" y="15600" width="1000" height="1000" id="page-part-sun" inkscape:label="part-sun" />
+    <inkscape:page x="13200" y="15600" width="1000" height="1000" id="page-part-dot" inkscape:label="part-dot" />
+    <inkscape:page x="0" y="16800" width="1000" height="1000" id="page-part-big-dot" inkscape:label="part-big-dot" />
   </sodipodi:namedview>
   <g id="reference" inkscape:groupmode="layer" inkscape:label="reference" style="opacity:0.25" sodipodi:insensitive="true">
     <image href="../../reference/pu/downloads/a.svg" xlink:href="../../reference/pu/downloads/a.svg" x="1260.0" y="-1.0" width="880.1" height="1002.0" preserveAspectRatio="none" id="reference-0" />
@@ -334,7 +336,8 @@
     <image href="../../reference/pu/downloads/a.svg" xlink:href="../../reference/pu/downloads/a.svg" x="6097.2" y="15609.8" width="804.92" height="916.41" preserveAspectRatio="none" id="reference-160" />
     <image href="../../reference/pu/downloads/wan.svg" xlink:href="../../reference/pu/downloads/wan.svg" x="7259.9" y="15599.0" width="880.1" height="1002.0" preserveAspectRatio="none" id="reference-161" />
     <image href="../../reference/pu/downloads/ijo.svg" xlink:href="../../reference/pu/downloads/ijo.svg" x="8460.0" y="15599.0" width="880.1" height="1002.0" preserveAspectRatio="none" id="reference-162" />
-    <image href="../../reference/pu/downloads/suno.svg" xlink:href="../../reference/pu/downloads/suno.svg" x="9660.0" y="15599.0" width="880.1" height="1002.0" preserveAspectRatio="none" id="reference-163" />
+    <path d="M10021.441080810608 16264.123092319238Q10015.436577433074 16264.123092319238 9998.423817863397 16256.117087815861Q9981.41105829372 16248.111083312484 9975.406554916186 16248.111083312484Q9968.401300975731 16248.111083312484 9939.87990993245 16233.099824868652Q9911.358518889167 16218.088566424818 9911.358518889167 16214.085564173129Q9911.358518889167 16212.084063047285 9901.851388541407 16208.081060795595Q9892.344258193645 16204.078058543906 9892.344258193645 16198.073555166373Q9892.344258193645 16191.068301225918 9889.342006504878 16191.068301225918Q9884.338253690268 16191.068301225918 9870.327745809356 16167.050287715785Q9855.316487365524 16141.030773079809 9853.314986239679 16101.000750562922Q9851.313485113835 16060.970728046033 9846.309732299223 16048.961721290967Q9842.306730047536 16035.951963972979 9846.309732299223 16029.947460595446Q9849.311983987991 16025.944458343756 9860.820615461596 15978.909181886414Q9872.329246935202 15931.87390542907 9877.332999749811 15923.867900925694Q9881.3360020015 15917.86339754816 9881.836377282962 15915.361521140854Q9882.336752564423 15912.85964473355 9879.834876157118 15909.857393044782Q9877.332999749811 15906.855141356016 9869.326995246434 15900.850637978483Q9860.320240180135 15893.845384038028 9843.807855891919 15877.833375031272Q9827.295471603702 15861.821366024516 9814.285714285714 15850.312734550913Q9801.275956967726 15838.804103077307 9794.27070302727 15836.802601951462Q9778.258694020515 15831.798849136852 9762.24668501376 15822.792094070552Q9749.23692769577 15815.786840130097 9745.734300725544 15810.783087315485Q9742.231673755316 15805.779334500874 9742.231673755316 15793.770327745808Q9742.231673755316 15773.755316487364 9748.236177132849 15768.251188391292Q9754.240680510382 15762.74706029522 9775.256442331749 15762.74706029522H9779.259444583437Q9801.275956967726 15762.74706029522 9805.779334500876 15770.753064798599Q9810.282712034024 15778.759069301976 9816.287215411558 15778.759069301976Q9820.290217663247 15778.759069301976 9830.297723292468 15788.766574931196Q9840.30522892169 15798.774080560419 9854.816112084063 15811.783837878407Q9869.326995246434 15824.793595196395 9881.3360020015 15830.798098573929Q9911.358518889167 15846.810107580684 9918.363772829622 15851.813860395296Q9931.37353014761 15860.820615461595 9943.382536902676 15860.820615461595Q9958.39379534651 15860.820615461595 9968.401300975731 15847.810858143606Q9975.406554916186 15839.80485364023 10008.43132349262 15836.302226670003Q10041.456092069051 15832.799599699774 10046.459844883662 15828.796597448085Q10053.465098824117 15823.792844633474 10099.499624718539 15823.792844633474Q10141.531148361271 15823.792844633474 10173.555166374781 15834.801100825618Q10205.57918438829 15845.809357017763 10223.09231923943 15857.317988491368Q10240.605454090568 15868.826619964973 10246.609957468101 15868.826619964973Q10259.61971478609 15868.826619964973 10296.14711033275 15837.803352514384Q10332.67450587941 15806.780085063796 10334.676007005253 15806.780085063796Q10338.679009256943 15806.780085063796 10338.679009256943 15800.775581686263Q10338.679009256943 15798.774080560419 10352.689517137853 15785.76432324243Q10366.700025018763 15772.754565924442 10387.215411558667 15759.244433324991Q10407.730798098573 15745.734300725542 10420.740555416562 15745.734300725542Q10436.752564423317 15745.734300725542 10447.260445333999 15756.742556917687Q10457.768326244683 15767.750813109831 10457.768326244683 15780.76057042782Q10457.768326244683 15802.777082812108 10435.751813860395 15811.783837878407Q10424.743557668251 15816.787590693019 10398.724043032274 15835.301476107079Q10372.704528396296 15853.81536152114 10368.701526144609 15853.81536152114Q10363.697773329997 15853.81536152114 10356.192144108081 15865.323992994745Q10348.686514886165 15876.83262446835 10344.683512634476 15878.834125594194Q10338.679009256943 15881.836377282962 10338.679009256943 15888.841631223417Q10338.679009256943 15892.844633475106 10335.176382286714 15894.84613460095Q10331.673755316488 15896.847635726794 10324.16812609457 15901.351013259944Q10316.662496872654 15905.854390793094 10308.656492369277 15914.861145859393Q10295.646735051288 15928.871653740303 10300.6504878659 15936.877658243682Q10330.673004753566 15991.918939204403 10330.673004753566 16057.968476357266Q10330.673004753566 16083.987990993244 10319.16437327996 16115.011258443832Q10307.655741806355 16146.03452589442 10298.148611458593 16161.546159619713Q10288.641481110833 16177.057793345008 10285.639229422066 16180.060045033773Q10281.636227170378 16183.06229672254 10276.132099074306 16192.569427070302Q10270.627970978234 16202.076557418062 10264.6234676007 16211.083312484363Q10258.618964223167 16220.090067550662 10237.10282712034 16231.598699024267Q10215.586690017513 16243.107330497873 10181.561170878158 16250.112584438328Q10148.536402301726 16257.117838378783 10141.531148361271 16264.123092319238Q10134.525894420814 16271.128346259693 10133.525143857893 16356.19214410808Q10132.52439329497 16420.2401801351 10130.022516887664 16437.252939704777Q10127.52064048036 16454.265699274456 10115.511633725293 16454.265699274456Q10110.507880910684 16454.265699274456 10100.0 16452.26419814861Q10089.492119089316 16450.262697022765 10074.981235926945 16441.255941956464Q10060.470352764572 16432.249186890167 10060.470352764572 16418.238679009257Q10060.470352764572 16412.234175631722 10061.471103327496 16409.231923942956Q10064.473355016262 16393.219914936202 10060.470352764572 16389.21691268451Q10055.466599949963 16384.2131598699 10059.46960220165 16384.2131598699Q10073.48011008256 16384.2131598699 10073.48011008256 16333.17488116087V16320.16512384288Q10070.477858393795 16280.135101325994 10065.474105579184 16271.628721541154Q10060.470352764572 16263.122341756316 10035.451588691518 16263.122341756316Q10032.449337002752 16263.122341756316 10027.945959469602 16263.622717037777Q10023.442581936451 16264.123092319238 10021.441080810608 16264.123092319238ZM10143.532649487115 15886.840130097571H10140.530397798348Q10135.526644983738 15886.840130097571 10122.516887665748 15882.33675256442Q10109.50713034776 15877.833375031272 10097.498123592693 15877.833375031272Q10071.478608956717 15877.833375031272 10034.450838128596 15895.846885163872Q9997.423067300475 15913.860395296471 9988.416312234176 15913.860395296471Q9987.415561671252 15913.860395296471 9985.414060545409 15913.36002001501Q9983.412559419565 15912.85964473355 9982.411808856643 15912.85964473355H9977.408056042032Q9952.389291968977 15912.85964473355 9928.371278458844 15953.89041781336Q9904.353264948712 15994.921190893168 9904.353264948712 16011.933950462846Q9904.353264948712 16017.93845384038 9908.3562672004 16017.93845384038Q9913.36002001501 16017.93845384038 9913.36002001501 16047.960970728045V16057.968476357266Q9913.36002001501 16087.990993244932 9919.864898674005 16107.505629221916Q9926.369777332999 16127.020265198898 9926.369777332999 16129.021766324742V16133.024768576432Q9926.369777332999 16139.029271953965 9939.87990993245 16148.036027020265Q9953.390042531899 16157.042782086564 9953.390042531899 16162.046534901176Q9953.390042531899 16167.050287715785 9962.396797598198 16171.053289967474Q9978.408806604953 16179.059294470851 9987.415561671252 16185.063797848385Q10010.432824618463 16199.074305729297 10086.48986740055 16199.074305729297Q10118.51388541406 16199.074305729297 10124.518388791594 16196.07205404053Q10134.525894420814 16192.06905178884 10173.555166374781 16182.061546159619Q10201.576182136601 16175.056292219164 10210.082561921441 16169.552164123092Q10218.588941706279 16164.04803602702 10235.601701275957 16143.032274205652Q10267.625719289466 16104.003002251688 10267.625719289466 16070.978233675256Q10267.625719289466 16065.974480860645 10266.624968726544 16063.972979734799Q10265.624218163623 16059.969977483112 10268.626469852388 16049.462096572428Q10271.628721541156 16038.954215661744 10267.625719289466 16038.954215661744Q10263.622717037779 16035.951963972979 10263.622717037779 16023.942957217912Q10263.622717037779 16006.930197648235 10232.599449587191 15950.888166124592Q10227.59569677258 15940.88066049537 10207.080310232675 15922.86715036277Q10186.56492369277 15904.85364023017 10181.561170878158 15904.85364023017Q10179.559669752314 15904.85364023017 10164.548411308482 15895.846885163872Q10149.537152864648 15886.840130097571 10143.532649487115 15886.840130097571Z" style="fill:#3d85c6;stroke:none" transform="translate(9600,15687.5) scale(1) translate(-9600,-15600)" id="reference-163" />
+    <image href="../../reference/pu/downloads/jelo.svg" xlink:href="../../reference/pu/downloads/jelo.svg" x="11673.8" y="15488.4" width="1652.34" height="1881.2" preserveAspectRatio="none" id="reference-164" />
   </g>
   <g id="guides" inkscape:groupmode="layer" inkscape:label="guides" style="fill:none;stroke:#e06666;stroke-width:2" sodipodi:insensitive="true">
     <rect x="100" y="100" width="800" height="800" id="guides-0" />
@@ -1166,12 +1169,22 @@
     <rect x="10925.0" y="15725.0" width="750.0" height="750.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" id="guides-826" />
     <path d="M 10800.0,16100.0 h 1000" style="stroke:#6fa8dc" id="guides-827" />
     <path d="M 11300.0,15600.0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" id="guides-828" />
-    <text x="10820.0" y="15660.0" style="font:40px sans-serif;fill:#999999;stroke:none" id="guides-829">part-dot</text>
+    <text x="10820.0" y="15660.0" style="font:40px sans-serif;fill:#999999;stroke:none" id="guides-829">part-sun-rays</text>
     <rect x="12100.0" y="15700.0" width="800" height="800" id="guides-830" />
     <rect x="12125.0" y="15725.0" width="750.0" height="750.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" id="guides-831" />
     <path d="M 12000.0,16100.0 h 1000" style="stroke:#6fa8dc" id="guides-832" />
     <path d="M 12500.0,15600.0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" id="guides-833" />
-    <text x="12020.0" y="15660.0" style="font:40px sans-serif;fill:#999999;stroke:none" id="guides-834">part-big-dot</text>
+    <text x="12020.0" y="15660.0" style="font:40px sans-serif;fill:#999999;stroke:none" id="guides-834">part-sun</text>
+    <rect x="13300.0" y="15700.0" width="800" height="800" id="guides-835" />
+    <rect x="13325.0" y="15725.0" width="750.0" height="750.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" id="guides-836" />
+    <path d="M 13200.0,16100.0 h 1000" style="stroke:#6fa8dc" id="guides-837" />
+    <path d="M 13700.0,15600.0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" id="guides-838" />
+    <text x="13220.0" y="15660.0" style="font:40px sans-serif;fill:#999999;stroke:none" id="guides-839">part-dot</text>
+    <rect x="100.0" y="16900.0" width="800" height="800" id="guides-840" />
+    <rect x="125.0" y="16925.0" width="750.0" height="750.0" style="stroke-dasharray:8,8;stroke:#f4a6a6" id="guides-841" />
+    <path d="M 0.0,17300.0 h 1000" style="stroke:#6fa8dc" id="guides-842" />
+    <path d="M 500.0,16800.0 v 1000" style="stroke:#6fa8dc;stroke-dasharray:4,12" id="guides-843" />
+    <text x="20.0" y="16860.0" style="font:40px sans-serif;fill:#999999;stroke:none" id="guides-844">part-big-dot</text>
   </g>
   <g id="drafts" inkscape:groupmode="layer" inkscape:label="drafts" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round">
     <g inkscape:label="a draft" transform="translate(1200,0)" id="draft-a">
@@ -1186,7 +1199,7 @@
     <path d="M 125,125 L 875,875 M 875,125 L 125,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,0)" inkscape:label="ala draft" />
     <g inkscape:label="alasa draft" transform="translate(4800,0)" id="draft-alasa">
       <use xlink:href="#part-arrowhead" inkscape:label="arrowhead" transform="matrix(0.6525,0,0,0.6525,325.971,209.43)" style="stroke-width:76.63" />
-      <path d="M 156.28,500 L 875,500 M 374.97,125 C 749.97,187.47 749.97,812.53 374.97,875 Z" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 160.03,500 L 836.02,500 M 299.97,125 C 476.71,125 620,292.86 620,500 C 620,707.14 476.71,875 299.97,875 Z" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <path d="M 500,500 C 384.64,355.72 125,355.72 125,500 C 125,644.28 384.64,644.28 500,500 C 615.36,355.72 875,355.72 875,500 C 875,644.28 615.36,644.28 500,500 Z" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,0)" inkscape:label="ale draft" />
     <g inkscape:label="anpa draft" transform="translate(7200,0)" id="draft-anpa">
@@ -1212,13 +1225,13 @@
       <use xlink:href="#part-short-box" inkscape:label="short-box" transform="matrix(1.0006,0,0,1.0006,-0.2789,13.9738)" style="stroke-width:49.97" />
       <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,0,-57.02)" style="stroke-width:50" />
     </g>
-    <path d="M 375.56,311.71 C 282.11,187.27 375.56,125 500,125 C 686.71,125 811.25,218.36 780.07,311.71 C 748.98,436.25 468.91,373.98 375.56,467.34 C 251.02,591.78 157.66,716.32 251.02,809.67 C 344.38,903.03 500,778.59 593.36,654.05 C 686.71,529.61 811.25,467.34 842.34,560.69 C 873.42,685.13 686.71,903.03 531.09,871.94 C 406.64,840.76 406.64,685.13 500,622.96" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,1200)" inkscape:label="jaki draft" />
+    <path d="M 300,330 C 313.3,303.3 330,202.5 380,170 C 430,137.5 531.7,126.7 600,135 C 668.3,143.3 763.3,175.8 790,220 C 816.7,264.2 805,358.3 760,400 C 715,441.7 596.7,443.3 520,470 C 443.3,496.7 350,511.7 300,560 C 250,608.3 206.7,710 220,760 C 233.3,810 316.7,856.7 380,860 C 443.3,863.3 546.7,823.3 600,780 C 653.3,736.7 700,675 700,600 C 700,525 646.7,375 600,330 C 553.3,285 465,306.7 420,330 C 375,353.3 321.7,418.3 330,470 C 338.3,521.7 405,601.7 470,640 C 535,678.3 655,670 720,700 C 785,730 863.3,790.8 860,820 C 856.7,849.2 760,866.7 700,875 C 640,883.3 533.3,870.8 500,870" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,1200)" inkscape:label="jaki draft" />
     <g inkscape:label="jan draft" transform="translate(7200,1200)" id="draft-jan">
       <use xlink:href="#part-person-head" inkscape:label="person-head" style="stroke-width:50" />
     </g>
     <g inkscape:label="jelo draft" transform="translate(8400,1200)" id="draft-jelo">
-      <use xlink:href="#part-small-triangle" inkscape:label="small-triangle" transform="matrix(0.9924,0,0,0.9924,3.7884,15.3308)" style="stroke-width:50.38" />
-      <path d="M 376.74,320.2 C 376.74,388.29 431.91,443.45 500,443.45 C 568.09,443.45 623.26,388.29 623.26,320.2 C 623.26,252.11 568.09,196.94 500,196.94 C 431.91,196.94 376.74,252.11 376.74,320.2 Z M 500,196.94 L 500,125 M 376.74,320.2 L 304.8,320.2 M 623.26,320.2 L 695.2,320.2 M 500,443.45 L 500,535.92" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
+      <use xlink:href="#part-sun" inkscape:label="sun" transform="matrix(0.53264,0,0,0.53264,233.68,58.465)" style="stroke-width:93.87" />
+      <use xlink:href="#part-small-triangle" inkscape:label="small-triangle" style="stroke-width:50" />
     </g>
     <path d="M 384.64,240.36 C 384.64,304.11 436.35,355.72 500,355.72 C 563.65,355.72 615.36,304.11 615.36,240.36 C 615.36,176.71 563.65,125 500,125 C 436.35,125 384.64,176.71 384.64,240.36 Z M 500,355.72 C 355.72,413.45 298.09,557.73 298.09,673.09 C 298.09,817.27 413.45,875 500,875 C 615.36,875 701.91,788.45 701.91,673.09 L 528.82,673.09" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,1200)" inkscape:label="jo draft" />
     <path d="M 125,678.22 C 273.52,440.59 511.15,292.07 719.08,321.78 C 927.01,351.48 927.01,648.52 719.08,678.22 C 511.15,707.93 273.52,559.41 125,321.78" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,1200)" inkscape:label="kala draft" />
@@ -1438,8 +1451,7 @@
     </g>
     <path d="M 211.55,125 L 500,875 L 788.45,125" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,9600)" inkscape:label="suli draft" />
     <g inkscape:label="suno draft" transform="translate(6000,9600)" id="draft-suno">
-      <use xlink:href="#part-small-circle" inkscape:label="small-circle" style="stroke-width:50" />
-      <path d="M 500,125 L 500,270 M 500,730 L 500,875 M 125,500 L 270,500 M 730,500 L 875,500" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
+      <use xlink:href="#part-sun" inkscape:label="sun" style="stroke-width:50" />
     </g>
     <path d="M 125,298.09 L 875,298.09 M 269.28,298.09 L 269.28,701.91 M 730.72,298.09 L 730.72,701.91" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,9600)" inkscape:label="supa draft" />
     <g inkscape:label="suwi draft" transform="translate(8400,9600)" id="draft-suwi">
@@ -1520,7 +1532,7 @@
     <g inkscape:label="kijetesantakalu draft" transform="translate(10800,12000)" id="draft-kijetesantakalu">
       <use xlink:href="#part-dot" inkscape:label="dot" transform="matrix(1,0,0,1,97.22,-79.99)" style="stroke-width:50" />
       <use xlink:href="#part-dot" inkscape:label="dot" transform="matrix(1,0,0,1,180.56,-79.99)" style="stroke-width:50" />
-      <path d="M 374.97,833.36 L 374.97,305.59 C 458.36,194.47 625.03,194.47 736.15,305.59 L 875,444.44 L 736.15,500 L 736.15,833.36 M 513.91,555.56 L 513.91,833.36 M 625.03,555.56 L 625.03,833.36 M 374.97,583.29 L 208.29,583.29 C 152.73,583.29 125,638.85 125,707.83 C 125,777.8 152.73,833.36 208.29,833.36 L 374.97,833.36 M 263.85,583.29 L 263.85,833.36" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 374.97,830 L 374.97,430.03 C 374.97,280.03 470,190.03 599.97,190.03 C 659.97,190.03 689.97,224.97 722.04,282.01 C 764.97,329.97 822.01,380 861.97,417.99 C 882.01,437.04 877.96,455 858.03,462.01 L 764.97,500 L 764.97,830 M 520.03,560 L 520.03,830 M 640.03,560 L 640.03,830 M 374.97,599.97 L 205.03,599.97 C 160.03,599.97 125,650 125,715.03 C 125,779.97 160.03,830 205.03,830 L 374.97,830 M 265.03,599.97 L 265.03,830" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <path d="M 125,442.27 C 125,211.55 326.91,125 500,125 C 673.09,125 875,211.55 875,442.27 Z M 500,442.27 L 500,875 M 355.72,673.09 L 644.28,673.09" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,12000)" inkscape:label="soko draft" />
     <g inkscape:label="meso draft" transform="translate(13200,12000)" id="draft-meso">
@@ -1565,7 +1577,7 @@
       <path d="M 125,333.32 C 250.03,791.71 749.97,791.71 875,333.32" data-spec="M 125,333.32 C 250.03,791.71 749.97,791.71 875,333.32" style="fill:none;stroke:#8e7cc3;stroke-linecap:round;stroke-linejoin:round" id="part-closed-mouth" inkscape:label="closed-mouth" />
     </g>
     <g id="parts-small-triangle" inkscape:groupmode="layer" inkscape:label="part-small-triangle" transform="translate(12000,13200)">
-      <path d="M 500,524.57 L 282.6,866.22 L 717.4,866.22 Z" data-spec="M 500,524.57 L 282.6,866.22 L 717.4,866.22 Z" style="fill:none;stroke:#8e7cc3;stroke-linecap:round;stroke-linejoin:round" id="part-small-triangle" inkscape:label="small-triangle" />
+      <path d="M 500,524.57 L 276.97,875 L 723.03,875 Z" data-spec="M 500,524.57 L 276.97,875 L 723.03,875 Z" style="fill:none;stroke:#8e7cc3;stroke-linecap:round;stroke-linejoin:round" id="part-small-triangle" inkscape:label="small-triangle" />
     </g>
     <g id="parts-big-triangle" inkscape:groupmode="layer" inkscape:label="part-big-triangle" transform="translate(13200,13200)">
       <path d="M 500,125 L 860,875 L 140,875 Z" data-spec="M 500,125 L 860,875 L 140,875 Z" style="fill:none;stroke:#8e7cc3;stroke-linecap:round;stroke-linejoin:round" id="part-big-triangle" inkscape:label="big-triangle" />
@@ -1637,10 +1649,19 @@
     <g id="parts-small-circle" inkscape:groupmode="layer" inkscape:label="part-small-circle" transform="translate(9600,15600)">
       <path d="M 270,500 C 270,627 373,730 500,730 C 627,730 730,627 730,500 C 730,373 627,270 500,270 C 373,270 270,373 270,500 Z" data-spec="M 270,500 C 270,627 373,730 500,730 C 627,730 730,627 730,500 C 730,373 627,270 500,270 C 373,270 270,373 270,500 Z" style="fill:none;stroke:#8e7cc3;stroke-linecap:round;stroke-linejoin:round" id="part-small-circle" inkscape:label="small-circle" />
     </g>
-    <g id="parts-dot" inkscape:groupmode="layer" inkscape:label="part-dot" transform="translate(10800,15600)">
+    <g id="parts-sun-rays" inkscape:groupmode="layer" inkscape:label="part-sun-rays" transform="translate(10800,15600)">
+      <path d="M 500,125 L 500,270 M 500,730 L 500,875 M 125,500 L 270,500 M 730,500 L 875,500" data-spec="M 500,125 L 500,270 M 500,730 L 500,875 M 125,500 L 270,500 M 730,500 L 875,500" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round" id="part-sun-rays" inkscape:label="sun-rays" />
+    </g>
+    <g id="parts-sun" inkscape:groupmode="layer" inkscape:label="part-sun" transform="translate(12000,15600)">
+      <g id="part-sun" inkscape:label="sun">
+        <use xlink:href="#part-small-circle" inkscape:label="small-circle" style="stroke-width:50" />
+        <use xlink:href="#part-sun-rays" inkscape:label="sun-rays" style="stroke-width:50" />
+      </g>
+    </g>
+    <g id="parts-dot" inkscape:groupmode="layer" inkscape:label="part-dot" transform="translate(13200,15600)">
       <path d="M 492,500 C 492,504.4 495.6,508 500,508 C 504.4,508 508,504.4 508,500 C 508,495.6 504.4,492 500,492 C 495.6,492 492,495.6 492,500 Z M 500,500 h 0.1" data-spec="M 492,500 C 492,504.4 495.6,508 500,508 C 504.4,508 508,504.4 508,500 C 508,495.6 504.4,492 500,492 C 495.6,492 492,495.6 492,500 Z M 500,500 h 0.1" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round" id="part-dot" inkscape:label="dot" />
     </g>
-    <g id="parts-big-dot" inkscape:groupmode="layer" inkscape:label="part-big-dot" transform="translate(12000,15600)">
+    <g id="parts-big-dot" inkscape:groupmode="layer" inkscape:label="part-big-dot" transform="translate(0,16800)">
       <path d="M 470,500 C 470,516.6 483.4,530 500,530 C 516.6,530 530,516.6 530,500 C 530,483.4 516.6,470 500,470 C 483.4,470 470,483.4 470,500 Z M 500,500 h 0.1" data-spec="M 470,500 C 470,516.6 483.4,530 500,530 C 516.6,530 530,516.6 530,500 C 530,483.4 516.6,470 500,470 C 483.4,470 470,483.4 470,500 Z M 500,500 h 0.1" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round" id="part-big-dot" inkscape:label="big-dot" />
     </g>
   </g>
@@ -1809,8 +1830,10 @@
     <g id="glyph-part-tally" inkscape:groupmode="layer" inkscape:label="part-tally" transform="translate(7200,15600)" />
     <g id="glyph-part-big-circle" inkscape:groupmode="layer" inkscape:label="part-big-circle" transform="translate(8400,15600)" />
     <g id="glyph-part-small-circle" inkscape:groupmode="layer" inkscape:label="part-small-circle" transform="translate(9600,15600)" />
-    <g id="glyph-part-dot" inkscape:groupmode="layer" inkscape:label="part-dot" transform="translate(10800,15600)" />
-    <g id="glyph-part-big-dot" inkscape:groupmode="layer" inkscape:label="part-big-dot" transform="translate(12000,15600)" />
+    <g id="glyph-part-sun-rays" inkscape:groupmode="layer" inkscape:label="part-sun-rays" transform="translate(10800,15600)" />
+    <g id="glyph-part-sun" inkscape:groupmode="layer" inkscape:label="part-sun" transform="translate(12000,15600)" />
+    <g id="glyph-part-dot" inkscape:groupmode="layer" inkscape:label="part-dot" transform="translate(13200,15600)" />
+    <g id="glyph-part-big-dot" inkscape:groupmode="layer" inkscape:label="part-big-dot" transform="translate(0,16800)" />
   </g>
   <g id="fill" inkscape:groupmode="layer" inkscape:label="fill" style="fill:#000000;stroke:none" />
 </svg>
