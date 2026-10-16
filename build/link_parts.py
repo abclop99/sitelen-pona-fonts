@@ -101,6 +101,20 @@ def place_matrix(box_from, kind, target):
     return (sx, 0, 0, sy, tx - sx * cx, ty - sy * cy)
 
 
+def placement(part, place, ids, part_size):
+    """Clone transform putting a part where a parts.py placement says."""
+    pre = PRE[place[2]] if place and len(place) > 2 else IDENTITY
+    # Placements are written for the part as parts.py draws it, before
+    # fit_sizes.py scaled the original: undo that scale first.
+    unscale = inverse(part_size[part])
+    if place is None:
+        return unscale
+    if place[0] == "matrix":
+        return multiply(place[1], multiply(pre, unscale))
+    pre = multiply(pre, unscale)
+    return multiply(place_matrix(bbox(ids[f"part-{part}"], ids, pre), place[0], place[1]), pre)
+
+
 def link(path):
     found, drafted = read_pages(path)
     drawn = set(found) - drafted
@@ -136,6 +150,10 @@ def link(path):
                 "id": f"parts-{name}", f"{INK}groupmode": "layer", f"{INK}label": label,
                 "transform": f"translate({ox:g},{oy:g})"})
         pid = f"part-{name}"
+        if pid in ids and "parts" in spec and ids[pid].tag != S + "g":
+            # It used to be drawn as one shape; parts.py now builds it from parts.
+            old = ids.pop(pid)
+            part_subs[label].remove(old)
         if pid in ids:
             el = ids[pid]
             part_size[name] = size = parse_size(el.get("data-size"))
@@ -149,7 +167,11 @@ def link(path):
             continue
         part_size[name] = IDENTITY
         sub = part_subs[label]
-        if "clone" in spec:
+        if "parts" in spec:
+            # Made of other parts: a group of their clones, filled in below.
+            el = ET.SubElement(sub, S + "g", {"id": pid, f"{INK}label": name})
+            notes.append(f"part {name}: made from {', '.join(p for p, *_ in spec['parts'])}")
+        elif "clone" in spec:
             target = ids[f"part-{spec['clone']}"]
             m = place_matrix(bbox(target, ids), "fit", spec["fit"])
             el = ET.SubElement(sub, S + "use", {f"{XLINK}href": f"#part-{spec['clone']}",
@@ -175,6 +197,19 @@ def link(path):
             notes.append(f"part {name}: drafted")
         ids[pid] = el
 
+    # Parts made of other parts: their clones are always put back in place.
+    for name, spec in PARTS.items():
+        if "parts" in spec:
+            g = ids[f"part-{name}"]
+            for child in list(g):
+                g.remove(child)
+            for part, place in spec["parts"]:
+                m = multiply(part_size[name], placement(part, place, ids, part_size))
+                attrs = {f"{XLINK}href": f"#part-{part}", f"{INK}label": part}
+                if not near_identity(m):
+                    attrs["transform"] = matrix_attr(m)
+                ET.SubElement(g, S + "use", attrs)
+
     # Glyphs: clones of their parts.
     drafts_layer = layers["drafts"]
     draft_els = {(e.get(f"{INK}label") or "").removesuffix(" draft"): e for e in drafts_layer}
@@ -185,21 +220,13 @@ def link(path):
         for item in spec["parts"]:
             part, place = item[0], item[1]
             pre = PRE[place[2]] if place and len(place) > 2 else IDENTITY
-            original = ids[f"part-{part}"]
-            # Placements are written for the part as parts.py draws it, before
-            # fit_sizes.py scaled the original: undo that scale first.
-            unscale = inverse(part_size[part])
             src = PARTS[part].get("src")
             if word in drawn and src and src[0] == word and part in src_map and part not in used_home:
-                m = multiply(inverse(src_map[part]), unscale)   # the drawing's own place
+                # The drawing's own place (undoing fit_sizes.py's scale of the part).
+                m = multiply(inverse(src_map[part]), inverse(part_size[part]))
                 used_home.add(part)
-            elif place is None:
-                m = unscale
-            elif place[0] == "matrix":
-                m = multiply(place[1], multiply(pre, unscale))
             else:
-                pre = multiply(pre, unscale)
-                m = multiply(place_matrix(bbox(original, ids, pre), place[0], place[1]), pre)
+                m = placement(part, place, ids, part_size)
             matrices.append((part, multiply(sizes.get(word, IDENTITY), m)))
 
         current = glyph_subs.get(word) if word in drawn else draft_els.get(word)

@@ -15,6 +15,8 @@ PARTS: name -> where the original comes from.
   clone another part to clone instead of drawing a shape (with fit).
   ref   the word whose reference is shown on the part's page (default: the
         first word in LINKS that uses it).
+  parts the part is made of other parts, placed as in LINKS (a group of
+        clones; edit the parts it is made of).
 
 LINKS: word -> the clones it is built from, and its own strokes.
   parts  list of (part, place). place is None for the part exactly where it
@@ -45,9 +47,11 @@ PARTS = {
     "palisa": dict(ref="palisa", d=ellipse(500, 500, 75, 325, BLUNT)),
     "loop": dict(ref="mi", d="M 365,500 A 135,135 0 1 1 404.5,595.5"),
     "page": dict(ref="lipu", d=rect(225, 175, 775, 825)),
+    "head": dict(ref="toki", d=circle(500, 600, 225)),
     # The toki pona logo: toki with pona's smile inside. Not a UCSUR word,
     # so for now it is only a part (pu's cover, and later a "toki pona" ligature).
-    "toki-pona": dict(d=j(rays(), circle(500, 600, 225), "M 415,585 C 440,680 560,680 585,585")),
+    "toki-pona": dict(parts=[("rays", ("fit", (325, 175, 675, 300))), ("head", None),
+                             ("closed-mouth", ("fit", (405, 555, 595, 690)))]),
     "big-box": dict(ref="poki", d=line((225, 175), (225, 825), (775, 825), (775, 175))),
     "short-box": dict(ref="insa", src=("insa", [0]), d=line((225, 375), (225, 625), (775, 625), (775, 375))),
     "side-box": dict(ref="sinpin", d=line((275, 175), (425, 175), (425, 825), (275, 825))),
@@ -72,7 +76,11 @@ LINKS = {
     # Emitters
     "kalama": dict(parts=[("rays", None), ("mouth", ("fit", (300, 450, 700, 725)))]),
     "pana": dict(parts=[("rays", ("fit", (325, 175, 675, 325))), ("hand", None)]),
-    "toki": dict(parts=[("rays", ("fit", (325, 175, 675, 300)))], own=circle(500, 600, 225)),
+    "toki": dict(parts=[("rays", ("fit", (325, 175, 675, 300))), ("head", None)]),
+    "kokosila": dict(parts=[("rays", ("fit", (325, 175, 675, 300))), ("head", None)],
+                     own=line((175, 750), (825, 475))),
+    "epiku": dict(parts=[("rays", ("fit", (300, 150, 700, 325))),
+                         ("closed-mouth", ("stretch", (275, 450, 725, 760)))]),
     "sona": dict(parts=[("rays", ("fit", (300, 150, 700, 275))), ("page", ("fit", (325, 375, 675, 850)))]),
     # Mouths: loje and moku share the mouth's place
     "uta": dict(parts=[("mouth", ("fit", (250, 290, 750, 600)))], own=dot(500, 700)),
@@ -134,6 +142,9 @@ LINKS = {
     # Punctuation stems
     "a": dict(parts=[("stem", None)],
               own="M 540,760 C 540,700 440,690 440,760 C 440,830 540,820 540,760 L 575,825"),
+    "o": dict(parts=[("stem", None)], own=circle(500, 765, 75)),
+    "kin": dict(parts=[("stem", None)],
+                own=j(line((425, 775), (575, 775)), line((462, 710), (538, 840)), line((538, 710), (462, 840)))),
     "n": dict(parts=[("stem", None)],
               own="M 375,850 V 725 C 375,650 425,625 475,625 C 550,625 600,675 600,725 V 850"),
     # Tally marks, all in the same places

@@ -136,6 +136,15 @@ def run(path):
                  p.bounds[2] - STROKE / 2, p.bounds[3] - STROKE / 2) for w, p in found.items()}
 
     sizes = load_sizes(ET.parse(path).getroot())
+    # Work with each drawing as it was before any earlier fitting (undo its
+    # data-size), so words sized together end up at exactly the same size
+    # even if they were fitted apart before.
+    def unsized(w):
+        x0, y0, x1, y1 = inner[w]
+        s, dx, dy = (lambda m: (m[0], m[4], m[5]))(sizes.get(w, IDENTITY))
+        return (x0 - dx) / s, (y0 - dy) / s, (x1 - dx) / s, (y1 - dy) / s
+    raw = {w: unsized(w) for w in inner}
+
     fits, notes = {}, []
     grouped = {w for g in groups() for w in g}
     units = [sorted(w for w in g if w in inner) for g in groups()]
@@ -143,7 +152,7 @@ def run(path):
     units += [[w] for w in inner if w not in grouped and w not in SMALL]
 
     def union(u):
-        b = [inner[w] for w in u]
+        b = [raw[w] for w in u]
         return min(x[0] for x in b), min(x[1] for x in b), max(x[2] for x in b), max(x[3] for x in b)
 
     scale = {}
@@ -152,17 +161,18 @@ def run(path):
                  for p, place in spec["parts"] if p in parts and (place is None or place[0] in ("matrix", "move"))}
         tied = [u for u in units if users & set(u)]
         if tied:
-            # Compare against the drawings' original size: some may be scaled already.
-            had = {u[0]: sizes.get(u[0], IDENTITY)[0] for u in tied}
-            s = min(fit(union(u))[0] * had[u[0]] for u in tied)
-            scale.update({u[0]: s / had[u[0]] for u in tied})
+            s = min(fit(union(u))[0] for u in tied)
+            scale.update({u[0]: s for u in tied})
+    target = {}
     for u in units:
         t = fit(union(u), scale=scale.get(u[0]))
         for w in u:
-            fits[w] = t
-    typical = statistics.median(t[0] for t in fits.values())
+            target[w] = t
+    typical = statistics.median(t[0] for t in target.values())
     for w in SMALL & set(inner):
-        fits[w] = fit(inner[w], typical)
+        target[w] = fit(raw[w], typical)
+    # What each word still needs, on top of the size it already has.
+    fits = {w: multiply(t, inverse(sizes.get(w, IDENTITY))) for w, t in target.items()}
 
     tree = ET.parse(path)
     root = tree.getroot()

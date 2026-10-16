@@ -31,7 +31,7 @@ Shapes that several words share, such as the three rays of *toki*, *sona*, *pana
 - A draft that is made only of parts counts as drawn once all of its parts are black. A draft with its own strokes counts as drawn when those are recoloured too.
 - The small hand (`part-hand`) is a clone of `part-luka`: reshape *luka* on its page, and move, scale or squash the small hand by selecting the clone on `part-hand` (the clones in *pali*, *moku* and the rest follow it).
 - Each part page shows a word's reference behind the part (its `ref` in `parts.py`, such as *kama* for the legs), lined up the way that word uses it. A purple part is redrawn from `parts.py` when its shape there changes; a black one is yours and is left alone.
-- *toki-pona*, the toki pona logo (*toki* with *pona*'s smile), is a part only: it isn't a UCSUR word, so it has no glyph of its own yet. *pu* uses it on its cover.
+- *toki-pona*, the toki pona logo, is a part made of other parts: *toki*'s rays and head with *pona*'s smile inside. Edit those parts, not the clones on its page. It isn't a UCSUR word, so it has no glyph of its own yet; *pu* uses it on its cover.
 
 The build strokes after placing, so a scaled clone keeps the same line weight in the font, even though Inkscape shows its stroke scaled. Don't delete a part that still has clones: the build stops with an error naming the missing piece. For a one-off shared piece you can still clone by hand: select it, `Alt+D`, and move the clone to the word's page in the `glyph` layer.
 
