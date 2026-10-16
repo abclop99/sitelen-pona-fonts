@@ -176,6 +176,10 @@ LINKS = {
     "pilin": dict(parts=[("heart", None)]),
     "olin": dict(parts=[("heart", ("fit", (315, 120, 685, 490))),
                         ("heart", ("fit", (315, 510, 685, 880)))]),
+    # A heart without its point: the arms round off and flow into the stick
+    "unpa": dict(parts=[("palisa", ("fit", (427.13, 255.35, 572.88, 880)))],
+                 own="M 500,229.1 C 404.7,64.1 218.8,94.5 218.8,264.7 C 218.8,385.5 366.8,464 411.2,514.9 C 431.2,537.9 459.3,556.3 500,556.3"
+                     " M 500,229.1 C 595.3,64.1 781.2,94.5 781.2,264.7 C 781.2,385.5 633.2,464 588.8,514.9 C 568.8,537.9 540.7,556.3 500,556.3"),
     "palisa": dict(parts=[("palisa", None)]),
     # Pointing hands: one hand, flipped and turned
     "mi": dict(parts=[("pointer", None)]),

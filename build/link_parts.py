@@ -17,7 +17,7 @@ import argparse
 import math
 import xml.etree.ElementTree as ET
 
-from build import element_paths, read_pages, to_pathops
+from build import element_paths, hidden, read_pages, to_pathops
 from check_glyphs import absolute, serialise, transform_d
 from common import CELL, IDENTITY, ROOT, STROKE, multiply, page_origin, parse_transform
 from drafts import circle, ellipse
@@ -74,6 +74,16 @@ def leaves(sub):
         tag = el.tag.rsplit("}", 1)[-1]
         if tag in ("path", "circle", "ellipse"):
             yield el, subpaths(element_d(el))
+
+
+def visible_uses(el):
+    """Clones under el, leaving out hidden groups (such as an old version kept for reference)."""
+    for child in el:
+        if hidden(child):
+            continue
+        if child.tag == S + "use":
+            yield child
+        yield from visible_uses(child)
 
 
 def bbox(el, ids, pre=IDENTITY):
@@ -316,7 +326,7 @@ def link(path):
 
         current = glyph_subs.get(word) if word in drawn else draft_els.get(word)
         wanted = {f"#part-{p}" for p, _ in matrices}
-        linked = [u for u in (current.iter(S + "use") if current is not None else [])
+        linked = [u for u in (visible_uses(current) if current is not None else [])
                   if u.get(f"{XLINK}href") in wanted]
         if linked and word not in drawn and [u.get(f"{XLINK}href") for u in linked] != [f"#part-{p}" for p, _ in matrices]:
             linked = []     # parts.py changed what this draft is made of: rebuild it below
@@ -389,6 +399,7 @@ def link(path):
                 own = spec["own"]
                 ET.SubElement(g, S + "path", {"d": own, "style": DRAFT_STYLE})
             if old is not None:
+                g.extend(c for c in old if hidden(c))      # e.g. an old version kept for reference
                 drafts_layer.insert(list(drafts_layer).index(old), g)
                 drafts_layer.remove(old)
             else:
