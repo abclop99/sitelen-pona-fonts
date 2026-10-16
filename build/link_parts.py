@@ -424,19 +424,27 @@ def show_real_weight(root, parts_layer):
     strokes after placing, so the font is right either way; this is only so
     the file looks like the font. The originals leave their stroke width to
     their parents (the parts layer gives it to them on their own pages), and
-    each clone sets the width that comes out at STROKE after its scale.
+    each clone sets the width that comes out at STROKE after its scale. A clone
+    at full size inside a part sets nothing, so it takes its width from
+    whatever clones that part (jelo's small sun would look thin otherwise).
     """
     style = parts_layer.get("style", "")
     parts_layer.set("style", without_stroke_width(style) + f";stroke-width:{STROKE}")
+    nested = set()
     for el in parts_layer.iter():
-        if (el.get("id") or "").startswith("part-") and el.get("style"):
-            el.set("style", without_stroke_width(el.get("style")))
+        if (el.get("id") or "").startswith("part-"):
+            if el.get("style"):
+                el.set("style", without_stroke_width(el.get("style")))
+            nested.update(u for u in el.iter(S + "use") if u is not el)
     for el in root.iter(S + "use"):
         if not (el.get(f"{XLINK}href") or "").startswith("#part-"):
             continue
         a, b, c, d, _, _ = parse_transform(el.get("transform", ""))
         scale = math.sqrt(abs(a * d - b * c)) or 1
-        el.set("style", f"stroke-width:{STROKE / scale:.4g}")
+        if el in nested and abs(scale - 1) < 1e-6:
+            el.attrib.pop("style", None)
+        else:
+            el.set("style", f"stroke-width:{STROKE / scale:.4g}")
 
 
 def main():
