@@ -114,8 +114,12 @@ function render(text, mode) {
       out.appendChild(s);
     } else if (/\s/.test(token)) {
       // a single space just separates words; each pair of spaces makes one blank, as in sitelen seli kiwen
-      const blanks = Math.floor((token.match(/ /g) || []).length / 2);
-      if (blanks) out.appendChild(document.createTextNode("\u3000".repeat(blanks)));
+      // and a newline starts a new line
+      token.split("\n").forEach((run, i) => {
+        if (i) out.appendChild(document.createElement("br"));
+        const blanks = Math.floor((run.match(/ /g) || []).length / 2);
+        if (blanks) out.appendChild(document.createTextNode("\u3000".repeat(blanks)));
+      });
     } else {
       out.appendChild(document.createTextNode(token.replace(/\./g, "　")));
     }
