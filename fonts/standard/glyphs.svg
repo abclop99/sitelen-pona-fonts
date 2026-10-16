@@ -1337,7 +1337,7 @@
     </g>
     <g inkscape:label="kule draft" transform="translate(8400,2400)" id="draft-kule">
       <use xlink:href="#part-big-triangle" inkscape:label="big-triangle" />
-      <path d="M 123.042,515.197 L 876.956,515.197" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 120.002,515.197 L 879.996,515.197" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g inkscape:label="pimeja draft" transform="translate(9600,7200)" id="draft-pimeja">
       <use xlink:href="#part-big-triangle" inkscape:label="big-triangle" />

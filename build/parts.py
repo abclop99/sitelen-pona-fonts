@@ -106,7 +106,7 @@ LINKS = {
                  own=j("M 500,425 C 450,250 300,225 300,325 C 300,400 425,425 500,425",
                        "M 500,425 C 550,250 700,225 700,325 C 700,400 575,425 500,425",
                        line((500, 425), (500, 520)))),
-    "kule": dict(parts=[("big-triangle", None)], own=line((190, 500), (810, 500))),
+    "kule": dict(parts=[("big-triangle", None)], own=line((187.5, 500), (812.5, 500))),
     "pimeja": dict(parts=[("big-triangle", None)],
                    own=j(line((350, 488), (580, 800)), line((650, 488), (420, 800)))),
     "walo": dict(parts=[("big-triangle", None)],
