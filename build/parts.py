@@ -28,7 +28,7 @@ LINKS: word -> the clones it is built from, and its own strokes.
          a word that is a part's source drops that part's subpaths itself.
 """
 
-from drafts import DRAFTS, arm, bowl, circle, closed, dot, ellipse, heart, j, line, rays, rect
+from drafts import BLUNT, DRAFTS, arm, bowl, circle, closed, dot, ellipse, heart, j, line, rays, rect
 
 PARTS = {
     "legs": dict(src=("kama", [0]), d=DRAFTS["kama"]),
@@ -40,7 +40,7 @@ PARTS = {
     "luka": dict(d=arm(350, 750, 225, 825)),
     "hand": dict(clone="luka", fit=(300, 450, 650, 825)),
     "heart": dict(d=heart(500, 225, 600, 600)),
-    "palisa": dict(d=ellipse(500, 500, 75, 325)),
+    "palisa": dict(d=ellipse(500, 500, 75, 325, BLUNT)),
     "loop": dict(d="M 365,500 A 135,135 0 1 1 404.5,595.5"),
     "page": dict(d=rect(225, 175, 775, 825)),
     "big-box": dict(d=line((225, 175), (225, 825), (775, 825), (775, 175))),

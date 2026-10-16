@@ -29,9 +29,27 @@ def circle(cx, cy, rad):
     return ellipse(cx, cy, rad, rad)
 
 
-def ellipse(cx, cy, rx, ry):
-    return (f"M {r(cx - rx)},{r(cy)} A {r(rx)},{r(ry)} 0 1 0 {r(cx + rx)},{r(cy)} "
-            f"A {r(rx)},{r(ry)} 0 1 0 {r(cx - rx)},{r(cy)} Z")
+KAPPA = 0.5523    # handle length, as a share of the radius, of a quarter ellipse
+
+
+def ellipse(cx, cy, rx, ry, ends=KAPPA):
+    """Four curves with nodes at the top, bottom and sides. ends > KAPPA
+    lengthens the handles at the two ends of the long axis, which makes
+    those ends blunter (less like an ellipse)."""
+    kx = ky = KAPPA
+    if rx >= ry:
+        ky = ends      # handles at the left and right nodes run vertically
+    else:
+        kx = ends      # handles at the top and bottom nodes run horizontally
+    hx, hy = rx * kx, ry * ky
+    return (f"M {r(cx - rx)},{r(cy)} "
+            f"C {r(cx - rx)},{r(cy + hy)} {r(cx - hx)},{r(cy + ry)} {r(cx)},{r(cy + ry)} "
+            f"C {r(cx + hx)},{r(cy + ry)} {r(cx + rx)},{r(cy + hy)} {r(cx + rx)},{r(cy)} "
+            f"C {r(cx + rx)},{r(cy - hy)} {r(cx + hx)},{r(cy - ry)} {r(cx)},{r(cy - ry)} "
+            f"C {r(cx - hx)},{r(cy - ry)} {r(cx - rx)},{r(cy - hy)} {r(cx - rx)},{r(cy)} Z")
+
+
+BLUNT = 0.64      # ends for eyes and sticks: slightly fuller than an ellipse
 
 
 def dot(x, y):
@@ -183,7 +201,7 @@ DRAFTS = {
     "loje": j(bowl(350, 650, 175, 200), closed((500, 525), (350, 800), (650, 800))),
     "lon": j(line((175, 575), (825, 575)), dot(500, 400)),
     "luka": arm(350, 750, 225, 825),
-    "lukin": j(ellipse(500, 500, 375, 150), dot(500, 500)),
+    "lukin": j(ellipse(500, 500, 375, 150, BLUNT), dot(500, 500)),
     "ma": j(circle(500, 500, 275), line((500, 225), (500, 775)), line((225, 500), (775, 500))),
     "mama": j(circle(500, 400, 250), circle(500, 775, 75)),
     "mani": j(circle(500, 575, 225), "M 341,416 C 275,375 225,300 225,225",
@@ -217,7 +235,7 @@ DRAFTS = {
     "open": j(line((250, 175), (250, 800), (750, 800), (750, 175)), line((250, 625), (750, 625))),
     "pakala": j(rect(225, 175, 775, 825), line((575, 175), (375, 475), (625, 475), (425, 825))),
     "pali": j(circle(500, 325, 125), arm(350, 650, 450, 825)),
-    "palisa": ellipse(500, 500, 75, 325),
+    "palisa": ellipse(500, 500, 75, 325, BLUNT),
     "pan": j(line((400, 250), (500, 325), (600, 250)), line((375, 400), (500, 500), (625, 400)),
              line((350, 575), (500, 775), (650, 575))),
     "pana": j(arm(375, 650, 450, 825), rays(175, 325, 175)),
@@ -269,7 +287,7 @@ DRAFTS = {
     "toki": j(circle(500, 600, 225), rays(175, 300, 175)),
     "tomo": closed((500, 175), (775, 475), (775, 825), (225, 825), (225, 475)),
     # pilin and palisa: a heart with a stick running down through it.
-    "unpa": j(heart(500, 150, 540, 440), ellipse(500, 555, 70, 300)),
+    "unpa": j(heart(500, 150, 540, 440), ellipse(500, 555, 70, 300, BLUNT)),
     "uta": j(bowl(300, 700, 350, 275), dot(500, 775)),
     "utala": j(line((325, 225), (700, 775)), line((700, 225), (300, 775)),
                line((250, 625), (300, 775)), line((750, 625), (700, 775))),
