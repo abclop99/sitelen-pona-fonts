@@ -440,11 +440,11 @@ def write_file(path, words, ref):
             yield from colours(child, depth)
 
     def taken_over(el):
-        # A draft becomes a drawing once none of its strokes, parts included,
-        # are in the draft colour any more.
+        # A draft becomes a drawing once all of its strokes, parts included,
+        # are black. Any other colour (a darker purple, say) keeps it a draft.
         label = el.get(f"{INK}label") or ""
         found = set(colours(el))
-        return not label.endswith(" draft") or (found and DRAFT_COLOUR not in found)
+        return not label.endswith(" draft") or (found and found <= {"#000000", "#000"})
 
     strays = [el for el in drafts_layer if taken_over(el)]
     for el in strays:
