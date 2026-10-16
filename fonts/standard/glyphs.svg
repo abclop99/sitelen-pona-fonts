@@ -1189,7 +1189,7 @@
   <g id="drafts" inkscape:groupmode="layer" inkscape:label="drafts" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round">
     <g inkscape:label="a draft" transform="translate(1200,0)" id="draft-a">
       <use xlink:href="#part-stem" inkscape:label="stem" transform="matrix(1.0934,0,0,1.0934,-46.3046,-11.6742)" style="stroke-width:45.73" />
-      <path d="M 544.41,775.03 C 544.41,708.32 433.29,697.27 433.29,775.03 C 433.29,852.8 544.41,841.64 544.41,775.03 L 583.29,847.27" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 636.35,875 C 636.35,875 534.48,705.52 512.91,677.07 C 490.46,647.47 419.27,653.65 387.09,717.09 C 360.35,769.76 344.64,836.07 396.59,860.72 C 468.99,895.06 548.56,731.53 548.56,731.53" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g inkscape:label="akesi draft" transform="translate(2400,0)" id="draft-akesi">
       <use xlink:href="#part-dot" inkscape:label="dot" transform="matrix(1,0,0,1,-89.05,-367.09)" style="stroke-width:50" />
@@ -1245,8 +1245,8 @@
     <path d="M 500,875 L 500,374.97 M 500,374.97 C 437.53,218.75 250.03,187.47 250.03,281.22 C 250.03,374.97 406.25,406.25 500,374.97 M 500,374.97 C 562.47,125 812.53,62.53 812.53,187.47 C 812.53,312.5 625.03,374.97 500,374.97" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,2400)" inkscape:label="kasi draft" />
     <path d="M 298.09,125 L 298.09,875 M 701.91,125 C 673.09,326.91 500,471.18 298.09,500 M 298.09,500 C 528.82,528.82 701.91,644.28 701.91,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,2400)" inkscape:label="ken draft" />
     <g inkscape:label="kepeken draft" transform="translate(2400,2400)" id="draft-kepeken">
-      <use xlink:href="#part-hammer" inkscape:label="hammer" transform="matrix(0.4757,0,0,0.4757,262.177,97.7929)" style="stroke-width:105.1" />
       <use xlink:href="#part-hand" inkscape:label="hand" transform="matrix(0.9924,0,0,0.9924,3.7883,15.3308)" style="stroke-width:50.38" />
+      <path d="M 310,125 L 690,125 L 690,335 L 310,335 Z M 500,125 L 500,498.5" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <path d="M 500,332.24 C 529.61,277.96 588.82,253.29 648.03,253.29 C 749.57,253.29 815.79,399.84 815.79,578.95 C 815.79,741.78 726.97,875 500,875 C 273.03,875 184.21,741.78 184.21,578.95 C 184.21,399.84 250.43,253.29 351.97,253.29 C 411.18,253.29 470.39,277.96 500,332.24 Z M 500,332.24 C 495.07,233.55 524.67,164.47 588.82,125" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,2400)" inkscape:label="kili draft" />
     <path d="M 295.43,193.19 L 704.57,193.19 L 875,363.62 L 500,875 L 125,363.62 Z" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,2400)" inkscape:label="kiwen draft" />
@@ -1312,7 +1312,7 @@
       <path d="M 177.8,873.32 L 177.8,790.03 L 822.2,790.03 L 822.2,873.32" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g inkscape:label="moku draft" transform="translate(8400,4800)" id="draft-moku">
-      <use xlink:href="#part-mouth" inkscape:label="mouth" transform="matrix(0.9924,0,0,0.9924,3.7897,15.3313)" style="stroke-width:50.38" />
+      <use xlink:href="#part-mouth" inkscape:label="mouth" transform="matrix(1.2901,0,0,1.2901,-145.05,-106.88)" style="stroke-width:38.76" />
       <use xlink:href="#part-hand" inkscape:label="hand" transform="matrix(0.9924,0,0,0.9924,3.7883,15.3308)" style="stroke-width:50.38" />
     </g>
     <g inkscape:label="moli draft" transform="translate(9600,4800)" id="draft-moli">
@@ -1349,13 +1349,13 @@
     <path d="M 214.31,875 L 214.31,410.69 A 285.69 285.69 0 0 1 785.69,410.69 L 785.69,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,6000)" inkscape:label="nena draft" />
     <g inkscape:label="ni draft" transform="translate(7200,6000)" id="draft-ni">
       <use xlink:href="#part-shaft" inkscape:label="shaft" style="stroke-width:50" />
-      <use xlink:href="#part-arrowhead" inkscape:label="arrowhead" transform="matrix(0,0.5593,-0.5593,0,749.056,388.866)" style="stroke-width:89.4" />
+      <use xlink:href="#part-arrowhead" inkscape:label="arrowhead" transform="matrix(0,1,-1,0,941.344,34.929)" style="stroke-width:50" />
     </g>
     <path d="M 211.55,355.72 L 788.45,355.72 A 86.55 86.55 0 0 1 875,442.27 L 875,557.73 A 86.55 86.55 0 0 1 788.45,644.28 L 211.55,644.28 A 86.55 86.55 0 0 1 125,557.73 L 125,442.27 A 86.55 86.55 0 0 1 211.55,355.72 Z" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,6000)" inkscape:label="nimi draft" />
     <path d="M 450,125 L 450,560 L 600,560 C 660.8,560 710,609.2 710,670 L 710,765 C 710,825.8 660.8,875 600,875 L 290,875 L 290,125" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,6000)" inkscape:label="noka draft" />
     <g inkscape:label="o draft" transform="translate(10800,6000)" id="draft-o">
       <use xlink:href="#part-stem" inkscape:label="stem" transform="matrix(1.0934,0,0,1.0934,-46.3046,-11.6742)" style="stroke-width:45.73" />
-      <path d="M 416.71,780.56 C 416.71,826.55 454.01,863.85 500,863.85 C 545.99,863.85 583.29,826.55 583.29,780.56 C 583.29,734.57 545.99,697.27 500,697.27 C 454.01,697.27 416.71,734.57 416.71,780.56 Z" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 390,765 C 390,825.8 439.2,875 500,875 C 560.8,875 610,825.8 610,765 C 610,704.2 560.8,655 500,655 C 439.2,655 390,704.2 390,765 Z" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g inkscape:label="olin draft" transform="translate(12000,6000)" id="draft-olin">
       <use xlink:href="#part-heart" inkscape:label="heart" transform="matrix(0.486849,0,0,0.486849,256.576,64.1372)" style="stroke-width:102.7" />
@@ -1437,9 +1437,9 @@
     </g>
     <g inkscape:label="sitelen draft" transform="translate(1200,9600)" id="draft-sitelen">
       <use xlink:href="#part-page" inkscape:label="page" style="stroke-width:50" />
-      <use xlink:href="#part-dot" inkscape:label="dot" transform="matrix(1,0,0,1,-171.07,0)" style="stroke-width:50" />
-      <use xlink:href="#part-dot" inkscape:label="dot" style="stroke-width:50" />
-      <use xlink:href="#part-dot" inkscape:label="dot" transform="matrix(1,0,0,1,171.07,0)" style="stroke-width:50" />
+      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,-171.07,0)" style="stroke-width:50" />
+      <use xlink:href="#part-big-dot" inkscape:label="big-dot" style="stroke-width:50" />
+      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,171.07,0)" style="stroke-width:50" />
     </g>
     <g inkscape:label="sona draft" transform="translate(2400,9600)" id="draft-sona">
       <use xlink:href="#part-rays" inkscape:label="rays" transform="matrix(0.6245,0,0,0.6245,187.747,56.3058)" style="stroke-width:80.06" />
@@ -1514,7 +1514,7 @@
     </g>
     <g inkscape:label="kin draft" transform="translate(2400,12000)" id="draft-kin">
       <use xlink:href="#part-stem" inkscape:label="stem" style="stroke-width:50" />
-      <path d="M 417.89,792.89 L 582.11,792.89 M 458.36,721.74 L 541.64,864.05 M 541.64,721.74 L 458.36,864.05" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 335,757.5 H 665 M 425,640 L 575,875 M 575,640 L 425,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <path d="M 125,500 C 421.05,490.13 598.68,401.32 756.58,125 M 125,500 C 421.05,509.87 598.68,598.68 756.58,875 M 708.52,202.37 A 359.7 359.7 0 0 1 708.52,797.63 M 847.86,386.51 A 116.25 116.25 0 0 0 847.86,613.49" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,12000)" inkscape:label="oko draft" />
     <g inkscape:label="kipisi draft" transform="translate(4800,12000)" id="draft-kipisi">
@@ -1544,7 +1544,7 @@
       <path d="M 210.76,441.09 C 210.76,680.69 340.23,875 500,875 C 659.77,875 789.24,680.69 789.24,441.09" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g inkscape:label="kokosila draft" transform="translate(1200,13200)" id="draft-kokosila">
-      <use xlink:href="#part-rays" inkscape:label="rays" transform="matrix(0.6431,0,0,0.6431,178.467,54.2641)" style="stroke-width:77.75" />
+      <use xlink:href="#part-rays" inkscape:label="rays" transform="matrix(1.1359,0,0,0.9106,-67.9308,11.1811)" style="stroke-width:49.16" />
       <use xlink:href="#part-head" inkscape:label="head" style="stroke-width:50" />
       <path d="M 125,788.45 L 875,471.18" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
