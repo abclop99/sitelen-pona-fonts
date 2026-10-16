@@ -1106,11 +1106,11 @@
     <path d="M 225,175 L 775,175 L 775,825 L 225,825 Z M 700,300 L 375,425 L 450,825 M 567,600 A 8,8 0 1 0 583,600 A 8,8 0 1 0 567,600 Z M 575,600 h 0.1" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,13200)" inkscape:label="ku draft" />
   </g>
   <g id="parts" inkscape:groupmode="layer" inkscape:label="parts" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
-  <g id="glyph" inkscape:groupmode="layer" inkscape:label="glyph" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round">
+  <g id="glyph" inkscape:groupmode="layer" inkscape:label="glyph" style="fill:none;stroke:#000000;stroke-width:40;stroke-linecap:round;stroke-linejoin:round">
     <g id="glyph-a" inkscape:groupmode="layer" inkscape:label="a" transform="translate(1200,0)" />
     <g id="glyph-akesi" inkscape:groupmode="layer" inkscape:label="akesi" transform="translate(2400,0)" />
     <g id="glyph-ala" inkscape:groupmode="layer" inkscape:label="ala" transform="translate(3600,0)">
-      <path d="M 175 175 825 825 M 825 175 175 825" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 175 175 825 825 M 825 175 175 825" style="fill:none;stroke:#000000;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g id="glyph-alasa" inkscape:groupmode="layer" inkscape:label="alasa" transform="translate(4800,0)" />
     <g id="glyph-ale" inkscape:groupmode="layer" inkscape:label="ale" transform="translate(6000,0)" />
@@ -1123,7 +1123,7 @@
     <g id="glyph-esun" inkscape:groupmode="layer" inkscape:label="esun" transform="translate(0,1200)" />
     <g id="glyph-ijo" inkscape:groupmode="layer" inkscape:label="ijo" transform="translate(1200,1200)" />
     <g id="glyph-ike" inkscape:groupmode="layer" inkscape:label="ike" transform="translate(2400,1200)">
-      <path d="M 175 625 Q 500 100 825 625" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 275 600 C 350 325 650 325 725 600" style="fill:none;stroke:#000000;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g id="glyph-ilo" inkscape:groupmode="layer" inkscape:label="ilo" transform="translate(3600,1200)" />
     <g id="glyph-insa" inkscape:groupmode="layer" inkscape:label="insa" transform="translate(4800,1200)" />
@@ -1159,7 +1159,7 @@
     <g id="glyph-luka" inkscape:groupmode="layer" inkscape:label="luka" transform="translate(12000,3600)" />
     <g id="glyph-lukin" inkscape:groupmode="layer" inkscape:label="lukin" transform="translate(13200,3600)" />
     <g id="glyph-lupa" inkscape:groupmode="layer" inkscape:label="lupa" transform="translate(0,4800)">
-      <path d="M 250 225 V 525 A 250 250 0 0 0 750 525 V 225" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 300 225 V 550 A 200 200 0 0 0 700 550 V 225" style="fill:none;stroke:#000000;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g id="glyph-ma" inkscape:groupmode="layer" inkscape:label="ma" transform="translate(1200,4800)" />
     <g id="glyph-mama" inkscape:groupmode="layer" inkscape:label="mama" transform="translate(2400,4800)" />
@@ -1178,7 +1178,7 @@
     <g id="glyph-nasa" inkscape:groupmode="layer" inkscape:label="nasa" transform="translate(3600,6000)" />
     <g id="glyph-nasin" inkscape:groupmode="layer" inkscape:label="nasin" transform="translate(4800,6000)" />
     <g id="glyph-nena" inkscape:groupmode="layer" inkscape:label="nena" transform="translate(6000,6000)">
-      <path d="M 250 775 V 475 A 250 250 0 0 1 750 475 V 775" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 300 775 V 450 A 200 200 0 0 1 700 450 V 775" style="fill:none;stroke:#000000;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g id="glyph-ni" inkscape:groupmode="layer" inkscape:label="ni" transform="translate(7200,6000)" />
     <g id="glyph-nimi" inkscape:groupmode="layer" inkscape:label="nimi" transform="translate(8400,6000)" />
@@ -1200,7 +1200,7 @@
     <g id="glyph-poka" inkscape:groupmode="layer" inkscape:label="poka" transform="translate(13200,7200)" />
     <g id="glyph-poki" inkscape:groupmode="layer" inkscape:label="poki" transform="translate(0,8400)" />
     <g id="glyph-pona" inkscape:groupmode="layer" inkscape:label="pona" transform="translate(1200,8400)">
-      <path d="M 175 375 Q 500 900 825 375" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 275 400 C 350 675 650 675 725 400" style="fill:none;stroke:#000000;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g id="glyph-pu" inkscape:groupmode="layer" inkscape:label="pu" transform="translate(2400,8400)" />
     <g id="glyph-sama" inkscape:groupmode="layer" inkscape:label="sama" transform="translate(3600,8400)" />
@@ -1228,7 +1228,7 @@
     <g id="glyph-toki" inkscape:groupmode="layer" inkscape:label="toki" transform="translate(1200,10800)" />
     <g id="glyph-tomo" inkscape:groupmode="layer" inkscape:label="tomo" transform="translate(2400,10800)" />
     <g id="glyph-tu" inkscape:groupmode="layer" inkscape:label="tu" transform="translate(3600,10800)">
-      <path d="M 380 175 V 825 M 620 175 V 825" style="fill:none;stroke:#000000;stroke-width:70;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 400 200 V 800 M 600 200 V 800" style="fill:none;stroke:#000000;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g id="glyph-unpa" inkscape:groupmode="layer" inkscape:label="unpa" transform="translate(4800,10800)" />
     <g id="glyph-uta" inkscape:groupmode="layer" inkscape:label="uta" transform="translate(6000,10800)" />

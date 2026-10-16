@@ -68,11 +68,11 @@ PU_WIDTH, PU_HEIGHT = round(27.502 * PU_SCALE, 1), round(31.312 * PU_SCALE, 1)
 # They are ordinary drawings: edit or replace them.
 STARTERS = {
     "ala": "M 175,175 825,825 M 825,175 175,825",
-    "tu": "M 380,175 V 825 M 620,175 V 825",
-    "lupa": "M 250,225 V 525 A 250,250 0 0 0 750,525 V 225",
-    "nena": "M 250,775 V 475 A 250,250 0 0 1 750,475 V 775",
-    "pona": "M 175,375 Q 500,900 825,375",
-    "ike": "M 175,625 Q 500,100 825,625",
+    "tu": "M 400,200 V 800 M 600,200 V 800",
+    "lupa": "M 300,225 V 550 A 200,200 0 0 0 700,550 V 225",
+    "nena": "M 300,775 V 450 A 200,200 0 0 1 700,450 V 775",
+    "pona": "M 275,400 C 350,675 650,675 725,400",
+    "ike": "M 275,600 C 350,325 650,325 725,600",
 }
 
 
@@ -155,17 +155,21 @@ def shift_path(d, dx, dy):
     return " ".join(out)
 
 
+EFFECTS = {}   # id -> <inkscape:path-effect>, filled in by write_file
+SHIFTED = set()
+
+
 def shift_element(el, dx, dy):
     """Move an element by (dx, dy), rewriting its coordinates where possible."""
     tag = el.tag.rsplit("}", 1)[-1]
     t = el.get("transform")
-    m = re.fullmatch(r"\s*translate\(\s*([-\d.e]+)[\s,]+([-\d.e]+)\s*\)\s*", t or "")
+    m = re.fullmatch(r"\s*translate\(\s*([-\d.e]+)(?:[\s,]+([-\d.e]+))?\s*\)\s*", t or "")
     if m and tag != "g":
         # Bake a plain shift into the coordinates, so they read from the page.
         del el.attrib["transform"]
-        shift_element(el, dx + float(m.group(1)), dy + float(m.group(2)))
+        shift_element(el, dx + float(m.group(1)), dy + float(m.group(2) or 0))
     elif m:
-        tx, ty = float(m.group(1)) + dx, float(m.group(2)) + dy
+        tx, ty = float(m.group(1)) + dx, float(m.group(2) or 0) + dy
         if abs(tx) < 1e-6 and abs(ty) < 1e-6:
             del el.attrib["transform"]
         else:
@@ -174,6 +178,18 @@ def shift_element(el, dx, dy):
         el.set("transform", f"translate({dx:g},{dy:g}) {t}")
     elif tag == "path":
         el.set("d", shift_path(el.get("d", ""), dx, dy))
+        # Path effects (such as Mirror symmetry) keep the original path and
+        # their own points, like the mirror line, in the same coordinates.
+        if el.get(f"{INK}original-d"):
+            el.set(f"{INK}original-d", shift_path(el.get(f"{INK}original-d"), dx, dy))
+        for ref in (el.get(f"{INK}path-effect") or "").split(";"):
+            effect = EFFECTS.get(ref.strip().lstrip("#"))
+            if effect is not None and effect.get("id") not in SHIFTED:
+                SHIFTED.add(effect.get("id"))
+                for key in ("start_point", "end_point", "center_point"):
+                    if effect.get(key):
+                        x, y = (float(v) for v in effect.get(key).split(","))
+                        effect.set(key, f"{round(x + dx, 4):g},{round(y + dy, 4):g}")
     elif tag in ("circle", "ellipse"):
         el.set("cx", f"{float(el.get('cx', 0)) + dx:g}")
         el.set("cy", f"{float(el.get('cy', 0)) + dy:g}")
@@ -193,7 +209,7 @@ def shift_element(el, dx, dy):
         el.set("transform", f"translate({dx:g},{dy:g})")
 
 
-def page_layers(glyph, pages, ids):
+def page_layers(glyph, pages, ids, extra=()):
     """Give every page a sub-layer of glyph, shifted onto the page.
 
     Anything drawn inside a page's sub-layer then has coordinates from that
@@ -210,6 +226,7 @@ def page_layers(glyph, pages, ids):
         else:
             loose.append(child)
         glyph.remove(child)
+    loose += list(extra)
     for label, ox, oy in pages:
         if label not in subs:
             subs[label] = ET.Element(S + "g", {
@@ -294,6 +311,7 @@ def write_file(path, words, ref):
         found, drafted = read_pages(path)
         drawn |= set(found) - drafted
         old = ET.parse(path).getroot()
+        old_defs = old.find(S + "defs")
         for g in old.findall(S + "g"):
             if g.get(f"{INK}label") in KEPT_LAYERS:
                 keep[g.get(f"{INK}label")] = g
@@ -304,6 +322,9 @@ def write_file(path, words, ref):
 
     svg = ET.Element(S + "svg", {"width": str(CELL), "height": str(CELL),
                                  "viewBox": f"0 0 {CELL} {CELL}"})
+    if path.exists() and old_defs is not None:
+        svg.append(old_defs)  # path effects, gradients and anything else Inkscape put there
+        EFFECTS.update({e.get("id"): e for e in old_defs if e.get("id")})
     nv = ET.SubElement(svg, f"{SODI}namedview", {
         "id": "namedview", "pagecolor": "#ffffff", "showgrid": "true",
         f"{INK}document-units": "px", f"{INK}current-layer": "glyph",
@@ -353,9 +374,15 @@ def write_file(path, words, ref):
                                                   "transform": f"translate({ox},{oy})"})
 
     glyph = next(g for g in svg.findall(S + "g") if g.get(f"{INK}label") == "glyph")
+    # Drawings made in the drafts layer by mistake belong in glyph: anything
+    # there that isn't one of the generated drafts moves over.
+    drafts_layer = next(g for g in svg.findall(S + "g") if g.get(f"{INK}label") == "drafts")
+    strays = [el for el in drafts_layer if not (el.get(f"{INK}label") or "").endswith(" draft")]
+    for el in strays:
+        drafts_layer.remove(el)
     page_list = [(label, *page_origin(i)) for i, (label, _) in enumerate(pages) if label != "parts"]
     page_list += [(p.get(f"{INK}label"), float(p.get("x")), float(p.get("y"))) for p in own_pages]
-    page_layers(glyph, page_list, {e.get("id"): e for e in svg.iter() if e.get("id")})
+    page_layers(glyph, page_list, {e.get("id"): e for e in svg.iter() if e.get("id")}, strays)
 
     ET.indent(svg)
     ET.ElementTree(svg).write(path, encoding="UTF-8", xml_declaration=True)

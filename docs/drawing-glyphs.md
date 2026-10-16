@@ -71,6 +71,10 @@ The *ku suli* words (*kin, namako, oko, …*) have no drawing in *pu*, so their 
 
 The grid is 25 units, and every page starts on a grid line, so the same grid point has the same coordinates on every page. Turn snapping on (`%`, or the magnet at the top right) and make sure snapping to grids is enabled in its menu; then points land on round numbers like 175 or 500.
 
+## Checking the file
+
+`python3 build/check_glyphs.py --font standard` lists likely mistakes: ink past the red box, pieces on the wrong page or on no page, paths whose ends almost meet, and filled shapes in the glyph layer (which come out a stroke-width bigger). With `--fix` it also straightens lines that are nearly vertical or horizontal, gives every piece the standard stroke style, removes drafts under pages you have drawn, and drops unused path effects. Run `make_templates.py` first: it moves loose pieces, and drawings accidentally made in the drafts layer, into their pages' sub-layers.
+
 ## Regenerating the file
 
 `python3 build/make_templates.py --font standard` rewrites the `reference` and `guides` layers and the word pages, for example after a word is added to `spec/words.tsv`. It keeps the drawings in `drafts`, `parts`, `glyph` and `fill`, and pages you added yourself. Shapes lying loose in `glyph` are moved into their page's sub-layer, without changing where they are. It reads the ku suli reference from `reference/sitelen-seli-kiwen/downloads/sitelenselikiwenjuniko.ttf` (or `--reference other.ttf`); without that file those words lose their reference.
