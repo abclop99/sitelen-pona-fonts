@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__remote-devices__device_stage_files",
+      "Bash(python3 build/check_glyphs.py --font standard)",
+      "mcp__remote-devices__device_list_dir",
+      "Bash(python3 build/check_glyphs.py)"
+    ]
+  }
+}

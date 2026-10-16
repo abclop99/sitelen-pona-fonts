@@ -7,3 +7,6 @@ dist/
 
 # Downloaded reference fonts (see reference/README.md)
 reference/**/downloads/
+
+# Python
+__pycache__/
