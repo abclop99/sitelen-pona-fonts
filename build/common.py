@@ -100,3 +100,24 @@ def parse_transform(text):
 
 def multiply(a, b):
     return _mul(a, b)
+
+
+
+def load_sizes(root):
+    """Per-word placement, {word: matrix}, from a glyphs.svg's glyph sub-layers.
+
+    fit_sizes.py stores each word's scale as data-size="scale dx dy" on its
+    sub-layer: the word's references, drafts and shared-part clones are
+    scaled by that much about the page's top-left and then shifted, so the
+    word fills the ink box. Keeping it in the file means it travels with
+    the drawings it was measured from.
+    """
+    out = {}
+    for layer in root.findall(f"{{{SVG_NS}}}g"):
+        if layer.get(f"{{{INKSCAPE_NS}}}label") != "glyph":
+            continue
+        for sub in layer:
+            if sub.get("data-size"):
+                s, dx, dy = (float(v) for v in sub.get("data-size").split())
+                out[sub.get(f"{{{INKSCAPE_NS}}}label")] = (s, 0, 0, s, dx, dy)
+    return out

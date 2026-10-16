@@ -18,8 +18,8 @@ import math
 import xml.etree.ElementTree as ET
 
 from build import element_paths, read_pages, to_pathops
-from check_glyphs import absolute, serialise
-from common import CELL, IDENTITY, ROOT, multiply, page_origin, parse_transform
+from check_glyphs import absolute, serialise, transform_d
+from common import CELL, IDENTITY, ROOT, load_sizes, multiply, page_origin, parse_transform
 from drafts import circle, ellipse
 from make_templates import DRAFT_STYLE, GLYPH_STYLE, INK, S, SODI
 from parts import LINKS, PARTS
@@ -38,22 +38,6 @@ def inverse(m):
 
 def matrix_attr(m):
     return "matrix(" + ",".join(f"{round(v, 6):g}" for v in m) + ")"
-
-
-def transform_d(d, m):
-    """Apply a scale-and-translate (or mirror) matrix to path data."""
-    a, b, c, dd, e, f = m
-    pt = lambda p: (a * p[0] + c * p[1] + e, b * p[0] + dd * p[1] + f)
-    k = math.sqrt(abs(a * dd - b * c))
-    flip = a * dd - b * c < 0
-    out = []
-    for cmd, pts in absolute(d):
-        if cmd == "A":
-            rx, ry, rot, large, sweep, end = pts
-            out.append(("A", [rx * k, ry * k, rot, large, (1 - sweep) if flip else sweep, pt(end)]))
-        else:
-            out.append((cmd, [pt(p) for p in pts]))
-    return serialise(out)
 
 
 def element_d(el):
@@ -118,6 +102,7 @@ def link(path):
     drawn = set(found) - drafted
     tree = ET.parse(path)
     root = tree.getroot()
+    sizes = load_sizes(root)
     nv = root.find(f"{SODI}namedview")
     pages = {p.get(f"{INK}label"): (float(p.get("x")), float(p.get("y"))) for p in nv.findall(f"{INK}page")}
     layers = {g.get(f"{INK}label"): g for g in root.findall(S + "g")}
@@ -198,7 +183,7 @@ def link(path):
                 m = multiply(place[1], pre)
             else:
                 m = multiply(place_matrix(bbox(original, ids, pre), place[0], place[1]), pre)
-            matrices.append((part, m))
+            matrices.append((part, multiply(sizes.get(word, IDENTITY), m)))
 
         current = glyph_subs.get(word) if word in drawn else draft_els.get(word)
         wanted = {f"#part-{p}" for p, _ in matrices}
@@ -266,7 +251,10 @@ def link(path):
                                      "id": f"draft-{word}"})
             g.extend(uses)
             if spec.get("own"):
-                ET.SubElement(g, S + "path", {"d": spec["own"], "style": DRAFT_STYLE})
+                own = spec["own"]
+                if word in sizes:
+                    own = transform_d(own, sizes[word])
+                ET.SubElement(g, S + "path", {"d": own, "style": DRAFT_STYLE})
             if old is not None:
                 drafts_layer.insert(list(drafts_layer).index(old), g)
                 drafts_layer.remove(old)

@@ -106,6 +106,22 @@ def serialise(segs):
     return " ".join(out)
 
 
+def transform_d(d, m):
+    """Apply a scale-and-translate (or mirror) matrix to path data."""
+    a, b, c, dd, e, f = m
+    pt = lambda p: (a * p[0] + c * p[1] + e, b * p[0] + dd * p[1] + f)
+    k = math.sqrt(abs(a * dd - b * c))
+    flip = a * dd - b * c < 0
+    out = []
+    for cmd, pts in absolute(d):
+        if cmd == "A":
+            rx, ry, rot, large, sweep, end = pts
+            out.append(("A", [rx * k, ry * k, rot, large, (1 - sweep) if flip else sweep, pt(end)]))
+        else:
+            out.append((cmd, [pt(p) for p in pts]))
+    return serialise(out)
+
+
 def straighten(segs):
     """Make nearly vertical/horizontal straight lines exactly so. Returns count."""
     fixed = 0
@@ -223,6 +239,19 @@ def check(path, fix):
                                       ("right", x1 > hi), ("bottom", y1 > hi)) if bad]
             notes.append(f"{label}: ink goes past the red box on the {', '.join(sides)} "
                          f"({x0:.0f}, {y0:.0f} to {x1:.0f}, {y1:.0f}; the box is {BOX[0]}-{BOX[1]})")
+
+    # Big glyphs should reach the lines (fit_sizes.py does that); words that
+    # share a linked part are sized as a group, so some of them stop short.
+    from fit_sizes import SMALL, groups
+    grouped = {w: g for g in groups() for w in g}
+    span = BOX[1] - BOX[0]
+    for label, p in drawn.items():
+        x0, y0, x1, y1 = p.bounds
+        size = max(x1 - x0, y1 - y0)
+        if label not in SMALL and 0.7 * span <= size < span - 2 * TOLERANCE:
+            why = (f" (sized with {', '.join(sorted(grouped[label] - {label}))}, which share its parts)"
+                   if label in grouped else "; python3 build/fit_sizes.py fits it")
+            notes.append(f"{label}: doesn't reach the lines ({size:.0f} of {span}){why}")
 
     drafts = layers.get("drafts")
     if drafts is not None:

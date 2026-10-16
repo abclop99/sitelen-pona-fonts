@@ -37,7 +37,7 @@ from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
 
 from common import (BOX, CELL, GRID, INKSCAPE_NS, MIDLINE, ROOT, SODIPODI_NS,
-                    STROKE, SVG_NS, page_origin, read_words)
+                    STROKE, SVG_NS, load_sizes, page_origin, read_words)
 from drafts import DRAFTS
 
 ET.register_namespace("", SVG_NS)
@@ -65,16 +65,9 @@ DEFAULT_REFERENCE = ROOT / "reference/sitelen-seli-kiwen/downloads/sitelenseliki
 PU_SCALE = (BOX[1] - BOX[0]) / 25
 PU_WIDTH, PU_HEIGHT = round(27.502 * PU_SCALE, 1), round(31.312 * PU_SCALE, 1)
 
-# Simple starting shapes for a few words, so a first build has something in it.
-# They are ordinary drawings: edit or replace them.
-STARTERS = {
-    "ala": "M 175,175 825,825 M 825,175 175,825",
-    "tu": "M 400,200 V 800 M 600,200 V 800",
-    "lupa": "M 300,225 V 550 A 200,200 0 0 0 700,550 V 225",
-    "nena": "M 300,775 V 450 A 200,200 0 0 1 700,450 V 775",
-    "pona": "M 275,400 C 350,675 650,675 725,400",
-    "ike": "M 275,600 C 350,325 650,325 725,600",
-}
+# Drawings a new file starts with. Every word now starts from its draft
+# (drafts.py) instead, so this is empty; it stays for fonts that want some.
+STARTERS = {}
 
 
 class Reference:
@@ -285,7 +278,9 @@ def page_guides(g, label, ox, oy):
     text.text = label
 
 
-def reference_art(g, word, ref, ox, oy):
+def reference_art(g, word, ref, ox, oy, size=None):
+    """The reference drawing on a word's page, scaled like its glyph (data-size)."""
+    s, dx, dy = (size[0], size[4], size[5]) if size else (1, 0, 0)
     if word["set"] == "pu":
         # jan Sonja's drawing from pu, linked rather than copied into the repo.
         # Every file shares one 27.502 x 31.312 viewBox with the glyph
@@ -293,18 +288,22 @@ def reference_art(g, word, ref, ox, oy):
         href = f"{PU_LINK}/{word['word']}.svg"
         ET.SubElement(g, S + "image", {
             "href": href, f"{{{XLINK_NS}}}href": href,  # xlink for older Inkscape
-            "x": str(round(ox + (CELL - PU_WIDTH) / 2, 1)),
-            "y": str(round(oy + (CELL - PU_HEIGHT) / 2, 1)),
-            "width": str(PU_WIDTH), "height": str(PU_HEIGHT),
+            "x": str(round(ox + dx + s * (CELL - PU_WIDTH) / 2, 1)),
+            "y": str(round(oy + dy + s * (CELL - PU_HEIGHT) / 2, 1)),
+            "width": str(round(s * PU_WIDTH, 2)), "height": str(round(s * PU_HEIGHT, 2)),
             "preserveAspectRatio": "none",
         })
     elif ref:
         d = ref.svg_path(word["codepoint"], ox, oy)
         if d:
-            ET.SubElement(g, S + "path", {"d": d, "style": "fill:#3d85c6;stroke:none"})
+            el = ET.SubElement(g, S + "path", {"d": d, "style": "fill:#3d85c6;stroke:none"})
+            if size:
+                el.set("transform", f"translate({ox + dx:g},{oy + dy:g}) scale({s:g}) "
+                                    f"translate({-ox:g},{-oy:g})")
 
 
 def write_file(path, words, ref):
+    sizes = {}
     keep, own_pages, drawn = {}, [], set(STARTERS)
     labels = {"parts"} | {w["word"] for w in words}
     if path.exists():
@@ -312,6 +311,7 @@ def write_file(path, words, ref):
         found, drafted = read_pages(path)
         drawn |= set(found) - drafted
         old = ET.parse(path).getroot()
+        sizes = load_sizes(old)
         old_defs = old.find(S + "defs")
         for g in old.findall(S + "g"):
             if g.get(f"{INK}label") in KEPT_LAYERS:
@@ -350,7 +350,7 @@ def write_file(path, words, ref):
         ox, oy = page_origin(i)
         page_guides(guides, label, ox, oy)
         if word:
-            reference_art(refs, word, ref, ox, oy)
+            reference_art(refs, word, ref, ox, oy, sizes.get(label))
     for p in own_pages:
         page_guides(guides, p.get(f"{INK}label"), float(p.get("x")), float(p.get("y")))
 
@@ -364,7 +364,11 @@ def write_file(path, words, ref):
             for i, (name, _) in enumerate(pages):
                 if name in DRAFTS and name not in drawn:
                     ox, oy = page_origin(i)
-                    ET.SubElement(g, S + "path", {"d": DRAFTS[name], "style": DRAFT_STYLE,
+                    d = DRAFTS[name]
+                    if name in sizes:
+                        from check_glyphs import transform_d
+                        d = transform_d(d, sizes[name])
+                    ET.SubElement(g, S + "path", {"d": d, "style": DRAFT_STYLE,
                                                   "transform": f"translate({ox},{oy})",
                                                   f"{INK}label": f"{name} draft"})
         if label == "glyph":

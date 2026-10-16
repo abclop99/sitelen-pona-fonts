@@ -76,6 +76,10 @@ The *ku suli* words (*kin, namako, oko, …*) have no drawing in *pu*, so their 
 
 The grid is 25 units, and every page starts on a grid line, so the same grid point has the same coordinates on every page. Turn snapping on (`%`, or the magnet at the top right) and make sure snapping to grids is enabled in its menu; then points land on round numbers like 175 or 500.
 
+## Glyph sizes
+
+The red box is the topline and baseline: a glyph's outer edge should touch it on its longer side (top and bottom for tall glyphs, left and right for wide ones like *linja*). `python3 build/fit_sizes.py --font standard` scales every glyph that falls short and centres it along that side. Words that share a linked part in the same place are scaled together so the part stays put, which can leave some of them a little short; small glyphs (*lili*) grow by the typical amount instead. Each word's scale is kept on its page's sub-layer (`data-size`), and the references, drafts and part clones on that page follow it. Run `make_templates.py` and `link_parts.py` afterwards. The checker lists big glyphs that don't reach the lines.
+
 ## Checking the file
 
 `python3 build/check_glyphs.py --font standard` lists likely mistakes: ink past the red box, pieces on the wrong page or on no page, paths whose ends almost meet, and filled shapes in the glyph layer (which come out a stroke-width bigger). With `--fix` it also straightens lines that are nearly vertical or horizontal, gives every piece the standard stroke style, removes drafts under pages you have drawn, and drops unused path effects. Run `make_templates.py` (and `link_parts.py`) first: they move loose pieces, and drawings accidentally made in the drafts layer, into their pages' sub-layers.
