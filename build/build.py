@@ -9,7 +9,7 @@ drawn uses its geometric draft from the "drafts" layer (see drafts.py), and
 a word with neither is left out of the font.
 
 Two builds come out of the same drawings:
-  mono   every glyph is one full cell wide. A "<word>.mono" page replaces
+  mono   every glyph is MONO_ADVANCE wide, centred on the cell. A "<word>.mono" page replaces
          the word's page here when it exists, for glyphs that need a wider
          or differently proportioned drawing in a fixed-width cell.
   prop   each glyph is trimmed to its ink plus equal side bearings.
@@ -41,6 +41,7 @@ FAMILY = {
     "standard": "SP Standard Draft",
 }
 SIDE_BEARING = 60     # each side, proportional build
+MONO_ADVANCE = 900    # glyph width, mono build: the 840-wide ink box plus 30 a side
 SPACE_PROP = 330      # word space, proportional build
 LINE_GAP = 200
 
@@ -200,10 +201,11 @@ def build(font, mode, words, outdir, drawings):
     fullname = f"{family} Mono" if mode == "mono" else family
 
     order = [".notdef", "space", "ideographic_space", *ZERO_WIDTH.values()]
-    glyphs = {".notdef": notdef(CELL), "space": empty_glyph(),
+    full = MONO_ADVANCE if mode == "mono" else CELL
+    glyphs = {".notdef": notdef(full), "space": empty_glyph(),
               "ideographic_space": empty_glyph()}
-    metrics = {".notdef": (CELL, 100), "space": (CELL if mode == "mono" else SPACE_PROP, 0),
-               "ideographic_space": (CELL, 0)}
+    metrics = {".notdef": (full, 100), "space": (full if mode == "mono" else SPACE_PROP, 0),
+               "ideographic_space": (full, 0)}
     cmap = {0x20: "space", 0x3000: "ideographic_space"}
     for cp, name in ZERO_WIDTH.items():
         glyphs[name] = empty_glyph()
@@ -220,7 +222,7 @@ def build(font, mode, words, outdir, drawings):
             continue
         xmin, _, xmax, _ = path.bounds
         if mode == "mono":
-            dx, advance = 0, CELL
+            dx, advance = (MONO_ADVANCE - CELL) / 2, MONO_ADVANCE
         else:
             dx = SIDE_BEARING - xmin
             advance = round(xmax - xmin + 2 * SIDE_BEARING)
