@@ -22,9 +22,11 @@ import argparse
 import base64
 import datetime
 import json
+import math
 import xml.etree.ElementTree as ET
 
 import pathops
+from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
 from fontTools.fontBuilder import FontBuilder
 from fontTools.pens.areaPen import AreaPen
 from fontTools.pens.boundsPen import BoundsPen
@@ -45,6 +47,7 @@ SIDE_GAP = 96         # proportional build: bearing beside a flat, full-height s
 OPEN_SHARE = 0.4      # how much of a side's average openness comes off its bearing
 MIN_BEARING = 25      # never closer than this, however open the side
 MAX_DEPTH = 150       # white deeper than this into a side counts as this deep
+MIN_CLEARANCE = 100   # kerning pushes apart any pair that comes closer than this
 BAND = 10             # height of the slices a side is measured in
 MONO_ADVANCE = 900    # glyph width, mono build: the 800-wide ink box plus 50 a side
 SPACE_PROP = 330      # word space, proportional build
@@ -173,35 +176,69 @@ def read_pages(svg_file):
     return {**found["drafts"], **found["drawn"]}, drafted
 
 
-def side_bearings(path):
-    """Left and right bearings that make the gaps beside a glyph look even.
+def ink_profile(path):
+    """Where the ink starts and ends in each BAND-high slice down the cell.
 
-    Equal bearings off the ink box look uneven: pi is a full-height stem on
-    the left but open above its foot on the right, so the space after it
-    looks wide and the space before it narrow. So each side is cut into
-    bands across the guides, and the white between the ink box and the ink is
-    averaged over them (each band capped at MAX_DEPTH, and an empty band
-    counts as fully open). The bearing is SIDE_GAP less OPEN_SHARE of that
-    average: a flat side gets SIDE_GAP, a typical side about 60 and the most
-    open about 40.
+    One (left, right) per slice from the top of the red box to the bottom,
+    or None for a slice with no ink.
     """
     xmin, _, xmax, _ = path.bounds
-    lo, hi = BOX[0] + STROKE / 2, BOX[1] - STROKE / 2
-    left = right = 0
-    bands = 0
-    y = lo
-    while y < hi:
+    profile = []
+    for y in range(BOX[0], BOX[1], BAND):
         band = pathops.Path()
         band.moveTo(xmin - 1, y); band.lineTo(xmax + 1, y)
         band.lineTo(xmax + 1, y + BAND); band.lineTo(xmin - 1, y + BAND); band.close()
         cut = pathops.op(path, band, pathops.PathOp.INTERSECTION)
-        x0, _, x1, _ = cut.bounds if list(cut.segments) else (xmax, 0, xmin, 0)
-        left += min(x0 - xmin, MAX_DEPTH)
-        right += min(xmax - x1, MAX_DEPTH)
-        bands += 1
-        y += BAND
-    return (max(MIN_BEARING, SIDE_GAP - OPEN_SHARE * left / bands),
-            max(MIN_BEARING, SIDE_GAP - OPEN_SHARE * right / bands))
+        profile.append((cut.bounds[0], cut.bounds[2]) if list(cut.segments) else None)
+    return profile
+
+
+def side_bearings(path, profile):
+    """Left and right bearings that make the gaps beside a glyph look even.
+
+    Equal bearings off the ink box look uneven: pi is a full-height stem on
+    the left but open above its foot on the right, so the space after it
+    looks wide and the space before it narrow. So the white between the ink
+    box and the ink is averaged over the slices between the guides (each
+    capped at MAX_DEPTH, and an empty slice counts as fully open). The
+    bearing is SIDE_GAP less OPEN_SHARE of that average: a flat side gets
+    SIDE_GAP, a typical side about 60 and the most open about 40.
+    """
+    xmin, _, xmax, _ = path.bounds
+    lo, hi = BOX[0] + STROKE / 2, BOX[1] - STROKE / 2
+    inside = [p for i, p in enumerate(profile) if lo <= BOX[0] + i * BAND < hi]
+    left = sum(MAX_DEPTH if p is None else min(p[0] - xmin, MAX_DEPTH) for p in inside)
+    right = sum(MAX_DEPTH if p is None else min(xmax - p[1], MAX_DEPTH) for p in inside)
+    return (max(MIN_BEARING, SIDE_GAP - OPEN_SHARE * left / len(inside)),
+            max(MIN_BEARING, SIDE_GAP - OPEN_SHARE * right / len(inside)))
+
+
+def clearance_kerning(edges):
+    """Kerning that keeps every pair at least MIN_CLEARANCE apart.
+
+    Side bearings that follow how open a side is can bring two glyphs closer
+    where both are open on the same level: pi's foot runs along the bottom
+    and pini's bar sits there too. edges maps each glyph to its (left, right)
+    white per slice, measured from the advance edges, None where it has no
+    ink. A pair's closest approach compares slices on the same level and up
+    to two slices apart; any pair closer than MIN_CLEARANCE is pushed apart
+    by the difference.
+    """
+    near = {name: (min((e for e in left if e is not None), default=None),
+                   min((e for e in right if e is not None), default=None))
+            for name, (left, right) in edges.items()}
+    kerns = {}
+    for a, (_, right) in edges.items():
+        for b, (left, _) in edges.items():
+            if near[a][1] is None or near[b][0] is None or near[a][1] + near[b][0] >= MIN_CLEARANCE:
+                continue
+            closest = min((math.hypot(right[i] + left[j], (i - j) * BAND)
+                           for i in range(len(right)) if right[i] is not None
+                           for j in range(max(0, i - 2), min(len(left), i + 3)) if left[j] is not None),
+                          default=math.inf)
+            if closest < MIN_CLEARANCE:
+                kerns[a, b] = math.ceil(MIN_CLEARANCE - closest)
+    return kerns
 
 
 def make_ttglyph(path, dx):
@@ -248,7 +285,7 @@ def build(font, mode, words, outdir, drawings):
         metrics[name] = (0, 0)
         cmap[cp] = name
 
-    drawn, missing = [], []
+    drawn, missing, edges = [], [], {}
     for w in words:
         path = drawings.get(w["word"])
         if mode == "mono":
@@ -260,9 +297,12 @@ def build(font, mode, words, outdir, drawings):
         if mode == "mono":
             dx, advance = (MONO_ADVANCE - CELL) / 2, MONO_ADVANCE
         else:
-            lsb, rsb = side_bearings(path)
+            profile = ink_profile(path)
+            lsb, rsb = side_bearings(path, profile)
             dx = round(lsb - xmin)
             advance = round(xmax - xmin + lsb + rsb)
+            edges[w["word"]] = ([None if p is None else p[0] + dx for p in profile],
+                                [None if p is None else advance - (p[1] + dx) for p in profile])
         name = w["word"]
         glyphs[name] = make_ttglyph(path, dx)
         order.append(name)
@@ -305,6 +345,10 @@ def build(font, mode, words, outdir, drawings):
     if mode == "mono":
         fb.font["post"].isFixedPitch = 1
     fb.setupMaxp()
+    if edges:
+        kerns = clearance_kerning(edges)
+        pairs = "".join(f"  pos \\{a} \\{b} {v};\n" for (a, b), v in sorted(kerns.items()))
+        addOpenTypeFeaturesFromString(fb.font, f"languagesystem DFLT dflt;\nfeature kern {{\n{pairs}}} kern;\n")
 
     outdir.mkdir(parents=True, exist_ok=True)
     stem = f"{fullname.replace(' ', '')}"
