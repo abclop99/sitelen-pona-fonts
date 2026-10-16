@@ -176,8 +176,6 @@ LINKS = {
     "pilin": dict(parts=[("heart", None)]),
     "olin": dict(parts=[("heart", ("fit", (315, 120, 685, 490))),
                         ("heart", ("fit", (315, 510, 685, 880)))]),
-    "unpa": dict(parts=[("heart", ("fit", (218.91, 120.01, 781.09, 604.12))),
-                        ("palisa", ("fit", (427.13, 255.35, 572.88, 880)))]),
     "palisa": dict(parts=[("palisa", None)]),
     # Pointing hands: one hand, flipped and turned
     "mi": dict(parts=[("pointer", None)]),

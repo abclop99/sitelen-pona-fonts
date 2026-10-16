@@ -19,7 +19,7 @@ import xml.etree.ElementTree as ET
 
 from build import element_paths, read_pages, to_pathops
 from check_glyphs import absolute, serialise, transform_d
-from common import CELL, IDENTITY, ROOT, multiply, page_origin, parse_transform
+from common import CELL, IDENTITY, ROOT, STROKE, multiply, page_origin, parse_transform
 from drafts import circle, ellipse
 from make_templates import DRAFT_COLOUR, DRAFT_STYLE, GLYPH_STYLE, INK, S, SODI
 from parts import LINKS, PARTS
@@ -395,9 +395,37 @@ def link(path):
                 drafts_layer.append(g)
             notes.append(f"{word}: draft rebuilt from {', '.join(p for p, *_ in spec['parts'])}")
 
+    show_real_weight(root, layers["parts"])
     ET.indent(tree)
     tree.write(path, encoding="UTF-8", xml_declaration=True)
     return notes
+
+
+def without_stroke_width(style):
+    return ";".join(p for p in style.split(";") if p and not p.strip().startswith("stroke-width"))
+
+
+def show_real_weight(root, parts_layer):
+    """Make Inkscape show every clone at the real stroke weight.
+
+    Inkscape scales a clone's stroke with the clone, so a part cloned at half
+    size looks half as heavy and seems to stop short of the box. The build
+    strokes after placing, so the font is right either way; this is only so
+    the file looks like the font. The originals leave their stroke width to
+    their parents (the parts layer gives it to them on their own pages), and
+    each clone sets the width that comes out at STROKE after its scale.
+    """
+    style = parts_layer.get("style", "")
+    parts_layer.set("style", without_stroke_width(style) + f";stroke-width:{STROKE}")
+    for el in parts_layer.iter():
+        if (el.get("id") or "").startswith("part-") and el.get("style"):
+            el.set("style", without_stroke_width(el.get("style")))
+    for el in root.iter(S + "use"):
+        if not (el.get(f"{XLINK}href") or "").startswith("#part-"):
+            continue
+        a, b, c, d, _, _ = parse_transform(el.get("transform", ""))
+        scale = math.sqrt(abs(a * d - b * c)) or 1
+        el.set("style", f"stroke-width:{STROKE / scale:.4g}")
 
 
 def main():

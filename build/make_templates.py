@@ -425,6 +425,8 @@ def write_file(path, words, ref):
     def colours(el, depth=0):
         """Stroke colours of every shape under el, following clones to their parts."""
         tag = el.tag.rsplit("}", 1)[-1]
+        if "display:none" in el.get("style", "").replace(" ", "") or el.get("display") == "none":
+            return      # hidden things, like an old version kept for reference, don't count
         if tag == "use" and depth < 20:
             href = el.get("{http://www.w3.org/1999/xlink}href") or el.get("href") or ""
             if href[1:] in every:
