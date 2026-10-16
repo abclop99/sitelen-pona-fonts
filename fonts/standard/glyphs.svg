@@ -1271,7 +1271,7 @@
     </g>
     <g inkscape:label="lon draft" transform="translate(10800,3600)" id="draft-lon">
       <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,0,-115.38)" style="stroke-width:50" />
-      <path d="M 125,586.55 L 875,586.55" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 186.58,586.55 L 813.42,586.55" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g inkscape:label="luka draft" transform="translate(12000,3600)" id="draft-luka">
       <use xlink:href="#part-luka" inkscape:label="luka" style="stroke-width:50" />
@@ -1339,7 +1339,7 @@
       <use xlink:href="#part-arrowhead" inkscape:label="arrowhead" transform="matrix(0,0.5593,-0.5593,0,749.056,388.866)" style="stroke-width:89.4" />
     </g>
     <path d="M 211.55,355.72 L 788.45,355.72 A 86.55 86.55 0 0 1 875,442.27 L 875,557.73 A 86.55 86.55 0 0 1 788.45,644.28 L 211.55,644.28 A 86.55 86.55 0 0 1 125,557.73 L 125,442.27 A 86.55 86.55 0 0 1 211.55,355.72 Z" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,6000)" inkscape:label="nimi draft" />
-    <path d="M 312.5,125 L 312.5,875 L 531.28,875 C 656.22,875 718.78,781.25 718.78,687.5 C 718.78,562.47 593.75,500 500,531.28 C 406.25,562.47 343.78,593.75 312.5,625.03" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,6000)" inkscape:label="noka draft" />
+    <path d="M 450,125 L 450,560 L 600,560 C 660.8,560 710,609.2 710,670 L 710,765 C 710,825.8 660.8,875 600,875 L 290,875 L 290,125" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(9600,6000)" inkscape:label="noka draft" />
     <g inkscape:label="o draft" transform="translate(10800,6000)" id="draft-o">
       <use xlink:href="#part-stem" inkscape:label="stem" transform="matrix(1.0934,0,0,1.0934,-46.3046,-11.6742)" style="stroke-width:45.73" />
       <path d="M 416.71,780.56 C 416.71,826.55 454.01,863.85 500,863.85 C 545.99,863.85 583.29,826.55 583.29,780.56 C 583.29,734.57 545.99,697.27 500,697.27 C 454.01,697.27 416.71,734.57 416.71,780.56 Z" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
@@ -1374,7 +1374,7 @@
     </g>
     <g inkscape:label="pimeja draft" transform="translate(9600,7200)" id="draft-pimeja">
       <use xlink:href="#part-big-triangle" inkscape:label="big-triangle" style="stroke-width:50" />
-      <path d="M 320,500.59 L 596.02,875 M 680,500.59 L 403.98,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 363.22,410 L 596.02,875 M 636.78,410 L 403.98,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <path d="M 343.78,125 L 656.22,125 M 343.78,875 L 656.22,875 M 500,125 L 500,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(10800,7200)" inkscape:label="pini draft" />
     <g inkscape:label="pipi draft" transform="translate(12000,7200)" id="draft-pipi">
@@ -1482,7 +1482,7 @@
     <path d="M 261.38,125 L 772.76,875 M 772.76,125 L 227.24,875 M 159.14,670.43 L 227.24,875 M 840.95,670.43 L 772.76,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(7200,10800)" inkscape:label="utala draft" />
     <g inkscape:label="walo draft" transform="translate(8400,10800)" id="draft-walo">
       <use xlink:href="#part-big-triangle" inkscape:label="big-triangle" style="stroke-width:50" />
-      <path d="M 200,425 L 343.98,455 M 800,425 L 656.02,455" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 253.78,273.22 L 384.84,365 M 746.22,273.22 L 615.16,365" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g inkscape:label="wan draft" transform="translate(9600,10800)" id="draft-wan">
       <use xlink:href="#part-tally" inkscape:label="tally" style="stroke-width:50" />
@@ -1493,7 +1493,7 @@
       <use xlink:href="#part-dot" inkscape:label="dot" transform="matrix(1,0,0,1,-103.85,-17.3)" style="stroke-width:50" />
       <path d="M 326.91,125 L 701.91,615.36 L 384.64,615.36 L 384.64,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
-    <path d="M 125,125 L 343.78,749.97 M 875,125 L 656.22,749.97 M 343.78,718.78 C 343.78,805.03 413.75,875 500,875 C 586.25,875 656.22,805.03 656.22,718.78 C 656.22,632.53 586.25,562.47 500,562.47 C 413.75,562.47 343.78,632.53 343.78,718.78 Z" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,10800)" inkscape:label="wawa draft" />
+    <path d="M 125,125 L 245,600 M 875,125 L 755,600 M 330,705 C 330,798.9 406.1,875 500,875 C 593.9,875 670,798.9 670,705 C 670,611.1 593.9,535 500,535 C 406.1,535 330,611.1 330,705 Z" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,10800)" inkscape:label="wawa draft" />
     <path d="M 156.28,125 L 406.25,406.25 M 843.72,125 L 593.75,406.25 M 406.25,593.75 L 156.28,875 M 593.75,593.75 L 843.72,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,10800)" inkscape:label="weka draft" />
     <path d="M 186.88,186.88 C 92.93,343.39 92.93,813.12 280.82,844.51 C 406.05,875.79 468.72,750.56 500,656.61 C 531.28,750.56 593.95,875.79 719.18,844.51 C 907.07,813.12 907.07,343.39 813.12,186.88" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(0,12000)" inkscape:label="wile draft" />
     <g inkscape:label="namako draft" transform="translate(1200,12000)" id="draft-namako">
@@ -1524,7 +1524,7 @@
     </g>
     <path d="M 125,442.27 C 125,211.55 326.91,125 500,125 C 673.09,125 875,211.55 875,442.27 Z M 500,442.27 L 500,875 M 355.72,673.09 L 644.28,673.09" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,12000)" inkscape:label="soko draft" />
     <g inkscape:label="meso draft" transform="translate(13200,12000)" id="draft-meso">
-      <use xlink:href="#part-dot" inkscape:label="dot" style="stroke-width:50" />
+      <use xlink:href="#part-big-dot" inkscape:label="big-dot" style="stroke-width:50" />
       <path d="M 269.28,125 L 269.28,875 M 730.72,125 L 730.72,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g inkscape:label="epiku draft" transform="translate(0,13200)" id="draft-epiku">
@@ -1547,8 +1547,8 @@
     <path d="M 295,500 C 295,597.7 294.9,653 305.9,706.2 C 330,823.7 410.7,875 500,875 C 589.3,875 670,823.7 694.1,706.2 C 705.1,653 705,597.7 705,500 C 705,402.3 705.1,347 694.1,293.8 C 670,176.3 589.3,125 500,125 C 410.7,125 330,176.3 305.9,293.8 C 294.9,347 295,402.3 295,500 Z M 295,500 L 705,500" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,13200)" inkscape:label="misikeke draft" />
     <g inkscape:label="ku draft" transform="translate(6000,13200)" id="draft-ku">
       <use xlink:href="#part-page" inkscape:label="page" style="stroke-width:50" />
-      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,85.48,113.98)" style="stroke-width:50" />
-      <path d="M 727.96,272.04 L 357.5,414.54 L 442.96,870.46" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
+      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,150,140.03)" style="stroke-width:50" />
+      <path d="M 800,224.97 L 357.5,414.54 L 442.96,870.36 M 800,350.1 L 487.47,483.91 L 560,870.36" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
   </g>
   <g id="parts" inkscape:groupmode="layer" inkscape:label="parts" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:50">

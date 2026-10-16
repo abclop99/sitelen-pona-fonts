@@ -167,9 +167,9 @@ LINKS = {
                      " M 500,437.5 L 500,536.4"),
     "kule": dict(parts=[("big-triangle", None)], own="M 120,515.2 L 880,515.2"),
     "pimeja": dict(parts=[("big-triangle", None)],
-                   own="M 317.6,500.6 L 597.3,880 M 682.4,500.6 L 402.7,880"),
+                   own="M 361.4,408.8 L 597.3,880 M 638.6,408.8 L 402.7,880"),
     "walo": dict(parts=[("big-triangle", None)],
-                 own="M 196,424 L 341.9,454.4 M 804,424 L 658.1,454.4"),
+                 own="M 250.5,270.2 L 383.3,363.2 M 749.5,270.2 L 616.7,363.2"),
     # Hands: the small hand is a smaller clone of luka, in one place
     "luka": dict(parts=[("luka", None)]),
     "pali": dict(parts=[("hand", ("matrix", (0.9924, 0, 0, 0.9924, 3.7881, 15.4845)))],
@@ -204,8 +204,10 @@ LINKS = {
                            ("dot", ("at", (673.35, 500)))],
                     own=""),
     "pu": dict(parts=[("page", None), ("toki-pona", ("fit", (361.32, 338.2, 638.68, 731.13)))]),
-    "ku": dict(parts=[("page", None), ("big-dot", ("at", (586.62, 615.5)))],
-               own="M 731,269 L 355.6,413.4 L 442.2,875.4"),
+    # The cover of ku: a cube (two nested corners) with the logo, as a dot, on its face
+    "ku": dict(parts=[("page", None), ("big-dot", ("at", (652, 641.9)))],
+               own="M 804,221.3 L 355.6,413.4 L 442.2,875.3"
+                   " M 804,348.1 L 487.3,483.7 L 560.8,875.3"),
     "poki": dict(parts=[("big-box", None)]),
     "open": dict(parts=[("big-box", None)], own="M 182.4,644.4 L 817.6,644.4"),
     "insa": dict(parts=[("short-box", ("matrix", (1.0006, 0, 0, 1.0006, -0.2786, 14.1641))),
@@ -296,7 +298,7 @@ LINKS = {
                       " C 566.4,880 620.3,731.9 620.3,549.1 C 620.3,366.4 566.4,218.3 500,218.3"
                       " C 433.6,218.3 379.7,366.4 379.7,549.1 Z M 259.4,368.7 L 740.6,368.7"
                       " M 259.4,549.1 L 740.6,549.1 M 259.4,729.6 L 740.6,729.6"),
-    "lon": dict(parts=[("big-dot", ("at", (500, 383.08)))], own="M 120,587.7 L 880,587.7"),
+    "lon": dict(parts=[("big-dot", ("at", (500, 383.08)))], own="M 182.4,587.7 L 817.6,587.7"),
     "lukin": dict(parts=[("big-dot", ("at", (500, 500)))],
                   own="M 120,500 C 120,597.3 290.1,652 500,652 C 709.9,652 880,597.3 880,500"
                       " C 880,402.7 709.9,348 500,348 C 290.1,348 120,402.7 120,500 Z"),
@@ -328,7 +330,7 @@ LINKS = {
                                 " L 204.4,584.4 C 148.1,584.4 120,640.7 120,710.6"
                                 " C 120,781.5 148.1,837.8 204.4,837.8 L 373.3,837.8 M 260.7,584.4"
                                 " L 260.7,837.8"),
-    "meso": dict(parts=[("dot", ("at", (500, 500)))],
+    "meso": dict(parts=[("big-dot", ("at", (500, 500)))],
                  own="M 266.2,120 L 266.2,880 M 733.8,120 L 733.8,880"),
     "lanpan": dict(parts=[("big-dot", ("at", (682.4, 849.6)))],
                    own="M 317.6,302.4 C 317.6,403.1 399.3,484.8 500,484.8"
