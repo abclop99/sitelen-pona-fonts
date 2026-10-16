@@ -1494,7 +1494,7 @@
       <use xlink:href="#part-stem" inkscape:label="stem" style="stroke-width:40" />
       <path d="M 416.8,796.8 L 583.2,796.8 M 457.8,724.7 L 542.2,868.9 M 542.2,724.7 L 457.8,868.9" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
     </g>
-    <path d="M 120,500 C 420,490 600,400 760,120 M 120,500 C 420,510 600,600 760,880 M 711.3,198.4 A 364.5 364.5 0 0 1 711.3,801.6 M 859.8,410 A 95.8 95.8 0 0 0 859.8,590" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,12000)" inkscape:label="oko draft" />
+    <path d="M 120,500 C 420,490 600,400 760,120 M 120,500 C 420,510 600,600 760,880 M 711.3,198.4 A 364.5 364.5 0 0 1 711.3,801.6 M 852.5,385 A 117.8 117.8 0 0 0 852.5,615" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,12000)" inkscape:label="oko draft" />
     <g inkscape:label="kipisi draft" transform="translate(4800,12000)" id="draft-kipisi">
       <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,-276.36,-310.91)" style="stroke-width:40" />
       <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,276.36,310.91)" style="stroke-width:40" />
