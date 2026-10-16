@@ -30,7 +30,7 @@ import xml.etree.ElementTree as ET
 from build import read_pages
 from check_glyphs import transform_d
 from common import BOX, IDENTITY, ROOT, STROKE, load_sizes, multiply, parse_size, parse_transform, size_attr
-from link_parts import XLINK, inverse, matrix_attr
+from link_parts import XLINK, bbox, inverse, matrix_attr
 from make_templates import INK, S, SODI
 from parts import LINKS, PARTS
 
@@ -233,6 +233,20 @@ def run(path):
             m = parse_transform(el.get("transform"))
             m = multiply(delta.get(part, IDENTITY), multiply(m, inverse(delta.get(spec["clone"], IDENTITY))))
             el.set("transform", matrix_attr(m))
+    # A part made of other parts is a glyph of its own (the toki pona logo):
+    # size it to fill the box like one. link_parts.py rebuilds its clones.
+    ids = {e.get("id"): e for e in root.iter() if e.get("id")}
+    for part, spec in PARTS.items():
+        el = ids.get(f"part-{part}")
+        if "parts" not in spec or el is None or len(el) == 0:
+            continue
+        had = parse_size(el.get("data-size"))
+        x0, y0, x1, y1 = bbox(el, ids)
+        s, dx, dy = had[0], had[4], had[5]
+        t = fit(((x0 - dx) / s, (y0 - dy) / s, (x1 - dx) / s, (y1 - dy) / s))
+        if max(abs(a - b) for a, b in zip(t, had)) > 0.5 or abs(t[0] - had[0]) > 0.001:
+            el.set("data-size", size_attr(t))
+            notes.append(f"part {part}: sized to fill the box ({t[0]:.3f})")
 
     ET.indent(tree)
     tree.write(path, encoding="UTF-8", xml_declaration=True)

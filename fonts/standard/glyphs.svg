@@ -316,7 +316,7 @@
     <image href="../../reference/pu/downloads/mi.svg" xlink:href="../../reference/pu/downloads/mi.svg" x="4755.0" y="14507.0" width="1037.1" height="1180.75" preserveAspectRatio="none" id="reference-147" />
     <image href="../../reference/pu/downloads/lipu.svg" xlink:href="../../reference/pu/downloads/lipu.svg" x="5991.7" y="14321.3" width="1016.53" height="1157.33" preserveAspectRatio="none" id="reference-148" />
     <image href="../../reference/pu/downloads/toki.svg" xlink:href="../../reference/pu/downloads/toki.svg" x="7185.5" y="14314.2" width="1029.04" height="1171.57" preserveAspectRatio="none" id="reference-149" />
-    <image href="../../reference/pu/downloads/pu.svg" xlink:href="../../reference/pu/downloads/pu.svg" x="8058.7" y="13884.9" width="1682.54" height="1915.59" preserveAspectRatio="none" id="reference-150" />
+    <image href="../../reference/pu/downloads/pu.svg" xlink:href="../../reference/pu/downloads/pu.svg" x="8071.4" y="13905.9" width="1657.11" height="1886.63" preserveAspectRatio="none" id="reference-150" />
     <image href="../../reference/pu/downloads/poki.svg" xlink:href="../../reference/pu/downloads/poki.svg" x="9591.7" y="14321.3" width="1016.53" height="1157.33" preserveAspectRatio="none" id="reference-151" />
     <image href="../../reference/pu/downloads/insa.svg" xlink:href="../../reference/pu/downloads/insa.svg" x="10791.7" y="14321.3" width="1016.53" height="1157.33" preserveAspectRatio="none" id="reference-152" />
     <image href="../../reference/pu/downloads/sinpin.svg" xlink:href="../../reference/pu/downloads/sinpin.svg" x="11991.7" y="14321.3" width="1016.53" height="1157.33" preserveAspectRatio="none" id="reference-153" />
@@ -1339,7 +1339,7 @@
     </g>
     <g inkscape:label="pu draft" transform="translate(2400,8400)" id="draft-pu">
       <use xlink:href="#part-page" inkscape:label="page" />
-      <use xlink:href="#part-toki-pona" inkscape:label="toki-pona" transform="matrix(0.604164,0,0,0.604164,197.92,232.569)" />
+      <use xlink:href="#part-toki-pona" inkscape:label="toki-pona" transform="matrix(0.516719,0,0,0.516719,241.642,276.291)" />
     </g>
     <g inkscape:label="ku draft" transform="translate(6000,13200)" id="draft-ku">
       <use xlink:href="#part-page" inkscape:label="page" />
@@ -1483,10 +1483,10 @@
       <path d="M 236.923,616.923 C 236.923,762.258 354.665,880 500,880 C 645.335,880 763.077,762.258 763.077,616.923 C 763.077,471.588 645.335,353.846 500,353.846 C 354.665,353.846 236.923,471.588 236.923,616.923 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" data-spec="M 275,600 C 275,724.3 375.7,825 500,825 C 624.3,825 725,724.3 725,600 C 725,475.7 624.3,375 500,375 C 375.7,375 275,475.7 275,600 Z" id="part-head" inkscape:label="head" data-size="1.16923 -84.6153 -84.6153" />
     </g>
     <g id="parts-toki-pona" inkscape:groupmode="layer" inkscape:label="part-toki-pona" transform="translate(8400,14400)">
-      <g id="part-toki-pona" inkscape:label="toki-pona">
-        <use xlink:href="#part-rays" inkscape:label="rays" transform="matrix(0.571087,0,0,0.571087,214.457,106.47)" />
-        <use xlink:href="#part-head" inkscape:label="head" transform="matrix(0.855264,0,0,0.855264,72.3684,72.3684)" />
-        <use xlink:href="#part-closed-mouth" inkscape:label="closed-mouth" transform="matrix(0.250003,0,0,0.250003,374.998,496.179)" />
+      <g id="part-toki-pona" inkscape:label="toki-pona" data-size="1.16923 -84.6144 -84.6144">
+        <use xlink:href="#part-rays" inkscape:label="rays" transform="matrix(0.667732,0,0,0.667732,166.135,39.8731)" />
+        <use xlink:href="#part-head" inkscape:label="head" transform="matrix(1,0,0,1,0.0009,0.0009)" />
+        <use xlink:href="#part-closed-mouth" inkscape:label="closed-mouth" transform="matrix(0.292311,0,0,0.292311,353.845,495.533)" />
       </g>
     </g>
     <g id="parts-big-box" inkscape:groupmode="layer" inkscape:label="part-big-box" transform="translate(9600,14400)">
