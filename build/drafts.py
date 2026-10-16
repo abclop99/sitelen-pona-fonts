@@ -52,10 +52,10 @@ def ellipse(cx, cy, rx, ry, ends=KAPPA):
 BLUNT = 0.64      # ends for eyes and sticks: slightly fuller than an ellipse
 
 
-def dot(x, y):
+def dot(x, y, rad=8):
     # A tiny ring plus a point in its middle: stroked, they make a solid dot
-    # about 1.4 strokes wide.
-    return f"{circle(x, y, 8)} M {r(x)},{r(y)} h 0.1"
+    # 2 * rad + 40 wide (about 1.4 strokes at the default).
+    return f"{circle(x, y, rad)} M {r(x)},{r(y)} h 0.1"
 
 
 def rect(x0, y0, x1, y1, rad=0):
@@ -201,7 +201,7 @@ DRAFTS = {
     "loje": j(bowl(350, 650, 175, 200), closed((500, 525), (350, 800), (650, 800))),
     "lon": j(line((175, 575), (825, 575)), dot(500, 400)),
     "luka": arm(350, 750, 225, 825),
-    "lukin": j(ellipse(500, 500, 375, 150, BLUNT), dot(500, 500)),
+    "lukin": j(ellipse(500, 500, 375, 150, BLUNT), dot(500, 500, 18)),
     "ma": j(circle(500, 500, 275), line((500, 225), (500, 775)), line((225, 500), (775, 500))),
     "mama": j(circle(500, 400, 250), circle(500, 775, 75)),
     "mani": j(circle(500, 575, 225), "M 341,416 C 275,375 225,300 225,225",
