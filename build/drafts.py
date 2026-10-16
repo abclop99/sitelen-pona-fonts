@@ -261,7 +261,8 @@ DRAFTS = {
     "tenpo": j(circle(500, 500, 325), line((500, 300), (500, 500), (600, 500))),
     "toki": j(circle(500, 600, 225), rays(175, 300, 175)),
     "tomo": closed((500, 175), (775, 475), (775, 825), (225, 825), (225, 475)),
-    "unpa": j(circle(375, 325, 125), circle(625, 325, 125), ellipse(500, 650, 75, 200)),
+    # pilin and palisa: a heart with a stick running down through it.
+    "unpa": j(heart(500, 150, 540, 440), ellipse(500, 555, 70, 300)),
     "uta": j(bowl(300, 700, 350, 275), dot(500, 775)),
     "utala": j(line((325, 225), (700, 775)), line((700, 225), (300, 775)),
                line((250, 625), (300, 775)), line((750, 625), (700, 775))),
