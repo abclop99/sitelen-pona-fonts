@@ -204,10 +204,9 @@ LINKS = {
                            ("dot", ("at", (673.35, 500)))],
                     own=""),
     "pu": dict(parts=[("page", None), ("toki-pona", ("fit", (361.32, 338.2, 638.68, 731.13)))]),
-    # The cover of ku: a cube (two nested corners) with the logo, as a dot, on its face
-    "ku": dict(parts=[("page", None), ("big-dot", ("at", (652, 641.9)))],
-               own="M 804,221.3 L 355.6,413.4 L 442.2,875.3"
-                   " M 804,348.1 L 487.3,483.7 L 560.8,875.3"),
+    # The cover of ku: a cube corner pointing left, the logo (a dot) on its front face
+    "ku": dict(parts=[("page", None), ("big-dot", ("at", (611.5, 667.2)))],
+               own="M 804,221.3 L 355.6,413.4 L 442.2,875.3 M 355.6,413.4 L 804,479.7"),
     "poki": dict(parts=[("big-box", None)]),
     "open": dict(parts=[("big-box", None)], own="M 182.4,644.4 L 817.6,644.4"),
     "insa": dict(parts=[("short-box", ("matrix", (1.0006, 0, 0, 1.0006, -0.2786, 14.1641))),

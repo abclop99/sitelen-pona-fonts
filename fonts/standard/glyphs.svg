@@ -1547,8 +1547,8 @@
     <path d="M 295,500 C 295,597.7 294.9,653 305.9,706.2 C 330,823.7 410.7,875 500,875 C 589.3,875 670,823.7 694.1,706.2 C 705.1,653 705,597.7 705,500 C 705,402.3 705.1,347 694.1,293.8 C 670,176.3 589.3,125 500,125 C 410.7,125 330,176.3 305.9,293.8 C 294.9,347 295,402.3 295,500 Z M 295,500 L 705,500" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(4800,13200)" inkscape:label="misikeke draft" />
     <g inkscape:label="ku draft" transform="translate(6000,13200)" id="draft-ku">
       <use xlink:href="#part-page" inkscape:label="page" style="stroke-width:50" />
-      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,150,140.03)" style="stroke-width:50" />
-      <path d="M 800,224.97 L 357.5,414.54 L 442.96,870.36 M 800,350.1 L 487.47,483.91 L 560,870.36" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
+      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,110.03,165)" style="stroke-width:50" />
+      <path d="M 800,224.97 L 357.5,414.54 L 442.96,870.36 M 357.5,414.54 L 800,479.97" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
   </g>
   <g id="parts" inkscape:groupmode="layer" inkscape:label="parts" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:50">
