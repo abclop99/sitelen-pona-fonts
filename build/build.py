@@ -279,7 +279,7 @@ def build(font, mode, words, outdir, drawings):
               "ideographic_space": empty_glyph()}
     metrics = {".notdef": (full, 100), "space": (full if mode == "mono" else SPACE_PROP, 0),
                "ideographic_space": (full, 0)}
-    cmap = {0x20: "space", 0x3000: "ideographic_space"}
+    cmap = {0x20: "space", 0xA0: "space", 0x3000: "ideographic_space"}   # the test page writes blanks as no-break spaces
     for cp, name in ZERO_WIDTH.items():
         glyphs[name] = empty_glyph()
         metrics[name] = (0, 0)

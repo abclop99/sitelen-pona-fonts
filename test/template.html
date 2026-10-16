@@ -118,10 +118,10 @@ function render(text, mode) {
       token.split("\n").forEach((run, i) => {
         if (i) out.appendChild(document.createElement("br"));
         const blanks = Math.floor((run.match(/ /g) || []).length / 2);
-        if (blanks) out.appendChild(document.createTextNode("\u3000".repeat(blanks)));
+        if (blanks) out.appendChild(document.createTextNode("\u00a0".repeat(blanks)));
       });
     } else {
-      out.appendChild(document.createTextNode(token.replace(/\./g, "　")));
+      out.appendChild(document.createTextNode(token.replace(/\./g, "\u00a0")));
     }
   }
   return out;
