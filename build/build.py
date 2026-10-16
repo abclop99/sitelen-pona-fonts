@@ -153,7 +153,7 @@ def read_pages(svg_file):
             for d, m in shapes:
                 p = to_pathops(d, multiply((1, 0, 0, 1, -px, -py), m))
                 if kind in ("glyph", "drafts"):
-                    p.stroke(STROKE, pathops.LineCap.ROUND_CAP, pathops.LineJoin.ROUND_JOIN, 4)
+                    p.stroke(stroke_width, pathops.LineCap.ROUND_CAP, pathops.LineJoin.ROUND_JOIN, 4)
                     p.convertConicsToQuads()
                 key = "drafts" if kind == "drafts" else "drawn"
                 pieces_by_page.setdefault((key, label), []).append(p)
@@ -296,12 +296,19 @@ def write_test_page(font, words, drawn, drafted, outdir, stems):
     print(f"{page.relative_to(ROOT)}: open in a browser")
 
 
+stroke_width = STROKE    # --stroke changes it for one build, to try a different weight
+
+
 def main():
+    global stroke_width
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--font", default="standard", help="folder under fonts/")
     ap.add_argument("--out", default=None, help="output folder (default dist/<font>)")
+    ap.add_argument("--stroke", type=float, default=STROKE,
+                    help=f"stroke width to try, instead of STROKE ({STROKE}) in common.py")
     args = ap.parse_args()
+    stroke_width = args.stroke
 
     words = read_words()
     outdir = ROOT / (args.out or f"dist/{args.font}")
