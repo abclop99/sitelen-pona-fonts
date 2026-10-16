@@ -178,8 +178,8 @@ LINKS = {
                         ("heart", ("fit", (315, 510, 685, 880)))]),
     # A heart without its point: the arms round off and flow into the stick
     "unpa": dict(parts=[("palisa", ("fit", (427.13, 255.35, 572.88, 880)))],
-                 own="M 500,556.3 C 445,556.3 218.8,389 218.8,259.6 C 218.8,86.5 375,66.6 500,243.8"
-                     " C 625,66.6 781.2,86.5 781.2,259.6 C 781.2,389 555,556.3 500,556.3"),
+                 own="M 500,556.3 C 445,556.3 218.8,391.8 218.8,264.7 C 218.8,73.9 375,75 500,249.1"
+                     " C 625,75 781.2,73.9 781.2,264.7 C 781.2,391.8 555,556.3 500,556.3"),
     "palisa": dict(parts=[("palisa", None)]),
     # Pointing hands: one hand, flipped and turned
     "mi": dict(parts=[("pointer", None)]),
