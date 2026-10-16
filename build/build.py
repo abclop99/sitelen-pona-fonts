@@ -12,7 +12,8 @@ Two builds come out of the same drawings:
   mono   every glyph is MONO_ADVANCE wide, centred on the cell. A "<word>.mono" page replaces
          the word's page here when it exists, for glyphs that need a wider
          or differently proportioned drawing in a fixed-width cell.
-  prop   each glyph is trimmed to its ink plus equal side bearings.
+  prop   each glyph is trimmed to its ink and given side bearings by how open
+         each side is (see side_bearings), so the gaps look even.
 
     python3 build/build.py --font standard
 """
@@ -34,13 +35,17 @@ from fontTools.pens.ttGlyphPen import TTGlyphPen
 from fontTools.svgLib.path import parse_path
 from fontTools.svgLib.path.shapes import PathBuilder
 
-from common import (ASCENT, CELL, INKSCAPE_NS, IDENTITY, ROOT, SODIPODI_NS, STROKE, SVG_NS,
+from common import (ASCENT, BOX, CELL, INKSCAPE_NS, IDENTITY, ROOT, SODIPODI_NS, STROKE, SVG_NS,
                     multiply, parse_transform, read_words)
 
 FAMILY = {
     "standard": "SP Standard Draft",
 }
-SIDE_BEARING = 60     # each side, proportional build
+SIDE_GAP = 96         # proportional build: bearing beside a flat, full-height side
+OPEN_SHARE = 0.4      # how much of a side's average openness comes off its bearing
+MIN_BEARING = 25      # never closer than this, however open the side
+MAX_DEPTH = 150       # white deeper than this into a side counts as this deep
+BAND = 10             # height of the slices a side is measured in
 MONO_ADVANCE = 900    # glyph width, mono build: the 800-wide ink box plus 50 a side
 SPACE_PROP = 330      # word space, proportional build
 LINE_GAP = 200
@@ -168,6 +173,37 @@ def read_pages(svg_file):
     return {**found["drafts"], **found["drawn"]}, drafted
 
 
+def side_bearings(path):
+    """Left and right bearings that make the gaps beside a glyph look even.
+
+    Equal bearings off the ink box look uneven: pi is a full-height stem on
+    the left but open above its foot on the right, so the space after it
+    looks wide and the space before it narrow. So each side is cut into
+    bands across the guides, and the white between the ink box and the ink is
+    averaged over them (each band capped at MAX_DEPTH, and an empty band
+    counts as fully open). The bearing is SIDE_GAP less OPEN_SHARE of that
+    average: a flat side gets SIDE_GAP, a typical side about 60 and the most
+    open about 40.
+    """
+    xmin, _, xmax, _ = path.bounds
+    lo, hi = BOX[0] + STROKE / 2, BOX[1] - STROKE / 2
+    left = right = 0
+    bands = 0
+    y = lo
+    while y < hi:
+        band = pathops.Path()
+        band.moveTo(xmin - 1, y); band.lineTo(xmax + 1, y)
+        band.lineTo(xmax + 1, y + BAND); band.lineTo(xmin - 1, y + BAND); band.close()
+        cut = pathops.op(path, band, pathops.PathOp.INTERSECTION)
+        x0, _, x1, _ = cut.bounds if list(cut.segments) else (xmax, 0, xmin, 0)
+        left += min(x0 - xmin, MAX_DEPTH)
+        right += min(xmax - x1, MAX_DEPTH)
+        bands += 1
+        y += BAND
+    return (max(MIN_BEARING, SIDE_GAP - OPEN_SHARE * left / bands),
+            max(MIN_BEARING, SIDE_GAP - OPEN_SHARE * right / bands))
+
+
 def make_ttglyph(path, dx):
     """Flip SVG coordinates into font coordinates, shift by dx, convert to quadratics."""
     rec = RecordingPen()
@@ -224,8 +260,9 @@ def build(font, mode, words, outdir, drawings):
         if mode == "mono":
             dx, advance = (MONO_ADVANCE - CELL) / 2, MONO_ADVANCE
         else:
-            dx = SIDE_BEARING - xmin
-            advance = round(xmax - xmin + 2 * SIDE_BEARING)
+            lsb, rsb = side_bearings(path)
+            dx = round(lsb - xmin)
+            advance = round(xmax - xmin + lsb + rsb)
         name = w["word"]
         glyphs[name] = make_ttglyph(path, dx)
         order.append(name)
