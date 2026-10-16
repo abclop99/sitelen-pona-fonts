@@ -23,9 +23,14 @@ Every word starts with a geometric draft made of straight lines, circles and arc
 
 ## Shared parts
 
-Draw a shared piece once in the `parts` layer, on the parts page. To use it in a word, select it, clone it (`Alt+D`), move the clone to the `glyph` layer (`Shift+PageUp`/`Shift+PageDown`, or Layer ▸ Move Selection to Layer…) and put it on the word's page. Move, scale, rotate or mirror the clone as needed.
+Shapes that several words share, such as the three rays of *toki*, *sona*, *pana* and *kalama*, the mouth of *uta*, *loje* and *moku*, or the tally marks, are drawn once and cloned. `build/parts.py` lists every part and where each word places it, and `python3 build/link_parts.py --font standard` sets them up: each part gets its own page at the end of the file (`part-rays`, `part-mouth`, …) with its original in the `parts` layer, and each word that uses it gets clones in place of those strokes.
 
-Editing the original updates every clone. The build strokes after placing, so a scaled-down clone still has the same line weight as everything else. Don't delete a part that still has clones: the build stops with an error naming the missing piece.
+- **To change a part, edit the original on its part page.** Every clone follows, in the same place relative to its page. A part taken from one of your drawings starts black; one from a draft starts purple.
+- **Don't move the clones.** Where each clone sits is set in `parts.py`, and running `link_parts.py` again puts any clone that was dragged back in its place. To place a part differently in one word, change that word's entry in `parts.py`.
+- **Keep Inkscape's clone setting at its default:** Preferences ▸ Behavior ▸ Clones ▸ "When the original moves" ▸ *Move in parallel*.
+- A draft that is made only of parts counts as drawn once all of its parts are black. A draft with its own strokes counts as drawn when those are recoloured too.
+
+The build strokes after placing, so a scaled clone keeps the same line weight in the font, even though Inkscape shows its stroke scaled. Don't delete a part that still has clones: the build stops with an error naming the missing piece. For a one-off shared piece you can still clone by hand: select it, `Alt+D`, and move the clone to the word's page in the `glyph` layer.
 
 ## How to draw
 
@@ -73,7 +78,7 @@ The grid is 25 units, and every page starts on a grid line, so the same grid poi
 
 ## Checking the file
 
-`python3 build/check_glyphs.py --font standard` lists likely mistakes: ink past the red box, pieces on the wrong page or on no page, paths whose ends almost meet, and filled shapes in the glyph layer (which come out a stroke-width bigger). With `--fix` it also straightens lines that are nearly vertical or horizontal, gives every piece the standard stroke style, removes drafts under pages you have drawn, and drops unused path effects. Run `make_templates.py` first: it moves loose pieces, and drawings accidentally made in the drafts layer, into their pages' sub-layers.
+`python3 build/check_glyphs.py --font standard` lists likely mistakes: ink past the red box, pieces on the wrong page or on no page, paths whose ends almost meet, and filled shapes in the glyph layer (which come out a stroke-width bigger). With `--fix` it also straightens lines that are nearly vertical or horizontal, gives every piece the standard stroke style, removes drafts under pages you have drawn, and drops unused path effects. Run `make_templates.py` (and `link_parts.py`) first: they move loose pieces, and drawings accidentally made in the drafts layer, into their pages' sub-layers.
 
 ## Regenerating the file
 

@@ -380,10 +380,28 @@ def write_file(path, words, ref):
     # draft that has been recoloured (taken over as a drawing).
     drafts_layer = next(g for g in svg.findall(S + "g") if g.get(f"{INK}label") == "drafts")
 
-    def taken_over(el):
-        label = el.get(f"{INK}label") or ""
+    every = {e.get("id"): e for e in svg.iter() if e.get("id")}
+
+    def colours(el, depth=0):
+        """Stroke colours of every shape under el, following clones to their parts."""
+        tag = el.tag.rsplit("}", 1)[-1]
+        if tag == "use" and depth < 20:
+            href = el.get("{http://www.w3.org/1999/xlink}href") or el.get("href") or ""
+            if href[1:] in every:
+                yield from colours(every[href[1:]], depth + 1)
+            return
         stroke = re.search(r"stroke:\s*(#[0-9a-fA-F]+)", el.get("style", ""))
-        return not label.endswith(" draft") or (stroke and stroke.group(1).lower() != DRAFT_COLOUR)
+        if stroke and tag != "g":
+            yield stroke.group(1).lower()
+        for child in el:
+            yield from colours(child, depth)
+
+    def taken_over(el):
+        # A draft becomes a drawing once none of its strokes, parts included,
+        # are in the draft colour any more.
+        label = el.get(f"{INK}label") or ""
+        found = set(colours(el))
+        return not label.endswith(" draft") or (found and DRAFT_COLOUR not in found)
 
     strays = [el for el in drafts_layer if taken_over(el)]
     for el in strays:
@@ -394,6 +412,14 @@ def write_file(path, words, ref):
     page_list = [(label, *page_origin(i)) for i, (label, _) in enumerate(pages) if label != "parts"]
     page_list += [(p.get(f"{INK}label"), float(p.get("x")), float(p.get("y"))) for p in own_pages]
     page_layers(glyph, page_list, {e.get("id"): e for e in svg.iter() if e.get("id")}, strays)
+
+    # Inkscape gives id-less elements ids as it loads them, and one of those
+    # can take an id a clone points at, further down the file. Generated
+    # elements get their own ids so that never happens.
+    for g in svg.findall(S + "g"):
+        if g.get(f"{INK}label") in ("reference", "guides"):
+            for i, el in enumerate(e for e in g.iter() if e is not g and not e.get("id")):
+                el.set("id", f"{g.get(f'{INK}label')}-{i}")
 
     ET.indent(svg)
     ET.ElementTree(svg).write(path, encoding="UTF-8", xml_declaration=True)
