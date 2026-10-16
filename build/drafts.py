@@ -56,13 +56,13 @@ BLUNT = 0.64      # ends for eyes and sticks: slightly fuller than an ellipse
 
 def dot(x, y, rad=8):
     # A tiny ring plus a point in its middle: stroked, they make a solid dot
-    # 2 * rad + 40 wide (about 1.4 strokes at the default).
+    # 2 * rad + STROKE wide.
     return f"{circle(x, y, rad)} M {r(x)},{r(y)} h 0.1"
 
 
 def big_dot(x, y):
     # The bigger dot: eyes and pupils stay small, places and mouths get this.
-    return dot(x, y, 18)
+    return dot(x, y, 30)
 
 
 def rect(x0, y0, x1, y1, rad=0):

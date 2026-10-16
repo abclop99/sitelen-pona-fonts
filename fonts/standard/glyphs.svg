@@ -1384,7 +1384,7 @@
     </g>
     <g inkscape:label="poka draft" transform="translate(13200,7200)" id="draft-poka">
       <use xlink:href="#part-short-box" inkscape:label="short-box" transform="matrix(1.0006,0,0,1.0006,-61.6555,13.9747)" style="stroke-width:49.97" />
-      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,357.17,-28.51)" style="stroke-width:50" />
+      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,345.17,-28.51)" style="stroke-width:50" />
     </g>
     <g inkscape:label="poki draft" transform="translate(0,8400)" id="draft-poki">
       <use xlink:href="#part-big-box" inkscape:label="big-box" style="stroke-width:50" />
@@ -1398,12 +1398,12 @@
     </g>
     <path d="M 125,350 L 875,350 M 125,650 L 875,650" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(3600,8400)" inkscape:label="sama draft" />
     <g inkscape:label="seli draft" transform="translate(4800,8400)" id="draft-seli">
-      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,0,357.17)" style="stroke-width:50" />
+      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,0,345.17)" style="stroke-width:50" />
       <path d="M 500,125 L 500,688.19 M 274.7,293.95 L 387.4,631.84 M 725.3,293.95 L 612.6,631.84" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <path d="M 125,843.72 L 125,187.47 L 875,187.47 L 875,843.72 M 281.22,187.47 L 281.22,625.03 M 718.78,187.47 L 718.78,625.03" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(6000,8400)" inkscape:label="selo draft" />
     <g inkscape:label="seme draft" transform="translate(7200,8400)" id="draft-seme">
-      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,0,357.2)" style="stroke-width:50" />
+      <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,0,345.2)" style="stroke-width:50" />
       <path d="M 310.13,287.73 C 310.13,152.14 445.72,125 527.14,125 C 662.73,125 716.91,233.45 689.87,314.87 C 662.73,423.32 500,477.5 500,667.37" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <path d="M 125,763.88 C 208.29,736.15 236.12,680.59 236.12,597.2 L 236.12,680.59 C 236.12,787.17 276.09,847.17 347.24,847.17 C 418.29,847.17 458.36,787.17 458.36,680.59 L 458.36,458.36 L 458.36,680.59 C 458.36,787.17 498.32,847.17 569.47,847.17 C 640.53,847.17 680.59,787.17 680.59,680.59 L 680.59,291.68 M 875,125 L 875,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(8400,8400)" inkscape:label="sewi draft" />
@@ -1641,7 +1641,7 @@
       <path d="M 492,500 C 492,504.4 495.6,508 500,508 C 504.4,508 508,504.4 508,500 C 508,495.6 504.4,492 500,492 C 495.6,492 492,495.6 492,500 Z M 500,500 h 0.1" data-spec="M 492,500 C 492,504.4 495.6,508 500,508 C 504.4,508 508,504.4 508,500 C 508,495.6 504.4,492 500,492 C 495.6,492 492,495.6 492,500 Z M 500,500 h 0.1" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round" id="part-dot" inkscape:label="dot" />
     </g>
     <g id="parts-big-dot" inkscape:groupmode="layer" inkscape:label="part-big-dot" transform="translate(12000,15600)">
-      <path d="M 482,500 C 482,509.9 490.1,518 500,518 C 509.9,518 518,509.9 518,500 C 518,490.1 509.9,482 500,482 C 490.1,482 482,490.1 482,500 Z M 500,500 h 0.1" data-spec="M 482,500 C 482,509.9 490.1,518 500,518 C 509.9,518 518,509.9 518,500 C 518,490.1 509.9,482 500,482 C 490.1,482 482,490.1 482,500 Z M 500,500 h 0.1" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round" id="part-big-dot" inkscape:label="big-dot" />
+      <path d="M 470,500 C 470,516.6 483.4,530 500,530 C 516.6,530 530,516.6 530,500 C 530,483.4 516.6,470 500,470 C 483.4,470 470,483.4 470,500 Z M 500,500 h 0.1" data-spec="M 470,500 C 470,516.6 483.4,530 500,530 C 516.6,530 530,516.6 530,500 C 530,483.4 516.6,470 500,470 C 483.4,470 470,483.4 470,500 Z M 500,500 h 0.1" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round" id="part-big-dot" inkscape:label="big-dot" />
     </g>
   </g>
   <g id="glyph" inkscape:groupmode="layer" inkscape:label="glyph" style="fill:none;stroke:#000000;stroke-width:50;stroke-linecap:round;stroke-linejoin:round">
