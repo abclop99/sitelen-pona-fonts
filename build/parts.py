@@ -40,7 +40,7 @@ from common import CELL, guide_scale, multiply, scale_d
 PARTS = {
     "legs": dict(ref="kama",
                  src=("kama", [0]),
-                 d="M 120,850.8 L 383.1,850.8 L 558.5,149.2 L 880,821.5 L 704.6,850.8"),
+                 d="M 120,821.02 L 319.53,821.02 L 528.58,164.28 L 880,773.7 L 696.28,835.72"),
     "rays": dict(ref="kalama",
                  src=("kalama", [1, 2, 3]),
                  d="M 234.8,180.6 L 354.2,332.1 M 500,104.8 L 500,332.1 M 765.2,180.6 L 645.8,332.1"),
@@ -129,8 +129,8 @@ PARTS = {
 
 LINKS = {
     # Legs: tawa is kama mirrored
-    "kama": dict(parts=[("legs", ("matrix", (0.9286, 0, 0, 0.9286, 8.5658, 35.7093)))]),
-    "tawa": dict(parts=[("legs", ("matrix", (-0.9286, 0, 0, 0.9286, 991.43, 35.7093)))],
+    "kama": dict(parts=[("legs", None)]),
+    "tawa": dict(parts=[("legs", ("matrix", (-1, 0, 0, 1, 1000, 0)))],
                  drop="all"),
     # Emitters
     "kalama": dict(parts=[("rays", ("matrix", (0.9631, 0, 0, 0.9631, 18.471, 19.0738))),
