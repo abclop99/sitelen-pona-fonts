@@ -18,9 +18,45 @@ ASCENT = 900         # font y of the top of the cell
 MIDLINE = 500        # SVG y of the midline
 BOX = (100, 900)     # outer edge of the ink: glyphs fill this square
 STROKE = 50          # stroke width for centrelines
+DESIGN_INSET = 120   # parts.py and drafts.py shapes were drawn with centrelines at 120-880
 GRID = 25            # Inkscape grid spacing
 PAGE_COLUMNS = 12    # pages per row in glyphs.svg
 PAGE_GAP = 200       # space between pages
+
+
+def guide_scale():
+    """How much to scale a parts.py or drafts.py shape about the cell centre so
+    its centrelines at DESIGN_INSET land on the guides (BOX inset by half a stroke)."""
+    inset = BOX[0] + STROKE / 2
+    return (CELL - 2 * inset) / (CELL - 2 * DESIGN_INSET)
+
+
+def scale_d(d, k, c=CELL / 2):
+    """Path data scaled by k about the point (c, c)."""
+    out, cmd, i = [], None, 0
+    tokens = re.findall(r"[A-Za-z]|[-+]?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?", d)
+    num = lambda v: f"{round(v, 2):g}"
+    while i < len(tokens):
+        if tokens[i].isalpha():
+            cmd = tokens[i]
+            out.append(cmd)
+            i += 1
+            continue
+        rel = cmd.islower()
+        xy = lambda v: v * k if rel else c + (v - c) * k
+        low = cmd.lower()
+        if low == "a":
+            rx, ry, rot, large, sweep, x, y = (float(t) for t in tokens[i:i + 7])
+            out.append(f"{num(rx * k)} {num(ry * k)} {tokens[i + 2]} {tokens[i + 3]} {tokens[i + 4]}"
+                       f" {num(xy(x))},{num(xy(y))}")
+            i += 7
+        elif low in "hv":
+            out.append(num(xy(float(tokens[i]))))
+            i += 1
+        else:
+            out.append(f"{num(xy(float(tokens[i])))},{num(xy(float(tokens[i + 1])))}")
+            i += 2
+    return " ".join(out)
 
 
 def page_origin(index):

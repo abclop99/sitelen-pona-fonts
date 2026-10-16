@@ -35,6 +35,8 @@ LINKS: word -> the clones it is built from, and its own strokes.
          a word that is a part's source drops that part's subpaths itself.
 """
 
+from common import CELL, guide_scale, multiply, scale_d
+
 PARTS = {
     "legs": dict(ref="kama",
                  src=("kama", [0]),
@@ -105,8 +107,10 @@ PARTS = {
                        d="M 120,500 C 120,709.9 290.1,880 500,880 C 709.9,880 880,709.9 880,500"
                          " C 880,290.1 709.9,120 500,120 C 290.1,120 120,290.1 120,500 Z"),
     "small-circle": dict(ref="suno",
-                         d="M 270,500 C 270,627 373,730 500,730 C 627,730 730,627 730,500"
-                         " C 730,373 627,270 500,270 C 373,270 270,373 270,500 Z"),
+                         d="M 266.93,500 C 266.93,628.69 371.31,733.07 500,733.07"
+                           " C 628.69,733.07 733.07,628.69 733.07,500"
+                           " C 733.07,371.31 628.69,266.93 500,266.93"
+                           " C 371.31,266.93 266.93,371.31 266.93,500 Z"),
     # Dots: placed with ("at", (x, y)) and never scaled, so every dot is the
     # same size. In drawn glyphs, link_parts.py swaps your dots for these.
     "dot": dict(ref="",
@@ -273,9 +277,10 @@ LINKS = {
     "sike": dict(parts=[("big-circle", None), ("big-circle", ("fit", (310, 310, 690, 690)))]),
     # Small circles: the sun and tonsi's head
     "suno": dict(parts=[("small-circle", None)],
-                 own="M 500,125 L 500,270 M 500,730 L 500,875 M 125,500 L 270,500 M 730,500 L 875,500"),
-    "tonsi": dict(parts=[("small-circle", ("move", (500, 412.5)))],
-                  own="M 325.5,262.7 L 165,125 M 674.5,262.7 L 835,125 M 500,642.5 L 500,875"),
+                 own="M 500,120 L 500,266.93 M 500,733.07 L 500,880 M 120,500 L 266.93,500"
+                     " M 733.07,500 L 880,500"),
+    "tonsi": dict(parts=[("small-circle", ("move", (500, 411.33)))],
+                  own="M 323.17,259.54 L 160.53,120 M 676.83,259.54 L 839.47,120 M 500,644.4 L 500,880"),
     "mu": dict(parts=[("person-head", ("fit", (180.37, 240.75, 819.63, 880))),
                       ("big-dot", ("at", (500, 666.91)))],
                own="M 201.7,205.2 C 201.7,252.3 239.9,290.5 286.9,290.5"
@@ -333,3 +338,37 @@ LINKS = {
                        " C 287.2,940.8 439.2,758.4 621.6,697.6"
                        " C 773.6,636.8 864.8,758.4 864.8,880"),
 }
+
+
+def _fit_to_guides():
+    """The shapes and places above were drawn with centrelines at DESIGN_INSET
+    (120-880); scale them about the cell centre onto the current guides.
+    Dots keep their size: only where they go changes."""
+    k = guide_scale()
+    t = CELL / 2 * (1 - k)
+    scale, unscale = (k, 0, 0, k, t, t), (1 / k, 0, 0, 1 / k, -t / k, -t / k)
+    pts = lambda v: tuple(round(t + x * k, 2) for x in v)
+
+    def place(p):
+        if p is None:
+            return None
+        kind, v, *rest = p
+        if kind == "matrix":
+            v = tuple(round(x, 4) for x in multiply(scale, multiply(v, unscale)))
+        return (kind, pts(v), *rest) if kind != "matrix" else (kind, v, *rest)
+
+    for name, spec in PARTS.items():
+        if name not in ("dot", "big-dot") and "d" in spec:
+            spec["d"] = scale_d(spec["d"], k)
+        for key in ("fit", "at"):
+            if key in spec:
+                spec[key] = pts(spec[key])
+        if "parts" in spec:
+            spec["parts"] = [(part, place(p)) for part, p in spec["parts"]]
+    for spec in LINKS.values():
+        if spec.get("own"):
+            spec["own"] = scale_d(spec["own"], k)
+        spec["parts"] = [(part, place(p)) for part, p in spec["parts"]]
+
+
+_fit_to_guides()
