@@ -152,7 +152,7 @@ LINKS = {
                        ("big-dot", ("at", (500, 826.88)))],
                 own=""),
     "loje": dict(parts=[("mouth", ("matrix", (0.9924, 0, 0, 0.9924, 3.7896, 15.4851))),
-                        ("small-triangle", ("matrix", (0.9924, 0, 0, 0.9924, 3.7882, 15.4845)))]),
+                        ("small-triangle", None)]),
     "moku": dict(parts=[("mouth", ("matrix", (0.9924, 0, 0, 0.9924, 3.7896, 15.4851))),
                         ("hand", ("matrix", (0.9924, 0, 0, 0.9924, 3.7881, 15.4845)))]),
     "pona": dict(parts=[("closed-mouth", None)]),
@@ -160,7 +160,7 @@ LINKS = {
     # Colour triangles
     "jelo": dict(parts=[("sun", ("fit", (297.6, 120, 702.4, 524.9))), ("small-triangle", None)],
                  drop="all"),
-    "laso": dict(parts=[("small-triangle", ("matrix", (0.9924, 0, 0, 0.9924, 3.7882, 15.4845)))],
+    "laso": dict(parts=[("small-triangle", None)],
                  own="M 500,437.5 C 447.9,255.3 291.8,229.3 291.8,333.4"
                      " C 291.8,411.5 421.9,437.5 500,437.5 M 500,437.5"
                      " C 552.1,255.3 708.2,229.3 708.2,333.4 C 708.2,411.5 578.1,437.5 500,437.5"

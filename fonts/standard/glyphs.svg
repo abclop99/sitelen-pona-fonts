@@ -314,7 +314,7 @@
     <image href="../../reference/pu/downloads/kalama.svg" xlink:href="../../reference/pu/downloads/kalama.svg" x="8443.1" y="13179.2" width="913.82" height="1040.39" preserveAspectRatio="none" id="reference-138" />
     <image href="../../reference/pu/downloads/uta.svg" xlink:href="../../reference/pu/downloads/uta.svg" x="9917.8" y="13300.2" width="364.45" height="414.92" preserveAspectRatio="none" id="reference-139" />
     <image href="../../reference/pu/downloads/pona.svg" xlink:href="../../reference/pu/downloads/pona.svg" x="10860.0" y="13199.0" width="880.1" height="1002.0" preserveAspectRatio="none" id="reference-140" />
-    <image href="../../reference/pu/downloads/loje.svg" xlink:href="../../reference/pu/downloads/loje.svg" x="12056.6" y="13183.5" width="886.84" height="1009.67" preserveAspectRatio="none" id="reference-141" />
+    <image href="../../reference/pu/downloads/loje.svg" xlink:href="../../reference/pu/downloads/loje.svg" x="12060.0" y="13199.0" width="880.1" height="1002.0" preserveAspectRatio="none" id="reference-141" />
     <image href="../../reference/pu/downloads/kule.svg" xlink:href="../../reference/pu/downloads/kule.svg" x="13260.0" y="13199.0" width="880.1" height="1002.0" preserveAspectRatio="none" id="reference-142" />
     <image href="../../reference/pu/downloads/luka.svg" xlink:href="../../reference/pu/downloads/luka.svg" x="59.9" y="14399.0" width="880.1" height="1002.0" preserveAspectRatio="none" id="reference-143" />
     <image href="../../reference/pu/downloads/pana.svg" xlink:href="../../reference/pu/downloads/pana.svg" x="1256.6" y="14383.5" width="886.84" height="1009.67" preserveAspectRatio="none" id="reference-144" />
@@ -1264,7 +1264,7 @@
     <path d="M 419.67,125 C 660.76,312.5 660.76,687.5 419.67,875" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(12000,2400)" inkscape:label="la draft" />
     <path d="M 125,500 L 635,500 M 635,500 C 635,566.22 688.78,620 755,620 C 821.22,620 875,566.22 875,500 C 875,433.78 821.22,380 755,380 C 688.78,380 635,433.78 635,500 Z" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(13200,2400)" inkscape:label="lape draft" />
     <g inkscape:label="laso draft" transform="translate(0,3600)" id="draft-laso">
-      <use xlink:href="#part-small-triangle" inkscape:label="small-triangle" transform="matrix(0.9924,0,0,0.9924,3.7884,15.3308)" style="stroke-width:50.38" />
+      <use xlink:href="#part-small-triangle" inkscape:label="small-triangle" style="stroke-width:50" />
       <path d="M 500,438.32 C 448.59,258.52 294.54,232.86 294.54,335.59 C 294.54,412.66 422.93,438.32 500,438.32 M 500,438.32 C 551.41,258.52 705.46,232.86 705.46,335.59 C 705.46,412.66 577.07,438.32 500,438.32 M 500,438.32 L 500,535.92" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <path d="M 125,553.59 C 125,716.32 256.94,848.26 419.67,848.26 C 582.4,848.26 714.24,716.32 714.24,553.59 C 714.24,390.86 582.4,258.91 419.67,258.91 C 256.94,258.91 125,390.86 125,553.59 Z M 125,419.67 L 875,419.67" style="fill:none;stroke:#8e7cc3;stroke-width:50;stroke-linecap:round;stroke-linejoin:round" transform="translate(1200,3600)" inkscape:label="lawa draft" />
@@ -1280,7 +1280,7 @@
     </g>
     <g inkscape:label="loje draft" transform="translate(9600,3600)" id="draft-loje">
       <use xlink:href="#part-mouth" inkscape:label="mouth" transform="matrix(0.9924,0,0,0.9924,3.7897,15.3313)" style="stroke-width:50.38" />
-      <use xlink:href="#part-small-triangle" inkscape:label="small-triangle" transform="matrix(0.9924,0,0,0.9924,3.7884,15.3308)" style="stroke-width:50.38" />
+      <use xlink:href="#part-small-triangle" inkscape:label="small-triangle" style="stroke-width:50" />
     </g>
     <g inkscape:label="lon draft" transform="translate(10800,3600)" id="draft-lon">
       <use xlink:href="#part-big-dot" inkscape:label="big-dot" transform="matrix(1,0,0,1,0,-115.38)" style="stroke-width:50" />
