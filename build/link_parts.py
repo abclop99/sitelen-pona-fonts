@@ -210,6 +210,8 @@ def link(path):
         wanted = {f"#part-{p}" for p, _ in matrices}
         linked = [u for u in (current.iter(S + "use") if current is not None else [])
                   if u.get(f"{XLINK}href") in wanted]
+        if linked and word not in drawn and [u.get(f"{XLINK}href") for u in linked] != [f"#part-{p}" for p, _ in matrices]:
+            linked = []     # parts.py changed what this draft is made of: rebuild it below
         if linked:
             # Already linked: put any clone that has been moved back in its place.
             if [u.get(f"{XLINK}href") for u in linked] != [f"#part-{p}" for p, _ in matrices]:

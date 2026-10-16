@@ -36,8 +36,8 @@ from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
 
-from common import (BOX, CELL, GRID, INKSCAPE_NS, MIDLINE, ROOT, SODIPODI_NS,
-                    STROKE, SVG_NS, load_sizes, page_origin, read_words)
+from common import (BOX, CELL, GRID, IDENTITY, INKSCAPE_NS, MIDLINE, ROOT, SODIPODI_NS,
+                    STROKE, SVG_NS, load_sizes, multiply, page_origin, parse_transform, read_words)
 from drafts import DRAFTS
 
 ET.register_namespace("", SVG_NS)
@@ -302,8 +302,39 @@ def reference_art(g, word, ref, ox, oy, size=None):
                                     f"translate({-ox:g},{-oy:g})")
 
 
+def part_references(root, sizes):
+    """For each shared part, a word to show as its reference, and where.
+
+    The word is the part's "ref" in parts.py, or else the first word whose
+    clone of it is only scaled and moved (the "ref" too must be that). Its reference is placed by undoing
+    that clone's transform, so it sits under the part just as it sits under
+    the clone on the word's own page.
+    """
+    from link_parts import XLINK, inverse
+    from parts import LINKS, PARTS
+    clones = {}
+    for layer_el in root.findall(S + "g"):
+        if layer_el.get(f"{INK}label") not in ("glyph", "drafts"):
+            continue
+        for g in layer_el:
+            word = (g.get(f"{INK}label") or "").removesuffix(" draft")
+            for u in g.iter(S + "use"):
+                part = (u.get(f"{XLINK}href") or "").removeprefix("#part-")
+                m = parse_transform(u.get("transform"))
+                if part in PARTS and abs(m[1]) < 1e-6 and abs(m[2]) < 1e-6 and abs(m[0] - m[3]) < 1e-6 and m[0] > 0:
+                    clones.setdefault((part, word), m)
+    out = {}
+    for part, spec in PARTS.items():
+        words = [spec.get("ref")] + [w for w in LINKS if any(p == part for p, _ in LINKS[w]["parts"])]
+        for word in words:
+            if (part, word) in clones:
+                out[part] = (word, multiply(inverse(clones[part, word]), sizes.get(word, IDENTITY)))
+                break
+    return out
+
+
 def write_file(path, words, ref):
-    sizes = {}
+    sizes, part_refs = {}, {}
     keep, own_pages, drawn = {}, [], set(STARTERS)
     labels = {"parts"} | {w["word"] for w in words}
     if path.exists():
@@ -312,6 +343,7 @@ def write_file(path, words, ref):
         drawn |= set(found) - drafted
         old = ET.parse(path).getroot()
         sizes = load_sizes(old)
+        part_refs = part_references(old, sizes)
         old_defs = old.find(S + "defs")
         for g in old.findall(S + "g"):
             if g.get(f"{INK}label") in KEPT_LAYERS:
@@ -351,8 +383,13 @@ def write_file(path, words, ref):
         page_guides(guides, label, ox, oy)
         if word:
             reference_art(refs, word, ref, ox, oy, sizes.get(label))
+    by_word = {w["word"]: w for w in words}
     for p in own_pages:
-        page_guides(guides, p.get(f"{INK}label"), float(p.get("x")), float(p.get("y")))
+        label, ox, oy = p.get(f"{INK}label"), float(p.get("x")), float(p.get("y"))
+        page_guides(guides, label, ox, oy)
+        if label.removeprefix("part-") in part_refs:
+            word, m = part_refs[label.removeprefix("part-")]
+            reference_art(refs, by_word[word], ref, ox, oy, m)
 
     for label, style in (("drafts", DRAFT_STYLE), ("parts", GLYPH_STYLE),
                          ("glyph", GLYPH_STYLE), ("fill", FILL_STYLE)):

@@ -13,6 +13,8 @@ PARTS: name -> where the original comes from.
         keep it where it is on the word's page.
   d     the shape to use when the source word is not drawn yet.
   clone another part to clone instead of drawing a shape (with fit).
+  ref   the word whose reference is shown on the part's page (default: the
+        first word in LINKS that uses it).
 
 LINKS: word -> the clones it is built from, and its own strokes.
   parts  list of (part, place). place is None for the part exactly where it
@@ -31,28 +33,31 @@ LINKS: word -> the clones it is built from, and its own strokes.
 from drafts import BLUNT, DRAFTS, arm, bowl, circle, closed, dot, ellipse, heart, j, line, rays, rect
 
 PARTS = {
-    "legs": dict(src=("kama", [0]), d=DRAFTS["kama"]),
-    "rays": dict(src=("kalama", [1, 2, 3]), d=rays(200, 350, 175)),
-    "mouth": dict(src=("kalama", [0]), fit=(350, 175, 650, 375), d=bowl(350, 650, 175, 200)),
-    "closed-mouth": dict(src=("pona", [0]), d="M 275,400 C 350,675 650,675 725,400"),
-    "small-triangle": dict(src=("jelo", [5]), d=closed((500, 520), (290, 850), (710, 850))),
-    "big-triangle": dict(d=closed((500, 175), (800, 800), (200, 800))),
-    "luka": dict(d=arm(350, 750, 225, 825)),
+    "legs": dict(ref="kama", src=("kama", [0]), d=DRAFTS["kama"]),
+    "rays": dict(ref="kalama", src=("kalama", [1, 2, 3]), d=rays(200, 350, 175)),
+    "mouth": dict(ref="uta", src=("kalama", [0]), fit=(350, 175, 650, 375), d=bowl(350, 650, 175, 200)),
+    "closed-mouth": dict(ref="pona", src=("pona", [0]), d="M 275,400 C 350,675 650,675 725,400"),
+    "small-triangle": dict(ref="loje", src=("jelo", [5]), d=closed((500, 520), (290, 850), (710, 850))),
+    "big-triangle": dict(ref="kule", d=closed((500, 175), (800, 800), (200, 800))),
+    "luka": dict(ref="luka", d=arm(350, 750, 225, 825)),
     "hand": dict(clone="luka", fit=(300, 450, 650, 825)),
-    "heart": dict(d=heart(500, 225, 600, 600)),
-    "palisa": dict(d=ellipse(500, 500, 75, 325, BLUNT)),
-    "loop": dict(d="M 365,500 A 135,135 0 1 1 404.5,595.5"),
-    "page": dict(d=rect(225, 175, 775, 825)),
-    "big-box": dict(d=line((225, 175), (225, 825), (775, 825), (775, 175))),
-    "short-box": dict(src=("insa", [0]), d=line((225, 375), (225, 625), (775, 625), (775, 375))),
-    "side-box": dict(d=line((275, 175), (425, 175), (425, 825), (275, 825))),
-    "hammer": dict(src=("ilo", [0, 1]), d=j(rect(275, 200, 725, 475), line((500, 200), (500, 825)))),
-    "wave": dict(d="M 150,450 C 275,550 375,600 500,525 C 625,450 750,375 850,550"),
-    "arrowhead": dict(src=("alasa", [0]), d=line((725, 425), (800, 500), (725, 575))),
+    "heart": dict(ref="pilin", d=heart(500, 225, 600, 600)),
+    "palisa": dict(ref="palisa", d=ellipse(500, 500, 75, 325, BLUNT)),
+    "loop": dict(ref="mi", d="M 365,500 A 135,135 0 1 1 404.5,595.5"),
+    "page": dict(ref="lipu", d=rect(225, 175, 775, 825)),
+    # The toki pona logo: toki with pona's smile inside. Not a UCSUR word,
+    # so for now it is only a part (pu's cover, and later a "toki pona" ligature).
+    "toki-pona": dict(d=j(rays(), circle(500, 600, 225), "M 415,585 C 440,680 560,680 585,585")),
+    "big-box": dict(ref="poki", d=line((225, 175), (225, 825), (775, 825), (775, 175))),
+    "short-box": dict(ref="insa", src=("insa", [0]), d=line((225, 375), (225, 625), (775, 625), (775, 375))),
+    "side-box": dict(ref="sinpin", d=line((275, 175), (425, 175), (425, 825), (275, 825))),
+    "hammer": dict(ref="ilo", src=("ilo", [0, 1]), d=j(rect(275, 200, 725, 475), line((500, 200), (500, 825)))),
+    "wave": dict(ref="linja", d="M 150,450 C 275,550 375,600 500,525 C 625,450 750,375 850,550"),
+    "arrowhead": dict(ref="alasa", src=("alasa", [0]), d=line((725, 425), (800, 500), (725, 575))),
     "shaft": dict(d=line((500, 150), (500, 850))),
-    "stem": dict(src=("a", [0]), d=line((500, 175), (500, 575))),
-    "tally": dict(src=("tu", [0]), at=(500, 500), d=line((500, 200), (500, 800))),
-    "big-circle": dict(src=("ijo", [0]), d=circle(500, 500, 300)),
+    "stem": dict(ref="a", src=("a", [0]), d=line((500, 175), (500, 575))),
+    "tally": dict(ref="wan", src=("tu", [0]), at=(500, 500), d=line((500, 200), (500, 800))),
+    "big-circle": dict(ref="ijo", src=("ijo", [0]), d=circle(500, 500, 300)),
 }
 
 
@@ -106,7 +111,7 @@ LINKS = {
     # Boxes
     "lipu": dict(parts=[("page", None)]),
     "sitelen": dict(parts=[("page", None)], own=j(dot(350, 500), dot(500, 500), dot(650, 500))),
-    "pu": dict(parts=[("page", None)], own=j(circle(500, 575, 90), rays(375, 450, 100))),
+    "pu": dict(parts=[("page", None), ("toki-pona", ("fit", (380, 360, 620, 700)))]),
     "ku": dict(parts=[("page", None)], own=j(line((700, 300), (375, 425), (450, 825)), dot(575, 600))),
     "poki": dict(parts=[("big-box", None)]),
     "open": dict(parts=[("big-box", None)], own=line((225, 625), (775, 625))),
