@@ -1463,7 +1463,7 @@
     </g>
     <g inkscape:label="unpa draft" transform="translate(4800,10800)" id="draft-unpa">
       <use xlink:href="#part-palisa" inkscape:label="palisa" transform="matrix(0.821908,0,0,0.821908,89.0511,156.721)" style="stroke-width:48.67" />
-      <path d="M 500,229.1 C 404.7,64.1 218.8,94.5 218.8,264.7 C 218.8,385.5 366.8,464 411.2,514.9 C 431.2,537.9 459.3,556.3 500,556.3 M 500,229.1 C 595.3,64.1 781.2,94.5 781.2,264.7 C 781.2,385.5 633.2,464 588.8,514.9 C 568.8,537.9 540.7,556.3 500,556.3" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
+      <path d="M 500,556.3 C 445,556.3 218.8,389 218.8,259.6 C 218.8,86.5 375,66.6 500,243.8 C 625,66.6 781.2,86.5 781.2,259.6 C 781.2,389 555,556.3 500,556.3" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" />
     </g>
     <g inkscape:label="uta draft" transform="translate(6000,10800)" id="draft-uta">
       <use xlink:href="#part-mouth" inkscape:label="mouth" transform="matrix(2.4149,0,0,2.4149,-707.447,-236.878)" style="stroke-width:16.56" />
