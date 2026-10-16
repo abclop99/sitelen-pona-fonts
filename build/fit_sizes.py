@@ -88,6 +88,9 @@ def conjugate(t, inner):
     return multiply(inverse(inner), multiply(t, inner))
 
 
+DOTS = {}    # "#part-dot" -> the dot's centre on its page; dots move but keep their size
+
+
 def bake(el, t, effects, skip_uses=()):
     """Apply a uniform scale-and-shift to an element's coordinates."""
     own = parse_transform(el.get("transform"))
@@ -120,6 +123,10 @@ def bake(el, t, effects, skip_uses=()):
         for key in ("width", "height", "rx", "ry"):
             if el.get(key):
                 el.set(key, f"{float(el.get(key)) * s:g}")
+    elif tag == "use" and el.get(f"{XLINK}href") in DOTS:
+        cx, cy = DOTS[el.get(f"{XLINK}href")]
+        x, y = own[0] * cx + own[2] * cy + own[4], own[1] * cx + own[3] * cy + own[5]
+        el.set("transform", matrix_attr((1, 0, 0, 1, t[0] * x + t[4] - cx, t[3] * y + t[5] - cy)))
     elif tag == "use":
         if el.get(f"{XLINK}href") not in skip_uses:
             el.set("transform", matrix_attr(multiply(t, own)))
@@ -182,6 +189,11 @@ def run(path):
     drafts = layers["drafts"]
     nv = root.find(f"{SODI}namedview")
     origin = {p.get(f"{INK}label"): (float(p.get("x")), float(p.get("y"))) for p in nv.findall(f"{INK}page")}
+    every = {e.get("id"): e for e in root.iter() if e.get("id")}
+    for name in ("dot", "big-dot"):
+        if f"part-{name}" in every:
+            x0, y0, x1, y1 = bbox(every[f"part-{name}"], every)
+            DOTS[f"#part-{name}"] = ((x0 + x1) / 2, (y0 + y1) / 2)
     part_els = {e.get("id")[5:]: e for e in layers["parts"].iter()
                 if (e.get("id") or "").startswith("part-") and e.tag in (S + "path", S + "use")}
     changed = 0
@@ -190,7 +202,7 @@ def run(path):
         if abs(t[0] - 1) < 0.003 and abs(t[4]) < 1 and abs(t[5]) < 1:
             continue
         changed += 1
-        managed = {f"#part-{p}" for p, _ in LINKS.get(w, {}).get("parts", [])}
+        managed = {f"#part-{p}" for p, _ in LINKS.get(w, {}).get("parts", [])} - set(DOTS)
         if w in drawn:
             for child in subs[w]:
                 bake(child, t, effects, managed)

@@ -17,6 +17,7 @@ PARTS: name -> where the original comes from.
         first word in LINKS that uses it).
   parts the part is made of other parts, placed as in LINKS (a group of
         clones; edit the parts it is made of).
+  black start black (as drawn) rather than as a purple draft.
 
 LINKS: word -> the clones it is built from, and its own strokes.
   parts  list of (part, place). place is None for the part exactly where it
@@ -25,12 +26,16 @@ LINKS: word -> the clones it is built from, and its own strokes.
            ("stretch", box)      scale each way to fill box
            ("move", (x, y))      keep the size, centre on (x, y)
            ("matrix", m)         an explicit transform
+           ("at", (x, y))        centre on (x, y) at the part's own size
+                                 (for dots, so they are all alike)
          with an optional third item: a rotation or mirror applied first,
          "flipx", "flipy", "rot90" (clockwise) or "rot-90".
   own    the word's other strokes while it is a draft.
   drop   for a drawn word, the subpaths the clones replace ("all" for all);
          a word that is a part's source drops that part's subpaths itself.
 """
+
+import re
 
 from drafts import BLUNT, DRAFTS, arm, open_bowl, bowl, circle, closed, dot, ellipse, heart, j, line, rays, rect
 
@@ -45,7 +50,8 @@ PARTS = {
     "hand": dict(clone="luka", fit=(300, 450, 650, 825)),
     "heart": dict(ref="pilin", d=heart(500, 225, 600, 600)),
     "palisa": dict(ref="palisa", d=ellipse(500, 500, 75, 325, BLUNT)),
-    "loop": dict(ref="mi", d="M 365,500 A 135,135 0 1 1 404.5,595.5"),
+    "pointer": dict(ref="mi", d="M 400,800 V 325 A 125,125 0 1 1 436.6,413.4"),
+    "person-head": dict(ref="jan", src=("jan", [0]), d=circle(500, 450, 275)),
     "page": dict(ref="lipu", d=rect(225, 175, 775, 825)),
     "head": dict(ref="toki", d=circle(500, 600, 225)),
     # The toki pona logo: toki with pona's smile inside. Not a UCSUR word,
@@ -62,6 +68,10 @@ PARTS = {
     "stem": dict(ref="a", src=("a", [0]), d=line((500, 175), (500, 575))),
     "tally": dict(ref="wan", src=("tu", [0]), at=(500, 500), d=line((500, 200), (500, 800))),
     "big-circle": dict(ref="ijo", src=("ijo", [0]), d=circle(500, 500, 300)),
+    # Dots: placed with ("at", (x, y)) and never scaled, so every dot is the
+    # same size. In drawn glyphs, link_parts.py swaps your dots for these.
+    "dot": dict(ref="", black=True, d=dot(500, 500)),
+    "big-dot": dict(ref="", black=True, d=dot(500, 500, 18)),
 }
 
 
@@ -110,11 +120,13 @@ LINKS = {
     "olin": dict(parts=[("heart", ("fit", (290, 120, 710, 490))), ("heart", ("fit", (290, 505, 710, 875)))]),
     "unpa": dict(parts=[("heart", ("fit", (230, 125, 770, 590))), ("palisa", ("fit", (430, 255, 570, 855)))]),
     "palisa": dict(parts=[("palisa", None)]),
-    # Pointing hands: one loop, turned
-    "mi": dict(parts=[("loop", shift(25, -165))], own="M 390,800 V 335"),
-    "sina": dict(parts=[("loop", ("matrix", (1, 0, 0, -1, 15, 1155)))], own="M 380,175 V 655"),
-    "ona": dict(parts=[("loop", ("matrix", (0, -1, -1, 0, 1185, 1000)))],
-                own="M 175,325 A 574.5,574.5 0 0 0 685,635"),
+    # Pointing hands: one hand, flipped and turned
+    "mi": dict(parts=[("pointer", None)]),
+    "sina": dict(parts=[("pointer", ("matrix", (1, 0, 0, -1, 0, 1000)))]),
+    "ona": dict(parts=[("pointer", ("matrix", (0, 1, -1, 0, 1000, 0)))]),
+    # People and animal heads
+    "jan": dict(parts=[("person-head", None)]),
+    "mije": dict(parts=[("person-head", None)], own=line((210, 850), (210, 775), (790, 775), (790, 850))),
     # Boxes
     "lipu": dict(parts=[("page", None)]),
     "sitelen": dict(parts=[("page", None)], own=j(dot(350, 500), dot(500, 500), dot(650, 500))),
@@ -159,4 +171,42 @@ LINKS = {
                  own=j(line((325, 400), (450, 600)), line((450, 400), (325, 600)),
                        line((550, 400), (675, 600)), line((675, 400), (550, 600)))),
     "ma": dict(parts=[("big-circle", None)], own=j(line((500, 200), (500, 800)), line((200, 500), (800, 500)))),
+    "tenpo": dict(parts=[("big-circle", None)], own=line((500, 300), (500, 500), (600, 500))),
+    "sike": dict(parts=[("big-circle", None), ("big-circle", ("fit", (350, 350, 650, 650)))]),
+    "mu": dict(parts=[("person-head", ("fit", (275, 350, 725, 800)))],
+               own=j(circle(350, 325, 60), circle(650, 325, 60), dot(500, 650))),
+    "mani": dict(parts=[("person-head", ("fit", (275, 350, 725, 800)))],
+                 own=j("M 341,416 C 275,375 225,300 225,225", "M 659,416 C 725,375 775,300 775,225")),
 }
+
+
+DOT = re.compile(r"M (-?[\d.]+),(-?[\d.]+) C [^MZ]*Z M (-?[\d.]+),(-?[\d.]+) h 0\.1")
+
+
+def split_dots(d):
+    """Take the dots (drafts.dot) out of path data: (the rest, [(x, y, radius)])."""
+    found = []
+
+    def take(m):
+        x0, cx, cy = float(m.group(1)), float(m.group(3)), float(m.group(4))
+        found.append((cx, cy, cx - x0))
+        return ""
+    rest = " ".join(DOT.sub(take, d).split())
+    return rest, found
+
+
+def dot_parts(found):
+    return [("big-dot" if rad >= 14 else "dot", ("at", (x, y))) for x, y, rad in found]
+
+
+# Every dot in a draft becomes a clone of a dot part: the words above keep
+# their other parts, and drafted words with dots get an entry of their own.
+for _word in list(DRAFTS):
+    _spec = LINKS.get(_word)
+    _rest, _found = split_dots(_spec.get("own", "") if _spec else DRAFTS[_word])
+    if _found:
+        if _spec:
+            _spec["parts"] = _spec["parts"] + dot_parts(_found)
+            _spec["own"] = _rest
+        else:
+            LINKS[_word] = dict(parts=dot_parts(_found), own=_rest)

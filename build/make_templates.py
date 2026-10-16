@@ -325,6 +325,8 @@ def part_references(root, sizes):
                     clones.setdefault((part, word), m)
     out = {}
     for part, spec in PARTS.items():
+        if spec.get("ref") == "":
+            continue     # no reference (dots)
         words = [spec.get("ref")] + [w for w in LINKS if any(p == part for p, _ in LINKS[w]["parts"])]
         for word in words:
             if (part, word) in clones:
