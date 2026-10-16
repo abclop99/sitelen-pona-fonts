@@ -37,7 +37,7 @@ LINKS: word -> the clones it is built from, and its own strokes.
 
 import re
 
-from drafts import BLUNT, DRAFTS, arm, open_bowl, bowl, circle, closed, dot, ellipse, heart, j, line, rays, rect
+from drafts import BLUNT, DRAFTS, arm, big_dot, open_bowl, bowl, circle, closed, dot, ellipse, heart, j, line, rays, rect
 
 PARTS = {
     "legs": dict(ref="kama", src=("kama", [0]), d=DRAFTS["kama"]),
@@ -50,7 +50,7 @@ PARTS = {
     "hand": dict(clone="luka", fit=(300, 450, 650, 825)),
     "heart": dict(ref="pilin", d=heart(500, 225, 600, 600)),
     "palisa": dict(ref="palisa", d=ellipse(500, 500, 75, 325, BLUNT)),
-    "pointer": dict(ref="mi", d="M 400,800 V 325 A 125,125 0 1 1 436.6,413.4"),
+    "pointer": dict(ref="mi", d="M 360,800 C 365,575 395,425 400,325 A 125,125 0 1 1 436.6,413.4"),
     "person-head": dict(ref="jan", src=("jan", [0]), d=circle(500, 450, 275)),
     "page": dict(ref="lipu", d=rect(225, 175, 775, 825)),
     "head": dict(ref="toki", d=circle(500, 600, 225)),
@@ -64,6 +64,7 @@ PARTS = {
     "hammer": dict(ref="ilo", src=("ilo", [0, 1]), d=j(rect(275, 200, 725, 475), line((500, 200), (500, 825)))),
     "wave": dict(ref="linja", d="M 150,450 C 275,550 375,600 500,525 C 625,450 750,375 850,550"),
     "arrowhead": dict(ref="alasa", src=("alasa", [0]), d=line((725, 425), (800, 500), (725, 575))),
+    "sin": dict(ref="sin", src=("sin", [0, 1, 2]), d=DRAFTS["sin"]),
     "shaft": dict(d=line((500, 150), (500, 850))),
     "stem": dict(ref="a", src=("a", [0]), d=line((500, 175), (500, 575))),
     "tally": dict(ref="wan", src=("tu", [0]), at=(500, 500), d=line((500, 200), (500, 800))),
@@ -92,7 +93,7 @@ LINKS = {
     "epiku": dict(parts=[("rays", ("fit", (300, 150, 700, 325)))], own=open_bowl(250, 750, 425, 375)),
     "sona": dict(parts=[("rays", ("fit", (300, 150, 700, 275))), ("page", ("fit", (325, 375, 675, 850)))]),
     # Mouths: loje and moku share the mouth's place
-    "uta": dict(parts=[("mouth", ("fit", (250, 290, 750, 600)))], own=dot(500, 700)),
+    "uta": dict(parts=[("mouth", ("fit", (250, 290, 750, 600)))], own=big_dot(500, 700)),
     "loje": dict(parts=[("mouth", None), ("small-triangle", None)]),
     "moku": dict(parts=[("mouth", None), ("hand", None)]),
     "pona": dict(parts=[("closed-mouth", None)]),
@@ -131,14 +132,14 @@ LINKS = {
     "lipu": dict(parts=[("page", None)]),
     "sitelen": dict(parts=[("page", None)], own=j(dot(350, 500), dot(500, 500), dot(650, 500))),
     "pu": dict(parts=[("page", None), ("toki-pona", ("fit", (380, 360, 620, 700)))]),
-    "ku": dict(parts=[("page", None)], own=j(line((700, 300), (375, 425), (450, 825)), dot(575, 600))),
+    "ku": dict(parts=[("page", None)], own=j(line((700, 300), (375, 425), (450, 825)), big_dot(575, 600))),
     "poki": dict(parts=[("big-box", None)]),
     "open": dict(parts=[("big-box", None)], own=line((225, 625), (775, 625))),
-    "insa": dict(parts=[("short-box", None)], own=dot(500, 450)),
-    "anpa": dict(parts=[("short-box", ("move", (500, 453)))], own=dot(500, 700), drop=[0]),
-    "poka": dict(parts=[("short-box", ("move", (425, 500)))], own=dot(800, 475)),
-    "sinpin": dict(parts=[("side-box", None)], own=dot(625, 500)),
-    "monsi": dict(parts=[("side-box", ("matrix", (-1, 0, 0, 1, 1000, 0)))], own=dot(375, 500)),
+    "insa": dict(parts=[("short-box", None)], own=big_dot(500, 450)),
+    "anpa": dict(parts=[("short-box", ("move", (500, 453)))], own=big_dot(500, 700), drop=[0]),
+    "poka": dict(parts=[("short-box", ("move", (425, 500)))], own=big_dot(792, 475)),
+    "sinpin": dict(parts=[("side-box", None)], own=big_dot(625, 500)),
+    "monsi": dict(parts=[("side-box", ("matrix", (-1, 0, 0, 1, 1000, 0)))], own=big_dot(375, 500)),
     # Waves
     "linja": dict(parts=[("wave", None)]),
     "telo": dict(parts=[("wave", ("stretch", (175, 250, 825, 450), "flipy")),
@@ -150,6 +151,11 @@ LINKS = {
                   own=j(line((225, 500), (800, 500)), "M 400,200 C 700,250 700,750 400,800 Z")),
     "ni": dict(parts=[("shaft", None), ("arrowhead", ("move", (500, 798), "rot90"))]),
     "nasin": dict(parts=[("shaft", None), ("arrowhead", ("move", (500, 477), "rot-90"))]),
+    "tan": dict(parts=[("arrowhead", ("move", (275, 612.5), "rot90"))],
+                own="M 725,650 C 725,425 625,350 500,350 C 375,350 275,425 275,650"),
+    # Rays
+    "sin": dict(parts=[("sin", None)]),
+    "namako": dict(parts=[("sin", ("fit", (180, 180, 820, 529)))], own=line((500, 674), (500, 878))),
     # Punctuation stems
     "a": dict(parts=[("stem", None)],
               own="M 540,760 C 540,700 440,690 440,760 C 440,830 540,820 540,760 L 575,825"),
@@ -174,7 +180,7 @@ LINKS = {
     "tenpo": dict(parts=[("big-circle", None)], own=line((500, 300), (500, 500), (600, 500))),
     "sike": dict(parts=[("big-circle", None), ("big-circle", ("fit", (350, 350, 650, 650)))]),
     "mu": dict(parts=[("person-head", ("fit", (275, 350, 725, 800)))],
-               own=j(circle(350, 325, 60), circle(650, 325, 60), dot(500, 650))),
+               own=j(circle(350, 325, 60), circle(650, 325, 60), big_dot(500, 650))),
     "mani": dict(parts=[("person-head", ("fit", (275, 350, 725, 800)))],
                  own=j("M 341,416 C 275,375 225,300 225,225", "M 659,416 C 725,375 775,300 775,225")),
 }

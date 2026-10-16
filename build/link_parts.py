@@ -279,6 +279,27 @@ def link(path):
             if n:
                 notes.append(f"{word}: {n} dot(s) now clone the dot parts")
 
+    # ...and are the size parts.py asks for (a dot or a big dot), in the same place.
+    for word in sorted(drawn):
+        kinds = {item[0] for item in LINKS.get(word, {}).get("parts", []) if item[1] and item[1][0] == "at"}
+        if len(kinds) != 1 or word not in glyph_subs:
+            continue
+        kind = kinds.pop()
+        n = 0
+        for u in glyph_subs[word].iter(S + "use"):
+            href = u.get(f"{XLINK}href")
+            if href in ("#part-dot", "#part-big-dot") and href != f"#part-{kind}":
+                old = parse_transform(u.get("transform"))
+                ox, oy = centre(ids[href[1:]], ids)
+                nx, ny = centre(ids[f"part-{kind}"], ids)
+                u.set(f"{XLINK}href", f"#part-{kind}")
+                u.set(f"{INK}label", kind)
+                u.set("transform", matrix_attr((1, 0, 0, 1, old[0] * ox + old[2] * oy + old[4] - nx,
+                                                old[1] * ox + old[3] * oy + old[5] - ny)))
+                n += 1
+        if n:
+            notes.append(f"{word}: {n} dot(s) now {'big' if kind == 'big-dot' else 'small'}")
+
     # Glyphs: clones of their parts.
     drafts_layer = layers["drafts"]
     draft_els = {(e.get(f"{INK}label") or "").removesuffix(" draft"): e for e in drafts_layer}
