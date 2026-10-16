@@ -113,7 +113,9 @@ function render(text, mode) {
       s.textContent = token;
       out.appendChild(s);
     } else if (/\s/.test(token)) {
-      // sitelen pona is written without spaces between words
+      // a single space just separates words; each pair of spaces makes one blank, as in sitelen seli kiwen
+      const blanks = Math.floor((token.match(/ /g) || []).length / 2);
+      if (blanks) out.appendChild(document.createTextNode("\u3000".repeat(blanks)));
     } else {
       out.appendChild(document.createTextNode(token.replace(/\./g, "　")));
     }
