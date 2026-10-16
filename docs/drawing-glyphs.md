@@ -38,9 +38,9 @@ The build strokes after placing, so a scaled clone keeps the same line weight in
 
 ## How to draw
 
-- **Draw centrelines, not outlines.** One path down the middle of each stroke. The build gives every path the same stroke weight (`STROKE` in `build/common.py`, 40 units) with round ends and joins, whatever stroke width the path has in Inkscape.
+- **Draw centrelines, not outlines.** One path down the middle of each stroke. The build gives every path the same stroke weight (`STROKE` in `build/common.py`, 50 units) with round ends and joins, whatever stroke width the path has in Inkscape.
 - **Build from simple pieces.** Use the Bezier pen (`B`) for lines and curves, the ellipse tool (`E`) for circles, and the rectangle tool (`R`) for boxes. With snapping on, points land on the 25-unit grid, which keeps sizes and curves consistent across words.
-- **Preview the real weight.** Give your paths `stroke-width: 40`, round caps and round joins, and no fill (Fill and Stroke, `Ctrl+Shift+F`). Inkscape remembers the last style per tool, so you only set it once.
+- **Preview the real weight.** Give your paths `stroke-width: 50`, round caps and round joins, and no fill (Fill and Stroke, `Ctrl+Shift+F`). Inkscape remembers the last style per tool, so you only set it once.
 - **Dots** are a path with a single tiny segment; the round caps turn it into a dot.
 - **Filled areas** (if a glyph has any) go in the `fill` layer and are filled exactly as drawn.
 - **The midline matters.** Sitelen pona centres on the midline, not a baseline, so keep each glyph visually centred on the blue line unless it is meant to sit high or low.

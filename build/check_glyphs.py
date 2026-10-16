@@ -233,7 +233,7 @@ def check(path, fix):
     drawn, drafted = read_pages(path)
     own = set(drawn) - drafted
     for label, p in drawn.items():
-        x0, y0, x1, y1 = p.bounds
+        x0, y0, x1, y1 = (round(v, 1) for v in p.bounds)   # ignore float noise
         lo, hi = BOX[0] - TOLERANCE, BOX[1] + TOLERANCE
         if x0 < lo or y0 < lo or x1 > hi or y1 > hi:
             sides = [s for s, bad in (("left", x0 < lo), ("top", y0 < lo),

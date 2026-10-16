@@ -17,7 +17,7 @@ CELL = 1000          # cell size in SVG units = font units per em
 ASCENT = 900         # font y of the top of the cell
 MIDLINE = 500        # SVG y of the midline
 BOX = (100, 900)     # outer edge of the ink: glyphs fill this square
-STROKE = 40          # stroke width for centrelines
+STROKE = 50          # stroke width for centrelines
 GRID = 25            # Inkscape grid spacing
 PAGE_COLUMNS = 12    # pages per row in glyphs.svg
 PAGE_GAP = 200       # space between pages

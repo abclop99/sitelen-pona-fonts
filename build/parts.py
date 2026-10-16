@@ -104,6 +104,9 @@ PARTS = {
                        src=("ijo", [0]),
                        d="M 120,500 C 120,709.9 290.1,880 500,880 C 709.9,880 880,709.9 880,500"
                          " C 880,290.1 709.9,120 500,120 C 290.1,120 120,290.1 120,500 Z"),
+    "small-circle": dict(ref="suno",
+                         d="M 270,500 C 270,627 373,730 500,730 C 627,730 730,627 730,500"
+                         " C 730,373 627,270 500,270 C 373,270 270,373 270,500 Z"),
     # Dots: placed with ("at", (x, y)) and never scaled, so every dot is the
     # same size. In drawn glyphs, link_parts.py swaps your dots for these.
     "dot": dict(ref="",
@@ -268,6 +271,11 @@ LINKS = {
     "ma": dict(parts=[("big-circle", None)], own="M 500,120 L 500,880 M 120,500 L 880,500"),
     "tenpo": dict(parts=[("big-circle", None)], own="M 500,246.7 L 500,500 L 626.7,500"),
     "sike": dict(parts=[("big-circle", None), ("big-circle", ("fit", (310, 310, 690, 690)))]),
+    # Small circles: the sun and tonsi's head
+    "suno": dict(parts=[("small-circle", None)],
+                 own="M 500,125 L 500,270 M 500,730 L 500,875 M 125,500 L 270,500 M 730,500 L 875,500"),
+    "tonsi": dict(parts=[("small-circle", ("move", (500, 412.5)))],
+                  own="M 325.5,262.7 L 165,125 M 674.5,262.7 L 835,125 M 500,642.5 L 500,875"),
     "mu": dict(parts=[("person-head", ("fit", (180.37, 240.75, 819.63, 880))),
                       ("big-dot", ("at", (500, 666.91)))],
                own="M 201.7,205.2 C 201.7,252.3 239.9,290.5 286.9,290.5"
