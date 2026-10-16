@@ -242,15 +242,22 @@ def check(path, fix):
 
     # Big glyphs should reach the lines (fit_sizes.py does that); words that
     # share a linked part are sized as a group, so some of them stop short.
-    from fit_sizes import SMALL, groups
+    from fit_sizes import SAME_SCALE, SMALL, groups
+    from parts import LINKS
     grouped = {w: g for g in groups() for w in g}
+    tied = {w: ", ".join(sorted(parts)) for parts in SAME_SCALE for w, spec in LINKS.items()
+            if any(p in parts and (pl is None or pl[0] in ("matrix", "move")) for p, pl in spec["parts"])}
     span = BOX[1] - BOX[0]
     for label, p in drawn.items():
         x0, y0, x1, y1 = p.bounds
         size = max(x1 - x0, y1 - y0)
         if label not in SMALL and 0.7 * span <= size < span - 2 * TOLERANCE:
-            why = (f" (sized with {', '.join(sorted(grouped[label] - {label}))}, which share its parts)"
-                   if label in grouped else "; python3 build/fit_sizes.py fits it")
+            if label in grouped:
+                why = f" (sized with {', '.join(sorted(grouped[label] - {label}))}, which share its parts)"
+            elif label in tied:
+                why = f" (scaled like the other glyphs made of {tied[label]})"
+            else:
+                why = "; python3 build/fit_sizes.py fits it"
             notes.append(f"{label}: doesn't reach the lines ({size:.0f} of {span}){why}")
 
     drafts = layers.get("drafts")

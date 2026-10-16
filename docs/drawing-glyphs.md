@@ -78,7 +78,7 @@ The grid is 25 units, and every page starts on a grid line, so the same grid poi
 
 ## Glyph sizes
 
-The red box is the topline and baseline: a glyph's outer edge should touch it on its longer side (top and bottom for tall glyphs, left and right for wide ones like *linja*). `python3 build/fit_sizes.py --font standard` scales every glyph that falls short and centres it along that side. Words that share a linked part in the same place are scaled together so the part stays put, which can leave some of them a little short; small glyphs (*lili*) grow by the typical amount instead. Each word's scale is kept on its page's sub-layer (`data-size`), and the references, drafts and part clones on that page follow it. Run `make_templates.py` and `link_parts.py` afterwards. The checker lists big glyphs that don't reach the lines.
+The red box is the topline and baseline: a glyph's outer edge should touch it on its longer side (top and bottom for tall glyphs, left and right for wide ones like *linja*). `python3 build/fit_sizes.py --font standard` scales every glyph that falls short and centres it along that side. Words that share a linked part in the same place are scaled together so the part stays put, which can leave some of them a little short, and the part's own page is scaled to match, so it looks the way those glyphs show it. Glyphs made of boxes are all scaled by the same amount, so the open boxes stay as wide as the closed ones. Small glyphs (*lili*) grow by the typical amount instead. Each word's scale is kept on its page's sub-layer (`data-size`), and the references, drafts and part clones on that page follow it. Run `make_templates.py` and `link_parts.py` afterwards. The checker lists big glyphs that don't reach the lines.
 
 ## Checking the file
 

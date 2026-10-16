@@ -102,7 +102,6 @@ def multiply(a, b):
     return _mul(a, b)
 
 
-
 def load_sizes(root):
     """Per-word placement, {word: matrix}, from a glyphs.svg's glyph sub-layers.
 
@@ -118,6 +117,17 @@ def load_sizes(root):
             continue
         for sub in layer:
             if sub.get("data-size"):
-                s, dx, dy = (float(v) for v in sub.get("data-size").split())
-                out[sub.get(f"{{{INKSCAPE_NS}}}label")] = (s, 0, 0, s, dx, dy)
+                out[sub.get(f"{{{INKSCAPE_NS}}}label")] = parse_size(sub.get("data-size"))
     return out
+
+
+def parse_size(text):
+    """A data-size value, "scale dx dy", as a matrix (identity when absent)."""
+    if not text:
+        return IDENTITY
+    s, dx, dy = (float(v) for v in text.split())
+    return (s, 0, 0, s, dx, dy)
+
+
+def size_attr(m):
+    return f"{m[0]:.6g} {m[4]:.6g} {m[5]:.6g}"

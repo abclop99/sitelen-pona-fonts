@@ -19,9 +19,9 @@ import xml.etree.ElementTree as ET
 
 from build import element_paths, read_pages, to_pathops
 from check_glyphs import absolute, serialise, transform_d
-from common import CELL, IDENTITY, ROOT, load_sizes, multiply, page_origin, parse_transform
+from common import CELL, IDENTITY, ROOT, load_sizes, multiply, page_origin, parse_size, parse_transform
 from drafts import circle, ellipse
-from make_templates import DRAFT_STYLE, GLYPH_STYLE, INK, S, SODI
+from make_templates import DRAFT_COLOUR, DRAFT_STYLE, GLYPH_STYLE, INK, S, SODI
 from parts import LINKS, PARTS
 
 XLINK = "{http://www.w3.org/1999/xlink}"
@@ -34,6 +34,10 @@ def inverse(m):
     a, b, c, d, e, f = m
     det = a * d - b * c
     return (d / det, -b / det, -c / det, a / det, (c * f - d * e) / det, (b * e - a * f) / det)
+
+
+def near_identity(m):
+    return max(abs(x - y) for x, y in zip(m, IDENTITY)) < 1e-6
 
 
 def matrix_attr(m):
@@ -118,6 +122,7 @@ def link(path):
     parts_layer = layers["parts"]
     part_subs = {g.get(f"{INK}label"): g for g in parts_layer if g.get(f"{INK}groupmode") == "layer"}
     src_map = {}      # part -> matrix from its source word's page to the part's page
+    part_size = {}    # part -> how much fit_sizes.py has scaled its original (data-size)
     for name, spec in PARTS.items():
         label = f"part-{name}"
         if label not in pages:
@@ -132,9 +137,21 @@ def link(path):
                 "transform": f"translate({ox:g},{oy:g})"})
         pid = f"part-{name}"
         if pid in ids:
-            if ids[pid].get("data-home") and spec.get("src", ("",))[0] in drawn:
-                src_map[name] = parse_transform(ids[pid].get("data-home"))
+            el = ids[pid]
+            part_size[name] = size = parse_size(el.get("data-size"))
+            if el.get("data-home") and spec.get("src", ("",))[0] in drawn:
+                src_map[name] = parse_transform(el.get("data-home"))
+            elif "clone" in spec:
+                # Follow the cloned part's size, then this part's own.
+                fit = place_matrix(bbox(ids[f"part-{spec['clone']}"], ids), "fit", spec["fit"])
+                el.set("transform", matrix_attr(multiply(size, fit)))
+            elif "d" in spec and DRAFT_COLOUR in el.get("style", "").lower() and el.get("data-spec") != spec["d"]:
+                # A drafted part follows parts.py until you draw it (turn it black).
+                el.set("d", transform_d(spec["d"], size) if not near_identity(size) else spec["d"])
+                el.set("data-spec", spec["d"])
+                notes.append(f"part {name}: redrawn from parts.py")
             continue
+        part_size[name] = IDENTITY
         sub = part_subs[label]
         if "clone" in spec:
             target = ids[f"part-{spec['clone']}"]
@@ -157,7 +174,7 @@ def link(path):
             src_map[name] = parse_transform(matrix_attr(m))
             notes.append(f"part {name}: taken from your {word}")
         else:
-            el = ET.SubElement(sub, S + "path", {"d": spec["d"], "style": DRAFT_STYLE,
+            el = ET.SubElement(sub, S + "path", {"d": spec["d"], "style": DRAFT_STYLE, "data-spec": spec["d"],
                                                  "id": pid, f"{INK}label": name})
             notes.append(f"part {name}: drafted")
         ids[pid] = el
@@ -173,15 +190,19 @@ def link(path):
             part, place = item[0], item[1]
             pre = PRE[place[2]] if place and len(place) > 2 else IDENTITY
             original = ids[f"part-{part}"]
+            # Placements are written for the part as parts.py draws it, before
+            # fit_sizes.py scaled the original: undo that scale first.
+            unscale = inverse(part_size[part])
             src = PARTS[part].get("src")
             if word in drawn and src and src[0] == word and part in src_map and part not in used_home:
-                m = inverse(src_map[part])   # the drawing's own place
+                m = multiply(inverse(src_map[part]), unscale)   # the drawing's own place
                 used_home.add(part)
             elif place is None:
-                m = IDENTITY
+                m = unscale
             elif place[0] == "matrix":
-                m = multiply(place[1], pre)
+                m = multiply(place[1], multiply(pre, unscale))
             else:
+                pre = multiply(pre, unscale)
                 m = multiply(place_matrix(bbox(original, ids, pre), place[0], place[1]), pre)
             matrices.append((part, multiply(sizes.get(word, IDENTITY), m)))
 
@@ -198,7 +219,7 @@ def link(path):
             for u, (part, m) in zip(linked, matrices):
                 have = parse_transform(u.get("transform"))
                 if max(abs(x - y) for x, y in zip(have, m)) > 0.01:
-                    if m == IDENTITY:
+                    if near_identity(m):
                         u.attrib.pop("transform", None)
                     else:
                         u.set("transform", matrix_attr(m))
@@ -210,7 +231,7 @@ def link(path):
         uses = []
         for part, m in matrices:
             attrs = {f"{XLINK}href": f"#part-{part}", f"{INK}label": part}
-            if m != IDENTITY:
+            if not near_identity(m):
                 attrs["transform"] = matrix_attr(m)
             uses.append(ET.Element(S + "use", attrs))
 
