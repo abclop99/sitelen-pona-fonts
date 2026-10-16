@@ -32,7 +32,7 @@ LINKS: word -> the clones it is built from, and its own strokes.
          a word that is a part's source drops that part's subpaths itself.
 """
 
-from drafts import BLUNT, DRAFTS, arm, bowl, circle, closed, dot, ellipse, heart, j, line, rays, rect
+from drafts import BLUNT, DRAFTS, arm, open_bowl, bowl, circle, closed, dot, ellipse, heart, j, line, rays, rect
 
 PARTS = {
     "legs": dict(ref="kama", src=("kama", [0]), d=DRAFTS["kama"]),
@@ -79,8 +79,7 @@ LINKS = {
     "toki": dict(parts=[("rays", ("fit", (325, 175, 675, 300))), ("head", None)]),
     "kokosila": dict(parts=[("rays", ("fit", (325, 175, 675, 300))), ("head", None)],
                      own=line((175, 750), (825, 475))),
-    "epiku": dict(parts=[("rays", ("fit", (300, 150, 700, 325))),
-                         ("closed-mouth", ("stretch", (275, 450, 725, 760)))]),
+    "epiku": dict(parts=[("rays", ("fit", (300, 150, 700, 325)))], own=open_bowl(250, 750, 425, 375)),
     "sona": dict(parts=[("rays", ("fit", (300, 150, 700, 275))), ("page", ("fit", (325, 375, 675, 850)))]),
     # Mouths: loje and moku share the mouth's place
     "uta": dict(parts=[("mouth", ("fit", (250, 290, 750, 600)))], own=dot(500, 700)),

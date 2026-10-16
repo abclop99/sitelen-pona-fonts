@@ -98,6 +98,14 @@ def bowl(x0, x1, top, depth):
             f"{r(cx)},{r(top + depth)} C {r(cx - k)},{r(top + depth)} {r(x0)},{r(top + k)} {r(x0)},{r(top)} Z")
 
 
+def open_bowl(x0, x1, top, depth):
+    """A bowl with no lid: straight down, round at the bottom (epiku's mouth)."""
+    cx, hw = (x0 + x1) / 2, (x1 - x0) / 2
+    kx, ky = hw * KAPPA, depth * KAPPA
+    return (f"M {r(x0)},{r(top)} C {r(x0)},{r(top + ky)} {r(cx - kx)},{r(top + depth)} {r(cx)},{r(top + depth)} "
+            f"C {r(cx + kx)},{r(top + depth)} {r(x1)},{r(top + ky)} {r(x1)},{r(top)}")
+
+
 def arm(x0, x1, top, bottom, hook=True):
     """The luka shape: a check mark rising into an arch."""
     cx = (x0 + x1) / 2
@@ -323,7 +331,7 @@ DRAFTS = {
     "soko": j("M 175,450 C 175,250 350,175 500,175 C 650,175 825,250 825,450 Z",
               line((500, 450), (500, 825)), line((375, 650), (625, 650))),
     "meso": j(line((300, 175), (300, 825)), line((700, 175), (700, 825)), dot(500, 500)),
-    "epiku": j("M 275,525 C 275,800 725,800 725,525", rays(175, 350, 200)),
+    "epiku": j(open_bowl(250, 750, 425, 375), rays(175, 350, 200)),
     "kokosila": j(circle(500, 600, 200), line((175, 750), (825, 475)), rays(175, 325, 200)),
     "lanpan": j(circle(500, 325, 150), "M 400,450 C 225,525 175,700 250,775 "
                 "C 325,850 450,700 600,650 C 725,600 800,700 800,800", dot(650, 775)),
