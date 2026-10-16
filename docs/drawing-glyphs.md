@@ -26,7 +26,7 @@ Every word starts with a geometric draft made of straight lines, circles and arc
 Shapes that several words share, such as the three rays of *toki*, *sona*, *pana* and *kalama*, the mouth of *uta*, *loje* and *moku*, or the tally marks, are drawn once and cloned. `build/parts.py` lists every part and where each word places it, and `python3 build/link_parts.py --font standard` sets them up: each part gets its own page at the end of the file (`part-rays`, `part-mouth`, …) with its original in the `parts` layer, and each word that uses it gets clones in place of those strokes.
 
 - **To change a part, edit the original on its part page.** Every clone follows, in the same place relative to its page. A part taken from one of your drawings starts black; one from a draft starts purple.
-- **Don't move the clones.** Where each clone sits is set in `parts.py`, and running `link_parts.py` again puts any clone that was dragged back in its place. To place a part differently in one word, change that word's entry in `parts.py`.
+- **Don't move the clones in drafts.** Where each clone sits is set in `parts.py`, and running `link_parts.py` again puts any clone in a draft that was dragged back in its place. To place a part differently in one word, change that word's entry in `parts.py`. Once a word is drawn, its clones are yours and stay where you put them.
 - **Keep Inkscape's clone setting at its default:** Preferences ▸ Behavior ▸ Clones ▸ "When the original moves" ▸ *Move in parallel*.
 - A draft that is made only of parts counts as drawn once all of its parts are black. A draft with its own strokes counts as drawn when those are black too. Any other colour, such as a darker purple, keeps it a draft.
 - The small hand (`part-hand`) is a clone of `part-luka`: reshape *luka* on its page, and move, scale or squash the small hand by selecting the clone on `part-hand` (the clones in *pali*, *moku* and the rest follow it).
@@ -82,7 +82,7 @@ The grid is 25 units, and every page starts on a grid line, so the same grid poi
 
 ## Glyph sizes
 
-The red box is the topline and baseline: a glyph's outer edge should touch it on its longer side (top and bottom for tall glyphs, left and right for wide ones like *linja*). `python3 build/fit_sizes.py --font standard` scales every glyph that falls short and centres it along that side. Words that share a linked part in the same place are scaled together so the part stays put, which can leave some of them a little short, and the part's own page is scaled to match, so it looks the way those glyphs show it. Glyphs made of boxes are all scaled by the same amount, so the open boxes stay as wide as the closed ones. Small glyphs (*lili*) grow by the typical amount instead. Each word's scale is kept on its page's sub-layer (`data-size`), and the references, drafts and part clones on that page follow it. Run `make_templates.py` and `link_parts.py` afterwards. The checker lists big glyphs that don't reach the lines.
+The red box is the topline and baseline: a glyph's outer edge should touch it on its longer side (top and bottom for tall glyphs, left and right for wide ones like *linja*). The shapes in `drafts.py` and `parts.py` are drawn at their real size, so drafts and glyphs built from parts come out the right size as designed; nothing is resized automatically. If a glyph you drew is off, scale it in Inkscape. The checker lists drawn glyphs that don't reach the lines. (Each page's sub-layer still has a `data-size`: it only lines up the reference drawing with the glyph.)
 
 ## Checking the file
 

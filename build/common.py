@@ -103,13 +103,12 @@ def multiply(a, b):
 
 
 def load_sizes(root):
-    """Per-word placement, {word: matrix}, from a glyphs.svg's glyph sub-layers.
+    """How much each word's reference is scaled, {word: matrix}.
 
-    fit_sizes.py stores each word's scale as data-size="scale dx dy" on its
-    sub-layer: the word's references, drafts and shared-part clones are
-    scaled by that much about the page's top-left and then shifted, so the
-    word fills the ink box. Keeping it in the file means it travels with
-    the drawings it was measured from.
+    Stored as data-size="scale dx dy" on the word's glyph sub-layer. The
+    glyphs were once scaled up to fill the ink box by that much; the shapes
+    in drafts.py and parts.py now include it, and only the reference
+    drawing on each page still uses it, so it lines up with the glyph.
     """
     out = {}
     for layer in root.findall(f"{{{SVG_NS}}}g"):

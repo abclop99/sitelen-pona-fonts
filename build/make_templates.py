@@ -404,9 +404,6 @@ def write_file(path, words, ref):
                 if name in DRAFTS and name not in drawn:
                     ox, oy = page_origin(i)
                     d = DRAFTS[name]
-                    if name in sizes:
-                        from check_glyphs import transform_d
-                        d = transform_d(d, sizes[name])
                     ET.SubElement(g, S + "path", {"d": d, "style": DRAFT_STYLE,
                                                   "transform": f"translate({ox},{oy})",
                                                   f"{INK}label": f"{name} draft"})

@@ -19,7 +19,7 @@ import xml.etree.ElementTree as ET
 
 from build import element_paths, read_pages, to_pathops
 from check_glyphs import absolute, serialise, transform_d
-from common import CELL, IDENTITY, ROOT, load_sizes, multiply, page_origin, parse_size, parse_transform, size_attr
+from common import CELL, IDENTITY, ROOT, multiply, page_origin, parse_transform
 from drafts import circle, ellipse
 from make_templates import DRAFT_COLOUR, DRAFT_STYLE, GLYPH_STYLE, INK, S, SODI
 from parts import LINKS, PARTS
@@ -145,17 +145,13 @@ def swap_dots(sub, ids):
     return len(found)
 
 
-def placement(part, place, ids, part_size):
+def placement(part, place, ids):
     """Clone transform putting a part where a parts.py placement says."""
     pre = PRE[place[2]] if place and len(place) > 2 else IDENTITY
-    # Placements are written for the part as parts.py draws it, before
-    # fit_sizes.py scaled the original: undo that scale first.
-    unscale = inverse(part_size[part])
     if place is None:
-        return unscale
+        return IDENTITY
     if place[0] == "matrix":
-        return multiply(place[1], multiply(pre, unscale))
-    pre = multiply(pre, unscale)
+        return multiply(place[1], pre)
     return multiply(place_matrix(bbox(ids[f"part-{part}"], ids, pre), place[0], place[1]), pre)
 
 
@@ -164,7 +160,6 @@ def link(path):
     drawn = set(found) - drafted
     tree = ET.parse(path)
     root = tree.getroot()
-    sizes = load_sizes(root)
     nv = root.find(f"{SODI}namedview")
     pages = {p.get(f"{INK}label"): (float(p.get("x")), float(p.get("y"))) for p in nv.findall(f"{INK}page")}
     layers = {g.get(f"{INK}label"): g for g in root.findall(S + "g")}
@@ -180,7 +175,6 @@ def link(path):
     parts_layer = layers["parts"]
     part_subs = {g.get(f"{INK}label"): g for g in parts_layer if g.get(f"{INK}groupmode") == "layer"}
     src_map = {}      # part -> matrix from its source word's page to the part's page
-    part_size = {}    # part -> how much fit_sizes.py has scaled its original (data-size)
     for name, spec in PARTS.items():
         label = f"part-{name}"
         if label not in pages:
@@ -201,16 +195,15 @@ def link(path):
             part_subs[label].remove(old)
         if pid in ids:
             el = ids[pid]
-            part_size[name] = size = parse_size(el.get("data-size"))
+            el.attrib.pop("data-size", None)     # parts are drawn at their real size now
             if el.get("data-home") and spec.get("src", ("",))[0] in drawn:
                 src_map[name] = parse_transform(el.get("data-home"))
             elif "d" in spec and DRAFT_COLOUR in el.get("style", "").lower() and el.get("data-spec") != spec["d"]:
                 # A drafted part follows parts.py until you draw it (turn it black).
-                el.set("d", transform_d(spec["d"], size) if not near_identity(size) else spec["d"])
+                el.set("d", spec["d"])
                 el.set("data-spec", spec["d"])
                 notes.append(f"part {name}: redrawn from parts.py")
             continue
-        part_size[name] = IDENTITY
         sub = part_subs[label]
         if "parts" in spec:
             # Made of other parts: a group of their clones, filled in below.
@@ -235,11 +228,6 @@ def link(path):
                                                  "style": GLYPH_STYLE, "id": pid, f"{INK}label": name,
                                                  "data-home": matrix_attr(m)})
             src_map[name] = parse_transform(matrix_attr(m))
-            if word in sizes:
-                # The drawing is already scaled (fit_sizes.py), so the part is too.
-                size = multiply(src_map[name], multiply(sizes[word], inverse(src_map[name])))
-                el.set("data-size", size_attr(size))
-                part_size[name] = size
             notes.append(f"part {name}: taken from your {word}")
         else:
             el = ET.SubElement(sub, S + "path", {"d": spec["d"], "data-spec": spec["d"],
@@ -266,7 +254,7 @@ def link(path):
             for child in list(g):
                 g.remove(child)
             for part, place in spec["parts"]:
-                m = multiply(part_size[name], placement(part, place, ids, part_size))
+                m = placement(part, place, ids)
                 attrs = {f"{XLINK}href": f"#part-{part}", f"{INK}label": part}
                 if not near_identity(m):
                     attrs["transform"] = matrix_attr(m)
@@ -313,19 +301,18 @@ def link(path):
                 if word in drawn:
                     continue     # a drawing's own dots are swapped for clones below
                 x, y = place[1]
-                sz = sizes.get(word, IDENTITY)
                 cx, cy = centre(ids[f"part-{part}"], ids)
-                matrices.append((part, (1, 0, 0, 1, sz[0] * x + sz[4] - cx, sz[3] * y + sz[5] - cy)))
+                matrices.append((part, (1, 0, 0, 1, x - cx, y - cy)))
                 continue
             pre = PRE[place[2]] if place and len(place) > 2 else IDENTITY
             src = PARTS[part].get("src")
-            if word in drawn and src and src[0] == word and part in src_map and part not in used_home:
-                # The drawing's own place (undoing fit_sizes.py's scale of the part).
-                m = multiply(inverse(src_map[part]), inverse(part_size[part]))
+            if place is None and word in drawn and src and src[0] == word and part in src_map and part not in used_home:
+                # The drawing's own place.
+                m = inverse(src_map[part])
                 used_home.add(part)
             else:
-                m = placement(part, place, ids, part_size)
-            matrices.append((part, multiply(sizes.get(word, IDENTITY), m)))
+                m = placement(part, place, ids)
+            matrices.append((part, m))
 
         current = glyph_subs.get(word) if word in drawn else draft_els.get(word)
         wanted = {f"#part-{p}" for p, _ in matrices}
@@ -333,6 +320,8 @@ def link(path):
                   if u.get(f"{XLINK}href") in wanted]
         if linked and word not in drawn and [u.get(f"{XLINK}href") for u in linked] != [f"#part-{p}" for p, _ in matrices]:
             linked = []     # parts.py changed what this draft is made of: rebuild it below
+        if linked and word in drawn:
+            continue        # your drawing: its clones stay where you have them
         if linked:
             # Already linked: put any clone that has been moved back in its place.
             if [u.get(f"{XLINK}href") for u in linked] != [f"#part-{p}" for p, _ in matrices]:
@@ -398,8 +387,6 @@ def link(path):
             g.extend(uses)
             if spec.get("own"):
                 own = spec["own"]
-                if word in sizes:
-                    own = transform_d(own, sizes[word])
                 ET.SubElement(g, S + "path", {"d": own, "style": DRAFT_STYLE})
             if old is not None:
                 drafts_layer.insert(list(drafts_layer).index(old), g)

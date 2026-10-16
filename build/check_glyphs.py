@@ -27,6 +27,7 @@ from build import element_paths, read_pages, to_pathops
 from common import BOX, CELL, IDENTITY, ROOT, STROKE, parse_transform
 from make_templates import ARGS, GLYPH_STYLE, INK, S, SODI
 
+SMALL = {"lili"}    # meant to stay small
 TOLERANCE = 5        # ink may overshoot the box by this much
 NEAR_AXIS = 0.035    # a line this close to vertical/horizontal (slope) gets straightened
 NEAR_AXIS_MAX = 20   # ... unless that moves its end by more than this
@@ -240,25 +241,18 @@ def check(path, fix):
             notes.append(f"{label}: ink goes past the red box on the {', '.join(sides)} "
                          f"({x0:.0f}, {y0:.0f} to {x1:.0f}, {y1:.0f}; the box is {BOX[0]}-{BOX[1]})")
 
-    # Big glyphs should reach the lines (fit_sizes.py does that); words that
-    # share a linked part are sized as a group, so some of them stop short.
-    from fit_sizes import SAME_SCALE, SMALL, groups
+    # Big glyphs should reach the lines. Glyphs built from shared parts are
+    # sized by parts.py, so this only looks at the ones you draw yourself;
+    # fix a size by scaling the drawing in Inkscape.
     from parts import LINKS
-    grouped = {w: g for g in groups() for w in g}
-    tied = {w: ", ".join(sorted(parts)) for parts in SAME_SCALE for w, spec in LINKS.items()
-            if any(p in parts and (pl is None or pl[0] in ("matrix", "move")) for p, pl in spec["parts"])}
     span = BOX[1] - BOX[0]
     for label, p in drawn.items():
+        if label in LINKS or label in SMALL:
+            continue
         x0, y0, x1, y1 = p.bounds
         size = max(x1 - x0, y1 - y0)
-        if label not in SMALL and 0.7 * span <= size < span - 2 * TOLERANCE:
-            if label in grouped:
-                why = f" (sized with {', '.join(sorted(grouped[label] - {label}))}, which share its parts)"
-            elif label in tied:
-                why = f" (scaled like the other glyphs made of {tied[label]})"
-            else:
-                why = "; python3 build/fit_sizes.py fits it"
-            notes.append(f"{label}: doesn't reach the lines ({size:.0f} of {span}){why}")
+        if 0.7 * span <= size < span - 2 * TOLERANCE:
+            notes.append(f"{label}: doesn't reach the lines ({size:.0f} of {span})")
 
     drafts = layers.get("drafts")
     if drafts is not None:
