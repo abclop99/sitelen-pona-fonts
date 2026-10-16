@@ -29,6 +29,7 @@ Shapes that several words share, such as the three rays of *toki*, *sona*, *pana
 - **Don't move the clones.** Where each clone sits is set in `parts.py`, and running `link_parts.py` again puts any clone that was dragged back in its place. To place a part differently in one word, change that word's entry in `parts.py`.
 - **Keep Inkscape's clone setting at its default:** Preferences ▸ Behavior ▸ Clones ▸ "When the original moves" ▸ *Move in parallel*.
 - A draft that is made only of parts counts as drawn once all of its parts are black. A draft with its own strokes counts as drawn when those are recoloured too.
+- The small hand (`part-hand`) is a clone of `part-luka`: reshape *luka* on its page, and move, scale or squash the small hand by selecting the clone on `part-hand` (the clones in *pali*, *moku* and the rest follow it).
 - Each part page shows a word's reference behind the part (its `ref` in `parts.py`, such as *kama* for the legs), lined up the way that word uses it. A purple part is redrawn from `parts.py` when its shape there changes; a black one is yours and is left alone.
 - *toki-pona*, the toki pona logo (*toki* with *pona*'s smile), is a part only: it isn't a UCSUR word, so it has no glyph of its own yet. *pu* uses it on its cover.
 

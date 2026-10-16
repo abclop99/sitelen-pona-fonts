@@ -141,10 +141,6 @@ def link(path):
             part_size[name] = size = parse_size(el.get("data-size"))
             if el.get("data-home") and spec.get("src", ("",))[0] in drawn:
                 src_map[name] = parse_transform(el.get("data-home"))
-            elif "clone" in spec:
-                # Follow the cloned part's size, then this part's own.
-                fit = place_matrix(bbox(ids[f"part-{spec['clone']}"], ids), "fit", spec["fit"])
-                el.set("transform", matrix_attr(multiply(size, fit)))
             elif "d" in spec and DRAFT_COLOUR in el.get("style", "").lower() and el.get("data-spec") != spec["d"]:
                 # A drafted part follows parts.py until you draw it (turn it black).
                 el.set("d", transform_d(spec["d"], size) if not near_identity(size) else spec["d"])

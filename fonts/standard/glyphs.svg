@@ -1445,7 +1445,7 @@
       <path d="M 310.001,373.332 C 310.001,233.999 424,120 563.333,120 C 702.666,120 816.665,233.999 816.665,373.332 L 816.665,879.997 M 183.335,658.331 L 310.001,879.997 L 310.001,373.332" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" data-spec="M 350,425 C 350,315 440,225 550,225 C 660,225 750,315 750,425 V 825 M 250,650 L 350,825 V 425" id="part-luka" inkscape:label="luka" data-size="1.26666 -133.33 -164.999" />
     </g>
     <g id="parts-hand" inkscape:groupmode="layer" inkscape:label="part-hand" transform="translate(1200,14400)">
-      <use xlink:href="#part-luka" transform="matrix(0.513703,0,0,0.513703,217.123,401.919)" id="part-hand" inkscape:label="hand" data-size="1.0411 -20.5479 -4.93151" />
+      <use xlink:href="#part-luka" transform="matrix(0.513701,0,0,0.513701,217.122,401.918)" id="part-hand" inkscape:label="hand" data-size="1.0411 -20.5479 -4.93151" />
     </g>
     <g id="parts-heart" inkscape:groupmode="layer" inkscape:label="part-heart" transform="translate(2400,14400)">
       <path d="M 500,311.319 C 405.22,83.848 101.926,83.848 120.882,387.143 C 139.838,576.702 386.265,728.349 500,879.996 C 613.735,728.349 860.162,576.702 879.118,387.143 C 898.074,83.848 594.78,83.848 500,311.319 Z" style="fill:none;stroke:#8e7cc3;stroke-width:40;stroke-linecap:round;stroke-linejoin:round" data-spec="M 500,375 C 425,195 185,195 200,435 C 215,585 410,705 500,825 C 590,705 785,585 800,435 C 815,195 575,195 500,375 Z" id="part-heart" inkscape:label="heart" data-size="1.26373 -131.864 -162.579" />

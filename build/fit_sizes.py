@@ -32,7 +32,7 @@ from check_glyphs import transform_d
 from common import BOX, IDENTITY, ROOT, STROKE, load_sizes, multiply, parse_size, parse_transform, size_attr
 from link_parts import XLINK, inverse, matrix_attr
 from make_templates import INK, S, SODI
-from parts import LINKS
+from parts import LINKS, PARTS
 
 SMALL = {"lili"}
 SAME_SCALE = [{"page", "big-box", "short-box", "side-box"}]
@@ -199,6 +199,7 @@ def run(path):
 
     # Each part's original is the size of the words that use it where it is,
     # so those clones are 1:1 and the part's page shows it as they do.
+    delta = {}
     for part, el in sorted(part_els.items()):
         users = [w for w, spec in LINKS.items() for p, place in spec["parts"]
                  if p == part and (place is None or place[0] == "matrix") and w in new_sizes]
@@ -210,8 +211,18 @@ def run(path):
             continue
         if el.tag == S + "path":
             bake(el, t, effects)
+        delta[part] = t
         el.set("data-size", size_attr(new_sizes[users[0]]))
         notes.append(f"part {part}: scaled {t[0]:.3f} to match {users[0]}")
+    # A part that clones another (the small hand is a clone of luka) keeps
+    # the shape and place you gave it: undo the change to the part it
+    # clones, then take its own.
+    for part, spec in PARTS.items():
+        el = part_els.get(part)
+        if "clone" in spec and el is not None and (part in delta or spec["clone"] in delta):
+            m = parse_transform(el.get("transform"))
+            m = multiply(delta.get(part, IDENTITY), multiply(m, inverse(delta.get(spec["clone"], IDENTITY))))
+            el.set("transform", matrix_attr(m))
 
     ET.indent(tree)
     tree.write(path, encoding="UTF-8", xml_declaration=True)
