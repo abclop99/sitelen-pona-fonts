@@ -41,7 +41,7 @@ FAMILY = {
     "standard": "SP Standard Draft",
 }
 SIDE_BEARING = 60     # each side, proportional build
-MONO_ADVANCE = 900    # glyph width, mono build: the 840-wide ink box plus 30 a side
+MONO_ADVANCE = 900    # glyph width, mono build: the 800-wide ink box plus 50 a side
 SPACE_PROP = 330      # word space, proportional build
 LINE_GAP = 200
 
