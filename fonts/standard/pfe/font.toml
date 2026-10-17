@@ -9,11 +9,11 @@ descender = -100
 width = 900
 line_gap = 200    # as in the Inkscape build
 version = "0.1"
-copyright = "Copyright (c) 2026 abclop99"
+copyright = "Copyright (c) 2026 abclop99. Some glyphs based on sitelen seli kiwen, Copyright (c) 2022 Kreative Software."
 designer = "abclop99"
 license = "This Font Software is licensed under the SIL Open Font License, Version 1.1."
 license_url = "https://openfontlicense.org"
-description = "sitelen pona, the writing system of Toki Pona. Glyph forms follow jan Sonja's (Sonja Lang's) handwriting in Toki Pona: The Language of Good (pu), traced and adjusted from CC0 vectorizations on Wikimedia Commons by LiliCharlie and Sonja Lang."
+description = "sitelen pona, the writing system of Toki Pona. Glyph forms follow jan Sonja's (Sonja Lang's) handwriting in Toki Pona: The Language of Good (pu), traced and adjusted from CC0 vectorizations on Wikimedia Commons by LiliCharlie and Sonja Lang. Some ku suli glyphs, which have no drawing in pu, are traced from sitelen seli kiwen (Kreative Software, SIL OFL 1.1)."
 
 [params]
 stroke = 50  # centreline pen
