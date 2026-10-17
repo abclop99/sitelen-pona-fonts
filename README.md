@@ -5,27 +5,35 @@ Three related sitelen pona fonts that share one encoding, so the same text works
 | Folder | Font | Style |
 |---|---|---|
 | `fonts/handwriting/` | *(name TBD)* | Semi-cursive script based on how sitelen pona could be handwritten at speed. Line style undecided |
-| `fonts/combos/` | *(name TBD)* | Normal sitelen pona with added features: more automatic combinations (stacked, side by side, inside) and designed combos such as a walking-house *tomo tawa*. Could start as a modification of an existing open-licensed font |
+| `fonts/standard/` | *(name TBD)* | Normal sitelen pona close to the *pu* forms, with clean, even monoline strokes, plus added features: automatic combinations (stacked, side by side, inside) and designed combos such as a walking-house *tomo tawa* |
 | `fonts/display/` | *(name TBD)* | Display / formal script with unified styling, loosely inspired by seal script. Probably monospace, with nested combinations |
 
 ## Layout
 
 ```
-spec/        shared encoding, asuki input syntax, combo list, mirroring tiers
-docs/        feasibility write-up and design decisions
+spec/        shared encoding (words.tsv), asuki input syntax, combo list, mirroring tiers
+docs/        feasibility write-up, design decisions, notes
 reference/   links and notes; downloaded reference fonts (git-ignored)
-build/       build scripts (glyph SVGs + features -> TTF/WOFF2)
-fonts/*/     per-font glyph sources and features
-test/        HTML test page
+fonts/*/     per-font sources
 ```
+
+The standard font is written as code for [pfe](https://github.com/abclop99/parametric-font-engine), a parametric font engine: `fonts/standard/pfe/` holds `font.toml`, shared parts and one script per word. With `pfe` installed:
+
+```
+pfe preview fonts/standard/pfe   # live preview in the browser
+pfe build fonts/standard/pfe     # UFO + TTF in fonts/standard/pfe/build/
+```
+
+or open the folder in VS Code with the pfe extension for diagnostics and a preview that follows the cursor.
 
 ## Status
 
-Planning. Start with [docs/custom-font-feasibility.md](docs/custom-font-feasibility.md) and [spec/README.md](spec/README.md).
+The standard font has all 137 words (*nimi pu* and *ku suli*), imported from earlier drawings and now being rewritten as parametric code. Next: typing features (ASCII input, cartouches, long *pi*), then combos. Background: [docs/custom-font-feasibility.md](docs/custom-font-feasibility.md) and [spec/README.md](spec/README.md).
 
 ## Licenses
 
 - Fonts and glyph sources: [SIL Open Font License 1.1](OFL.txt)
-- Build scripts and tooling: [MIT](LICENSE-MIT.txt)
+- The standard font's glyph forms follow jan Sonja's (Sonja Lang's) handwriting in *Toki Pona: The Language of Good* (*pu*). Many were traced, then adjusted, from the vectorizations on Wikimedia Commons ("&lt;Word&gt; - sitelen pona in Sonja Lang's handwriting.svg", by LiliCharlie and Sonja Lang), which are dedicated to the public domain (CC0). See the [comparison page](https://sona.pona.la/wiki/Comparison_of_jan_Sonja%27s_handwriting_and_linja_pona) on sona pona.
+- Scripts or tooling added to this repo (none yet; the font is built with pfe, which has its own repo): [MIT](LICENSE-MIT.txt)
 - If a font copies glyphs or feature code from another OFL font (for example sitelen seli kiwen), add that font's copyright line to its license notice, as OFL condition 2 requires.
 - `reference/sitelen-seli-kiwen/` (README and license only; see [reference/README.md](reference/README.md) for the font files): by Kreative Software (jan Lepeka), OFL 1.1, see its own [OFL.txt](reference/sitelen-seli-kiwen/OFL.txt)

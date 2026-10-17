@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<!-- Font units with y up: this file is upside down in an SVG viewer. -->
+<path d="M600 55 C600 38.4 613.4 25 630 25 C646.6 25 660 38.4 660 55 C660 71.6 646.6 85 630 85 C613.4 85 600 71.6 600 55 Z M630 55 L630.1 55 " fill="none" stroke="#000" stroke-width="50"/>
+<path d="M270 595 C270 495.64 350.64 415 450 415 C549.36 415 630 495.64 630 595 C630 694.36 549.36 775 450 775 C350.64 775 270 694.36 270 595 Z M330 445 C120 355 60 145 150 55 C240 -35 390 145 570 205 C720 265 810 145 810 25 " fill="none" stroke="#000" stroke-width="50"/>
+</svg>

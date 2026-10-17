@@ -18,6 +18,7 @@ Everything the three fonts must agree on, so one text works in all of them. Each
 Match sitelen seli kiwen wherever possible:
 - `-` or `+` combine, `^` stack, `*` scale
 - `[` `]` cartouche, `..` middle dot, `::` colon
+- a single space between words is invisible; two spaces make one blank the width of a glyph
 - `(` `)` extend right, `{` `}` extend left
 - number suffix selects a variant (for example `ni2`)
 - New syntax only for things seli kiwen lacks (nesting, forced side-by-side, inside, mirroring). Check the SPPTA ASCII Input Standard first and accept its form where it overlaps. TODO

@@ -1,5 +1,6 @@
 # Build outputs (publish via GitHub Releases instead)
 dist/
+fonts/*/pfe/build/
 *.ttf
 *.otf
 *.woff

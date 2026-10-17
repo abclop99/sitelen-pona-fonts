@@ -1,0 +1,32 @@
+# sitelen pona, standard font, as a pfe project: the source of the font. Imported once from the
+# earlier Inkscape drawings (kept on the claude/project-thread-y55klr branch).
+
+[font]
+family = "SP Standard Draft"   # temporary, until the font has a name
+upm = 1000
+ascender = 900
+descender = -100
+width = 900
+line_gap = 200    # as in the Inkscape build
+version = "0.1"
+copyright = "Copyright (c) 2026 abclop99"
+designer = "abclop99"
+license = "This Font Software is licensed under the SIL Open Font License, Version 1.1."
+license_url = "https://openfontlicense.org"
+description = "sitelen pona, the writing system of Toki Pona. Glyph forms follow jan Sonja's (Sonja Lang's) handwriting in Toki Pona: The Language of Good (pu), traced and adjusted from CC0 vectorizations on Wikimedia Commons by LiliCharlie and Sonja Lang."
+
+[params]
+stroke = 50  # centreline pen
+subdiv = 4          # cubics per stroke side per segment; imported curves bend sharply
+cell = 900         # advance: the 800-wide ink box plus 50 a side
+mid = 400          # sitelen pona centres on the midline
+ink_l = 50         # the ink box
+ink_r = 850
+ink_b = 0
+ink_t = 800
+
+[preview]
+guides_h = ["mid", "ink_b", "ink_t"]
+guides_v = ["ink_l", "ink_r"]
+proof = "toki pona li pona"
+reference = "reference"

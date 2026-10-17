@@ -1,0 +1,5 @@
+// ala. Imported from the earlier Inkscape drawings; edit freely.
+glyph("ala", 0xF1902, #{ width: p.cell });
+
+stroke(path(pt(185.965, 774.995)).line(pt(714.035, 25.004)));
+stroke(path(pt(714.035, 774.995)).line(pt(185.965, 25.004)));
