@@ -61,8 +61,8 @@ fn closed_mouth() {
     out
 }
 
-// Part dot, drawn on page part-dot.
-fn dot() {
+// Part small-dot, drawn on page part-dot.
+fn small_dot() {
     let out = [];
     out.push(path(pt(442, 400))
             .controls(pt(442, 395.6), pt(445.6, 392), pt(450, 392))
@@ -236,8 +236,8 @@ fn side_box() {
     out
 }
 
-// Part sin, drawn on page part-sin.
-fn sin() {
+// Part sin-lines, drawn on page part-sin.
+fn sin_lines() {
     let out = [];
     out.push(path(pt(450, 638.636)).line(pt(450, 400)));
     out.push(path(pt(75, 229.546)).line(pt(347.728, 229.546)));
