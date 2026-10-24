@@ -1,6 +1,8 @@
 # sitelen pona, standard font, as a pfe project: the source of the font. Imported once from the
 # earlier Inkscape drawings (kept on the claude/project-thread-y55klr branch).
 
+pfe = "0.2"
+
 [font]
 family = "SP Standard Draft"   # temporary, until the font has a name
 upm = 1000
