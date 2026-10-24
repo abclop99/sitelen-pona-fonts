@@ -27,5 +27,5 @@ ink_t = 800
 [preview]
 guides_h = ["mid", "ink_b", "ink_t"]
 guides_v = ["ink_l", "ink_r"]
-proof = "toki pona li pona"
+proof = "sp.toki sp.pona sp.li sp.pona"
 reference = "reference"
