@@ -1,5 +1,5 @@
 // jaki. Imported from the earlier Inkscape drawings; edit freely.
-glyph("jaki", 0xF1910, #{ width: p.cell });
+glyph("jaki", 0xF1910);
 
 stroke(path(pt(223.8, 47.6))
        .controls(pt(236.4, 47.6), pt(274.9, 43.5), pt(299.4, 47.8))

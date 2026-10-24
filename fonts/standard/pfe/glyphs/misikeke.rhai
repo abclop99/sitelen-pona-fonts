@@ -1,5 +1,5 @@
 // misikeke. Imported from the earlier Inkscape drawings; edit freely.
-glyph("misikeke", 0xF1987, #{ width: p.cell });
+glyph("misikeke", 0xF1987);
 
 stroke(path(pt(266.683, 400))
        .controls(pt(266.683, 301.957), pt(266.594, 246.462), pt(276.43, 193.076))

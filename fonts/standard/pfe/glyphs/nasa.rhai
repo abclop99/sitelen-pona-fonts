@@ -1,5 +1,5 @@
 // nasa. Imported from the earlier Inkscape drawings; edit freely.
-glyph("nasa", 0xF193E, #{ width: p.cell });
+glyph("nasa", 0xF193E);
 
 stroke(path(pt(518.996, 388.801))
        .controls(pt(559.627, 354.471), pt(564.835, 293.745), pt(530.644, 252.997))

@@ -1,5 +1,5 @@
 // tonsi. Imported from the earlier Inkscape drawings; edit freely.
-glyph("tonsi", 0xF197E, #{ width: p.cell });
+glyph("tonsi", 0xF197E);
 
 draw(small_circle(), tf(1, 0, 0, 1, 0, 87.5));
 stroke(path(pt(275.5, 637.3)).line(pt(115, 775)));

@@ -1,5 +1,5 @@
 // jan. Imported from the earlier Inkscape drawings; edit freely.
-glyph("jan", 0xF1911, #{ width: p.cell });
+glyph("jan", 0xF1911);
 
 draw(person_head(), tf(1, 0, 0, 1, 0, 0));
 stroke(path(pt(297.779, 205.003)).line(pt(172.224, 25.004)));

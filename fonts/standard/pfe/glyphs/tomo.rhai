@@ -1,5 +1,5 @@
 // tomo. Imported from the earlier Inkscape drawings; edit freely.
-glyph("tomo", 0xF196D, #{ width: p.cell });
+glyph("tomo", 0xF196D);
 
 stroke(path(pt(450, 774.999))
        .line(pt(767.307, 428.845))

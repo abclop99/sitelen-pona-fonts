@@ -1,5 +1,5 @@
 // musi. Imported from the earlier Inkscape drawings; edit freely.
-glyph("musi", 0xF193B, #{ width: p.cell });
+glyph("musi", 0xF193B);
 
 stroke(path(pt(219.231, 601.923))
        .controls(pt(203.289, 276.645), pt(277.07, 25.987), pt(450, 25))

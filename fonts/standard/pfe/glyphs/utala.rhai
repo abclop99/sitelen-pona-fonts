@@ -1,5 +1,5 @@
 // utala. Imported from the earlier Inkscape drawings; edit freely.
-glyph("utala", 0xF1971, #{ width: p.cell });
+glyph("utala", 0xF1971);
 
 stroke(path(pt(742.72, 775))
        .controls(pt(580.301, 510.63), pt(417.122, 228.253), pt(257.28, 25))

@@ -1,5 +1,5 @@
 // sewi. Imported from the earlier Inkscape drawings; edit freely.
-glyph("sewi", 0xF195A, #{ width: p.cell });
+glyph("sewi", 0xF195A);
 
 stroke(path(pt(75.001, 136.115))
        .controls(pt(158.334, 163.893), pt(186.112, 219.448), pt(186.112, 302.781))

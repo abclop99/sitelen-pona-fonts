@@ -1,5 +1,5 @@
 // pipi. Imported from the earlier Inkscape drawings; edit freely.
-glyph("pipi", 0xF1951, #{ width: p.cell });
+glyph("pipi", 0xF1951);
 
 draw(dot(), tf(1, 0, 0, 1, -85.626, 367.092));
 draw(dot(), tf(1, 0, 0, 1, 85.626, 367.092));

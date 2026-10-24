@@ -1,5 +1,5 @@
 // pali. Imported from the earlier Inkscape drawings; edit freely.
-glyph("pali", 0xF1949, #{ width: p.cell });
+glyph("pali", 0xF1949);
 
 draw(hand(), tf(1, 0, 0, 1, 0, 0));
 stroke(path(pt(320.593, 577.27))

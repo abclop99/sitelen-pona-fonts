@@ -1,5 +1,5 @@
 // oko. Imported from the earlier Inkscape drawings; edit freely.
-glyph("oko", 0xF197A, #{ width: p.cell });
+glyph("oko", 0xF197A);
 
 stroke(path(pt(75, 400)).controls(pt(371.053, 409.868), pt(548.684, 498.684), pt(706.579, 775)));
 stroke(path(pt(75, 400)).controls(pt(371.053, 390.132), pt(548.684, 301.316), pt(706.579, 25)));

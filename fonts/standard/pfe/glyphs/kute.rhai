@@ -1,5 +1,5 @@
 // kute. Imported from the earlier Inkscape drawings; edit freely.
-glyph("kute", 0xF1920, #{ width: p.cell });
+glyph("kute", 0xF1920);
 
 stroke(path(pt(292.106, 656.58))
        .controls(pt(355.264, 814.474), pt(607.894, 814.474), pt(607.894, 656.58))

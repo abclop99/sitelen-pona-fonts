@@ -1,5 +1,5 @@
 // meli. Imported from the earlier Inkscape drawings; edit freely.
-glyph("meli", 0xF1933, #{ width: p.cell });
+glyph("meli", 0xF1933);
 
 stroke(path(pt(219.231, 343.826))
        .controls(pt(219.231, 216.375), pt(322.549, 113.057), pt(450, 113.057))

@@ -1,5 +1,5 @@
 // lape. Imported from the earlier Inkscape drawings; edit freely.
-glyph("lape", 0xF1922, #{ width: p.cell });
+glyph("lape", 0xF1922);
 
 stroke(path(pt(75, 400)).line(pt(577.066, 400)));
 stroke(path(pt(577.066, 400))

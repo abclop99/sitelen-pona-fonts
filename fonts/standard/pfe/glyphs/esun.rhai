@@ -1,5 +1,5 @@
 // esun. Imported from the earlier Inkscape drawings; edit freely.
-glyph("esun", 0xF190B, #{ width: p.cell });
+glyph("esun", 0xF190B);
 
 stroke(
        path(pt(122, 660))

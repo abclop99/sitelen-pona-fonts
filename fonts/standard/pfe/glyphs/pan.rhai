@@ -1,5 +1,5 @@
 // pan. Imported from the earlier Inkscape drawings; edit freely.
-glyph("pan", 0xF194B, #{ width: p.cell });
+glyph("pan", 0xF194B);
 
 stroke(path(pt(300, 775)).line(pt(450.015, 626.177)));
 stroke(path(pt(250, 525)).line(pt(450, 325.588)));

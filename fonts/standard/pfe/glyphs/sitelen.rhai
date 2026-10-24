@@ -1,5 +1,5 @@
 // sitelen. Imported from the earlier Inkscape drawings; edit freely.
-glyph("sitelen", 0xF1960, #{ width: p.cell });
+glyph("sitelen", 0xF1960);
 
 draw(page(), tf(1, 0, 0, 1, 0, 0));
 draw(big_dot(), tf(1, 0, 0, 1, -170.976, 0.004));

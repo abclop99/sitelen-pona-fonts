@@ -18,7 +18,6 @@ description = "sitelen pona, the writing system of Toki Pona. Glyph forms follow
 [params]
 stroke = 50  # centreline pen
 subdiv = 4          # cubics per stroke side per segment; imported curves bend sharply
-cell = 900         # advance: the 800-wide ink box plus 50 a side
 mid = 400          # sitelen pona centres on the midline
 ink_l = 50         # the ink box
 ink_r = 850

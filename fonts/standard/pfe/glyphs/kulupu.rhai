@@ -1,5 +1,5 @@
 // kulupu. Imported from the earlier Inkscape drawings; edit freely.
-glyph("kulupu", 0xF191F, #{ width: p.cell });
+glyph("kulupu", 0xF191F);
 
 stroke(path(pt(313.636, 638.636))
        .controls(pt(313.636, 563.324), pt(374.688, 502.272), pt(450, 502.272))

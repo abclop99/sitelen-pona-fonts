@@ -1,5 +1,5 @@
 // epiku. Imported from the earlier Inkscape drawings; edit freely.
-glyph("epiku", 0xF1983, #{ width: p.cell });
+glyph("epiku", 0xF1983);
 
 draw(rays(), tf(1.17, 0, 0, 1.17, -76.684, -132.026));
 stroke(path(pt(155.535, 347.423))

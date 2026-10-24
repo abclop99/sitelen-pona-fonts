@@ -1,5 +1,5 @@
 // n. Imported from the earlier Inkscape drawings; edit freely.
-glyph("n", 0xF1986, #{ width: p.cell });
+glyph("n", 0xF1986);
 
 draw(stem(), tf(1, 0, 0, 1, 0, 0));
 stroke(path(pt(598.026, 25))

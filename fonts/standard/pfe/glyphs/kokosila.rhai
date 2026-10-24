@@ -1,5 +1,5 @@
 // kokosila. Imported from the earlier Inkscape drawings; edit freely.
-glyph("kokosila", 0xF1984, #{ width: p.cell });
+glyph("kokosila", 0xF1984);
 
 draw(rays(), tf(1.136, 0, 0, 0.911, -61.136, 69.279));
 draw(head(), tf(1, 0, 0, 1, -0.001, 0.002));

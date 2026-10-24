@@ -1,5 +1,5 @@
 // tan. Imported from the earlier Inkscape drawings; edit freely.
-glyph("tan", 0xF1967, #{ width: p.cell });
+glyph("tan", 0xF1967);
 
 draw(arrowhead(), tf(-0.275, -0.921, 0.921, -0.275, -26.646, 1084.75));
 stroke(path(pt(176.777, 267.253))

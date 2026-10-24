@@ -1,5 +1,5 @@
 // unpa. Imported from the earlier Inkscape drawings; edit freely.
-glyph("unpa", 0xF196F, #{ width: p.cell });
+glyph("unpa", 0xF196F);
 
 draw(palisa(), tf(0.822, 0, 0, 0.822, 80.146, 4.451));
 stroke(path(pt(450, 344.441))

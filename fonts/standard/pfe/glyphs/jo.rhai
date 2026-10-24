@@ -1,5 +1,5 @@
 // jo. Imported from the earlier Inkscape drawings; edit freely.
-glyph("jo", 0xF1913, #{ width: p.cell });
+glyph("jo", 0xF1913);
 
 stroke(path(pt(335.906, 632.388))
        .controls(pt(335.906, 553.626), pt(399.755, 489.777), pt(478.518, 489.777))

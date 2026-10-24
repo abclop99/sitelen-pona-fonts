@@ -1,5 +1,5 @@
 // kala. Imported from the earlier Inkscape drawings; edit freely.
-glyph("kala", 0xF1914, #{ width: p.cell });
+glyph("kala", 0xF1914);
 
 stroke(path(pt(75.005, 222.413))
        .controls(pt(223.519, 459.196), pt(461.14, 607.185), pt(669.06, 577.587))

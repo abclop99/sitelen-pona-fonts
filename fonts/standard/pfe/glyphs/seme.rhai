@@ -1,5 +1,5 @@
 // seme. Imported from the earlier Inkscape drawings; edit freely.
-glyph("seme", 0xF1959, #{ width: p.cell });
+glyph("seme", 0xF1959);
 
 draw(big_dot(), tf(1, 0, 0, 1, 0, -345.447));
 stroke(path(pt(260.107, 612.234))

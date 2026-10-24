@@ -1,5 +1,5 @@
 // nena. Imported from the earlier Inkscape drawings; edit freely.
-glyph("nena", 0xF1940, #{ width: p.cell });
+glyph("nena", 0xF1940);
 
 stroke(path(pt(164.286, 25))
        .line(pt(164.286, 489.286))

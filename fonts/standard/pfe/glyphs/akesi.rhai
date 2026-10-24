@@ -1,5 +1,5 @@
 // akesi. Imported from the earlier Inkscape drawings; edit freely.
-glyph("akesi", 0xF1901, #{ width: p.cell });
+glyph("akesi", 0xF1901);
 
 stroke(path(pt(572.205, 356.286))
        .controls(pt(572.205, 173.322), pt(517.492, 25), pt(450, 25))

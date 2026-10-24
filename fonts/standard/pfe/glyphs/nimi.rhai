@@ -1,5 +1,5 @@
 // nimi. Imported from the earlier Inkscape drawings; edit freely.
-glyph("nimi", 0xF1942, #{ width: p.cell });
+glyph("nimi", 0xF1942);
 
 stroke(path(pt(450, 544.2))
        .controls(pt(787.5, 544.2), pt(825, 503.8), pt(825, 400))
