@@ -1,5 +1,5 @@
 // leko. Imported from the earlier Inkscape drawings; edit freely.
-glyph("leko", 0xF197C, #{ width: p.cell });
+glyph("leko", 0xF197C);
 
 stroke(path(pt(75, 775))
        .line(pt(825, 775))

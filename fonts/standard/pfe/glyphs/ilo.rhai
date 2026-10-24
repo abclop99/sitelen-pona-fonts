@@ -1,5 +1,5 @@
 // ilo. Imported from the earlier Inkscape drawings; edit freely.
-glyph("ilo", 0xF190E, #{ width: p.cell });
+glyph("ilo", 0xF190E);
 
 stroke(path(pt(173.967, 775))
        .line(pt(726.031, 775))

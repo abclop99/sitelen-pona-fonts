@@ -1,5 +1,5 @@
 // seli. Imported from the earlier Inkscape drawings; edit freely.
-glyph("seli", 0xF1957, #{ width: p.cell });
+glyph("seli", 0xF1957);
 
 draw(big_dot(), tf(1, 0, 0, 1, 0, -345.439));
 stroke(path(pt(450, 775)).line(pt(450, 310.269)));

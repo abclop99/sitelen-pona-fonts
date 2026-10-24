@@ -1,5 +1,5 @@
 // ko. Imported from the earlier Inkscape drawings; edit freely.
-glyph("ko", 0xF191C, #{ width: p.cell });
+glyph("ko", 0xF191C);
 
 stroke(path(pt(377.732, 768.751))
        .controls(pt(497.26, 798.926), pt(557.024, 708.4), pt(676.552, 738.575))

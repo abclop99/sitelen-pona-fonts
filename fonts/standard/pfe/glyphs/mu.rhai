@@ -1,5 +1,5 @@
 // mu. Imported from the earlier Inkscape drawings; edit freely.
-glyph("mu", 0xF1939, #{ width: p.cell });
+glyph("mu", 0xF1939);
 
 draw(person_head(), tf(1.032, 0, 0, 1.032, -14.531, -144.183));
 draw(big_dot(), tf(1, 0, 0, 1, 0, -164.719));

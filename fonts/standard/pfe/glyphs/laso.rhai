@@ -1,5 +1,5 @@
 // laso. Imported from the earlier Inkscape drawings; edit freely.
-glyph("laso", 0xF1923, #{ width: p.cell });
+glyph("laso", 0xF1923);
 
 draw(small_triangle(), tf(1, 0, 0, 1, 0, 0));
 stroke(path(pt(449.998, 473.747))

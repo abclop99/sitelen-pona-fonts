@@ -1,5 +1,5 @@
 // mani. Imported from the earlier Inkscape drawings; edit freely.
-glyph("mani", 0xF1932, #{ width: p.cell });
+glyph("mani", 0xF1932);
 
 draw(person_head(), tf(0.96, 0, 0, 0.96, 17.784, -132.416));
 stroke(path(pt(274.36, 553.595))

@@ -1,5 +1,5 @@
 // kasi. Imported from the earlier Inkscape drawings; edit freely.
-glyph("kasi", 0xF1917, #{ width: p.cell });
+glyph("kasi", 0xF1917);
 
 stroke(path(pt(408.334, 25)).line(pt(408.334, 425)));
 stroke(path(pt(408.334, 425))

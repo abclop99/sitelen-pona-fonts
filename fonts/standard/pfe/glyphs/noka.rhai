@@ -1,5 +1,5 @@
 // noka. Imported from the earlier Inkscape drawings; edit freely.
-glyph("noka", 0xF1943, #{ width: p.cell });
+glyph("noka", 0xF1943);
 
 stroke(path(pt(400, 775))
        .line(pt(400, 260))

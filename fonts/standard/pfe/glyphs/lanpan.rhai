@@ -1,5 +1,5 @@
 // lanpan. Imported from the earlier Inkscape drawings; edit freely.
-glyph("lanpan", 0xF1985, #{ width: p.cell });
+glyph("lanpan", 0xF1985);
 
 draw(big_dot(), tf(1, 0, 0, 1, 180, -345));
 stroke(path(pt(270, 595))

@@ -1,5 +1,5 @@
 // a. Imported from the earlier Inkscape drawings; edit freely.
-glyph("a", 0xF1900, #{ width: p.cell });
+glyph("a", 0xF1900);
 
 draw(stem(), tf(1, 0, 0, 1, 0, 0));
 stroke(path(pt(569.912, 25))

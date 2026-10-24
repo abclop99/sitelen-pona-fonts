@@ -1,5 +1,5 @@
 // jasima. Imported from the earlier Inkscape drawings; edit freely.
-glyph("jasima", 0xF197F, #{ width: p.cell });
+glyph("jasima", 0xF197F);
 
 stroke(path(pt(450, 775)).line(pt(450, 25)));
 stroke(path(pt(170.648, 457.692))

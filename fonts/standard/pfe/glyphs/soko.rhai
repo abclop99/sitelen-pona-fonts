@@ -1,5 +1,5 @@
 // soko. Imported from the earlier Inkscape drawings; edit freely.
-glyph("soko", 0xF1981, #{ width: p.cell });
+glyph("soko", 0xF1981);
 
 stroke(path(pt(75, 457.7))
        .controls(pt(75, 688.5), pt(276.9, 775), pt(450, 775))

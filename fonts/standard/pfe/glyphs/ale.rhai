@@ -1,5 +1,5 @@
 // ale. Imported from the earlier Inkscape drawings; edit freely.
-glyph("ale", 0xF1904, #{ width: p.cell });
+glyph("ale", 0xF1904);
 
 stroke(path(pt(450, 400))
        .controls(pt(334.615, 544.231), pt(75, 601.923), pt(75, 400))

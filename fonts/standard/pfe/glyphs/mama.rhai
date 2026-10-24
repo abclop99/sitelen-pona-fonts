@@ -1,5 +1,5 @@
 // mama. Imported from the earlier Inkscape drawings; edit freely.
-glyph("mama", 0xF1931, #{ width: p.cell });
+glyph("mama", 0xF1931);
 
 stroke(path(pt(153.425, 482.354))
        .controls(pt(153.425, 643.977), pt(286.206, 774.998), pt(450, 774.998))

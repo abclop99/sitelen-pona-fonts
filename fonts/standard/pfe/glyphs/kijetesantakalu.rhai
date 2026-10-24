@@ -1,5 +1,5 @@
 // kijetesantakalu. Imported from the earlier Inkscape drawings; edit freely.
-glyph("kijetesantakalu", 0xF1980, #{ width: p.cell });
+glyph("kijetesantakalu", 0xF1980);
 
 draw(dot(), tf(1, 0, 0, 1, 68.42, 66.97));
 draw(dot(), tf(1, 0, 0, 1, 174.53, 66.97));

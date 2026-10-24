@@ -1,5 +1,5 @@
 // monsuta. Imported from the earlier Inkscape drawings; edit freely.
-glyph("monsuta", 0xF197D, #{ width: p.cell });
+glyph("monsuta", 0xF197D);
 
 stroke(path(pt(75, 319.6))
        .line(pt(138.75, 449.935))

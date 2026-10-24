@@ -1,5 +1,5 @@
 // soweli. Imported from the earlier Inkscape drawings; edit freely.
-glyph("soweli", 0xF1962, #{ width: p.cell });
+glyph("soweli", 0xF1962);
 
 stroke(path(pt(257.567, 756.949))
        .line(pt(454.934, 756.949))

@@ -1,5 +1,5 @@
 // wile. Imported from the earlier Inkscape drawings; edit freely.
-glyph("wile", 0xF1977, #{ width: p.cell });
+glyph("wile", 0xF1977);
 
 stroke(path(pt(176.852, 713.1))
        .controls(pt(125, 675), pt(74, 572.678), pt(75, 460))

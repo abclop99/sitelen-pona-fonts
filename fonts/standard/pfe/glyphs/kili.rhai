@@ -1,5 +1,5 @@
 // kili. Imported from the earlier Inkscape drawings; edit freely.
-glyph("kili", 0xF191A, #{ width: p.cell });
+glyph("kili", 0xF191A);
 
 stroke(path(pt(450, 567.76))
        .controls(pt(479.6, 622.04), pt(538.82, 646.71), pt(598.03, 646.71))

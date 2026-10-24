@@ -1,5 +1,5 @@
 // wawa. Imported from the earlier Inkscape drawings; edit freely.
-glyph("wawa", 0xF1975, #{ width: p.cell });
+glyph("wawa", 0xF1975);
 
 stroke(path(pt(75, 655)).line(pt(200, 150)));
 stroke(path(pt(825, 655)).line(pt(700, 150)));

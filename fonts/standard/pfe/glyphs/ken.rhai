@@ -1,5 +1,5 @@
 // ken. Imported from the earlier Inkscape drawings; edit freely.
-glyph("ken", 0xF1918, #{ width: p.cell });
+glyph("ken", 0xF1918);
 
 stroke(path(pt(268.064, 775)).line(pt(268.064, 25)));
 stroke(path(pt(628.966, 775))

@@ -1,5 +1,5 @@
 // pini. Imported from the earlier Inkscape drawings; edit freely.
-glyph("pini", 0xF1950, #{ width: p.cell });
+glyph("pini", 0xF1950);
 
 stroke(path(pt(293.75, 775)).line(pt(606.25, 775)));
 stroke(path(pt(293.75, 25)).line(pt(606.25, 25)));

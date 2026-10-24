@@ -1,5 +1,5 @@
 // lukin. Imported from the earlier Inkscape drawings; edit freely.
-glyph("lukin", 0xF192E, #{ width: p.cell });
+glyph("lukin", 0xF192E);
 
 stroke(path(pt(75, 400.002))
        .controls(pt(75, 304.002), pt(242.899, 250.002), pt(449.998, 250.002))

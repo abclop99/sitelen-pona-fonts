@@ -1,5 +1,5 @@
 // pakala. Imported from the earlier Inkscape drawings; edit freely.
-glyph("pakala", 0xF1948, #{ width: p.cell });
+glyph("pakala", 0xF1948);
 
 stroke(path(pt(132.696, 774.996))
        .line(pt(767.304, 774.996))

@@ -1,5 +1,5 @@
 // mun. Imported from the earlier Inkscape drawings; edit freely.
-glyph("mun", 0xF193A, #{ width: p.cell });
+glyph("mun", 0xF193A);
 
 stroke(path(pt(200.68, 732.427))
        .controls(pt(533.107, 870.938), pt(750.58, 647.879), pt(750.58, 400))
