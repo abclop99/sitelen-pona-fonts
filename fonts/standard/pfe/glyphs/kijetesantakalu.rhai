@@ -1,8 +1,8 @@
 // kijetesantakalu. Imported from the earlier Inkscape drawings; edit freely.
 glyph("kijetesantakalu", 0xF1980);
 
-draw(dot(), tf(1, 0, 0, 1, 68.42, 66.97));
-draw(dot(), tf(1, 0, 0, 1, 174.53, 66.97));
+draw(small_dot(), tf(1, 0, 0, 1, 68.42, 66.97));
+draw(small_dot(), tf(1, 0, 0, 1, 174.53, 66.97));
 stroke(path(pt(298.56, 124.93))
        .line(pt(298.56, 287.88))
        .controls(pt(298.56, 380.6), pt(318.13, 477.87), pt(359.34, 538.65))
