@@ -17,7 +17,7 @@ reference/   links and notes; downloaded reference fonts (git-ignored)
 fonts/*/     per-font sources
 ```
 
-The standard font is written as code for [pfe](https://github.com/abclop99/parametric-font-engine), a parametric font engine: `fonts/standard/pfe/` holds `font.toml`, shared parts and one script per word. With `pfe` installed:
+The standard font is written as code for [pfe](https://github.com/abclop99/parametric-font-engine), a parametric font engine: `fonts/standard/pfe/` holds `font.toml` (font info, parameters, the word list), `font.rhai` (metrics, spacing, preview guides and each word's code, from `spec/words.tsv`), shared parts in `lib/` and one script per word. It needs pfe 0.4. With `pfe` installed:
 
 ```
 pfe preview fonts/standard/pfe   # live preview in the browser
