@@ -1,6 +1,6 @@
 // The cell every glyph sits in, and its midline.
 
-// The advance: the ink box with 50 on either side, so 100 between glyphs.
+// The advance: the ink box centred in the cell, with ink_l on either side.
 fn cell() { params.ink_l + params.ink_r }
 
 // sitelen pona centres on the midline, the middle of the ink box.
