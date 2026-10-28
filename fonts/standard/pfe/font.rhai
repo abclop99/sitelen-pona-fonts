@@ -12,12 +12,15 @@ fn guides(g) {
      guide::vertical(params.ink_l), guide::vertical(params.ink_r)]
 }
 
-// Each word's code and the class typing rules use, from the word list. A word with no code
-// point yet is left unencoded.
+// The class typing rules use, and each word's code from the word list. The glyph scripts still
+// give their own codes, which win, so for now this checks them against the list (a mismatch is a
+// code_not_default warning); a word with no code point yet gets none.
 fn glyph_defaults() {
     let out = #{};
     for w in data::words {
-        out[`sp.${w.word}`] = if w.codepoint != "" { #{ code: w.codepoint, classes: ["word"] } } else { #{ classes: ["word"] } };
+        let d = #{ classes: ["word"] };
+        if w.codepoint != "" { d.code = w.codepoint; }
+        out[`sp.${w.word}`] = d;
     }
     out
 }
