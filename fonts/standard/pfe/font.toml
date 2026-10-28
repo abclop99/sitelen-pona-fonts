@@ -1,15 +1,11 @@
 # sitelen pona, standard font, as a pfe project: the source of the font. Imported once from the
 # earlier Inkscape drawings (kept on the claude/project-thread-y55klr branch).
 
-pfe = "0.3"
+pfe = "0.4"
 
 [font]
 family = "SP Standard Draft"   # temporary, until the font has a name
 upm = 1000
-ascender = 900
-descender = -100
-width = 900
-line_gap = 200    # as in the Inkscape build
 version = "0.1"
 copyright = "Copyright (c) 2026 abclop99. Some glyphs based on sitelen seli kiwen, Copyright (c) 2022 Kreative Software."
 designer = "abclop99"
@@ -20,14 +16,15 @@ description = "sitelen pona, the writing system of Toki Pona. Glyph forms follow
 [params]
 stroke = 50  # centreline pen
 subdiv = 4          # cubics per stroke side per segment; imported curves bend sharply
-mid = 400          # sitelen pona centres on the midline
 ink_l = 50         # the ink box
 ink_r = 850
 ink_b = 0
 ink_t = 800
 
+# The word list, for each glyph's code and class (glyph_defaults() in font.rhai).
+[data]
+words = { path = "../../../spec/words.tsv", header = "last_comment" }
+
 [preview]
-guides_h = ["mid", "ink_b", "ink_t"]
-guides_v = ["ink_l", "ink_r"]
 proof = "sp.toki sp.pona sp.li sp.pona"
 reference = "reference"
