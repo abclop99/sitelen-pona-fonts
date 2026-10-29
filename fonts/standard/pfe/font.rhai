@@ -12,9 +12,9 @@ fn guides(g) {
      guide::vertical(params.ink_l), guide::vertical(params.ink_r)]
 }
 
-// The class typing rules use, and each word's code from the word list. The glyph scripts still
-// give their own codes, which win, so for now this checks them against the list (a mismatch is a
-// code_not_default warning); a word with no code point yet gets none.
+// The class for typing rules to use (none yet), and each word's code from the word list. The glyph
+// scripts still give their own codes, which win, so for now this checks them against the list (a
+// mismatch is a code_not_default warning); a word with no code point yet gets none.
 fn glyph_defaults() {
     let out = #{};
     for w in data::words {
