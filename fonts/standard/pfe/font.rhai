@@ -18,9 +18,7 @@ fn guides(g) {
 fn glyph_defaults() {
     let out = #{};
     for w in data::words {
-        let d = #{ classes: ["word"] };
-        if w.codepoint != "" { d.code = w.codepoint; }
-        out[`sp.${w.word}`] = d;
+        out[`sp.${w.word}`] = #{ code: w.codepoint, classes: ["word"] };
     }
     out
 }
