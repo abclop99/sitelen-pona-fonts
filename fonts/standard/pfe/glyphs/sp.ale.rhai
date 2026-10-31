@@ -1,9 +1,17 @@
-// sp.ale. Imported from the earlier Inkscape drawings; edit freely.
+// sp.ale
 glyph("sp.ale", 0xF1904);
 
-stroke(path(pt(450, 400))
-       .controls(pt(334.615, 544.231), pt(75, 601.923), pt(75, 400))
-       .controls(pt(75, 198.077), pt(334.615, 255.769), pt(450, 400))
-       .controls(pt(565.385, 544.231), pt(825, 601.923), pt(825, 400))
-       .controls(pt(825, 198.077), pt(565.385, 255.769), pt(450, 400))
-       .close());
+const STROKE_RADIUS = 0.5 * params.stroke;
+
+let b = box();
+let middle = pt(b.left + b.width / 2, mid());
+let left = pt(b.left + STROKE_RADIUS, middle.y);
+let right = pt(b.right - STROKE_RADIUS, middle.y);
+
+stroke(
+       path(middle)
+       .curve(left, DOWN) // TODO: Make fatter, with a param for how fat (for stretch)
+       .curve(middle)
+       .curve(right, DOWN) // TODO: Make fatter
+       .cycle()
+);
