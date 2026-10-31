@@ -1,4 +1,4 @@
-// sp.lanpan.
+// sp.lanpan
 glyph("sp.lanpan", 0xF1985);
 
 draw(big_dot(), tf(1, 0, 0, 1, 180, -345));
@@ -11,7 +11,7 @@ stroke(
 );
 stroke(
        path(pt(330, 450)).dir(200)
-       .curve(pt(150, 55))
+       .curve(pt(150, 57))
        .curve(pt(620, 215))
        .curve(pt(810, 25))
 );
