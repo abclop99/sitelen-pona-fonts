@@ -1,9 +1,18 @@
-// sp.mun. Imported from the earlier Inkscape drawings; edit freely.
+// sp.mun
 glyph("sp.mun", 0xF193A);
 
-stroke(path(pt(200.68, 732.427))
-       .controls(pt(533.107, 870.938), pt(750.58, 647.879), pt(750.58, 400))
-       .controls(pt(750.58, 152.121), pt(533.107, -70.938), pt(200.68, 67.573))
-       .controls(pt(422.297, 150.68), pt(492.03, 261.489), pt(492.03, 400))
-       .controls(pt(492.03, 538.511), pt(422.297, 649.32), pt(200.68, 732.427))
-       .close());
+// Glyph height: Should be a shared parameter
+const GLYPH_HEIGHT = 800;
+
+let point_top = pt(200, 725);
+let point_low = pt(point_top.x, GLYPH_HEIGHT - point_top.y);
+let outer = pt(750, 400);
+let inner = pt(500, 400);
+
+stroke(
+       path(point_top).corner()
+       .curve(inner)
+       .curve(point_low).corner()
+       .curve(outer)
+       .cycle()
+);
