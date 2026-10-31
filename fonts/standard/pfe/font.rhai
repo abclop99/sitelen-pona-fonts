@@ -1,15 +1,16 @@
 // Font-wide choices, as hooks: functions with names pfe knows. Helpers go in lib/.
 
 // Every glyph is a cell wide.
-fn default_spacing(g) { cell() }
+fn default_spacing(g) { advance() }
 
 // 100 above and below the ink box, and the line gap of the Inkscape build.
-fn metrics() { #{ ascender: params.ink_t + 100, descender: params.ink_b - 100, line_gap: 200 } }
+fn metrics() { #{ ascender: box().top + 100, descender: box().bottom - 100, line_gap: 200 } }
 
 // The preview's guides: the midline and the ink box.
 fn guides(g) {
-    [guide::horizontal(mid()), guide::horizontal(params.ink_b), guide::horizontal(params.ink_t),
-     guide::vertical(params.ink_l), guide::vertical(params.ink_r)]
+    let b = box();
+    [guide::horizontal(mid()), guide::horizontal(b.bottom), guide::horizontal(b.top),
+     guide::vertical(b.left), guide::vertical(b.right)]
 }
 
 // The class for typing rules to use (none yet), and each word's code from the word list. The glyph

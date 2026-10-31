@@ -14,12 +14,13 @@ license_url = "https://openfontlicense.org"
 description = "sitelen pona, the writing system of Toki Pona. Glyph forms follow jan Sonja's (Sonja Lang's) handwriting in Toki Pona: The Language of Good (pu), traced and adjusted from CC0 vectorizations on Wikimedia Commons by LiliCharlie and Sonja Lang. Some ku suli glyphs, which have no drawing in pu, are traced from sitelen seli kiwen (Kreative Software, SIL OFL 1.1)."
 
 [params]
-stroke = 50  # centreline pen
+stroke = 50         # centreline pen width
 subdiv = 4          # cubics per stroke side per segment; imported curves bend sharply
-ink_l = 50         # the ink box
-ink_r = 850
-ink_b = 0
-ink_t = 800
+margin_l = 50       # space before the ink box
+margin_r = 50       # space after it
+box_w = 800         # the ink box's width
+box_h = 800         # and height
+box_b = 0           # its bottom edge
 
 # The word list, for each glyph's code and class (glyph_defaults() in font.rhai).
 [data]
